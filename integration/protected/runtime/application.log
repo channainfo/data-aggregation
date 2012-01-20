@@ -1,0 +1,474 @@
+2012/01/12 06:53:48 [error] [php] Undefined variable: _time (/var/www/servage/yiiwork/integration/protected/views/message/index.php:8)
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CController.php(870): MessageController->renderFile()
+#1 /var/www/servage/yiiwork/framework/web/CController.php(783): MessageController->renderPartial()
+#2 /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php(7): MessageController->render()
+#3 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): MessageController->actionIndex()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/servage/yiiwork/framework/web/CController.php(287): MessageController->runAction()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(266): MessageController->runActionWithFilters()
+#7 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): MessageController->run()
+#8 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/servage/yiiwork/integration/index.php(13): CWebApplication->run()
+REQUEST_URI=/integration/index.php?r=message
+in /var/www/servage/yiiwork/integration/protected/views/message/index.php (8)
+in /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php (7)
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/12 06:54:39 [error] [php] Undefined variable: time (/var/www/servage/yiiwork/integration/protected/views/message/index.php:8)
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CController.php(870): MessageController->renderFile()
+#1 /var/www/servage/yiiwork/framework/web/CController.php(783): MessageController->renderPartial()
+#2 /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php(7): MessageController->render()
+#3 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): MessageController->actionIndex()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/servage/yiiwork/framework/web/CController.php(287): MessageController->runAction()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(266): MessageController->runActionWithFilters()
+#7 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): MessageController->run()
+#8 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/servage/yiiwork/integration/index.php(13): CWebApplication->run()
+REQUEST_URI=/integration/index.php?r=message
+in /var/www/servage/yiiwork/integration/protected/views/message/index.php (8)
+in /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php (7)
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/12 06:54:49 [error] [exception.CException] exception 'CException' with message 'Property "MessageController.time" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/views/message/index.php(8): CComponent->__get('time')
+#1 /var/www/servage/yiiwork/framework/web/CBaseController.php(127): require('/var/www/servag...')
+#2 /var/www/servage/yiiwork/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/servag...', NULL, true)
+#3 /var/www/servage/yiiwork/framework/web/CController.php(870): CBaseController->renderFile('/var/www/servag...', NULL, true)
+#4 /var/www/servage/yiiwork/framework/web/CController.php(783): CController->renderPartial('index', NULL, true)
+#5 /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php(7): CController->render('index')
+#6 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): MessageController->actionIndex()
+#7 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/servage/yiiwork/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#9 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('')
+#11 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('message')
+#12 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/integration/index.php?r=message
+---
+2012/01/12 06:56:03 [error] [exception.CException] exception 'CException' with message 'Property "MessageController._time" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/views/message/index.php(8): CComponent->__get('_time')
+#1 /var/www/servage/yiiwork/framework/web/CBaseController.php(127): require('/var/www/servag...')
+#2 /var/www/servage/yiiwork/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/servag...', Array, true)
+#3 /var/www/servage/yiiwork/framework/web/CController.php(870): CBaseController->renderFile('/var/www/servag...', Array, true)
+#4 /var/www/servage/yiiwork/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#5 /var/www/servage/yiiwork/integration/protected/controllers/MessageController.php(9): CController->render('index', Array)
+#6 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): MessageController->actionIndex()
+#7 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/servage/yiiwork/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#9 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('')
+#11 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('message')
+#12 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/integration/index.php?r=message
+---
+2012/01/13 05:36:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiwork.project' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `project`.
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/13 05:40:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiwork.project' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `project`.
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/13 05:40:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiiwork.project' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `project`.
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/13 05:40:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to find the code you requested.' in /var/www/servage/yiiwork/framework/gii/CCodeGenerator.php:90
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionCode()
+#1 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#2 /var/www/servage/yiiwork/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#3 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('code')
+#5 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('gii/model/code')
+#6 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#7 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/integration/index.php?r=gii/model/code&id=0
+HTTP_REFERER=http://yiiwork.com/integration/index.php?r=gii/model
+---
+2012/01/16 07:24:07 [error] [php] Missing argument 3 for CActiveForm::dropDownList(), called in /var/www/servage/yiiwork/integration/protected/views/issue/_form.php on line 32 and defined (/var/www/servage/yiiwork/framework/web/widgets/CActiveForm.php:672)
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CBaseController.php(96): IssueController->renderInternal()
+#1 /var/www/servage/yiiwork/framework/web/CController.php(870): IssueController->renderFile()
+#2 /var/www/servage/yiiwork/integration/protected/views/issue/create.php(15): IssueController->renderPartial()
+#3 /var/www/servage/yiiwork/framework/web/CBaseController.php(127): require()
+#4 /var/www/servage/yiiwork/framework/web/CBaseController.php(96): IssueController->renderInternal()
+#5 /var/www/servage/yiiwork/framework/web/CController.php(870): IssueController->renderFile()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(783): IssueController->renderPartial()
+#7 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(78): IssueController->render()
+#8 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): IssueController->actionCreate()
+#9 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams()
+#10 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(134): IssueController->runAction()
+#11 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/servage/yiiwork/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#13 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterAccessControl()
+#14 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#15 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/servage/yiiwork/framework/web/CController.php(266): IssueController->runActionWithFilters()
+#17 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): IssueController->run()
+#18 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#19 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/servage/yiiwork/integration/index.php(13): CWebApplication->run()
+REQUEST_URI=/integration/index.php?r=issue/create
+in /var/www/servage/yiiwork/integration/protected/views/issue/_form.php (32)
+in /var/www/servage/yiiwork/integration/protected/views/issue/create.php (15)
+in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php (78)
+2012/01/16 08:39:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create?pid=1".' in /var/www/servage/yiiwork/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CController.php(271): CController->missingAction('create?pid=1')
+#1 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create?pid=1')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create?pi...')
+#3 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/integration/index.php?r=issue/create?pid=1
+---
+2012/01/16 08:40:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:199
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(221): IssueController->loadProject(NULL)
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create
+---
+2012/01/16 08:40:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:199
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(221): IssueController->loadProject(NULL)
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create
+---
+2012/01/16 08:40:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:199
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(221): IssueController->loadProject('1')
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create&pid=1
+HTTP_REFERER=http://yiiwork.com/integration/index.php?r=issue
+---
+2012/01/16 08:45:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:199
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(221): IssueController->loadProject(NULL)
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create
+---
+2012/01/16 09:07:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in /var/www/servage/yiiwork/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('user')
+#1 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/integration/index.php?r=user
+---
+2012/01/16 09:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in /var/www/servage/yiiwork/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('user')
+#1 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/integration/index.php?r=user
+---
+2012/01/16 16:46:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:200
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(223): IssueController->loadProject(NULL)
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create
+---
+2012/01/16 16:47:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested project does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php:200
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/IssueController.php(223): IssueController->loadProject('1')
+#1 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('create')
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/create')
+#11 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/integration/index.php?r=issue/create&pid=1
+---
+2012/01/17 02:53:25 [error] [php] Missing argument 1 for ProjectController::loadModel(), called in /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php on line 55 and defined (/var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php:163)
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#1 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#2 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams()
+#3 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(134): ProjectController->runAction()
+#4 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /var/www/servage/yiiwork/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#6 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): ProjectController->filterAccessControl()
+#7 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#9 /var/www/servage/yiiwork/framework/web/CController.php(266): ProjectController->runActionWithFilters()
+#10 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): ProjectController->run()
+#11 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#12 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /var/www/servage/yiiwork/integration/index.php(13): CWebApplication->run()
+REQUEST_URI=/integration/index.php?r=project/view&id=1
+in /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php (163)
+in /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php (55)
+in /var/www/servage/yiiwork/integration/index.php (13)
+2012/01/17 07:40:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php:167
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php(59): ProjectController->loadModel('1')
+#1 [internal function]: ProjectController->actionView('1')
+#2 /var/www/servage/yiiwork/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#3 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#4 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('view')
+#13 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('project/view')
+#14 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/integration/index.php?r=project/view&id=1
+---
+2012/01/17 07:47:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php:167
+Stack trace:
+#0 /var/www/servage/yiiwork/integration/protected/controllers/ProjectController.php(59): ProjectController->loadModel('1')
+#1 [internal function]: ProjectController->actionView('1')
+#2 /var/www/servage/yiiwork/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(ProjectController), Array)
+#3 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProjectController), Object(ReflectionMethod), Array)
+#4 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('view')
+#13 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('project/view')
+#14 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/integration/index.php?r=project/view&id=1
+---
+2012/01/19 07:11:14 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "encrypt".' in /var/www/servage/yiiwork/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/db/ar/CActiveRecord.php(226): CComponent->__call('encrypt', Array)
+#1 /var/www/servage/yiiwork/integration/protected/components/UserIdentity.php(42): CActiveRecord->__call('encrypt', Array)
+#2 /var/www/servage/yiiwork/integration/protected/components/UserIdentity.php(42): User->encrypt('123456')
+#3 /var/www/servage/yiiwork/integration/protected/components/UserIdentity.php(32): UserIdentity->check_error()
+#4 /var/www/servage/yiiwork/integration/protected/models/LoginForm.php(49): UserIdentity->authenticate()
+#5 /var/www/servage/yiiwork/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#6 /var/www/servage/yiiwork/framework/validators/CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/servage/yiiwork/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#8 /var/www/servage/yiiwork/integration/protected/controllers/SiteController.php(88): CModel->validate()
+#9 /var/www/servage/yiiwork/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /var/www/servage/yiiwork/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/servage/yiiwork/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('login')
+#14 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/integration/index.php?r=site/login
+HTTP_REFERER=http://yiiwork.com/integration/index.php?r=site/login
+---
+2012/01/19 08:27:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/admin')
+#9 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/integration/index.php?r=issue/admin
+HTTP_REFERER=http://yiiwork.com/integration/index.php?r=issue
+---
+2012/01/19 08:35:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/admin')
+#9 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/integration/index.php?r=issue/admin
+---
+2012/01/19 08:36:15 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('username')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(26): CWebUser->__get('username')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('issue', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('issue/admin')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('issue/admin')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php?r=issue/admin
+---
+2012/01/19 08:42:07 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(27): CWebUser->__get('lastTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('site/logout')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('site/logout')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php?r=site/logout
+HTTP_REFERER=http://yiiwork.com/integration/index.php
+---
+2012/01/19 08:42:20 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastLoginTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastLoginTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(26): CWebUser->__get('lastLoginTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php
+---
+2012/01/19 08:42:22 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastLoginTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastLoginTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(26): CWebUser->__get('lastLoginTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php
+---
+2012/01/19 08:42:45 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastLoginTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastLoginTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(26): CWebUser->__get('lastLoginTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php
+---
+2012/01/19 08:43:43 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastLoginTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastLoginTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(27): CWebUser->__get('lastLoginTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php
+---
+2012/01/19 08:43:45 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.lastLoginTime" is not defined.' in /var/www/servage/yiiwork/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CWebUser.php(141): CComponent->__get('lastLoginTime')
+#1 /var/www/servage/yiiwork/integration/protected/components/Controller.php(27): CWebUser->__get('lastLoginTime')
+#2 /var/www/servage/yiiwork/framework/web/CWebApplication.php(349): Controller->__construct('site', NULL)
+#3 /var/www/servage/yiiwork/framework/web/CWebApplication.php(270): CWebApplication->createController('')
+#4 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#5 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/integration/index.php
+---
+2012/01/19 09:46:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/servage/yiiwork/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/servage/yiiwork/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/servage/yiiwork/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/servage/yiiwork/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/servage/yiiwork/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/servage/yiiwork/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/servage/yiiwork/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/servage/yiiwork/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/servage/yiiwork/framework/web/CWebApplication.php(135): CWebApplication->runController('user/admin')
+#9 /var/www/servage/yiiwork/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/servage/yiiwork/integration/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/integration/index.php?r=user/admin
+HTTP_REFERER=http://yiiwork.com/integration/index.php?r=user/create
+---
