@@ -19,10 +19,10 @@ return array(
 	),
     
   //authManager  Yii::app()->authManager
-  'authManager' => array(
-      'class' => 'CDbAuthManager',
-      'connectionID' => 'db' 
-    ),
+//  'authManager' => array(
+//      'class' => 'CDbAuthManager',
+//      'connectionID' => 'db' 
+//    ),
 
     'modules'=>array(
 		// uncomment the following to enable the Gii tool
@@ -57,10 +57,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=127.0.0.1;dbname=oi_server',
+			'connectionString' => 'mysql:host=127.0.0.1;dbname=server_oi_dbo',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 	

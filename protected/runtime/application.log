@@ -472,3 +472,36 @@ Stack trace:
 REQUEST_URI=/integration/index.php?r=user/admin
 HTTP_REFERER=http://yiiwork.com/integration/index.php?r=user/create
 ---
+2012/02/02 17:36:04 [error] [php] include(Ch.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php(26): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(349): SiteController->__construct()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(270): CWebApplication->createController()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\data-aggregretion\index.php(13): CWebApplication->run()
+REQUEST_URI=/data-aggregretion/
+in C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php (26)
+in C:\xampp\htdocs\data-aggregretion\index.php (13)
+2012/02/02 17:36:38 [error] [php] include(Ch.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php(26): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(349): SiteController->__construct()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(270): CWebApplication->createController()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\data-aggregretion\index.php(13): CWebApplication->run()
+REQUEST_URI=/data-aggregretion/
+in C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php (26)
+in C:\xampp\htdocs\data-aggregretion\index.php (13)
+2012/02/02 17:37:44 [error] [php] include(Ch.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php(26): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(349): SiteController->__construct()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(270): CWebApplication->createController()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\data-aggregretion\index.php(13): CWebApplication->run()
+REQUEST_URI=/data-aggregretion/
+in C:\xampp\htdocs\data-aggregretion\protected\components\Controller.php (26)
+in C:\xampp\htdocs\data-aggregretion\index.php (13)
