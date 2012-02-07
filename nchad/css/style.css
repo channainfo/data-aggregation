@@ -1,0 +1,54 @@
+root { 
+  display: block;
+}
+body, html{
+  margin: 0px;
+  padding: 0px;
+}
+th, td{
+  text-align: left;
+}
+.round{
+  border-radius: 3px;
+}
+a{
+  text-decoration: none;
+  color: #999;
+  font-weight: 600;
+}
+
+.button{
+  background-color: #997;
+  border: 1px solid #998;
+  padding:2px 6px;
+}
+
+.button:hover{
+  background-color: #998;
+}
+
+table{
+  border: 1px solid #ddd;
+}
+.action-bar{
+  margin: 5px 0px;
+  text-align: right;
+  clear:both;
+  padding: 5px;
+  background: #eee;
+}
+.action-bar-left{
+  float: left;
+}
+.action-bar-right{
+  float:right;
+}
+
+#main{
+  width: 1020px; 
+  margin: 0 auto;
+  padding: 5px 10px;
+}
+.clear{
+  clear: both;
+}
