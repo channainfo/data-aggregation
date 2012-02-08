@@ -70,8 +70,9 @@ class User extends CActiveRecord
 	}
   
   protected function beforeValidate() {
-    ChTool::debug($this->getErrors());
-    //set role
+    if(!$this->isNewRecord){
+      $this->password_repeat = $this->password;
+    }  
     return parent::beforeValidate();
     
   }
@@ -80,8 +81,7 @@ class User extends CActiveRecord
   }
 
   protected function afterValidate() {
-    ChTool::debug($this->getErrors());
-    
+
     if(!$this->hasErrors()){
       if($this->isNewRecord){
         $this->salt = $this->saltPassword( $this->login + "." + time());

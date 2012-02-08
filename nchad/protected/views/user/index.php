@@ -9,6 +9,17 @@ $this->menu = array(
 ?>
 
 <h1>Users </h1>
+
+<?php 
+  $flashes = Yii::app()->user->getFlashes();
+  if($flashes):
+  foreach($flashes as $key => $value): ?>
+  <div class=" round flash-<?php echo $key ?>" > <?php echo $value; ?> </div>
+<?php 
+  endforeach;
+  endif;
+?>
+  
 <div class="action-bar round"> 
   <div class="action-bar-left"> List of users </div>
   <div class="action-bar-right"> 
