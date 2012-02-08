@@ -32,11 +32,13 @@ class UserIdentity extends CUserIdentity{
           $lastLoginAt = date("Y-m-d h:m:i");
         else
           $lastLoginAt = $user->last_login_at;
+        
+        $this->setState("lastLoginAt", $lastLoginAt ); // set CWebUser Yii::app()->user->lastLoginAt 
+        $this->errorCode = self::ERROR_NONE;
       }
-      $this->setState("lastLoginAt", $lastLoginAt ); // set CWebUser Yii::app()->user->lastLoginAt 
-      $this->errorCode = self::ERROR_NONE;
+      
     }
-    return !$this->errorCode ;
+    return $this->errorCode ;
 	}
   
   public function getId(){

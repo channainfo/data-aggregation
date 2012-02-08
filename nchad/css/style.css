@@ -18,13 +18,13 @@ a{
 }
 
 .button{
-  background-color: #997;
-  border: 1px solid #998;
+  background-color: #eee;
+  border: 1px solid #eee;
   padding:2px 6px;
 }
 
 .button:hover{
-  background-color: #998;
+  background-color: #ddd;
 }
 
 table{
@@ -35,7 +35,6 @@ table{
   text-align: right;
   clear:both;
   padding: 5px;
-  background: #eee;
 }
 .action-bar-left{
   float: left;

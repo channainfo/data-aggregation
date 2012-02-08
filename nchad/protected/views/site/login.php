@@ -1,5 +1,6 @@
 <?php
 $this->pageTitle=Yii::app()->name . ' - Login';
+
 $this->breadcrumbs=array(
 	'Login',
 );
@@ -13,17 +14,15 @@ $this->breadcrumbs=array(
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
+	'clientOptions'=>array('validateOnSubmit'=>true	),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
+		<?php echo $form->labelEx($model,'login'); ?>
+		<?php echo $form->textField($model,'login'); ?>
+		<?php echo $form->error($model,'login'); ?>
 	</div>
 
 	<div class="row">

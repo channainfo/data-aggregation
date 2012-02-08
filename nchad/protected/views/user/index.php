@@ -44,8 +44,7 @@ $this->menu = array(
   <div class="clear"></div>
 </div>  
 <?php 
-//$this->widget('zii.widgets.CListView', array(
-//	'dataProvider'=>$dataProvider,
-//	'itemView'=>'_view',
-//)); 
+$this->widget('zii.widgets.grid.CGridView', array(
+	'dataProvider'=>$dataProvider,
+)); 
 ?>

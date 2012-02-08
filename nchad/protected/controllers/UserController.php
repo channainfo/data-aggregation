@@ -2,64 +2,36 @@
 
 class UserController extends Controller
 {
-
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
 	public $layout='//layouts/default';
-
-	/**
-	 * @return array action filters
-	 */
-//	public function filters()
-//	{
-//		return array(
-//			'accessControl', // perform access control for CRUD operations
-//		);
-//	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-//	public function accessRules()
-//	{
-//		return array(
-//			array('allow',  // allow all users to perform 'index' and 'view' actions
-//				'actions'=>array('index','view'),
-//				'users'=>array('*'),
-//			),
-//			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-//				'actions'=>array('create','update'),
-//				'users'=>array('@'),
-//			),
-//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-//				'actions'=>array('admin','delete'),
-//				'users'=>array('admin'),
-//			),
-//			array('deny',  // deny all users
-//				'users'=>array('*'),
-//			),
-//		);
-//	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
+  
+	public function actionView($id) {
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
+  public function actionLogin(){
+    
+    if(!Yii::app()->user->isGuest){
+      $this->redirect(Yii::app()->user->returnUrl);
+    }
+    $model = new LoginForm();
+    if(isset($_POST["LoginForm"])){
+      $model->setAttributes($_POST["LoginForm"]);
+      if($model->validate() && $model->login()){
+        $this->redirect(Yii::app()->user->returnUrl);
+      }
+      
+    }
+    $this->render( "login", array( "model" => $model) );
+    
+  }
+  
+  public function actionLogout(){
+    Yii::app()->user->logout();
+		$this->redirect("login");
+  }
+
 	public function actionCreate()
 	{
 		$model=new User;
@@ -67,8 +39,7 @@ class UserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
-		{
+		if(isset($_POST['User'])){
 			$model->attributes = $_POST['User'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -102,6 +73,24 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+  
+  public function actionChange(){
+    
+    $model = new PasswordChangeForm();
+    if(isset($_POST["PasswordChangeForm"])){
+      $model->setAttributes($_POST["PasswordChangeForm"]);
+      if($model->validate()){
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        $user->password = $_POST["PasswordChangeForm"]["password"];
+        Yii::app()->user->setFlash("success", "Password has been changed");
+        $user->save();
+        
+      }
+      
+    }
+    
+    $this->render("change", array("model" => $model));
+  }
 
 	/**
 	 * Deletes a particular model.
@@ -129,9 +118,12 @@ class UserController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('User', array(
-        "pagination" => array("pageSize" => 2)
+        "criteria" => array("select" => "login, email, name, role"),
+        //'columns'=>array('login','email', 'name' ),
+        "pagination" => array("pageSize" => 4)
       )
     );
+    
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
