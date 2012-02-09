@@ -6235,3 +6235,21 @@ REQUEST_URI=/yii/nchad/index.php
 in C:\xampp\htdocs\yii\nchad\protected\components\VViewHelper.php (3)
 in C:\xampp\htdocs\yii\nchad\protected\views\site\dashboard.php (5)
 in C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php (106)
+2012/02/09 08:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/create
+HTTP_REFERER=http://localhost/yii/nchad/user
+---
+2012/02/09 09:24:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/create
+HTTP_REFERER=http://localhost/yii/nchad/user
+---

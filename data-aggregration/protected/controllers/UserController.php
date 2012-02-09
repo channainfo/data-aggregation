@@ -41,8 +41,13 @@ class UserController extends Controller
 
 		if(isset($_POST['User'])){
 			$model->attributes = $_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+        Yii::app()->user->setFlash("success", "User has been created");
+				$this->redirect(array('index'));
+      }
+      else{
+        Yii::app()->user->setFlash("error", "Failed to create user");
+      }
 		}
 
 		$this->render('create',array(
@@ -58,10 +63,8 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
@@ -91,7 +94,6 @@ class UserController extends Controller
           $this->redirect("index");
       }
     }
-    
     $this->render("change", array("model" => $model));
   }
 
@@ -120,8 +122,8 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User', array(
-        "pagination" => array("pageSize" => 4),
+		$dataProvider = new CActiveDataProvider('User', array(
+        "pagination" => array("pageSize" => 2),
         "sort" => array(
             "defaultOrder" => array("id")
         )

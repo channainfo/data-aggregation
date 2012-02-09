@@ -33,6 +33,15 @@
         <div style="clear:both;"></div>
       </div>
       <div> </div>
+      <?php 
+        $flashes = Yii::app()->user->getFlashes();
+        if($flashes):
+        foreach($flashes as $key => $value): ?>
+        <div class=" round flash-<?php echo $key ?>" > <?php echo $value; ?> </div>
+      <?php 
+        endforeach;
+        endif;
+      ?>
       <?php echo $content; ?>
      </div> 
   </body>

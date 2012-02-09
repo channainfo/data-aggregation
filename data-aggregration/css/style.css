@@ -8,10 +8,16 @@ body, html{
 th, td{
   text-align: left;
 }
-.round{
+.round, .page a, .next a, .previous a{
   border-radius: 3px;
   border: 1px solid #eee;
 }
+.page a, .next a, .previous a{
+  padding: 3px 10px !important;
+}
+
+
+
 a{
   text-decoration: none;
   color: blue;
@@ -31,7 +37,7 @@ a{
 table{
   border: 1px solid #ddd;
 }
-.action-bar{
+.action-bar {
   margin: 5px 0px;
   text-align: right;
   clear:both;
