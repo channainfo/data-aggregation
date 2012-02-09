@@ -1,5 +1,5 @@
 
-<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+
 <h1 class="action-title round"> Dashboard </h1>
 <?php echo VViewHelper::dashboardIcon("user/" ,"icon-import", "Import", 
         "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>

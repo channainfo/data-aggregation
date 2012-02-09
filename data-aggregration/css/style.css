@@ -34,9 +34,6 @@ a{
   background-color: #ddd;
 }
 
-table{
-  border: 1px solid #ddd;
-}
 .action-bar {
   margin: 5px 0px;
   text-align: right;
@@ -144,4 +141,35 @@ div.breadcrumb{
 .btn-action:hover{
   background-color: #666;
   color:#fefefe;
+}
+div.tableWrapper{
+  padding: 5px;
+}
+div.tableWrapper thead tr{
+  background-color: #aaa;
+  border-bottom: 1px solid #999;
+  padding: 3px;
+}
+div.tableWrapper thead th {
+  color: white;
+}
+
+tr.odd{
+  background-color:#EFFDFF;
+}
+tr.even{
+  background-color: #E6ECFF;
+}
+
+div.tableWrapper thead th, td {
+  padding: 3px 5px;
+}
+.tgrid{
+  width: 100%; 
+}
+.left-align{
+  
+}
+.right-align{
+ text-align: right; 
 }

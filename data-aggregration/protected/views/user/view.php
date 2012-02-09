@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View User #<?php echo $model->id; ?></h1>
+<h1 class="action-title round">Detail: <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -21,9 +21,7 @@ $this->menu=array(
 		'id',
 		'login',
 		'role',
-		'password',
 		'email',
-		'salt',
 		'name',
 		'created_at',
 		'modified_at',

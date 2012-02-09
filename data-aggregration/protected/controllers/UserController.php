@@ -104,14 +104,21 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
+		if(1 || Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			try{
+        $this->loadModel($id)->delete();
+        Yii::app()->user->setFlash("success", "User has been deleted");
+      }
+      catch(Exception $ex){
+        Yii::app()->user->setFlash("error", "Failed to delete user");
+      }
+              
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -122,16 +129,19 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider = new CActiveDataProvider('User', array(
-        "pagination" => array("pageSize" => 2),
-        "sort" => array(
-            "defaultOrder" => array("id")
-        )
-      )
-    );
+    $model = new User();
+    $criteria = new CDbCriteria();
+    $criteria->order = 'id DESC,login ASC';
     
+    $itemCount = $model->count($criteria);
+    $pages = new CPagination($itemCount);
+    $pages->pageSize = 10 ;
+    $pages->applyLimit($criteria);
+    
+    $users = $model->findAll($criteria);
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'users'=>$users,
+      'pages' => $pages  
 		));
 	}
 

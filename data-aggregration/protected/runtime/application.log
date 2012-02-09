@@ -6253,3 +6253,133 @@ Stack trace:
 REQUEST_URI=/yii/nchad/create
 HTTP_REFERER=http://localhost/yii/nchad/user
 ---
+2012/02/09 10:50:56 [error] [php] Use of undefined constant phpendforeach - assumed 'phpendforeach' (C:\xampp\htdocs\yii\data-aggregration\protected\views\user\index.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): UserController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): UserController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php(135): UserController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): UserController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): UserController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): UserController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): UserController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/user/
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\user\index.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php (135)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/09 11:19:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('user')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('user')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/user/delet...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/user/user/delete/8
+HTTP_REFERER=http://localhost/yii/data-aggregration/user/
+---
+2012/02/09 11:20:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php:117
+Stack trace:
+#0 [internal function]: UserController->actionDelete('8')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/delete')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/user/delete/8
+HTTP_REFERER=http://localhost/yii/data-aggregration/user/index
+---
+2012/02/09 11:20:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php:117
+Stack trace:
+#0 [internal function]: UserController->actionDelete('8')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/delete')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/user/delete/8
+---
+2012/02/09 11:20:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php:117
+Stack trace:
+#0 [internal function]: UserController->actionDelete('8')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/delete')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/user/delete/8
+---
+2012/02/09 11:20:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php:117
+Stack trace:
+#0 [internal function]: UserController->actionDelete('8')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/delete')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/user/delete/8
+---
+2012/02/09 11:20:34 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php:117
+Stack trace:
+#0 [internal function]: UserController->actionDelete('8')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/delete')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/user/delete/8
+---
+2012/02/09 11:35:23 [error] [php] Undefined variable: dataProvider (C:\xampp\htdocs\yii\data-aggregration\protected\views\user\index.php:55)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): UserController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): UserController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php(140): UserController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): UserController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): UserController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): UserController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): UserController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/user/
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\user\index.php (55)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php (140)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/09 11:38:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/create
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/user
+---

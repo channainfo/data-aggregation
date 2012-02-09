@@ -2,6 +2,7 @@
 <html >
   <head>
     <title><?php echo VViewHelper::pageTitle($this->pageTitle); ?> </title>
+    <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/form.css" />
@@ -44,5 +45,16 @@
       ?>
       <?php echo $content; ?>
      </div> 
+    <script type="text/javascript">
+      $(function(){
+        $(".delete").click(function(){
+          if(!confirm("Are you sure to delete")){
+            return false;
+          }
+          return true;
+        })
+      });
+  
+    </script>
   </body>
 </html>

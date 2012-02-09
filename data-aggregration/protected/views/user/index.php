@@ -15,12 +15,53 @@ $this->menu = array(
   </div>
   <div class="clear"></div>
 </div>
+
+<div class="tableWrapper round">
+  <table class="tgrid" >
+    <thead>
+      <tr>
+        <th> Login </th>
+        <th> Name </th>
+        <th> Group </th>
+        <th> Active </th>
+        <th> Email </th>
+        <th> Action </th>
+        
+      </tr>
+    </thead>
+  <?php 
+  $i =0 ;
+   foreach($users as $row): ?>
+    <?php $class ?> 
+    <tr class="<?php echo $i%2?"even":"odd" ?>">
+      <td> <?php echo $row->login; ?>  </td>
+      <td> <?php echo $row->name ; ?>  </td>
+      <td> <?php echo $row->role; ?>  </td>
+      <td> <?php echo $row->active; ?>  </td>
+      <td> <?php echo $row->email; ?>  </td>
+      <td> <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-link delete") ) ?> </td>
+    </tr>
+  <?php $i++; endforeach; ?>
+  </table>
+  
+  <br />
+  <div class="right-align">
+    <?php $this->widget("CLinkPager", array("pages" => $pages)) ; ?>
+  </div>  
+  <div class="clear"></div>
+  <br />
+</div>
+
+
+
+
+
 <?php 
-$this->widget('zii.widgets.grid.CGridView', array(
-  'id' => "grid-user",  
-	'dataProvider'=>$dataProvider,
-  //'columns' => array("login", "name", "role"),
-    
-    
-)); 
+//$this->widget('zii.widgets.grid.CGridView', array(
+//  'id' => "grid-user",  
+//	'dataProvider'=>$dataProvider,
+//  'columns' => array("login", "name", "role",
+//      array('class'=>'CButtonColumn'),
+//      ),
+// )); 
 ?>
