@@ -10,10 +10,11 @@ th, td{
 }
 .round{
   border-radius: 3px;
+  border: 1px solid #eee;
 }
 a{
   text-decoration: none;
-  color: #999;
+  color: blue;
   font-weight: 600;
 }
 
@@ -38,6 +39,7 @@ table{
 }
 .action-bar-left{
   float: left;
+  font-weight: bold;
 }
 .action-bar-right{
   float:right;
@@ -50,4 +52,90 @@ table{
 }
 .clear{
   clear: both;
+}
+.icon-dashboard{
+ background-repeat: no-repeat;
+ background-position: 0px 0px;
+ height: 100px;
+ padding-left: 60px;
+ 
+}
+.icon-import{
+  background-image:url(../images/dashboard-import48.png);
+}
+.icon-history{
+  background-image:url(../images/dashboard-history48.png);
+}
+.icon-user{
+  background-image:url(../images/dashboard-user48.png);
+}
+.icon-config{
+  background-image:url(../images/dashboard-config48.png);
+}
+
+.icon-dashboard .descritpion{
+  font-size: 1em;
+  color: gray;
+  font-weight: lighter;
+  
+}
+.icon-wrapper{
+  float:left;
+  width: 495px;
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+  padding:3px;
+}
+.background{
+  background-color: #eee;
+  color: #fff;
+}
+.background .descritpion {
+  color: #333;
+} 
+.dashboard-title{
+  color: #06c;
+  text-decoration: underline;
+}
+.head{
+  height: 135px;
+}
+.action-title{
+  font-size: 18px;
+  color: green;
+  padding: 5px;
+  background-color: #eee;
+  margin-bottom: 10px;
+  
+}
+div.breadcrumb{
+  background-color: #fffefe;
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+.btn-link{
+  margin: 5px;
+  /*  background-color: #aaa;
+  padding:5px 10px;
+  color:white;*/
+}
+.btn-link:hover{
+/*  background-color: #666;
+  color:#fefefe;*/
+}
+.item-separator{
+  color: #aaa;
+  
+}
+
+.btn-action{
+  margin: 5px;
+  background-color: #aaa;
+  padding:5px 10px;
+  color:white;
+  font-size: 14px;
+}
+.btn-action:hover{
+  background-color: #666;
+  color:#fefefe;
 }

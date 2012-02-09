@@ -5539,3 +5539,699 @@ Stack trace:
 REQUEST_URI=/yii/nchad/user/nchad.png
 HTTP_REFERER=http://localhost/yii/nchad/user/change
 ---
+2012/02/08 11:10:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/index
+---
+2012/02/08 11:35:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:35:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:39:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:39:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:40:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:40:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/08 11:45:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('nchad.png')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/nchad.png')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/nchad/user/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/user/
+---
+2012/02/09 02:52:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 02:52:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 02:59:53 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "dashboad".' in C:\xampp\htdocs\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('dashboad', NULL, true)
+#1 C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php(104): CController->render('dashboad')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionDashboard()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('dashboard')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/dashboard')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/nchad/
+---
+2012/02/09 03:03:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:04:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:04:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:04:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:10:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:11:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/)".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('css/)')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/css/)
+HTTP_REFERER=http://localhost/yii/nchad/css/style.css
+---
+2012/02/09 03:11:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:14:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:14:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:16:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:17:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:20:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:22:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:24:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:30:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:30:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:31:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:31:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:32:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:32:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:32:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:41:55 [error] [php] Undefined variable: cassClass (C:\xampp\htdocs\yii\nchad\protected\components\VViewHelper.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(870): SiteController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(783): SiteController->renderPartial()
+#3 C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php(105): SiteController->render()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionDashboard()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteController->run()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\nchad\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/nchad/
+in C:\xampp\htdocs\yii\nchad\protected\components\VViewHelper.php (7)
+in C:\xampp\htdocs\yii\nchad\protected\views\site\dashboard.php (11)
+in C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php (105)
+2012/02/09 03:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:45:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:46:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:48:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:49:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 03:59:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:04:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:06:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:06:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:08:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:08:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:10:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:13:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:13:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nchads.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/nchads.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/images/nchads.png
+HTTP_REFERER=http://localhost/yii/nchad/css/style.css
+---
+2012/02/09 04:13:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nchads.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/nchads.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/images/nchads.png
+---
+2012/02/09 04:13:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nchads.".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/nchads.')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/images/nchads.
+HTTP_REFERER=http://localhost/yii/nchad/css/style.css
+---
+2012/02/09 04:15:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:15:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nchads.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('images/nchads.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/images/nchads.png
+HTTP_REFERER=http://localhost/yii/nchad/css/style.css
+---
+2012/02/09 04:16:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:17:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchad.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchad.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchad.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:18:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchads.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchads.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchads.png
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 04:19:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchads.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchads.png')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchads.png
+---
+2012/02/09 04:19:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nchads.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('nchads.jpg')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\nchad\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/nchad/nchads.jpg
+HTTP_REFERER=http://localhost/yii/nchad/
+---
+2012/02/09 05:23:20 [error] [php] Missing argument 4 for VViewHelper::dashboardIcon(), called in C:\xampp\htdocs\yii\nchad\protected\views\site\dashboard.php on line 5 and defined (C:\xampp\htdocs\yii\nchad\protected\components\VViewHelper.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(870): SiteController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(783): SiteController->renderPartial()
+#3 C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php(106): SiteController->render()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionDashboard()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteController->run()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\nchad\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/nchad/index.php
+in C:\xampp\htdocs\yii\nchad\protected\components\VViewHelper.php (3)
+in C:\xampp\htdocs\yii\nchad\protected\views\site\dashboard.php (5)
+in C:\xampp\htdocs\yii\nchad\protected\controllers\SiteController.php (106)

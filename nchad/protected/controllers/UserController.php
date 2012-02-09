@@ -121,9 +121,10 @@ class UserController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('User', array(
-        "criteria" => array("select" => "login, email, name, role"),
-        //'columns'=>array('login','email', 'name' ),
-        "pagination" => array("pageSize" => 4)
+        "pagination" => array("pageSize" => 4),
+        "sort" => array(
+            "defaultOrder" => array("id")
+        )
       )
     );
     

@@ -99,4 +99,10 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+  
+  public function actionDashboard(){
+    $this->pageTitle = "Dashboard";
+    $this->layout = "//layouts/default" ;
+    $this->render("dashboard");
+  }
 }
