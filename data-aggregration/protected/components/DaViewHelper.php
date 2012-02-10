@@ -1,5 +1,5 @@
 <?php
- class VViewHelper {
+ class DaViewHelper {
    public static function dashboardIcon($url, $cssClass, $title, $description){
      $template = <<<EOT
      <div class="icon-wrapper" data-url="$url" > 

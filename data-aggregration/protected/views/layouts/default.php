@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <title><?php echo VViewHelper::pageTitle($this->pageTitle); ?> </title>
+    <title><?php echo DaViewHelper::pageTitle($this->pageTitle); ?> </title>
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/main.css" />
@@ -24,7 +24,6 @@
 
         <div style="float:right;" >
           <?php if(!Yii::app()->user->isGuest) : ?>
-          <?php //ChTool::debug(Yii::app()->user); ?>
           Welcome <?php echo Yii::app()->user->getName(); ?> <span class="item-separator"> | </span>
           <?php echo CHtml::link("Change Password", Yii::app()->request->baseUrl."/user/change", array("class" => "btn-link") ) ?> 
           <span class="item-separator"> | </span>

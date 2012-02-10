@@ -7,7 +7,7 @@ $this->menu = array(
 	array('label'=>'Manage User', 'url'=>array('admin')),
 );
 ?>
-<?php echo VViewHelper::titleActionGroup("List of users", CHtml::link("New", "create", array("class" => "btn-action round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("List of users", CHtml::link("New", "create", array("class" => "btn-action round"))) ?>
 
 <?php if(count($users)): ?>
 <div class="tableWrapper round">

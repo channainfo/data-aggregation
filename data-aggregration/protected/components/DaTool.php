@@ -1,5 +1,5 @@
 <?php
- class ChTool {
+ class DaTool {
    public static function debug($var,$exit=false, $html_format = true){
     $html = <<<EOT
         <div style='text-align:left;border-top:1px solid #ccc;background-color:white;color:black;overflow:auto;' >
