@@ -25,9 +25,9 @@
         <div style="float:right;" >
           <?php if(!Yii::app()->user->isGuest) : ?>
           Welcome <?php echo Yii::app()->user->getName(); ?> <span class="item-separator"> | </span>
-          <?php echo CHtml::link("Change Password", Yii::app()->request->baseUrl."/user/change", array("class" => "btn-link") ) ?> 
+          <?php echo CHtml::link("Change Password", $this->createUrl("user/change"), array("class" => "btn-link") ) ?> 
           <span class="item-separator"> | </span>
-          <?php echo CHtml::link("Logout", Yii::app()->request->baseUrl."/user/logout" , array("class" => "btn-link")) ?> 
+          <?php echo CHtml::link("Logout", $this->createUrl("user/logout") , array("class" => "btn-link")) ?> 
           <?php endif; ?>
         </div>  
         <div style="clear:both;"></div>
