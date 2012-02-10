@@ -16,8 +16,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'role'); ?>
-		<?php echo $form->textField($model,'role'); ?>
+		<?php echo $form->label($model,'group_id'); ?>
+		<?php echo $form->textField($model,'group_id'); ?>
 	</div>
 
 	<div class="row">

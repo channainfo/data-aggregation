@@ -131,7 +131,7 @@ class UserController extends Controller
 	{
     $model = new User();
     $criteria = new CDbCriteria();
-    $criteria->order = 'id DESC,login ASC';
+    $criteria->order = 'modified_at DESC, login ASC';
     
     $itemCount = $model->count($criteria);
     $pages = new CPagination($itemCount);

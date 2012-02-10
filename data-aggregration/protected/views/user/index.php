@@ -36,8 +36,8 @@ $this->menu = array(
     <tr class="<?php echo $i%2?"even":"odd" ?>">
       <td> <?php echo $row->login; ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
-      <td> <?php echo $row->role; ?>  </td>
-      <td> <?php echo $row->active; ?>  </td>
+      <td> <?php echo $row->group_id; ?>  </td>
+      <td> <?php echo $row->getActive(); ?>  </td>
       <td> <?php echo $row->email; ?>  </td>
       <td> <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-link delete") ) ?> </td>
     </tr>
@@ -51,17 +51,3 @@ $this->menu = array(
   <div class="clear"></div>
   <br />
 </div>
-
-
-
-
-
-<?php 
-//$this->widget('zii.widgets.grid.CGridView', array(
-//  'id' => "grid-user",  
-//	'dataProvider'=>$dataProvider,
-//  'columns' => array("login", "name", "role",
-//      array('class'=>'CButtonColumn'),
-//      ),
-// )); 
-?>

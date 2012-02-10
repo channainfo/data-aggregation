@@ -8,8 +8,8 @@
 	<?php echo CHtml::encode($data->login); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('role')); ?>:</b>
-	<?php echo CHtml::encode($data->role); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('group_id')); ?>:</b>
+	<?php echo CHtml::encode($data->group_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?>:</b>

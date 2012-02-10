@@ -4,10 +4,10 @@ class m120206_061319_create_users_table extends CDbMigration
 {
 	public function up()
 	{
-     $this->createTable('tbl_users', array(
+     $this->createTable('da_users', array(
          'id' => 'pk',
          'login' => 'string NOT NULL',
-         'role' => 'int(11) NOT NULL' ,
+         'group_id' => 'int(11) NOT NULL' ,
          'password' => 'string NOT NULL' ,
          'email' => 'string NOT NULL' ,
          'salt' => 'string NOT NULL' ,
@@ -21,7 +21,7 @@ class m120206_061319_create_users_table extends CDbMigration
 
 	public function down()
 	{
-    $this->dropTable("tbl_users");
+    $this->dropTable("da_users");
 	}
 
 	/*

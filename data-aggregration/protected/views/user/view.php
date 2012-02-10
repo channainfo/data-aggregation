@@ -20,7 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'login',
-		'role',
+		'group_id',
 		'email',
 		'name',
 		'created_at',

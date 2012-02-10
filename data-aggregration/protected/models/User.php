@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'tbl_users':
  * @property integer $id
  * @property string $login
- * @property integer $role
+ * @property integer $group_id
  * @property string $password
  * @property string $email
  * @property string $salt
@@ -14,6 +14,7 @@
  * @property string $created_at
  * @property string $modified_at
  * @property string $last_login_at
+ * @property boolean $active
  */
 class User extends CActiveRecord
 {
@@ -22,7 +23,14 @@ class User extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return User the static model class
 	 */
+ 
+  public static $ROLE = array("Admin", "Normal") ;
+  public static $STATUS = array("Inactive", "Active");
+
+  
   public $password_repeat = null ;
+  
+  
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -33,9 +41,13 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_users';
+		return 'da_users';
 	}
-
+  
+  public function getActive(){
+    return User::$STATUS[$this->active];
+  }
+  
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -44,17 +56,17 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, role, name, password', 'required'),
+			array('login, group_id, name, password, active', 'required'),
       array('login, email', "unique"),   
       array('email', "email") ,  
       array('password', 'compare'), 
       array('password_repeat', 'safe'), //allow bulk assignment  
-			array('role', 'numerical', 'integerOnly'=>true),
+			array('group_id', 'numerical', 'integerOnly'=>true),
 			array('login, password, email, salt, name', 'length', 'max'=>255),
 			array('created_at, modified_at, last_login_at', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, login, role, password, email, salt, name, created_at, modified_at, last_login_at', 'safe', 'on'=>'search'),
+			array('id, login, group_id, password, email, salt, name, active, last_login_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -108,7 +120,7 @@ class User extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'login' => 'Login',
-			'role' => 'Role',
+			'group_id' => 'Group',
 			'password' => 'Password',
 			'password_repeat' => 'Password Repeat',
       'email' => 'Email',
@@ -134,7 +146,7 @@ class User extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('login',$this->login,true);
-		$criteria->compare('role',$this->role);
+		$criteria->compare('group_id',$this->group_id);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('salt',$this->salt,true);

@@ -22,9 +22,9 @@
 	</div>
   
 	<div class="row">
-		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->textField($model,'role'); ?>
-		<?php echo $form->error($model,'role'); ?>
+		<?php echo $form->labelEx($model,"group_id" ); ?>
+    <?php echo $form->listBox($model, "group_id" , User::$ROLE  , array("class" => "list-box", "size" => 1)) ?>
+		<?php echo $form->error($model,'group_id'); ?>
 	</div>
 
 	<div class="row">
@@ -45,8 +45,16 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
+  
+  <div class="row">
+		<?php echo $form->labelEx($model,'active'); ?>
+		<?php echo $form->listBox($model,'active',User::$STATUS, array('size'=>1, "class" => "list-box" ) ); ?>
+		<?php echo $form->error($model,'active'); ?>
+	</div>
+  
 
 	<div class="row buttons">
+    <label>&nbsp;</label>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
