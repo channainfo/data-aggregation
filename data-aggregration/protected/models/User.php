@@ -82,23 +82,18 @@ class User extends CActiveRecord
 		);
 	}
   
-  protected function beforeValidate() {
-    if(!$this->isNewRecord){
-      $this->password_repeat = $this->password;
-    }  
+  protected function beforeValidate() {  
     return parent::beforeValidate();
-    
   }
   protected function saltPassword($salt){
     return md5($salt);
   }
 
-  protected function afterValidate() {
-
+  protected function afterValidate(){
     if(!$this->hasErrors()){
       if($this->isNewRecord){
         $this->salt = $this->saltPassword( $this->login + "." + time());
-        $this->created_at = $this->modified_at = CDbWrapper::now();
+        $this->created_at = $this->modified_at = CDbWrapper::now();    
       }
       else
         $this->modified_at = CDbWrapper::now();

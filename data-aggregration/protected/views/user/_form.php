@@ -38,7 +38,6 @@
     <?php echo $form->labelEx($model, 'password_repeat'); ?>
     <?php echo $form->passwordField($model,"password_repeat", array("size"=>60,"maxlength" => 255, 'autocomplete' => "off")); ?>
     <?php echo $form->error($model, "password_repeat"); ?>
-    
   </div>
   
 	<div class="row">

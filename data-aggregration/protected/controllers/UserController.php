@@ -63,12 +63,17 @@ class UserController extends Controller
 		$model=$this->loadModel($id);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+		if(isset($_POST['User'])){
+			$model->attributes = $_POST['User'];
+			if($model->save()){
+        Yii::app()->user->setFlash("success","User has been updated successfully");
+				$this->redirect(array('index'));
+      }else
+        Yii::app()->user->setFlash("error", "Failed to update user");
+		}else{
+      $model->password = "";
+    }
+    
 
 		$this->render('update',array(
 			'model'=>$model,
@@ -85,8 +90,11 @@ class UserController extends Controller
       $model->setAttributes($attributes);
       
       if($model->validate()){
+        
         $user = User::model()->findByPk($currentUserId);
         $user->password = $_POST["PasswordChangeForm"]["password"];
+        $user->password_repeat = $_POST["PasswordChangeForm"]["password"];
+        
         Yii::app()->user->setFlash("success", "Password has been changed");
         if($user->save())
           $this->redirect("index");
@@ -130,6 +138,7 @@ class UserController extends Controller
     $model = new User();
     $criteria = new CDbCriteria();
     $criteria->order = 'modified_at DESC, login ASC';
+    $criteria->with = array("group") ;
     
     $itemCount = $model->count($criteria);
     $pages = new CPagination($itemCount);

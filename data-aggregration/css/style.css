@@ -136,24 +136,24 @@ div.breadcrumb{
   
 }
 .btn-action-table{
-  background-color:#09f;
+  background-color:#09d;
   padding:3px;
   color:white;
   font-size: 12px;
 }
 .btn-action-table:hover{
-  background-color: #09c;
+  background-color: #09f;
 }
 
 .btn-action{
   margin: 5px;
-  background-color: #aaa;
+  background-color: #09d;
   padding:5px 10px;
   color:white;
   font-size: 14px;
 }
 .btn-action:hover{
-  background-color: #666;
+  background-color: #09f;
   color:#fefefe;
 }
 div.tableWrapper{
@@ -176,7 +176,7 @@ tr.even{
 }
 
 div.tableWrapper thead th, td {
-  padding: 3px 5px;
+  padding: 5px;
 }
 .tgrid{
   width: 100%; 

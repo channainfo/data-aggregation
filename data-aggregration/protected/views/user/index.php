@@ -30,7 +30,7 @@ $this->menu = array(
     <tr class="<?php echo $i%2?"even":"odd" ?>">
       <td> <?php echo $row->login; ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
-      <td> <?php echo $row->group_id; ?>  </td>
+      <td> <?php echo $row->group->name; ?>  </td>
       <td> <?php echo $row->getActive(); ?>  </td>
       <td> <?php echo $row->email; ?>  </td>
       <td> 
