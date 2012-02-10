@@ -8,14 +8,17 @@ body, html{
 th, td{
   text-align: left;
 }
-.round, .page a, .next a, .previous a{
+.round, .page a, .next a, .previous a, .form, .errorSummary{
   border-radius: 3px;
   border: 1px solid #eee;
 }
 .page a, .next a, .previous a{
   padding: 3px 10px !important;
 }
-
+.form{
+  background-color: #eee;
+  padding:5px;
+}
 
 
 a{
@@ -126,9 +129,20 @@ div.breadcrumb{
 /*  background-color: #666;
   color:#fefefe;*/
 }
+
+
 .item-separator{
   color: #aaa;
   
+}
+.btn-action-table{
+  background-color:#09f;
+  padding:3px;
+  color:white;
+  font-size: 12px;
+}
+.btn-action-table:hover{
+  background-color: #09c;
 }
 
 .btn-action{
@@ -172,4 +186,9 @@ div.tableWrapper thead th, td {
 }
 .right-align{
  text-align: right; 
+}
+.form .errorMessage{
+  margin-left: 210px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
 }

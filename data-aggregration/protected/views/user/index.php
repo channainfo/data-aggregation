@@ -7,15 +7,9 @@ $this->menu = array(
 	array('label'=>'Manage User', 'url'=>array('admin')),
 );
 ?>
+<?php echo VViewHelper::titleActionGroup("List of users", CHtml::link("New", "create", array("class" => "btn-action round"))) ?>
 
-<div class="action-title round"> 
-  <div class="action-bar-left"> List of users </div>
-  <div class="action-bar-right"> 
-    <?php echo CHtml::link("New", "create", array("class" => "btn-action round")); ?> 
-  </div>
-  <div class="clear"></div>
-</div>
-
+<?php if(count($users)): ?>
 <div class="tableWrapper round">
   <table class="tgrid" >
     <thead>
@@ -39,7 +33,11 @@ $this->menu = array(
       <td> <?php echo $row->group_id; ?>  </td>
       <td> <?php echo $row->getActive(); ?>  </td>
       <td> <?php echo $row->email; ?>  </td>
-      <td> <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-link delete") ) ?> </td>
+      <td> 
+        <?php echo CHtml::link("Edit", "update/{$row->id}", array("class" => "btn-action-table round") ) ?> 
+        <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-action-table round delete") ) ?> 
+        
+      </td>
     </tr>
   <?php $i++; endforeach; ?>
   </table>
@@ -51,3 +49,4 @@ $this->menu = array(
   <div class="clear"></div>
   <br />
 </div>
+<?php endif; ?>

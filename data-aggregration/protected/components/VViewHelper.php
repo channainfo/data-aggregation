@@ -24,7 +24,20 @@ EOT;
      return Yii::app()->name;
    }
    
-   
+  public static function titleActionGroup($title, $link_content){
+    $template = <<<EOT
+    <div class="action-title round"> 
+      <div class="action-bar-left"> $title </div>
+      <div class="action-bar-right"> 
+        $link_content
+      </div>
+      <div class="clear"></div>
+    </div>
+
+EOT;
+    return $template;
+    
+  } 
    
  }
  

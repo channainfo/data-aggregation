@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<?php echo $this->renderPartial("//shared/_requireField"); ?>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -23,9 +23,10 @@
   
 	<div class="row">
 		<?php echo $form->labelEx($model,"group_id" ); ?>
-    <?php echo $form->listBox($model, "group_id" , User::$ROLE  , array("class" => "list-box", "size" => 1)) ?>
+    <?php echo $form->dropDownList($model,'group_id', CHtml::listData(Group::model()->findAll(), 'id', 'name'), array('empty'=>'Select group')); ?>
 		<?php echo $form->error($model,'group_id'); ?>
 	</div>
+  
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>

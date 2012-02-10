@@ -6515,3 +6515,177 @@ REQUEST_URI=/yii/data-aggregration/index.php/user/index
 in C:\xampp\htdocs\yii\data-aggregration\protected\views\user\index.php (40)
 in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php (145)
 in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/10 06:47:18 [error] [exception.CException] exception 'CException' with message 'GroupController cannot find the requested view "//shared/_requireField.php".' in C:\xampp\htdocs\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\_form.php(5): CController->renderPartial('//shared/_requi...')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(2): CController->renderPartial('_form', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#9 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 06:48:42 [error] [exception.CException] exception 'CException' with message 'GroupController cannot find the requested view "////shared/_requireField.php".' in C:\xampp\htdocs\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\_form.php(5): CController->renderPartial('////shared/_req...')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(2): CController->renderPartial('_form', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#9 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 06:53:17 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "textareaField".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\_form.php(15): CComponent->__call('textareaField', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\_form.php(15): CActiveForm->textareaField(Object(Group), 'description')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(2): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 06:59:51 [error] [exception.CException] exception 'CException' with message 'GroupController and its behaviors do not have a method or closure named "breadcrumbs".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): CComponent->__call('breadcrumbs', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): GroupController->breadcrumbs(Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 07:00:35 [error] [exception.CException] exception 'CException' with message 'GroupController and its behaviors do not have a method or closure named "breadcrumbs".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): CComponent->__call('breadcrumbs', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): GroupController->breadcrumbs(Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 07:00:37 [error] [exception.CException] exception 'CException' with message 'GroupController and its behaviors do not have a method or closure named "breadcrumbs".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): CComponent->__call('breadcrumbs', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): GroupController->breadcrumbs(Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 07:00:52 [error] [exception.CException] exception 'CException' with message 'GroupController and its behaviors do not have a method or closure named "breadcrumbs".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): CComponent->__call('breadcrumbs', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\group\create.php(6): GroupController->breadcrumbs(Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\GroupController.php(15): CController->render('create', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): GroupController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('group/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/group/create
+---
+2012/02/10 08:00:29 [error] [php] include(ItemType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\yii\data-aggregration\protected\views\user\_form.php(27): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): UserController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(870): UserController->renderFile()
+#4 C:\xampp\htdocs\yii\data-aggregration\protected\views\user\create.php(15): UserController->renderPartial()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): UserController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): UserController->renderFile()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(783): UserController->renderPartial()
+#9 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php(53): UserController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): UserController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(287): UserController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(266): UserController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): UserController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/user/create
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\user\_form.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\user\create.php (15)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\UserController.php (53)
