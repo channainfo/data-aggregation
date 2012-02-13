@@ -34,6 +34,20 @@ EOT;
         echo $str ;
         if($exit==true)
             exit;
-   }    
+   }
+   
+   public static function env($argv){
+     
+     $default = "console";
+     
+     foreach($argv as $value){
+        if(strtolower($value) == "env=test"){
+          $default = "test";
+          break;
+        }
+     }
+     return $default;
+     
+   }
  }
 ?>

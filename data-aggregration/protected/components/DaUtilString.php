@@ -1,6 +1,8 @@
 <?php
  class DaUtilString {
     public static function truncate($text = '', $length = 150, $suffix = '&hellip;', $isHTML = true){
+        if(empty($text))
+          return $text;
         $i = 0;
         $tags = array();
         if($isHTML){

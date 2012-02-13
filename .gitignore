@@ -1,1 +1,6 @@
 nbproject/*
+.settings/*
+.project
+.buildpath
+data-aggregration/assets/*
+framework/*
