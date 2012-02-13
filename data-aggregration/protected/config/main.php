@@ -39,7 +39,7 @@ return array(
 		// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-      'showScriptName' => false,  
+      'showScriptName' => true,  
 			'rules'=>array(
         '' => "site/dashboard",
         'login' => "user/login",  
@@ -61,7 +61,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=server_oi_dev',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123456',
 			'charset' => 'utf8',
 		),
 		

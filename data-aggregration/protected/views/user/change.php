@@ -1,4 +1,8 @@
 <?php
+  $this->breadcrumbs = array(
+  "User" => $this->createUrl("user/"),
+  "Change password"
+  );
   $form = $this->beginWidget("CActiveForm", array("id" => "PasswordChangeForm"));
 ?>
 <div class="form round" id="login">
