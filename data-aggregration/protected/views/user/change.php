@@ -5,7 +5,7 @@
   );
   $form = $this->beginWidget("CActiveForm", array("id" => "PasswordChangeForm"));
 ?>
-<div class="form round" id="login">
+<div class="form round" >
   <h2> Fill in the following fields </h2>
   <p class="note">Fields with <span class="required">*</span> are required.</p>
   

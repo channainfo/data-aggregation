@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 
 
 
-<div class="form round" id="login" >
+<div class="form round">
   <h1 id="login-el"> <?php echo CHtml::image( Yii::app()->request->baseUrl."/images/user-identity.png", "Login", array("width"=> 128, "height" => 128)); ?></h1>
   <p>Please fill out the following form with your login credentials:</p>
   <?php $form=$this->beginWidget('CActiveForm', array(
