@@ -6917,3 +6917,74 @@ Stack trace:
 REQUEST_URI=/yii/data-aggregration/siteconfig
 HTTP_REFERER=http://localhost/yii/data-aggregration/
 ---
+2012/02/13 15:21:23 [error] [exception.CException] exception 'CException' with message 'Property "CAccessRule.index" is not defined.' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\auth\CAccessControlFilter.php(93): CComponent->__set('index', Array)
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(1145): CAccessControlFilter->setRules(Array)
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(276): CController->run('login')
+#7 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#8 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/site/login
+---
+2012/02/13 15:21:45 [error] [exception.CException] exception 'CException' with message 'Property "CAccessRule.index" is not defined.' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\auth\CAccessControlFilter.php(93): CComponent->__set('index', Array)
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(1145): CAccessControlFilter->setRules(Array)
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(276): CController->run('login')
+#7 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#8 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/site/login
+---
+2012/02/13 15:47:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('users/login')
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/users/login
+---
+2012/02/13 16:40:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/user".' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('login/user')
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/login/user
+---
+2012/02/13 16:40:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/user".' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('login/user')
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/login/user
+---
+2012/02/13 16:40:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/user".' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('login/user')
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/login/user
+---
+2012/02/13 17:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\works\server\apache\htdocs\projects\data_aggregation\framework\web\CWebApplication.php(135): CWebApplication->runController('create')
+#1 C:\works\server\apache\htdocs\projects\data_aggregation\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\works\server\apache\htdocs\projects\data_aggregation\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projects/data_aggregation/data-aggregration/index.php/create
+HTTP_REFERER=http://localhost/projects/data_aggregation/data-aggregration/index.php/user
+---
