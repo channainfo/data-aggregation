@@ -11,7 +11,7 @@ return CMap::mergeArray(
 			'connectionString' => 'mysql:host=localhost;dbname=server_oi_test',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '',
 			'charset' => 'utf8'),
 		),
 	)

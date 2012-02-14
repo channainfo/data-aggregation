@@ -17,7 +17,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=server_oi_dev',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		

@@ -23,7 +23,7 @@ EOT;
     
 
         $debug_traces = debug_backtrace();
-        $debug_trace=$debug_traces[0];
+        $debug_trace = $debug_traces[0];
 
         $format = $html_format ? $html: $console ;
         $str = strtr($format,
@@ -48,6 +48,13 @@ EOT;
      }
      return $default;
      
+   }
+   public static function debugHtml($var, $exit = false){
+     self::debug($var, $exit, true);
+   }
+   
+   public static function debugConsole($var, $exit = false){
+     self::debug($var, $exit, 0);
    }
  }
 ?>

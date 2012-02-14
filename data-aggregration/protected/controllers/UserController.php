@@ -142,7 +142,7 @@ class UserController extends Controller
     
     $itemCount = $model->count($criteria);
     $pages = new CPagination($itemCount);
-    $pages->pageSize = 10 ;
+    $pages->pageSize = DaConfig::PAGE_SIZE ;
     $pages->applyLimit($criteria);
     
     $users = $model->findAll($criteria);

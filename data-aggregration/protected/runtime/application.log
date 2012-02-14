@@ -6917,3 +6917,97 @@ Stack trace:
 REQUEST_URI=/yii/data-aggregration/siteconfig
 HTTP_REFERER=http://localhost/yii/data-aggregration/
 ---
+2012/02/13 11:32:59 [error] [exception.CException] exception 'CException' with message 'SiteConfigController cannot find the requested view "index".' in C:\xampp\htdocs\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php(24): CController->render('index', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteConfigController->actionIndex()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('siteconfig/inde...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/index
+---
+2012/02/14 09:09:30 [error] [php] Undefined index: host (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testConnection?SiteConfig%5Bcode%5D=&SiteConfig%5Bname%5D=&SiteConfig%5Bhost%5D=&SiteConfig%5Bdb%5D=&SiteConfig%5Buser%5D=&SiteConfig%5Bpassword%5D=
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (37)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:05:52 [error] [php] Undefined index: SiteConfig (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (37)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:06:18 [error] [php] Undefined index: SiteConfig (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection?siteconfig[]
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (37)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:06:25 [error] [php] Undefined index: SiteConfig (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection?siteconfig[]=
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (37)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:06:45 [error] [php] Undefined index: host (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection?SiteConfig[]=
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:07:27 [error] [php] Undefined index: password (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection?SiteConfig[host]=&SiteConfig[user]=&SiteConfig[passsword]=&SiteConfig[db]=
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/14 10:23:19 [error] [php] Undefined property: DatabaseConnection::$connection (C:\xampp\htdocs\yii\data-aggregration\protected\models\DatabaseConnection.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/testconnection?SiteConfig[host]=&SiteConfig[user]=&SiteConfig[password]=&SiteConfig[db]=test
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\DatabaseConnection.php (20)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (40)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)

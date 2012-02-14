@@ -42,8 +42,8 @@ class SiteConfig extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('code, user, db, host', 'required'),
-      array("code", "length","max" => 4),
+			array('code, user, db, host ', 'required'),
+      array("code", "length", "max" => 4),
 			array('code, name, host, user, password, db', 'length', 'max'=>255),
 			array('created_at, modified_at', 'safe'),
 			// The following rule is used by search().
