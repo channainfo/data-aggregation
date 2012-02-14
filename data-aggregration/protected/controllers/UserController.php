@@ -1,9 +1,9 @@
 <?php
 
-class UserController extends Controller
+class UserController extends DaController
 {
 	public $layout='//layouts/default';
-  
+	
 	public function actionView($id) {
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
