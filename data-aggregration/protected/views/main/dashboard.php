@@ -1,6 +1,7 @@
 
 
 <h1 class="action-title round"> Home </h1>
+<div class="dashboard">
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("user/index") ,"icon-import", "Import", 
         "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>
 
@@ -15,13 +16,14 @@
 <script type="text/javascript" >
   $(function(){
       $(".icon-wrapper").mouseenter(function(){
-        $(this).addClass("background"); 
+        $(this).addClass("background round"); 
       }).mouseleave(function(){
-        $(this).removeClass("background");
+        $(this).removeClass("background round");
       }).click(function(){
         var url = this.getAttribute("data-url");
         window.location.href = url;
       });
   });
 </script>
+</div>
 

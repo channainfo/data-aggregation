@@ -5,9 +5,10 @@
   );
   $form = $this->beginWidget("CActiveForm", array("id" => "PasswordChangeForm"));
 ?>
+<h1 class="action-title round"> Change Password </h1>
 <div class="form round" >
-  <h2> Fill in the following fields </h2>
-  <p class="note">Fields with <span class="required">*</span> are required.</p>
+
+  <?php echo $this->renderPartial("//shared/_requireField"); ?>
   
   <div class="row" >
     <?php echo $form->labelEx($model, "old_password"); ?>
@@ -29,7 +30,7 @@
   
   <div class="row">
     <label>&nbsp;</label>
-    <?php echo CHtml::submitButton("Change"); ?>
+    <?php echo CHtml::submitButton("Change", array("class" => "btn-save")); ?>
   </div>
   
 </div>

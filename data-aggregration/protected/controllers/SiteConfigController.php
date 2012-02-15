@@ -1,6 +1,6 @@
 <?php
 
-class SiteConfigController extends Controller
+class SiteConfigController extends DaController
 {
   public $layout = "//layouts/default" ;
 	public function actionCreate(){
@@ -31,11 +31,44 @@ class SiteConfigController extends Controller
     $this->render("index", array("sites" => $sites, "pages" => $pages ));
   }
   
-  public function actionTestConnection(){
-//    DaTool::debug($_GET,1,0);
+  public function actionDelete($id){
+    try{
+      $model = $this->loadModel($id);
+      $model->delete();
+      Yii::app()->user->setFlash("success", "Site has been removed successfully");
+    }
+    catch(Exception $ex){
+      Yii::app()->user->setFlash("error", "Failed to remove site");
+    }
+    $this->redirect($this->createUrl("siteconfig/index"));
+  }
+
+  public function actionUpdate($id){
+    try{
+      $model = SiteConfig::model()->findByPk($id);
+      
+      if(isset($_POST["SiteConfig"])){
+        $model->setAttributes($_POST["SiteConfig"]);
+        if($model->save()){
+          Yii::app()->user->setFlash("success", "Site has been updated successfully");
+          $this->redirect($this->createUrl("index"));
+        }
+        else
+          Yii::app()->user->setFlash("error", "Failed to update site");
+      }
+      $this->render("update", array("model" => $model));
+      
+    }
+    catch (Exception $ex){
+      throw  new CHttpException("Invalid site configuration");
+    }
     
+    
+  }
+  
+  public function actionTestConnection(){
     $siteconfig = $_GET["SiteConfig"];
-    $db = new DatabaseConnection($siteconfig["host"], $siteconfig["user"], $siteconfig["password"] , $siteconfig["db"] );
+    $db = new DaDbConnection($siteconfig["host"], $siteconfig["user"], $siteconfig["password"] , $siteconfig["db"] );
     
     if($db->isConnected())
       echo "true";
@@ -43,4 +76,11 @@ class SiteConfigController extends Controller
       echo "false" ;
     
   }
+  public function loadModel($id)
+	{
+		$model=User::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
 }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/login.css" />
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/modernizr.custom.77819.js" ></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/custom.js" ></script>
+    
   </head>
   
   <body>
@@ -44,6 +46,9 @@
       ?>
       <?php echo $content; ?>
      </div> 
+    
+    <div id="ajax_loading" class="loading round" >Waiting for server response</div>
+    
     <script type="text/javascript">
       $(function(){
         $(".delete").click(function(){
@@ -51,9 +56,15 @@
             return false;
           }
           return true;
-        })
+        });
+        
+        $(".btn-save, .btn-action, .btn-action-edit, .btn-action-new, .btn-link, .breadcrumbs>a, .dashboard-title a").click(function(){
+          show_loading();
+        });
+          
       });
   
     </script>
+    
   </body>
 </html>

@@ -16,18 +16,16 @@
  * @property string $last_login_at
  * @property boolean $active
  */
-class User extends CActiveRecord
+class User extends DaActiveRecordModel
 {
-	/**
+  public static $ROLE = array("Admin", "Normal") ;
+  public static $STATUS = array("Inactive", "Active");
+ 
+  /**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return User the static model class
 	 */
- 
-  public static $ROLE = array("Admin", "Normal") ;
-  public static $STATUS = array("Inactive", "Active");
-
-  
   public $password_repeat = null ;
   
   
@@ -53,8 +51,6 @@ class User extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
 			array('login, group_id, name, password, active', 'required'),
       array('login, email', "unique"),   
@@ -63,10 +59,6 @@ class User extends CActiveRecord
       array('password_repeat', 'safe'), //allow bulk assignment  
 			array('group_id', 'numerical', 'integerOnly'=>true),
 			array('login, password, email, salt, name', 'length', 'max'=>255),
-			array('created_at, modified_at, last_login_at', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, login, group_id, password, email, salt, name, active, last_login_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,11 +85,10 @@ class User extends CActiveRecord
     if(!$this->hasErrors()){
       if($this->isNewRecord){
         $this->salt = $this->saltPassword( $this->login + "." + time());
-        $this->created_at = $this->modified_at = CDbWrapper::now();    
+        //$this->created_at = $this->modified_at = DaDbWrapper::now();    
       }
-      else
-        $this->modified_at = CDbWrapper::now();
-      
+      //else
+      //  $this->modified_at = DaDbWrapper::now();
       $this->password = $this->encrypt($this->password, $this->salt);
     }
     
@@ -122,37 +113,6 @@ class User extends CActiveRecord
       'email' => 'Email',
 			'salt' => 'Salt',
 			'name' => 'Name',
-			'created_at' => 'Created At',
-			'modified_at' => 'Modified At',
-			'last_login_at' => 'Last Login At',
-        
 		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('login',$this->login,true);
-		$criteria->compare('group_id',$this->group_id);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('salt',$this->salt,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('created_at',$this->created_at,true);
-		$criteria->compare('modified_at',$this->modified_at,true);
-		$criteria->compare('last_login_at',$this->last_login_at,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+	}	
 }

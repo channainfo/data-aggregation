@@ -1,7 +1,7 @@
 <?php
-$this->breadcrumbs = array('Site');
+$this->breadcrumbs = array('Sites');
 ?>
-<?php echo DaViewHelper::titleActionGroup("Site List", CHtml::link("New", "create", array("class" => "btn-action round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("Site List", CHtml::link("New", $this->createUrl("siteconfig/create"), array("class" => "btn-action-new round"))) ?>
 
 <?php if(count($sites)): ?>
 <div class="tableWrapper round">
@@ -21,14 +21,15 @@ $this->breadcrumbs = array('Site');
    foreach($sites as $row): ?>
     <?php $class ?> 
     <tr class="<?php echo $i%2?"even":"odd" ?>">
-      <td> <?php echo $row->code; ?>  </td>
+      <td> <?php echo CHtml::link($row->code, $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-link underline")); ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
       <td> <?php echo $row->host; ?>  </td>
       <td> <?php echo $row->db; ?>  </td>
       <td> <?php echo $row->user; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Edit", "update/{$row->id}", array("class" => "btn-action-table round") ) ?> 
-        <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-action-table round delete") ) ?> 
+        <?php echo CHtml::link("Backup", $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
+        <?php echo CHtml::link("Edit", $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
+        <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
       </td>
     </tr>
   <?php $i++; endforeach; ?>

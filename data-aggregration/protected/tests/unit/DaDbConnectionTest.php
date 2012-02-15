@@ -1,5 +1,5 @@
 <?php
-   class DatabaseConnectionTest extends CTestCase{
+   class DaDbConnectionTest extends CTestCase{
      
      public function testConnectionSuccess(){
        $host = "WORK-NIPH";
@@ -8,7 +8,7 @@
        $databases = array("test", "server_oi");
        
        foreach($databases as $database){
-          $db = new DatabaseConnection($host,$user,$passwrod, $database);
+          $db = new DaDbConnection($host,$user,$passwrod, $database);
           $this->assertEquals(true, $db->isConnected());
           unset($db);
        }
@@ -19,7 +19,7 @@
        $user = "sa" ;
        $passwrod = "" ;
        $database = "server_oi";
-       $db = new DatabaseConnection($host,$user,$passwrod, $database);
+       $db = new DaDbConnection($host,$user,$passwrod, $database);
        $this->assertEquals(false, $db->isConnected());
      }
      

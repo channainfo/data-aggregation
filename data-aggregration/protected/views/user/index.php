@@ -7,7 +7,7 @@ $this->menu = array(
 	array('label'=>'Manage User', 'url'=>array('admin')),
 );
 ?>
-<?php echo DaViewHelper::titleActionGroup("List of users", CHtml::link("New", "create", array("class" => "btn-action round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("List of users", CHtml::link("New", $this->createUrl("user/create"), array("class" => "btn-action-new round"))) ?>
 
 <?php if(count($users)): ?>
 <div class="tableWrapper round">
@@ -34,8 +34,8 @@ $this->menu = array(
       <td> <?php echo $row->getActive(); ?>  </td>
       <td> <?php echo $row->email; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Edit", "update/{$row->id}", array("class" => "btn-action-table round") ) ?> 
-        <?php echo CHtml::link("Delete", "delete/{$row->id}", array("class" => "btn-action-table round delete") ) ?> 
+        <?php echo CHtml::link("Edit", $this->createUrl("user/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
+        <?php echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete round ") ) ?> 
         
       </td>
     </tr>

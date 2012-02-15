@@ -2,7 +2,7 @@
  $form = $this->beginWidget("CActiveForm", array("id" => "active-form")); 
 ?>
 <div class="form" >
-  <?php echo $this->renderPartial("//shared/_requireField"); ?>
+  <?php $this->renderPartial("//shared/_requireField"); ?>
   <div class="row"> 
     <?php echo $form->labelEx($model, "name"); ?>
     <?php echo $form->textField($model, "name", array("size" => 60, "maxlength" => 255)); ?>

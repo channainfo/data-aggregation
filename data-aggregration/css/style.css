@@ -8,9 +8,8 @@ body, html{
 th, td{
   text-align: left;
 }
-.round, .page a, .next a, .previous a, .form, .errorSummary{
-  border-radius: 3px;
-  border: 1px solid #eee;
+.round, .page a, .next a, .previous a, .form, .errorSummary, .fade{
+  border-radius: 4px;
 }
 .page a, .next a, .previous a{
   padding: 3px 10px !important;
@@ -62,7 +61,7 @@ a{
 .icon-dashboard{
  background-repeat: no-repeat;
  background-position: 0px 0px;
- height: 100px;
+ height: 80px;
  padding-left: 60px;
  
 }
@@ -135,29 +134,19 @@ div.breadcrumb{
   color: #aaa;
   
 }
-.btn-action-table{
+.btn-action-edit, .btn-action-delete, .btn-action-new, .btn-action {
   background-color:#09d;
-  padding:3px;
+  padding:3px 6px;
   color:white;
   font-size: 12px;
 }
-.btn-action-table:hover{
+.btn-action-edit:hover, .btn-action-delete:hover ,.btn-action-new:hover, .btn-action:hover{
   background-color: #09f;
 }
 
-.btn-action{
-  margin: 5px;
-  background-color: #09d;
-  padding:5px 10px;
-  color:white;
-  font-size: 14px;
-}
-.btn-action:hover{
-  background-color: #09f;
-  color:#fefefe;
-}
-div.tableWrapper{
+div.tableWrapper, div.form{
   padding: 5px;
+  border : 1px solid #eee;
 }
 div.tableWrapper thead tr{
   background-color: #aaa;
@@ -176,7 +165,7 @@ tr.even{
 }
 
 div.tableWrapper thead th, td {
-  padding: 5px;
+  padding: 9px;
 }
 .tgrid{
   width: 100%; 
@@ -191,4 +180,32 @@ div.tableWrapper thead th, td {
   margin-left: 210px;
   margin-bottom: 5px;
   padding-bottom: 5px;
+}
+#fade-ajax {
+  font-size: 18px;
+  font-weight: bold;
+  background: #eee;
+  padding:  5px;
+}
+.loading{
+  background-image: url("../images/ajax-loader.gif");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  width: 400px;
+  position: absolute;
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 60px;
+  color: #333 ;
+}
+.hide{
+  display: none;
+}
+.underline{
+  text-decoration: underline;
 }

@@ -1,5 +1,5 @@
 <?php
-  class DatabaseConnection {
+  class DaDbConnection {
     private $connection = false ;
     
     public function __construct($host, $user, $pwd , $db) {

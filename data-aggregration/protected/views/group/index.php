@@ -1,6 +1,6 @@
 <?php
   $this->breadcrumbs = array("Group");
-  echo DaViewHelper::titleActionGroup("Group List", CHtml::link("New", "create", array("class"=>"btn-action round"))) ?>
+  echo DaViewHelper::titleActionGroup("Group List", CHtml::link("New", "create", array("class"=>"btn-action-new round"))) ?>
 <?php
   if(count($rows)):
   $i = 0 ;  

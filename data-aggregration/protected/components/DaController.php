@@ -4,10 +4,8 @@
  * @author Sokha RUM
  */
 class DaController extends Controller {
-	/**
-	 * (non-PHPdoc)
-	 * @see framework/web/CController::beforeAction()
-	 */
+  public $layout = "//layouts/default" ;
+  
 	function beforeAction($action) {
 		if(Yii::app()->user->isGuest) {
 		    if ($action->controller->getId() == "user" && $action->id == "login") {

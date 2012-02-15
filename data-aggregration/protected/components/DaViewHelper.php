@@ -4,12 +4,12 @@
      $template = <<<EOT
      <div class="icon-wrapper" data-url="$url" > 
         <div class="icon-dashboard $cssClass">
-          <h2 class="dashboard-title"> $title </h2>
+          <h2 class="dashboard-title"> <a href='$url' >  $title </a> </h2>
           <p class="descritpion">
             $description
           </p>
         </div>
-        <div class="clear"></div>
+        
       </div> 
      
 EOT;

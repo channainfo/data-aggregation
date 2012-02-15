@@ -55,7 +55,7 @@
 
 	<div class="row buttons">
     <label>&nbsp;</label>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array("class"=>"save-btn")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

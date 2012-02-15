@@ -1,5 +1,5 @@
 <?php
-  class CDbWrapper {
+  class DaDbWrapper {
     public static function now(){
       return new CDbExpression("Now()");
     } 
