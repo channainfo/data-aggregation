@@ -3,7 +3,7 @@
 class m120213_030304_create_da_site_config_tables extends CDbMigration
 {
 	public function up(){
-    $this->createTable("da_site_configs", array(
+    $this->createTable("da_siteconfigs", array(
         "id" => "pk",
         "code" => "string not null",
         "name" => "string",
@@ -17,7 +17,7 @@ class m120213_030304_create_da_site_config_tables extends CDbMigration
 	}
 
 	public function down(){
-    $this->dropTable("da_site_configs");
+    $this->dropTable("da_siteconfigs");
 	}
 
 	/*

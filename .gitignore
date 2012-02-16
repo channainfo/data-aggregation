@@ -3,5 +3,7 @@ nbproject/*
 .project
 .buildpath
 data-aggregration/assets/*
+data-aggregration/data/*
+
 framework/*
 *runtime/*.log

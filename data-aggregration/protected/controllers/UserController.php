@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends DaController
+class UserController extends Controller
 {
 	public $layout='//layouts/default';
 	

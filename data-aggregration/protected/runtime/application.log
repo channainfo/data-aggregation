@@ -231,3 +231,402 @@ REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
 in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (15)
 in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (42)
 in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 02:51:30 [error] [php] Missing argument 1 for CController::renderPartial(), called in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php on line 9 and defined (C:\xampp\htdocs\yii\framework\web\CController.php:866)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): BackupController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#3 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(20): BackupController->render()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionIndex()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/index?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php (9)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (20)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 02:52:01 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(20): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/index?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php (9)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (20)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 03:04:08 [error] [exception.CException] exception 'CException' with message 'Backup and its behaviors do not have a method or closure named "errorSummary".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('errorSummary', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): CActiveRecord->__call('errorSummary', Array)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): Backup->errorSummary()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php(10): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(41): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/create')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+---
+2012/02/16 03:08:54 [error] [exception.CException] exception 'CException' with message 'Backup and its behaviors do not have a method or closure named "errorSummary".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('errorSummary', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): CActiveRecord->__call('errorSummary', Array)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): Backup->errorSummary()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php(10): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(41): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/create')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+---
+2012/02/16 03:11:39 [error] [exception.CException] exception 'CException' with message 'Backup and its behaviors do not have a method or closure named "errorSummary".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('errorSummary', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): CActiveRecord->__call('errorSummary', Array)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php(1): Backup->errorSummary()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php(10): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(41): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/create')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+---
+2012/02/16 03:16:07 [error] [php] Missing argument 2 for CHtml::activeLabel(), called in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php on line 5 and defined (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:1145)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): BackupController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php(10): BackupController->renderPartial()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): BackupController->renderInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#7 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(41): BackupController->render()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\_form.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (10)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (41)
+2012/02/16 03:23:54 [error] [php] move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: The second argument to copy() function cannot be a directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (34)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 03:24:10 [error] [php] move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: The second argument to copy() function cannot be a directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (34)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 03:29:33 [error] [php] move_uploaded_file() [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: The second argument to copy() function cannot be a directory (C:\xampp\htdocs\yii\framework\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (34)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 03:34:45 [error] [exception.CException] exception 'CException' with message 'Property "Backup.name" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('name')
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(32): CActiveRecord->__get('name')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/create')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+---
+2012/02/16 03:56:30 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\views\siteconfig\_detail.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php(9): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): BackupController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#6 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(45): BackupController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=3
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\siteconfig\_detail.php (7)
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (9)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+2012/02/16 06:19:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:19:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:26:52 [error] [exception.CException] exception 'CException' with message 'Backup and its behaviors do not have a method or closure named "getStatus".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('getStatus', Array)
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php(26): CActiveRecord->__call('getStatus', Array)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php(26): Backup->getStatus()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(20): CController->render('index', Array)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionIndex()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/index')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/index?siteconfig_id=1
+---
+2012/02/16 06:28:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:28:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:28:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:28:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+---
+2012/02/16 06:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+---
+2012/02/16 06:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+---
+2012/02/16 06:29:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-pending.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-pending.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-pending.png
+HTTP_REFERER=http://localhost/yii/data-aggregration/css/style.css
+---
+2012/02/16 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+---
+2012/02/16 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "state-success.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('state-success.p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/data-aggregration/state-success.png
+---
+2012/02/16 07:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "backup".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('backup')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('backup')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/backup/i...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/backup/index
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+---
+2012/02/16 08:58:50 [error] [php] Undefined variable: _FILE (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)

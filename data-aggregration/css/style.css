@@ -209,3 +209,18 @@ div.tableWrapper thead th, td {
 .underline{
   text-decoration: underline;
 }
+.state{
+  
+  padding-left: 25px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.pending{
+  background-image: url(../images/state-pending.png);
+}
+.success{
+  background-image: url(../images/state-success.png);
+}
+.failed{
+  background-image: url(../images/state-failed.png);
+}

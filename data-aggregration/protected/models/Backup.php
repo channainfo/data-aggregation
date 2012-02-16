@@ -11,13 +11,18 @@
  * @property string $modified_at
  * @property string $created_at
  */
-class Backup extends CActiveRecord
+class Backup extends DaActiveRecordModel
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return Backup the static model class
 	 */
+  public function getStatusText(){
+    $status = array( 0 => "start", 1 => "pending" , 2 => "failed", 3 => "success", );
+    return $status[$this->status];
+  }
+  
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -37,13 +42,13 @@ class Backup extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('filename, status, siteconfig_id', 'required'),
+			array('filename, siteconfig_id', 'required'),
 			array('filename', 'length', 'max'=>255),
       array("filename","file", "types" => "bak")  
 		);
 	}
-
-	/**
+  
+  /**
 	 * @return array relational rules.
 	 */
 	public function relations()

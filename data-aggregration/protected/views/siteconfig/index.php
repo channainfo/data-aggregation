@@ -19,7 +19,6 @@ $this->breadcrumbs = array('Sites');
   <?php 
   $i =0 ;
    foreach($sites as $row): ?>
-    <?php $class ?> 
     <tr class="<?php echo $i%2?"even":"odd" ?>">
       <td> <?php echo CHtml::link($row->code, $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-link underline")); ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
@@ -27,7 +26,7 @@ $this->breadcrumbs = array('Sites');
       <td> <?php echo $row->db; ?>  </td>
       <td> <?php echo $row->user; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Backup", $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
+        <?php echo CHtml::link("Backup", $this->createUrl("backup/create/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
         <?php echo CHtml::link("Edit", $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
         <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
       </td>

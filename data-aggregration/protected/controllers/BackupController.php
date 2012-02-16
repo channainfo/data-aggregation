@@ -17,29 +17,39 @@
      $backups = $model->findAll($criteria);
      
      $siteconfig = SiteConfig::model()->findByPk((int)$_GET["siteconfig_id"]);
-     $this->render("index", array("backups" => $backups, "pages" => $pages, "siteconfig" => $siteconfig));
+     $this->render("index", array("backups" => $backups, "pages" => $pages, "siteconfig" => $siteconfig, "model" => $model));
      
    }
    
    public function actionCreate(){
-     $siteconfig = SiteConfig::model()->findByPk((int)$_GET["siteconfig_id"]);
+     $siteconfig = $this->getSiteConfig((int)$_GET["siteconfig_id"]);
      $model = new Backup();
      
      if(isset($_POST["Backup"])){
-       $model->attributes=$_POST['Backup'];
-       $model->filename = CUploadedFile::getInstance($model,'filename');
-       if($model->save()){
-
-         $model->filename->saveAs(DaConfig::pathData());
-          Yii::app()->user->setFlash("success", "Backup has been added successfully");
-          $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $_GET["siteconfig_id"])));
+       $model->setAttributes($_POST['Backup']);
+       $file = CUploadedFile::getInstance($model,'filename');
+       $filename = DaConfig::generateFile($file->name); 
+       $model->setAttributes(array("filename"=> DaConfig::pathDataDb().$filename, "siteconfig_id" =>(int)$_GET["siteconfig_id"] ));
+       
+       if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
+          if($model->save()){
+            Yii::app()->user->setFlash("success", "Backup has been added successfully");
+            $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $_GET["siteconfig_id"])));
+          }
+          else {
+              Yii::app()->user->setFlash("error", "Failed to save backup");
+          }
        }
-        else {
-          Yii::app()->user->setFlash("error", "Failed to save backup");
-        }
      }
      
      $this->render("create", array("siteconfig" => $siteconfig, "model" => $model ));
+   }
+   
+   private function getSiteConfig($siteconfig_id){
+    $siteconfig =  SiteConfig::model()->findByPk($siteconfig_id);
+    if($siteconfig == null)
+      throw new CHttpException("Site not valid");
+    return $siteconfig ;
    }
  }
 ?>

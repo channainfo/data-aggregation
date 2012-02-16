@@ -6,7 +6,7 @@ class m120215_074836_create_backup extends CDbMigration
     $this->createTable("da_backups", array(
         "id" => "pk",
         "filename" => "string NOT NULL",
-        "status" => "int(11) NOT NULL ",
+        "status" => "int(4) DEFAULT 1 ",
         "siteconfig_id" => "int(11) NOT NULL",
         "modified_at" => "datetime",
         "created_at" => "datetime"

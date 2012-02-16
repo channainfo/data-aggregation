@@ -1,7 +1,7 @@
 <div class="form">
 <?php $this->renderPartial("//shared/_requireField"); ?>  
 <?php $form = $this->beginWidget("CActiveForm", array("id" => "form-siteconfig")); ?>
-  <?php echo $form->errorSummary($model); ?>
+  <?php echo CHtml::errorSummary($model); ?>
   <div class="row">
     <?php echo $form->labelEx($model, "code");  ?>
     <?php echo $form->textField($model, "code", array("size" => 60, "autocomplete" => "off"));  ?>
