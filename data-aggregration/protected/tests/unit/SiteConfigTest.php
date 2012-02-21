@@ -13,6 +13,7 @@
     public function tearDown(){
       
     }
+    
     public function setUp() {
      $this->attributes =  array(
                               "code" => "0001",
@@ -23,6 +24,7 @@
                               "password" => "123456"
                           );
      $this->siteconfig = new SiteConfig();
+     
     }
 
     public function testCreateSiteConfigWithValidAttribute(){
@@ -54,6 +56,46 @@
        }
     }
     
+    public function testLastBackup(){
+       $this->siteconfig->setAttributes($this->attributes);
+       $this->siteconfig->save();
+       
+       
+       
+       $backupAttributes = array(
+          "filename" => "test.bak" ,
+          "siteconfig_id" => $this->siteconfig->id,
+       );
+       $backup1 = new Backup();
+       $backup1->setAttributes($backupAttributes);
+       $backup1->save();
+       
+       $backup2 = new Backup();
+       $backup2->setAttributes(array(
+          "siteconfig_id" => $this->siteconfig->id,
+          "filename" => "blah.bak" 
+       ));
+       $backup2->save();
+       
+       $lastBackup = $this->siteconfig->lastBackup();
+       $this->assertEquals($lastBackup->modified_at, $backup2->modified_at);
+       $this->assertEquals($lastBackup->filename, "blah.bak");
+       
+       
+       $backup3= new Backup();
+       $backup3->setAttributes(array(
+           "siteconfig_id" => $this->siteconfig->id,
+           "filename" => "bloo.bak",
+           "status" => 1
+       ));
+       $backup3->save();
+       
+       $lastBackup = $this->siteconfig->lastBackup(false);
+
+       $this->assertEquals($lastBackup->filename, "bloo.bak");
+       $this->assertEquals($lastBackup->status, 1);
+    }
+
     private function getAttributeInvalid($key, $destroy = false){
       $valid = $this->attributes ;
       if($destroy == true)
@@ -63,6 +105,8 @@
         
       return $valid;
     }
+    
+    
     
   }
 ?>

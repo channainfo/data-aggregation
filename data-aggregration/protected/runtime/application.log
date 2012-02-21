@@ -630,3 +630,772 @@ Stack trace:
 REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
 in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
 in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/16 14:15:59 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(20): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionIndex()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/index?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\index.php (7)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (20)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 08:57:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default ,
+	`attempts` INT UNSIGNED NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,' at line 4. The SQL statement executed was: CREATE TABLE `da_djjobs` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`handler` VARCHAR(255) NOT NULL,
+	`queue` VARCHAR(255) NOT NULL DEFAULT default ,
+	`attempts` INT UNSIGNED NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`locked_at` DATETIME NULL,
+	`locked_by` VARCHAR(255) NULL,
+	`failed_at` DATETIME NULL,
+	`error` VARCHAR(255) NULL,
+	`created_at` DATETIME NOT NULL
+).
+2012/02/17 08:57:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default ,
+	`attempts` INT UNSIGNED NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,' at line 4. The SQL statement executed was: CREATE TABLE `da_djjobs` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`handler` VARCHAR(255) NOT NULL,
+	`queue` VARCHAR(255) NOT NULL DEFAULT default ,
+	`attempts` INT UNSIGNED NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`locked_at` DATETIME NULL,
+	`locked_by` VARCHAR(255) NULL,
+	`failed_at` DATETIME NULL,
+	`error` VARCHAR(255) NULL,
+	`created_at` DATETIME NOT NULL
+)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(1251): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\CDbMigration.php(229): CDbCommand->createTable('da_djjobs', Array, NULL)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\migrations\m120217_073957_create_da_dj_jobs_table.php(17): CDbMigration->createTable('da_djjobs', Array)
+#3 C:\xampp\htdocs\yii\framework\cli\commands\MigrateCommand.php(362): m120217_073957_create_da_dj_jobs_table->up()
+#4 C:\xampp\htdocs\yii\framework\cli\commands\MigrateCommand.php(100): MigrateCommand->migrateUp('m120217_073957_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 C:\xampp\htdocs\yii\framework\console\CConsoleCommand.php(141): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 C:\xampp\htdocs\yii\framework\console\CConsoleCommandRunner.php(65): CConsoleCommand->run(Array)
+#8 C:\xampp\htdocs\yii\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\yii\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\yii\data-aggregration\protected\yiic.php(8): require_once('C:\xampp\htdocs...')
+#12 {main}
+---
+2012/02/17 08:58:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default ,
+	`attempts` INT(11) NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`lo' at line 4. The SQL statement executed was: CREATE TABLE `da_djjobs` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`handler` VARCHAR(255) NOT NULL,
+	`queue` VARCHAR(255) NOT NULL DEFAULT default ,
+	`attempts` INT(11) NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`locked_at` DATETIME NULL,
+	`locked_by` VARCHAR(255) NULL,
+	`failed_at` DATETIME NULL,
+	`error` VARCHAR(255) NULL,
+	`created_at` DATETIME NOT NULL
+).
+2012/02/17 08:58:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default ,
+	`attempts` INT(11) NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`lo' at line 4. The SQL statement executed was: CREATE TABLE `da_djjobs` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`handler` VARCHAR(255) NOT NULL,
+	`queue` VARCHAR(255) NOT NULL DEFAULT default ,
+	`attempts` INT(11) NOT NULL DEFAULT 0 ,
+	`run_at` DATETIME NULL,
+	`locked_at` DATETIME NULL,
+	`locked_by` VARCHAR(255) NULL,
+	`failed_at` DATETIME NULL,
+	`error` VARCHAR(255) NULL,
+	`created_at` DATETIME NOT NULL
+)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(1251): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\CDbMigration.php(229): CDbCommand->createTable('da_djjobs', Array, NULL)
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\migrations\m120217_073957_create_da_dj_jobs_table.php(17): CDbMigration->createTable('da_djjobs', Array)
+#3 C:\xampp\htdocs\yii\framework\cli\commands\MigrateCommand.php(362): m120217_073957_create_da_dj_jobs_table->up()
+#4 C:\xampp\htdocs\yii\framework\cli\commands\MigrateCommand.php(100): MigrateCommand->migrateUp('m120217_073957_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 C:\xampp\htdocs\yii\framework\console\CConsoleCommand.php(141): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 C:\xampp\htdocs\yii\framework\console\CConsoleCommandRunner.php(65): CConsoleCommand->run(Array)
+#8 C:\xampp\htdocs\yii\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\yii\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\yii\data-aggregration\protected\yiic.php(8): require_once('C:\xampp\htdocs...')
+#12 {main}
+---
+2012/02/17 11:24:56 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (31)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:32:31 [error] [php] Undefined index: filename (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:33:04 [error] [php] Undefined index: filename (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:46:36 [error] [php] Undefined index: Backup (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:48:58 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:50:08 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/17 11:50:50 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 05:43:38 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('lastbackup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/lastback...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/lastbackup
+---
+2012/02/20 05:43:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('lastbackup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/lastback...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/lastbackup/1
+---
+2012/02/20 05:44:18 [error] [php] Undefined index: siteconfig_id (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (9)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 05:45:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/view')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/1
+---
+2012/02/20 05:48:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/view')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/1
+---
+2012/02/20 05:48:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/view')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/1
+---
+2012/02/20 05:48:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('view')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/view')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/1
+---
+2012/02/20 05:48:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('backup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/backup')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/backup
+---
+2012/02/20 05:48:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('backup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/backup')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/backup/1
+---
+2012/02/20 05:49:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('backup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/backup')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/backup/1
+---
+2012/02/20 05:49:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('backup')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/backup')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/backup/1
+---
+2012/02/20 05:49:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah
+---
+2012/02/20 05:49:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah/1
+---
+2012/02/20 05:49:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah/1
+---
+2012/02/20 05:49:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah/1
+---
+2012/02/20 05:50:13 [error] [php] Undefined index: siteconfig_id (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (9)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 05:51:35 [error] [exception.CDbException] exception 'CDbException' with message 'Table "da_backups" does not have a column named "select".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:570
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1454): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Object(CDbCriteria), '', Array, '`t`.')
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): CActiveRecord->findByAttributes(Object(CDbCriteria))
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionBlah()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah
+---
+2012/02/20 05:52:08 [error] [exception.CDbException] exception 'CDbException' with message 'Table "da_backups" does not have a column named "select".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:570
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1454): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Object(CDbCriteria), '', Array, '`t`.')
+#1 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): CActiveRecord->findByAttributes(Object(CDbCriteria))
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionBlah()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('blah')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/blah')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah
+---
+2012/02/20 08:18:34 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:546)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionBlah()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/blah
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 10:10:24 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 ORDER BY  modified_at DESC  LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 1 ORDER BY  modified_at DESC  LIMIT 1.
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (31)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (38)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 10:10:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 ORDER BY  modified_at DESC  LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 1 ORDER BY  modified_at DESC  LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1455): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(31): CActiveRecord->findByAttributes(Array, Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(38): BackupController->lastBackUp(1)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/create')
+#11 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+---
+2012/02/20 10:11:10 [error] [php] Undefined variable: siteconfig (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(40): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (3)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (40)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/20 10:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1&_=1329730345952
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/backup/index?siteconfig_id=1
+---
+2012/02/20 10:55:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1&_=1329731706615
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/backup/index?siteconfig_id=1
+---
+2012/02/20 10:55:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1
+---
+2012/02/20 10:55:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1
+---
+2012/02/20 11:03:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1
+---
+2012/02/20 11:04:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1&_=1329732269068
+HTTP_REFERER=http://localhost/yii/data-aggregration/index.php/backup/index?siteconfig_id=1
+---
+2012/02/20 11:04:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1
+---
+2012/02/20 11:43:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "restore".' in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('restore')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('restore')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/restore')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/data-aggregration/index.php/backup/restore?siteconfig_id=1
+---
+2012/02/21 05:27:25 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(30): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(31): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (31)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [error] [php] Undefined variable: model (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(31): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (14)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (31)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [error] [php] Undefined variable: backup (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(55): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (55)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [error] [php] Undefined variable: backup (C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(870): BackupController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(783): BackupController->renderPartial()
+#2 C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php(55): BackupController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(287): BackupController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): BackupController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\yii\data-aggregration\protected\views\backup\create.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (55)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [error] [php] json_decode() expects parameter 1 to be string, object given (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:83)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/restore/1?_=1329820006182
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (83)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:28:03 [error] [php] json_decode() expects parameter 1 to be string, object given (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:83)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/restore/1?_=1329820083335
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (83)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:28:43 [error] [php] json_decode() expects parameter 1 to be string, array given (C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php:83)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): SiteConfigController->runAction()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): SiteConfigController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): SiteConfigController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yii\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/data-aggregration/index.php/siteconfig/restore/1?_=1329820122425
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (83)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)

@@ -21,6 +21,9 @@ class SiteConfig extends DaActiveRecordModel
 	 * @param string $className active record class name.
 	 * @return SiteConfigs the static model class
 	 */
+  
+  private $lastBackup = false;
+  
 	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}
@@ -48,8 +51,27 @@ class SiteConfig extends DaActiveRecordModel
 			array('id, code, name, host, user, password, db, created_at, modified_at', 'safe', 'on'=>'search'),
 		);
 	}
+  /**
+   *
+   * @param boolean $cache
+   * @return Backup 
+   */
+  
+  public function lastBackup($cache = true){
+    if($cache == true && $this->lastBackup !== false)
+      return $this->lastBackup;
+    
+    $model = new Backup();
 
-	/**
+    $criteria = new CDbCriteria();
+    $criteria->order = " id DESC ";
+    $criteria->condition = " siteconfig_id = " . $this->id; 
+    
+    $this->lastBackup = $model->findByAttributes(array(),$criteria);
+    return $this->lastBackup ;
+  }
+
+  /**
 	 * @return array relational rules.
 	 */
 	public function relations(){
@@ -57,6 +79,10 @@ class SiteConfig extends DaActiveRecordModel
         "backups" => array(self::HAS_MANY, "backup", "siteconfig_id")
 		);
 	}
+  
+  
+  
+  
 
 	/**
 	 * @return array customized attribute labels (name=>label)

@@ -67,7 +67,21 @@ return array(
 				array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
+            
 				),
+//       array(
+//          'class'=>'CWebLogRoute',
+//          'categories'=>'system.db.CDbCommand',
+//          'showInFireBug'=>true,
+//       ) ,
+//       array(
+//          'class'=>'CFileLogRoute',
+//          'levels'=>'trace',
+//          'categories'=>'system.db.*',
+//          'logFile'=>'sql.log',
+//      ),   
+          
+          
 				// uncomment the following to show log messages on web pages
 				/*
 				array(

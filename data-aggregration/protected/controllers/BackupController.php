@@ -22,29 +22,45 @@
    }
    
    public function actionCreate(){
-     $siteconfig = $this->getSiteConfig((int)$_GET["siteconfig_id"]);
-     $model = new Backup();
+     $siteconfig_id = (int)$_GET["siteconfig_id"];
+     $siteconfig = $this->getSiteConfig($siteconfig_id);
+     $backup = $siteconfig->lastBackUp(false);
      
-     if(isset($_POST["Backup"])){
-       $model->setAttributes($_POST['Backup']);
-       $file = CUploadedFile::getInstance($model,'filename');
-       $filename = DaConfig::generateFile($file->name); 
-       $model->setAttributes(array("filename"=> DaConfig::pathDataDb().$filename, "siteconfig_id" =>(int)$_GET["siteconfig_id"] ));
-       
-       if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
-          if($model->save()){
-            Yii::app()->user->setFlash("success", "Backup has been added successfully");
-            $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $_GET["siteconfig_id"])));
-          }
-          else {
-              Yii::app()->user->setFlash("error", "Failed to save backup");
-          }
-       }
+     if($backup and $backup->restorable()){
+       $this->render("create", array("backup" => $backup, "siteconfig" => $siteconfig));
      }
-     
-     $this->render("create", array("siteconfig" => $siteconfig, "model" => $model ));
+     else{
+        $model = new Backup();
+        if(isset($_POST["Backup"]) ){
+          if( $_FILES["Backup"]["error"]["filename"] !== UPLOAD_ERR_OK){
+            Yii::app()->user->setFlash("error", "Please choose the file");
+          }
+          else{
+              $model->setAttributes($_POST['Backup']);
+              $file = CUploadedFile::getInstance($model,'filename');
+              $filename = DaConfig::generateFile($file->name); 
+              $model->setAttributes(array("filename"=>$filename, "siteconfig_id" =>(int)$_GET["siteconfig_id"] ));
+
+              if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
+                  if($model->save()){
+                    Yii::app()->user->setFlash("success", "Backup has been added successfully");
+                    $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $_GET["siteconfig_id"])));
+                  }
+                  else {
+                      Yii::app()->user->setFlash("error", "Failed to save backup");
+                  }
+              }
+          }
+        }
+        $this->render("create", array("siteconfig" => $siteconfig, "model" => $model ));
+     }
    }
-   
+   /**
+    *
+    * @param integer $siteconfig_id
+    * @return SiteConfig
+    * @throws CHttpException 
+    */
    private function getSiteConfig($siteconfig_id){
     $siteconfig =  SiteConfig::model()->findByPk($siteconfig_id);
     if($siteconfig == null)

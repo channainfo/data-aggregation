@@ -49,12 +49,5 @@ EOT;
      return $default;
      
    }
-   public static function debugHtml($var, $exit = false){
-     self::debug($var, $exit, true);
-   }
-   
-   public static function debugConsole($var, $exit = false){
-     self::debug($var, $exit, 0);
-   }
  }
 ?>

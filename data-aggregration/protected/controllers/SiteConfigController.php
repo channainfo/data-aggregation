@@ -1,7 +1,5 @@
 <?php
-
-class SiteConfigController extends DaController
-{
+class SiteConfigController extends DaController {
   public $layout = "//layouts/default" ;
 	public function actionCreate(){
    
@@ -67,7 +65,6 @@ class SiteConfigController extends DaController
   }
   
   public function actionTestConnection(){
-    
     $siteconfig = $_GET["SiteConfig"];
     $db = new DaDbConnection( );
     $db->connect($siteconfig["host"], $siteconfig["user"], $siteconfig["password"] , $siteconfig["db"]);
@@ -76,7 +73,44 @@ class SiteConfigController extends DaController
       echo "true";
     else 
       echo "false" ;
-    
+  }
+  public function actionRestore(){
+     $siteconfig_id = (int)$_GET["id"];
+     $siteconfig = SiteConfig::model()->findByPk($siteconfig_id);
+     $errors = array();    
+     if($siteconfig){
+        $lastBackup = $siteconfig->lastBackUp(false);
+        if($lastBackup && $lastBackup->restorable()){
+          $backupAttrs = $lastBackup->attributes;
+          $siteAttrs = $siteconfig->attributes;
+          
+          $db = new DaDbConnection();
+          $startTime = microtime(true);
+          $lastBackup->status = Backup::PENDING;
+          $lastBackup->save();
+          $connection = null;
+          
+          $file =  DaConfig::pathDataStore().$backupAttrs["filename"] ;
+          $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], $siteAttrs["password"], $siteAttrs["db"], 
+                 $file ,$connection );
+          
+          $endTime =  microtime(true);
+          if(count($errors)){
+            $lastBackup->status = Backup::FAILED;
+            $lastBackup->reason = serialize($errors);
+          }  else {
+            $lastBackup->status = Backup::SUCCESS;
+          }
+          $lastBackup->duration = $endTime-$startTime;
+          $lastBackup->save();
+        }else{
+          $errors[] = "No back up to restore" ;
+        }
+        
+     }else{
+       $errors[] = "Site not found";       
+     }
+     json_encode($errors);
   }
   public function loadModel($id)
 	{

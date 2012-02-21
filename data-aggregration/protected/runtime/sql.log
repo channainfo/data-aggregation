@@ -1,0 +1,2319 @@
+2012/02/21 05:20:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:18 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:18 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:20:21 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (60)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:20:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:21:56 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:21:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:28 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:22:45 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (61)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:22:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (67)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:26:28 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:26:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:10 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] Backup.insert()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:16 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:16 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:16 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.ar.CActiveRecord] SiteConfig.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_siteconfigs` `t`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.ar.CActiveRecord] SiteConfig.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` ORDER BY  modified_at DESC  LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:25 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:27:33 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:27:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:29:59 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:29:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:15 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:17 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:19 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:37 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:30:48 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:30:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:36 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:31:37 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:31:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:14 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (66)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 05:34:52 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 05:34:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:14 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:14 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:51:42 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:51:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:00 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:36 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:42 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:52:58 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:52:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:05 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] Backup.insert()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:21 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:24 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:34 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:36 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 08:53:59 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 08:53:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:15:56 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:15:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:07 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:18 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:50 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] Backup.insert()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (45)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:56 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:57 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:16:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:19:15 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:19:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:19:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:19:15 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:19:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:01 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:01 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:12 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:25 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:25 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:20:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:23:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:27:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:29:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 09:31:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:10 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.ar.CActiveRecord] SiteConfig.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_siteconfigs` `t`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.ar.CActiveRecord] SiteConfig.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` ORDER BY  modified_at DESC  LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 10:02:17 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:17 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (84)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] Backup.update()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (93)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.ar.CActiveRecord] Backup.updateByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (93)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:02:20 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `da_backups` SET `id`=:yp0, `filename`=:yp1, `status`=:yp2, `siteconfig_id`=:yp3, `duration`=:yp4, `reason`=:yp5, `modified_at`=:yp6, `created_at`=:yp7 WHERE `da_backups`.`id`=5
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (93)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:09:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:29 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 10:10:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.ar.CActiveRecord] SiteConfig.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_siteconfigs` `t`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.ar.CActiveRecord] SiteConfig.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:19 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` ORDER BY  modified_at DESC  LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (48)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (48)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (48)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:23 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (48)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (48)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (23)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.ar.CActiveRecord] SiteConfig.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_siteconfigs` `t`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.ar.CActiveRecord] SiteConfig.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:26 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` ORDER BY  modified_at DESC  LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (30)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+2012/02/21 11:26:28 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (65)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (26)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (64)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.ar.CActiveRecord] Backup.findByAttributes()
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE  siteconfig_id = 1 ORDER BY  id DESC  LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (70)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (27)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_backups`
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.ar.CActiveRecord] Backup.count()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `da_backups` `t` WHERE siteconfig_id = 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (11)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.ar.CActiveRecord] Backup.findAll()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_backups` `t` WHERE siteconfig_id = 1 ORDER BY  modified_at DESC LIMIT 10
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (17)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\BackupController.php (19)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW COLUMNS FROM `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `da_siteconfigs`
+in C:\xampp\htdocs\yii\data-aggregration\protected\models\SiteConfig.php (28)
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [trace] [system.db.ar.CActiveRecord] SiteConfig.findByPk()
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)
+2012/02/21 11:26:46 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `da_siteconfigs` `t` WHERE `t`.`id`=1 LIMIT 1
+in C:\xampp\htdocs\yii\data-aggregration\protected\controllers\SiteConfigController.php (81)
+in C:\xampp\htdocs\yii\data-aggregration\index.php (13)

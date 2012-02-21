@@ -5,7 +5,7 @@
        $host = "WORK-NIPH";
        $user = "sa" ;
        $passwrod = "123456" ;
-       $databases = array("test", "server_oi");
+       $databases = array("master", "server_oi");
        
        foreach($databases as $database){
           $db = new DaDbConnection();
@@ -27,26 +27,17 @@
      }
     
      public function testRestoreSite(){
-       $site = new SiteConfig;
-       $site->setAttributes(array(
-              "code" => "0001",
+       echo "----------------------------------resotre\n\n";
+       $server = array(
               "host" => "localhost",
-              "db" => "test",
+              "db" => "element",
               "user" => "sa",
-              "password" => "123456",
-        ));
-       
-       $site->save();
-       
-       
+              "password" => "123456");
+       $file = dirname(__FILE__)."/../data/server_oi.bak";
+   
        $db =  new DaDbConnection();
-       $db->restoreFromBakFile(1);
+       $db->restoreFromBakFile($server["host"], $server["user"], $server["password"], $server["db"], $file);
        
-     }
-     
-     private function createSite(){
        
-     }
-     
-     
+     }   
    }

@@ -9,7 +9,7 @@
   
   <div class="row">
     <label></label>
-    <?php echo CHtml::submitButton("Save", array("class" => "btn-save")); ?>
+    <?php echo CHtml::submitButton("Start restoring", array("class" => "btn-save")); ?>
   </div>
   <?php echo CHtml::endForm(); ?>
 </div>

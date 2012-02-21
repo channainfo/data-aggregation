@@ -18,9 +18,21 @@ class Backup extends DaActiveRecordModel
 	 * @param string $className active record class name.
 	 * @return Backup the static model class
 	 */
+  const START = 0 ;
+  const PENDING = 1;
+  const FAILED = 2 ;
+  const SUCCESS = 3 ;
+  
   public function getStatusText(){
-    $status = array( 0 => "start", 1 => "pending" , 2 => "failed", 3 => "success", );
+    $status = array( self::START => "start", self::PENDING => "pending" , self::FAILED => "failed", self::SUCCESS => "success", );
     return $status[$this->status];
+  }
+  /**
+   *
+   * @return boolean 
+   */
+  public function restorable(){
+    return $this->status == self::START ;
   }
   
 	public static function model($className=__CLASS__)
@@ -44,9 +56,29 @@ class Backup extends DaActiveRecordModel
 		return array(
 			array('filename, siteconfig_id', 'required'),
 			array('filename', 'length', 'max'=>255),
-      array("filename","file", "types" => "bak")  
+      array("filename, siteconfig_id, status", "safe" ),
+      array("filename", "fileType", "type" => ".bak")  
+      //array("filename","file", "types" => "bak")  
 		);
 	}
+  
+  public function fileType($attribute, $params){
+    $type = "/" . preg_quote($params["type"]). "$/i";
+    $result = preg_match($type, $this->attributes[$attribute]);
+    if(!$result){
+      $this->addError($attribute, " must be in {$params["type"]} format");
+      return false;
+    }
+    return true;
+  }
+  
+  public function showRestoreError(){
+    if($this->reason){
+      
+    }
+  }
+  
+  
   
   /**
 	 * @return array relational rules.

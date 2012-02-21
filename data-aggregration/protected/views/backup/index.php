@@ -6,30 +6,67 @@
 ?>
 <?php echo DaViewHelper::titleActionGroup("Backup list", CHtml::link("New", $this->createUrl("backup/create", array("siteconfig_id" => $siteconfig->id)), array("class" => "btn-action-new round"))) ?>
 <?php $this->renderPartial("//siteconfig/_detail", array("siteconfig" => $siteconfig)) ?>
+
+<?php if(count($backups)): ?>
+<?php if($backups[0]->restorable()) : ?>
+  <!-- <div class="restore round" > Restoring ...  </div> -->
+  <script type="text/javascript">
+   $(function(){
+     show_loading("Restoring" );
+      $.ajax({
+        url: "<?php echo Yii::app()->createUrl("siteconfig/restore", array("id" => $siteconfig->id )) ?>",
+        cache: false,
+        dataType: "json",
+        success: function(response){
+          console.log("log", response );
+        },
+        complete:function(){
+          hide_loading();
+        }
+      });
+   }); 
+    
+  </script>
+<?php  endif; ?>
+
 <div class="tableWrapper round">
-  <?php if(count($backups)): ?>
-  <table class="tgrid">
-    <thead>
-      <tr>
-        <th width="120"> Date </th>
-        <th> Name </th>
-        <th width="50"> Status </th>
-        
-      </tr>
-    </thead>
-  <?php 
-  $i =0 ;
-  foreach ($backups as $backup): ?>
-      <?php $status = $backup->getStatusText();  ?>
-      <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
-        <td> <?php echo $backup->created_at; ?> </td>
-        <td> <?php echo basename($backup->filename); ?> </td>
-        <td><span class="state <?php echo $status  ?>" ><?php echo ucfirst($status) ?></span></td>
-      </tr>
-  <?php 
-  $i++;
-  endforeach; ?>
-  </table>     
-  <?php endif; ?>
-</div>
+
+    <table class="tgrid">
+      <thead>
+        <tr>
+          <th width="120"> Date </th>
+          <th> Name </th>
+          <th width="50"> Status </th>
+          <th> Reason </th>
+
+        </tr>
+      </thead>
+    <?php 
+    $i =0 ;
+    foreach ($backups as $backup): ?>
+        <?php $status = $backup->getStatusText();  ?>
+        <?php
+          $cls ="";
+          if($backups[0]->restorable() && $i == 0)
+            $cls = "restoring";
+        ?>
+        <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
+          <td> <?php echo $backup->created_at; ?> </td>
+          <td> <?php echo basename($backup->filename); ?> </td>
+          <td><span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
+          <td>
+            <?php 
+            if($backup->reason){
+              $reason = unserialize($backup->reason);
+              DaTool::debug($reason);
+            }  
+            ?>
+          </td>
+        </tr>
+    <?php 
+    $i++;
+    endforeach; ?>
+    </table>     
+  </div>
+<?php endif; ?>
 

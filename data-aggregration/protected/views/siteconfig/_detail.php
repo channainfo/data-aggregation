@@ -18,4 +18,5 @@
     <th>Server</td>
     <td><?php echo $siteconfig->host ?></td>
   </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
 </table>

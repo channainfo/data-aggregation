@@ -1,17 +1,23 @@
 <?php
   class DaDbConnection {
     private $connection = false ;
-    
+    const MASTER = "master" ;
     public function __construct() {
     }
 
-    public function connect($host, $user, $pwd , $db){
-      unset($this->connection);
-      
+    public function connect($host, $user, $password , $db){
+       if($this->connection)
+         unset($this->connection);
+       $this->connection = $this->establishConnection($host, $user, $password, $db);
+    }
+    
+    public function establishConnection($host, $user, $password , $db){
+      $connection = false;     
       if( !empty($host) && !empty($user) && !empty($db)){
-        $connOptions = array("Database"=>$db, "UID"=> $user, "PWD"=> $pwd);
-        $this->connection = sqlsrv_connect($host, $connOptions);
+        $connOptions = array("Database"=>$db, "UID"=> $user, "PWD"=> $password);
+        $connection = sqlsrv_connect($host, $connOptions);
       }
+      return $connection;
     }
     
     public function isConnected(){
@@ -22,16 +28,59 @@
       unset($this->connection);
     }
     
-    public function restoreFromBakFile($siteconfig_id){
-      $siteconfig = SiteConfig::model()->with(array('backups'=>array('order'=>'backups.id desc')))->findByPk($siteconfig_id);
+    public function query($sql, $connection=false){
+      if(!$connection)
+        $connection = $this->$connection;
       
-      echo "-----------------------------------" ;
-      DaTool::debug( "name : ". $siteconfig->name);
-      echo "-----------------------------------" ;
-      //DaTool::debug($siteconfig,0,0);
-      DaTool::debug($siteconfig->backups,0,0);
-              
+      return  sqlsrv_query($connection, $sql);
     }
+    
+    public function mssqlConfigure(){
+      sqlsrv_configure( "WarningsReturnAsErrors", 0 );
+    }
+    
+    
+    public function checkDbState($host, $user, $password,  $db){
+      $sql = "SELECT state, state_desc, FROM sys.databases WHERE name = '{$db}' " ;
+      $connection =  $this->establishConnection($host, $user, $password, "master" );
+      $stmt = $this->query($sql, $connection);
+      
+      
+    }
+    
+    
+    public function restoreFromBakFile($host, $user, $password,  $db, $backup, &$connection){
+       
+       $connection =  $this->establishConnection($host, $user, $password, "master");
+       $this->mssqlConfigure();
+       
+       // TODO update backup table to set state to pending
+       $errors = array();
+       if($connection){
+          // start doing restoring
+          $sql = <<<EOT
+         RESTORE DATABASE $db FROM DISK = '$backup' WITH REPLACE, RECOVERY ;
+         
+EOT;
+          $stmt = $this->query($sql, $connection );
+          
+          if($stmt === false)
+            $errors = sqlsrv_errors();
+          
+          //Put DB into usable state.
+          $useSql = " USE {$db}; ";
+          $stmt = $this->query($useSql, $connection);
+          
+          if($stmt === false)
+            $errors = sqlsrv_errors();       
+       }
+       else{
+         $errors[] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
+       }
+       return $errors;
+     }
+      
+    
     
     
   }

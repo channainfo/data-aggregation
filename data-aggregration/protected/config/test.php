@@ -11,7 +11,9 @@ $configTest = CMap::mergeArray(
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
-			'charset' => 'utf8'),
+			'charset' => 'utf8',
+      'enableProfiling'=>true,   
+      ),
 		),
 	)
 );

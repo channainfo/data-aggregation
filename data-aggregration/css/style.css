@@ -164,7 +164,7 @@ tr.even{
   background-color: #E6ECFF;
 }
 
-div.tableWrapper thead th, td {
+div.tableWrapper thead th, div.tableWrapper td {
   padding: 9px;
 }
 .tgrid{
@@ -203,6 +203,22 @@ div.tableWrapper thead th, td {
   padding-left: 60px;
   color: #333 ;
 }
+
+.restore{
+  background-image: url("../images/ajax-loader.gif");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-color: #eee;
+  border: 2px solid #ccc;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 60px;
+  color: #333 ;  
+  margin-bottom: 10px;
+}
+
 .hide{
   display: none;
 }
@@ -215,12 +231,15 @@ div.tableWrapper thead th, td {
   background-position: left center;
   background-repeat: no-repeat;
 }
-.pending{
+.pending-state{
   background-image: url(../images/state-pending.png);
 }
-.success{
+.success-state{
   background-image: url(../images/state-success.png);
 }
-.failed{
+.failed-stae{
   background-image: url(../images/state-failed.png);
+}
+.start-state{
+  background-image: url(../images/state-start.png);
 }
