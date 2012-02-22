@@ -77,7 +77,7 @@ class SiteConfigController extends DaController {
   public function actionRestore(){
      $siteconfig_id = (int)$_GET["id"];
      $siteconfig = SiteConfig::model()->findByPk($siteconfig_id);
-     $errors = array();    
+     $errors = array("message"=>"");    
      if($siteconfig){
         $lastBackup = $siteconfig->lastBackUp(false);
         if($lastBackup && $lastBackup->restorable()){
@@ -97,20 +97,24 @@ class SiteConfigController extends DaController {
           $endTime =  microtime(true);
           if(count($errors)){
             $lastBackup->status = Backup::FAILED;
-            $lastBackup->reason = serialize($errors);
+            $lastBackup->reason = $errors["message"];
           }  else {
             $lastBackup->status = Backup::SUCCESS;
           }
           $lastBackup->duration = $endTime-$startTime;
           $lastBackup->save();
         }else{
-          $errors[] = "No back up to restore" ;
-        }
-        
+          $errors["message"] = "No back up to restore" ;
+        }  
      }else{
-       $errors[] = "Site not found";       
+       $errors["message"] = "Site not found";       
      }
-     json_encode($errors);
+     if(count($errors))
+       Yii::app ()->user->setFlash("error", "Failed to restore the file");
+     else
+       Yii::app()->user->setFlash("success", "Database has been restored successfully");
+     
+     echo json_encode($errors);
   }
   public function loadModel($id)
 	{

@@ -8,7 +8,7 @@ class m120215_074836_create_backup extends CDbMigration
         "filename" => "string NOT NULL",
         "status" => "int(4) DEFAULT 0 ",
         "siteconfig_id" => "int(11) NOT NULL",
-        "duration" => "int(4)",
+        "duration" => "float",
         "reason" => "text",
         "modified_at" => "datetime",
         "created_at" => "datetime"

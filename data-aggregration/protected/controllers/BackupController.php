@@ -43,12 +43,11 @@
 
               if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
                   if($model->save()){
-                    Yii::app()->user->setFlash("success", "Backup has been added successfully");
+                    Yii::app()->user->setFlash("success", "Restoration has been saved successfully");
                     $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $_GET["siteconfig_id"])));
                   }
-                  else {
-                      Yii::app()->user->setFlash("error", "Failed to save backup");
-                  }
+                  else 
+                      Yii::app()->user->setFlash("error", "Failed to save backup file");
               }
           }
         }

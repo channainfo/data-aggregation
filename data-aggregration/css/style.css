@@ -68,6 +68,9 @@ a{
 .icon-import{
   background-image:url(../images/dashboard-import48.png);
 }
+.icon-export{
+  background-image:url(../images/dashboard-export48.png);
+}
 .icon-history{
   background-image:url(../images/dashboard-history48.png);
 }
@@ -237,7 +240,7 @@ div.tableWrapper thead th, div.tableWrapper td {
 .success-state{
   background-image: url(../images/state-success.png);
 }
-.failed-stae{
+.failed-state{
   background-image: url(../images/state-failed.png);
 }
 .start-state{

@@ -1,6 +1,6 @@
 <?php
   $this->breadcrumbs = array(
-      "Backups" => $this->createUrl("backup/index", array("siteconfig_id" => $siteconfig->id)) ,
+      "Restorations" => $this->createUrl("backup/index", array("siteconfig_id" => $siteconfig->id)) ,
       "Create"
 
   );

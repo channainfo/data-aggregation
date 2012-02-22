@@ -35,16 +35,14 @@ class Backup extends DaActiveRecordModel
     return $this->status == self::START ;
   }
   
-	public static function model($className=__CLASS__)
-	{
+	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}
 
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName()
-	{
+	public function tableName(){
 		return 'da_backups';
 	}
 
@@ -71,14 +69,6 @@ class Backup extends DaActiveRecordModel
     }
     return true;
   }
-  
-  public function showRestoreError(){
-    if($this->reason){
-      
-    }
-  }
-  
-  
   
   /**
 	 * @return array relational rules.

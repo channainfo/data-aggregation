@@ -65,23 +65,28 @@ EOT;
           $stmt = $this->query($sql, $connection );
           
           if($stmt === false)
-            $errors = sqlsrv_errors();
+            $errors["message"] = $this->errorMessage(sqlsrv_errors());
           
           //Put DB into usable state.
           $useSql = " USE {$db}; ";
           $stmt = $this->query($useSql, $connection);
           
           if($stmt === false)
-            $errors = sqlsrv_errors();       
+            $errors["message"] = $this->errorMessage(sqlsrv_errors());       
        }
        else{
-         $errors[] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
+         
+         $errors["message"] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
        }
        return $errors;
      }
-      
-    
-    
-    
+     
+     public function errorMessage($errors, $glue ="\n"){
+       $messages = array();
+       foreach($errors as $error){
+         $messages[] = $error["message"];
+       }
+       return implode($glue, $messages);
+     }
   }
 ?>

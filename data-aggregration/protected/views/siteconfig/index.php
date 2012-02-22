@@ -26,7 +26,7 @@ $this->breadcrumbs = array('Sites');
       <td> <?php echo $row->db; ?>  </td>
       <td> <?php echo $row->user; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Backup", $this->createUrl("backup/create/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
+        <?php echo CHtml::link("Restorations", $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
         <?php echo CHtml::link("Edit", $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
         <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
       </td>

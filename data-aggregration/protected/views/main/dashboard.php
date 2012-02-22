@@ -1,6 +1,5 @@
-
-
 <h1 class="action-title round"> Home </h1>
+
 <div class="dashboard">
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("user/index") ,"icon-import", "Import", 
         "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>
@@ -13,6 +12,11 @@
 
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-config", "Site Config & Restoration", 
         "Connection configuration of all sites databases and their restoration"); ?>
+  
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-export", "Export data", 
+        "Export database to a specific format"); ?>
+  
+  
 <script type="text/javascript" >
   $(function(){
       $(".icon-wrapper").mouseenter(function(){

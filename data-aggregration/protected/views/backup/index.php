@@ -4,7 +4,7 @@
       "Restorations"
   )
 ?>
-<?php echo DaViewHelper::titleActionGroup("Backup list", CHtml::link("New", $this->createUrl("backup/create", array("siteconfig_id" => $siteconfig->id)), array("class" => "btn-action-new round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("Restorations history", CHtml::link("New", $this->createUrl("backup/create", array("siteconfig_id" => $siteconfig->id)), array("class" => "btn-action-new round"))) ?>
 <?php $this->renderPartial("//siteconfig/_detail", array("siteconfig" => $siteconfig)) ?>
 
 <?php if(count($backups)): ?>
@@ -18,10 +18,10 @@
         cache: false,
         dataType: "json",
         success: function(response){
-          console.log("log", response );
         },
         complete:function(){
           hide_loading();
+          window.location = window.location.href ;
         }
       });
    }); 
@@ -30,7 +30,6 @@
 <?php  endif; ?>
 
 <div class="tableWrapper round">
-
     <table class="tgrid">
       <thead>
         <tr>
@@ -54,19 +53,21 @@
           <td> <?php echo $backup->created_at; ?> </td>
           <td> <?php echo basename($backup->filename); ?> </td>
           <td><span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
-          <td>
-            <?php 
-            if($backup->reason){
-              $reason = unserialize($backup->reason);
-              DaTool::debug($reason);
-            }  
-            ?>
+          <td> <?php echo $backup->reason; ?>
           </td>
         </tr>
     <?php 
     $i++;
     endforeach; ?>
     </table>     
+    <br />
+    <div class="right-align">
+      <?php $this->widget("CLinkPager", array("pages" => $pages)) ; ?>
+    </div>  
+    <div class="clear"></div>
+    <br />
+  
+  
   </div>
 <?php endif; ?>
 
