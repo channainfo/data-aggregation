@@ -1,5 +1,4 @@
 <h1 class="action-title round"> Home </h1>
-
 <div class="dashboard">
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("user/index") ,"icon-import", "Import", 
         "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>

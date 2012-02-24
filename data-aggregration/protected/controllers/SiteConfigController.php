@@ -36,7 +36,8 @@ class SiteConfigController extends DaController {
       Yii::app()->user->setFlash("success", "Site has been removed successfully");
     }
     catch(Exception $ex){
-      Yii::app()->user->setFlash("error", "Failed to remove site");
+      Yii::app()->user->setFlash("error", "Failed to remove site with: <br /> [ <b>message</b>] : ". $ex->getMessage()
+              ."<br />[<b>Code</b>] : " . $ex->getCode() );
     }
     $this->redirect($this->createUrl("siteconfig/index"));
   }
@@ -118,7 +119,7 @@ class SiteConfigController extends DaController {
   }
   public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model = SiteConfig::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
