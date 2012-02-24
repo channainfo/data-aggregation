@@ -1,6 +1,6 @@
 <?php
  class DaConfig{
-   const PAGE_SIZE = 2 ;
+   const PAGE_SIZE = 10 ;
    
    public static function pathDataStore(){
      return dirname(__FILE__)."/../../data/";
