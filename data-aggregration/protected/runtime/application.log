@@ -1593,3 +1593,24 @@ REQUEST_URI=/yii/data-aggregration/index.php/login
 in C:\xampp\htdocs\yii\data-aggregration\protected\models\User.php (34)
 in C:\xampp\htdocs\yii\data-aggregration\protected\components\UserIdentity.php (21)
 in C:\xampp\htdocs\yii\data-aggregration\protected\models\LoginForm.php (49)
+2012/02/27 05:32:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'server_oi_dev.da_backups' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `da_backups`.
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\BackupController.php (5)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/02/27 05:32:25 [error] [exception.CDbException] exception 'CDbException' with message 'The table "da_backups" for active record class "Backup" cannot be found in the database.' in C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Backup))
+#1 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Backup')
+#2 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\controllers\BackupController.php(5): CActiveRecord->__construct()
+#4 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): BackupController->actionIndex()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#9 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('backup/index')
+#10 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/work/data-aggregration/index.php/backup/index?siteconfig_id=1
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/siteconfig
+---

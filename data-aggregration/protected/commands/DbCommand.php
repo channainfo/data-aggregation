@@ -22,20 +22,31 @@
          $model = new Group();
          $model->setAttributes($group);
          $model->id = $group["id"];
-         
-         if($model->save())
-           echo "\n  '{$model->name}' has been created";
-         else
-           echo "\n  '{$model->name}' could not be created";
+         try{
+            if($model->save())
+              echo "\n  '{$model->name}' has been created";
+            else
+              echo "\n  '{$model->name}' could not be created";
+           
+           }
+         catch (Exception $ex){
+            echo "\n ".$ex->getMessage();
+         }   
       }
       
       foreach($users as $user) {
         $model = new User();
         $model->setAttributes($user);
-        if($model->save())
+        try{
+          if($model->save())
            echo "\n  '{$model->name}' has been created";
-         else
+          else
            echo "\n  '{$model->name}' could not be created";
+        }
+        catch(Exception $ex){
+          echo "\n".$ex->getMessage();
+        }
+        
       }
     }
     
@@ -46,4 +57,176 @@
       echo "\nremove '$count' groups ";
       
     }
+    
+    public function actionImportConfig(){
+      $file = dirname(__FILE__)."/../config/importConfig.php" ;
+      $sql = " SELECT * FROM ". DaConfig::IMPORT_TABLE_NAME." ORDER by priority DESC";
+      $db = Yii::app()->db;
+      
+      $command = $db->createCommand($sql);
+      $dataReader = $command->query();
+      $tables =  array();
+      foreach($dataReader as $row) {
+        $tables[] = "'{$row["table_name"]}'" ;
+      }
+      
+      $sql = "SELECT * FROM da_drug_controls " ;
+      $command = $db->createCommand($sql);
+      $dataReader = $command->query();
+      
+      $drugConrols = array();
+      foreach($dataReader as $row)
+        $drugConrols[] = "'{$row["name"]}'";
+      
+      
+      
+      $tableStr = implode("\n\t\t," , $tables );
+      $drugControlStr = implode("\n\t\t,", $drugConrols);
+      
+      $content = <<<EOT
+  <?php    
+  return array(
+    "tables" => array($tableStr),
+    "drugControls" => array($drugControlStr)  
+);      
+EOT;
+      echo $content ;
+      file_put_contents($file, $content);
+    }
+    
+    
+    
+    
+    public function actionGTableNames(){
+      $tables = $this->tableList();
+      $connection = Yii::app()->db;
+
+      $sql="INSERT INTO ".DaConfig::IMPORT_ESC_TABLE_NAME." (table_name, created_at, modified_at) VALUES(:name, NOW(),NOW())";
+      $command=$connection->createCommand();
+      
+      $command->truncateTable(DaConfig::IMPORT_TABLE_NAME);
+      $command->truncateTable(DaConfig::IMPORT_ESC_TABLE_NAME);
+      
+      if(count($tables["constant"])){
+        $command=$connection->createCommand($sql);
+        foreach($tables["constant"] as $table){
+          $command->bindParam(":name",$table,PDO::PARAM_STR);
+          try{
+            $command->execute();
+            echo "\n table : {$table} has been inserted ";
+            echo "\n ". $command->getText();
+          }
+          catch(Exception $ex){
+            echo "\n ".$ex->getMessage();
+          }
+        }
+      }
+      if(count($tables["server"])){
+        $sql="INSERT INTO ". DaConfig::IMPORT_TABLE_NAME ." (table_name, created_at, modified_at) VALUES(:name, NOW(),NOW())";
+        $command=$connection->createCommand($sql);
+        foreach($tables["server"] as $table){
+          $command->bindParam(":name",$table,PDO::PARAM_STR);
+          try{
+            $command->execute();
+            echo "\n table : {$table} has been inserted ";
+            echo "\n ". $command->getText();
+          }
+          catch(Exception $ex){
+            echo "\n ".$ex->getMessage();
+          }
+        }
+      }
+    }  
+    
+    public function actionPriorityImportTables($table,$priority){
+      
+      $tables = array();
+      $priorities = array();
+      
+      
+      if(preg_match("/^\[(.+)\]/i", $priority, $matches))
+        $priorities = explode(",",$matches[1]);
+      else{
+        if( !is_int($priority) || intval($priority) < 0 ){
+          echo "\n Priority must be greater than or equal to cero or in format of [number, number]";
+          return ;
+        }
+        $priorities [] = $priority;
+      }
+      
+      if(preg_match("/^\[(.+)\]/i", $table, $matches))
+        $tables = explode(",",$matches[1]);
+      else
+        $tables [] =$table;
+      
+      
+      
+      $diff = count($tables)-count($priorities);
+      if($diff >0){
+        $last = count($priorities)-1;
+        $last_priority = $priorities[$last];
+        for($i=0; $i<$diff ; $i++){
+          $priorities[] = $last_priority ;
+        }
+      }
+      
+      
+      $connection = Yii::app()->db;
+      $sql = "UPDATE ".DaConfig::IMPORT_TABLE_NAME ." SET 	priority = :priority WHERE table_name = :table" ;
+      $command = $connection->createCommand($sql) ;
+      
+      for($i=0; $n = count($tables), $i<$n; $i++){
+        $command->bindParam(":priority", $priorities[$i], PDO::PARAM_INT );
+        $command->bindParam(":table", $tables[$i], PDO::PARAM_STR );
+        try{
+          if($command->execute())
+            echo " Table: {$tables[$i]} has been set to priority: {$priorities[$i]} " ;
+          else
+            echo " Table: {$tables[$i]} with priority: {$priorities[$i]} is not modified " ;
+        }
+        catch(CException $ex){
+          echo "\n " . $ex->getMessage() ;
+        }
+        echo "\n " . $command->getText(); 
+      }
+    }
+    
+    
+    
+    
+    private function tableList(){
+      $connection = Yii::app()->db ;
+      $tables = array("server" => array("tblclinic"), "constant" => array());
+      
+      $sql = "SHOW TABLES LIKE 'tbl%'";
+      $command=$connection->createCommand($sql);
+      $dataReader = $command->query();
+
+      foreach($dataReader as $row){
+        $table = current($row) ;
+        if(strpos($table, "tbl_") === false){
+          if(!$this->hasIdColumn($table)){
+             $tables["constant"][] = $table ;
+          }
+          else{
+            $tables["server"][] = $table;
+          }
+        }
+      }
+      return $tables ;
+    }
+    
+    private function hasIdColumn($table){
+      $sql = "SHOW COLUMNS FROM {$table} ";
+      $connection = Yii::app()->db ;
+      $command = $connection->createCommand($sql);
+      $dataReader = $command->query();
+      foreach($dataReader as $row) {
+        if(strtolower($row["Field"]) == "id"){
+          return true;
+        }
+      }
+      return false;
+    }
+    
   }
