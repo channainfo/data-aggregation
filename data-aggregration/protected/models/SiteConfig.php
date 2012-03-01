@@ -23,6 +23,7 @@ class SiteConfig extends DaActiveRecordModel
 	 */
   
   private $lastBackup = false;
+  private $lastImport = false;
   
 	public static function model($className=__CLASS__){
 		return parent::model($className);
@@ -70,13 +71,32 @@ class SiteConfig extends DaActiveRecordModel
     $this->lastBackup = $model->findByAttributes(array(),$criteria);
     return $this->lastBackup ;
   }
+  /**
+   *
+   * @param boolean $cache
+   * @return ImportSiteHistory
+   */
+  public function lastImport($cache = true){
+    if($cache == true && $this->lastImport !== false)
+      return $this->lastImport;
+    
+    $model = new ImportSiteHistory();
+
+    $criteria = new CDbCriteria();
+    $criteria->order = " id DESC ";
+    $criteria->condition = " siteconfig_id = " . $this->id; 
+    
+    $this->lastImport = $model->findByAttributes(array(),$criteria);
+    return $this->lastImport ;
+  }
 
   /**
 	 * @return array relational rules.
 	 */
 	public function relations(){
 		return array(
-        "backups" => array(self::HAS_MANY, "backup", "siteconfig_id")
+        "backups" => array(self::HAS_MANY, "Backup", "siteconfig_id"),
+        "importSiteHistorys" => array(self::HAS_MANY, "ImportSiteHistory", "siteconfig_id" ),
 		);
 	}
   
@@ -95,9 +115,10 @@ class SiteConfig extends DaActiveRecordModel
 			'host' => 'Host',
 			'user' => 'User',
 			'password' => 'Password',
-			'db' => 'Db',
+			'db' => 'Database name',
 			'created_at' => 'Created At',
 			'modified_at' => 'Modified At',
 		);
 	}
+
 }

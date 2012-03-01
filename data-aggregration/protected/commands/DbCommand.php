@@ -58,6 +58,15 @@
       
     }
     
+    private function concatCols($cols){
+      
+      $fields = array();
+      foreach($cols as $col){
+        $fields[] = "'{$col["Field"]}'";
+      }
+      return implode(",", $fields);
+    }
+    
     public function actionImportConfig(){
       $file = dirname(__FILE__)."/../config/importConfig.php" ;
       $sql = " SELECT * FROM ". DaConfig::IMPORT_TABLE_NAME." ORDER by priority DESC";
@@ -67,7 +76,9 @@
       $dataReader = $command->query();
       $tables =  array();
       foreach($dataReader as $row) {
-        $tables[] = "'{$row["table_name"]}'" ;
+        $cols = unserialize($row["cols"]);
+        $table = " '{$row["table_name"]}' => array( {$this->concatCols($cols)} ) ";
+        $tables[] = $table ;
       }
       
       $sql = "SELECT * FROM da_drug_controls " ;
@@ -99,6 +110,7 @@ EOT;
     
     public function actionGTableNames(){
       $tables = $this->tableList();
+
       $connection = Yii::app()->db;
 
       $sql="INSERT INTO ".DaConfig::IMPORT_ESC_TABLE_NAME." (table_name, created_at, modified_at) VALUES(:name, NOW(),NOW())";
@@ -122,10 +134,13 @@ EOT;
         }
       }
       if(count($tables["server"])){
-        $sql="INSERT INTO ". DaConfig::IMPORT_TABLE_NAME ." (table_name, created_at, modified_at) VALUES(:name, NOW(),NOW())";
+        $sql="INSERT INTO ". DaConfig::IMPORT_TABLE_NAME ." (table_name, cols, created_at, modified_at) VALUES(:name,:cols, NOW(),NOW())";
         $command=$connection->createCommand($sql);
-        foreach($tables["server"] as $table){
+        foreach($tables["server"] as $table => $cols){
+          $cols_str = serialize($cols);
           $command->bindParam(":name",$table,PDO::PARAM_STR);
+          $command->bindParam(":cols", $cols_str,PDO::PARAM_STR);
+          
           try{
             $command->execute();
             echo "\n table : {$table} has been inserted ";
@@ -196,24 +211,33 @@ EOT;
     
     private function tableList(){
       $connection = Yii::app()->db ;
-      $tables = array("server" => array("tblclinic"), "constant" => array());
+      $tables = array("server" => array(), "constant" => array());
       
       $sql = "SHOW TABLES LIKE 'tbl%'";
       $command=$connection->createCommand($sql);
       $dataReader = $command->query();
 
+      $tables["server"][DaConfig::TBL_CLINIC] = $this->getColumnsFromTable(DaConfig::TBL_CLINIC);
+      
       foreach($dataReader as $row){
         $table = current($row) ;
         if(strpos($table, "tbl_") === false){
-          if(!$this->hasIdColumn($table)){
+          if(!$this->hasIdColumn($table))
              $tables["constant"][] = $table ;
-          }
-          else{
-            $tables["server"][] = $table;
-          }
+          else
+            $tables["server"][$table] = $this->getColumnsFromTable($table);
         }
       }
+      
       return $tables ;
+    }
+    
+    private function getColumnsFromTable($table){
+      $connection = Yii::app()->db;
+      $sql = "SHOW COLUMNS FROM {$table} ";
+      $colCommand = $connection->createCommand($sql);
+      $columns = $colCommand->queryAll();
+      return $columns ;
     }
     
     private function hasIdColumn($table){
@@ -228,5 +252,4 @@ EOT;
       }
       return false;
     }
-    
   }

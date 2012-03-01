@@ -246,3 +246,9 @@ div.tableWrapper thead th, div.tableWrapper td {
 .start-state{
   background-image: url(../images/state-start.png);
 }
+.disabled{
+  background-color: #eee;
+  color: #ccc;
+  padding: 5px 10px;
+  font-weight: bold;
+ }

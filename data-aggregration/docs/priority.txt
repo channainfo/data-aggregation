@@ -1,0 +1,1 @@
+yiic db priorityImportTables --table=[tblclinic,tblaimain,tblcimain,tblpatienttest,tblcvmain,tblavmain] --priority=[100,50,50,30,20,20]

@@ -1614,3 +1614,655 @@ Stack trace:
 REQUEST_URI=/work/data-aggregration/index.php/backup/index?siteconfig_id=1
 HTTP_REFERER=http://localhost/work/data-aggregration/index.php/siteconfig
 ---
+2012/02/29 09:43:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory/index".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/02/29 09:43:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory/index".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/02/29 09:43:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/
+---
+2012/02/29 09:43:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/siteimporthistory/
+---
+2012/02/29 09:53:38 [error] [exception.CException] exception 'CException' with message 'ImportHistoryController cannot find the requested view "index".' in C:\xampp\htdocs\work\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(4): CController->render('index', Array)
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionIndex()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('')
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory')
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/work/data-aggregration/importhistory/
+---
+2012/02/29 09:54:12 [error] [exception.CException] exception 'CException' with message 'ImportHistoryController cannot find the requested view "index".' in C:\xampp\htdocs\work\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(4): CController->render('index', Array)
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionIndex()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('')
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory')
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/work/data-aggregration/importhistory/
+---
+2012/02/29 09:54:19 [error] [exception.CException] exception 'CException' with message 'ImportHistoryController cannot find the requested view "index".' in C:\xampp\htdocs\work\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(4): CController->render('index', Array)
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionIndex()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('')
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importHistory')
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/work/data-aggregration/importHistory/
+---
+2012/02/29 09:56:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory/index".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/02/29 09:56:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory/index".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/02/29 09:57:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "siteimporthistory/index".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('siteimporthisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/siteimporthistory/index
+---
+2012/02/29 10:18:53 [error] [exception.CException] exception 'CException' with message 'ImportHistoryController cannot find the requested view "index".' in C:\xampp\htdocs\work\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(16): CController->render('index', Array)
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionSite()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('site')
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/s...')
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+---
+2012/02/29 11:00:06 [error] [exception.CException] exception 'CException' with message 'Property "SiteConfig.lastBackup" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('lastBackup')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php(33): CActiveRecord->__get('lastBackup')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('site', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(14): CController->render('site', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionSite()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('site')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/s...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+---
+2012/02/29 11:10:47 [error] [php] move_uploaded_file(C:\xampp\htdocs\work\data-aggregration\protected\components/../../data/1330510247-4548-server_oi.bak) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\work\framework\web\CUploadedFile.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): BackupController->actionCreate()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(287): BackupController->runAction()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(266): BackupController->runActionWithFilters()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): BackupController->run()
+#5 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/backup/create?siteconfig_id=1
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\BackupController.php (44)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/02/29 11:45:26 [error] [php] Undefined variable: cls (C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): ImportHistoryController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): ImportHistoryController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(14): ImportHistoryController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionSite()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): ImportHistoryController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): ImportHistoryController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ImportHistoryController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+in C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php (37)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php (14)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/02/29 11:55:13 [error] [exception.CException] exception 'CException' with message 'ImportHistoryController and its behaviors do not have a method or closure named "lastImport".' in C:\xampp\htdocs\work\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php(46): CComponent->__call('lastImport', Array)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php(46): ImportHistoryController->lastImport()
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('site', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(14): CController->render('site', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionSite()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('site')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/s...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+---
+2012/02/29 11:59:17 [error] [php] Missing argument 1 for CController::createUrl(), called in C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php on line 39 and defined (C:\xampp\htdocs\work\framework\web\CController.php:960)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): ImportHistoryController->renderInternal()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(870): ImportHistoryController->renderFile()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(783): ImportHistoryController->renderPartial()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(14): ImportHistoryController->render()
+#4 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionSite()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(287): ImportHistoryController->runAction()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(266): ImportHistoryController->runActionWithFilters()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ImportHistoryController->run()
+#9 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+in C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\site.php (39)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php (14)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/02/29 12:09:10 [error] [exception.CException] exception 'CException' with message 'Property "ImportSiteHistory.filename" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('filename')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\importhistory\index.php(53): CActiveRecord->__get('filename')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportHistoryController.php(21): CController->render('index', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportHistoryController->actionIndex()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/i...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/site
+---
+2012/02/29 12:10:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513823651
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513824519
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513825198
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513825917
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513827237
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513827845
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513828464
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513829542
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513830437
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513831971
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513833202
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513833943
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513834394
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513835120
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513836327
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513837545
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513838189
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513838973
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513839558
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513840145
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513840777
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513841319
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513843285
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513844098
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513844833
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513845264
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513845936
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513846411
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513847160
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513848831
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:10:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513854051
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/02/29 12:11:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1330513900301
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importhistory/index?siteconfig_id=1
+---
+2012/03/01 03:14:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importhistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/s...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/site
+---
+2012/03/01 03:14:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/
+---
+2012/03/01 03:14:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/
+---
+2012/03/01 03:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+---
+2012/03/01 03:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+---
+2012/03/01 03:18:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory
+---
+2012/03/01 03:18:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory
+---
+2012/03/01 03:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/
+---
+2012/03/01 03:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ImportSiteHistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('ImportSiteHisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/ImportSiteHistory
+---
+2012/03/01 03:19:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ImportSiteHistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('ImportSiteHisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/ImportSiteHistory
+---
+2012/03/01 03:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/03/01 03:20:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importsitehistory/site".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/site
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/03/01 03:27:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importhistory/import".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/i...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/import?siteconfig_id=2
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importsitehistory/site
+---
+2012/03/01 03:28:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "importhistory/import".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importhistory/i...')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importhistory/import?siteconfig_id=2
+---
+2012/03/01 03:28:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/2?_=1330568892495
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importsitehistory/index?siteconfig_id=2
+---
+2012/03/01 03:47:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/2?_=1330570078493
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importsitehistory/index?siteconfig_id=2
+---

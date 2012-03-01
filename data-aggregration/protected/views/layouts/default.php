@@ -51,8 +51,10 @@
     
     <script type="text/javascript">
       $(function(){
-        $(".delete").click(function(){
-          if(!confirm("Are you sure to delete")){
+        $(".delete, .confirm").click(function(){
+          var message = $(this).attr("data-tip") || "Are you sure to take this action";
+          
+          if(!confirm(message)){
             return false;
           }
           return true;
