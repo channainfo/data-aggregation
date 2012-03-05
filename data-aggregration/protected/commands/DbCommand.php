@@ -97,8 +97,10 @@
       $content = <<<EOT
   <?php    
   return array(
-    "tables" => array($tableStr),
-    "drugControls" => array($drugControlStr)  
+    "tables" => array($tableStr
+    ),
+    "drugControls" => array($drugControlStr
+    )  
 );      
 EOT;
       echo $content ;

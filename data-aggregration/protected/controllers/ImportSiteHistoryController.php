@@ -53,7 +53,7 @@
       
       $model = new ImportSiteHistory();
       $model->siteconfig_id = $siteconfig_id;
-      $model->status = ImportSiteHistory::PENDING ;
+      $model->status = ImportSiteHistory::START ;
       
       if($model->save())
         Yii::app()->user->setFlash("success", "Import has been run" );
@@ -61,7 +61,7 @@
       else
         Yii::app()->user->setFlash("error", "Could not created import");
       
-      shell_exec(DaConfig::webRoot()."protected/yiic import --code={$siteconfig->code}");
+      shell_exec(DaConfig::webRoot()."protected/yiic import start --code={$siteconfig->code}");
       $this->redirect($this->createUrl("importsitehistory/index", array("siteconfig_id" => $siteconfig_id)));
       
       
