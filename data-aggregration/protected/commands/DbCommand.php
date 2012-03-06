@@ -11,12 +11,10 @@
           array("name" => "Viewer", "description" => "TODO: clarify later", "id" => 2)
       );
       
-      
       $users = array(
           array("name" => "Administrator", "login" => "admin", "password" => "123456" , 
               "password_repeat" => "123456","active" => 1, "group_id" => $admin_group_id ) 
       );
-      
       
       foreach($groups as $group){
          $model = new Group();
@@ -24,47 +22,34 @@
          $model->id = $group["id"];
          try{
             if($model->save())
-              echo "\n  '{$model->name}' has been created";
+              DaTool::p("'{$model->name}' has been created");
             else
-              echo "\n  '{$model->name}' could not be created";
-           
-           }
+              DaTool::p("'{$model->name}' could not be created");
+         }
          catch (Exception $ex){
-            echo "\n ".$ex->getMessage();
+            DaTool::p("\n ".$ex->getMessage());
          }   
       }
-      
       foreach($users as $user) {
         $model = new User();
         $model->setAttributes($user);
         try{
           if($model->save())
-           echo "\n  '{$model->name}' has been created";
+            DaTool::p(" '{$model->name}' has been created");
           else
-           echo "\n  '{$model->name}' could not be created";
+            DaTool::p(" '{$model->name}' could not be created");
         }
         catch(Exception $ex){
-          echo "\n".$ex->getMessage();
+          DaTool::p($ex->getMessage());
         }
-        
       }
     }
     
     public function actionCleanSeed(){
       $count = User::model()->deleteAll();
-      echo "\nremove '$count' users ";
+      DaTool::p(" Remove '$count' users " );
       $count = Group::model()->deleteAll();
-      echo "\nremove '$count' groups ";
-      
-    }
-    
-    private function concatCols($cols){
-      
-      $fields = array();
-      foreach($cols as $col){
-        $fields[] = "'{$col["Field"]}'";
-      }
-      return implode(",", $fields);
+      DaTool::p(" Remove '$count' groups ");
     }
     
     public function actionImportConfig(){
@@ -103,12 +88,9 @@
     )  
 );      
 EOT;
-      echo $content ;
+      DaTool::p($content) ;
       file_put_contents($file, $content);
     }
-    
-    
-    
     
     public function actionGTableNames(){
       $tables = $this->tableList();
@@ -127,11 +109,11 @@ EOT;
           $command->bindParam(":name",$table,PDO::PARAM_STR);
           try{
             $command->execute();
-            echo "\n table : {$table} has been inserted ";
-            echo "\n ". $command->getText();
+            DaTool::p("Table : {$table} has been inserted ");
+            DaTool::p($command->getText());
           }
           catch(Exception $ex){
-            echo "\n ".$ex->getMessage();
+            DaTool::p($ex->getMessage());
           }
         }
       }
@@ -145,11 +127,11 @@ EOT;
           
           try{
             $command->execute();
-            echo "\n table : {$table} has been inserted ";
-            echo "\n ". $command->getText();
+            DaTool::p("Table : {$table} has been inserted ");
+            DaTool::p($command->getText());
           }
           catch(Exception $ex){
-            echo "\n ".$ex->getMessage();
+            DaTool::p($ex->getMessage());
           }
         }
       }
@@ -160,12 +142,11 @@ EOT;
       $tables = array();
       $priorities = array();
       
-      
       if(preg_match("/^\[(.+)\]/i", $priority, $matches))
         $priorities = explode(",",$matches[1]);
       else{
         if( !is_int($priority) || intval($priority) < 0 ){
-          echo "\n Priority must be greater than or equal to cero or in format of [number, number]";
+          DaTool::p("Priority must be greater than or equal to cero or in format of [number, number]");
           return ;
         }
         $priorities [] = $priority;
@@ -176,8 +157,6 @@ EOT;
       else
         $tables [] =$table;
       
-      
-      
       $diff = count($tables)-count($priorities);
       if($diff >0){
         $last = count($priorities)-1;
@@ -186,8 +165,27 @@ EOT;
           $priorities[] = $last_priority ;
         }
       }
+      $this->prioritizeTable($tables, $priorities);
       
+    }
+    
+    public function actionOrderTable(){
+      $tables = array("tblclinic", "tblaimain" , "tblcimain" , "tblpatienttest" , "tblcvmain" , "tblavmain" ) ;
+      $priorities = array(100,50,50,30,20,20);
+      $this->prioritizeTable($tables, $priorities);
+    }
+    
+    private function concatCols($cols){
       
+      $fields = array();
+      foreach($cols as $col){
+        $field = strtolower($col["Field"]);
+        $fields[] = "'{$field}'";
+      }
+      return implode(",", $fields);
+    }
+    
+    public function prioritizeTable($tables, $priorities){
       $connection = Yii::app()->db;
       $sql = "UPDATE ".DaConfig::IMPORT_TABLE_NAME ." SET 	priority = :priority WHERE table_name = :table" ;
       $command = $connection->createCommand($sql) ;
@@ -197,19 +195,16 @@ EOT;
         $command->bindParam(":table", $tables[$i], PDO::PARAM_STR );
         try{
           if($command->execute())
-            echo " Table: {$tables[$i]} has been set to priority: {$priorities[$i]} " ;
+            DaTool::p(" Table: {$tables[$i]} has been set to priority: {$priorities[$i]} ") ;
           else
-            echo " Table: {$tables[$i]} with priority: {$priorities[$i]} is not modified " ;
+            DaTool::p(" Table: {$tables[$i]} with priority: {$priorities[$i]} is not modified ") ;
         }
         catch(CException $ex){
-          echo "\n " . $ex->getMessage() ;
+          DaTool::p($ex->getMessage()) ;
         }
-        echo "\n " . $command->getText(); 
+        DaTool::p($command->getText()); 
       }
     }
-    
-    
-    
     
     private function tableList(){
       $connection = Yii::app()->db ;
@@ -230,7 +225,6 @@ EOT;
             $tables["server"][$table] = $this->getColumnsFromTable($table);
         }
       }
-      
       return $tables ;
     }
     
