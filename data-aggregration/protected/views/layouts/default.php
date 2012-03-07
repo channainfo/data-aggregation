@@ -26,7 +26,7 @@
 
         <div style="float:right;" >
           <?php if(!Yii::app()->user->isGuest) : ?>
-          Welcome <?php echo Yii::app()->user->getName(); ?> <span class="item-separator"> | </span>
+          Welcome <b><?php echo Yii::app()->user->getName(); ?></b> <span class="item-separator"> | </span>
           <?php echo CHtml::link("Change Password", $this->createUrl("user/change"), array("class" => "btn-link") ) ?> 
           <span class="item-separator"> | </span>
           <?php echo CHtml::link("Logout", $this->createUrl("user/logout") , array("class" => "btn-link")) ?> 
@@ -52,7 +52,7 @@
     <script type="text/javascript">
       $(function(){
         $(".delete, .confirm").click(function(){
-          var message = $(this).attr("data-tip") || "Are you sure to take this action";
+          var message = $(this).attr("data-tip") || "Are you sure to take this action ? ";
           
           if(!confirm(message)){
             return false;
