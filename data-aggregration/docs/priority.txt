@@ -1,0 +1,28 @@
+yiic db priorityImportTables --table=[tblclinic,tblaimain,tblcimain,tblpatienttest,tblcvmain,tblavmain] --priority=[100,50,50,30,20,20]
+
+ClinicID ,DateVisit, TypeVisit,Weight,Height,Pulse,Resp,Blood , Temperature, STIprevent
+ARTAdherence , BirthSpacing ,TBinfection,Partner,Advice, Cough, Fever ,Drenching
+FamilyNoYes,FamilyPlan,Hivpreven,HospitlastVisit,NumberDay, CauseHispital,MissARV,Mtime,
+Condom,NCondom,Asymptomatic, PGeneralised,weightLoss, Minor,HerpesZ, Recurrent,Angular,
+Seborrhoeic, Oral,Papular,Fungal,ULow, Uchronic,Ufever, Ocandidiasis,Ohairy, Pulmonary,
+Bacterial,Severe,Acute, Anaemia, HIVwast,Pneumocystis,Pneumonia,Cryptococcal,Atypical,
+Extrapulmonary,Candidiasis,HSV, Disseminated,Cryptonsoridiosis,Cytome,tuberculous, Kaposi,
+Lymphoma,HIV,Progressive,Toxoplasmosis,Typhoid, Associated,Chronic,Mycosis,Isoporiasis,Invasive,
+Cryptosporidiosis,Who,TST, NTST, TestID, EligibleART, funct, Pregnancy, PregnantStatus, EDDate, 
+EligiblePro,Refer,NextApp,AV_ID,ARTNum,ID
+ 
+Error: CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: 
+parameter was not defined. The SQL statement executed was: 
+
+INSERT INTO tblavmain 
+ (ClinicID,  DateVisit,  TypeVisit,  Weight,  Height,  Pulse,  Resp,  Blood,  Temperature, 
+ STIPrevent,  ARTAdherence,  BirthSpacing,  TBinfection,  Partner,  Advice,  Cough,  Fever,  
+ Drenching,  FamilyNoYes,  FamilyPlan,  Hivpreven,  HospitlastVisit,  NumberDay,  CauseHispital, 
+ MissARV,  Mtime,  Condom,  Ncondom,  Asymptomatic,  PGeneralised,  weightLoss,  Minor,  HerpesZ, 
+ Recurrent,  Angular,  Seborrhoeic,  Oral,  Papular,  Fungal,  ULow,  Uchronic,  Ufever,  Ocandidiasis, 
+ Ohairy,  Pulmonary,  Bacterial,  Severe,  Acute,  Anaemia,  HIVwast,  Pneumocystis,  Pneumonia,  Cryptococcal, 
+ Atypical,  Extrapulmonary,  Candidiasis,  HSV,  Disseminated,  Cryptonsoridiosis,  Cytome,  tuberculous, 
+ Kaposi,  Lymphoma,  HIV,  Progressive,  Toxoplasmosis,  Typhoid,  Associated,  Chronic,  Mycosis,  Isoporiasis, 
+ Invasive,  Cryptosporidiosis,  Who,  TST,  NTST,  TestID,  EligibleART,  funct,  Pregnancy,  PregnantStatus, 
+ EDDate,  EligiblePro,  Refer,  NextApp,  AV_ID,  ARTNum,  ID)
+ 

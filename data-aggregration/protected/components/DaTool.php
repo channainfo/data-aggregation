@@ -1,5 +1,16 @@
 <?php
  class DaTool {
+   public static function p($str, $return=false){
+     if($return)
+       return $str;
+     echo "\n $str ";
+   }
+   public static function  pd(){
+     $debug_traces = debug_backtrace();
+     $debug_trace = $debug_traces[0];
+     echo "\n $str in Line: {$debug_trace['line']} File: {$debug_trace['file']}";
+   }
+   
    public static function debug($var,$exit=false, $html_format = true){
     $html = <<<EOT
         <div style='text-align:left;border-top:1px solid #ccc;background-color:white;color:black;overflow:auto;' >

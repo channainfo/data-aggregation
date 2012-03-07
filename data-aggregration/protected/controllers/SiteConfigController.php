@@ -19,12 +19,16 @@ class SiteConfigController extends DaController {
   
   public function actionIndex(){
     $model = new SiteConfig();
+    
     $criteria = new CDbCriteria();
     $criteria->order = " modified_at DESC " ;
+    
     $itemCount = $model->count($criteria);
-    $pages = new CPagination($itemCount);
+    
+    $pages = new CPagination($itemCount) ;   
     $pages->pageSize = DaConfig::PAGE_SIZE ;
     $pages->applyLimit($criteria);
+    
     $sites = $model->findAll($criteria);
     $this->render("index", array("sites" => $sites, "pages" => $pages ));
   }
