@@ -2,10 +2,8 @@
   //yiic <command-name> <parameters>
   class DbCommand extends CConsoleCommand{
     
-     public function actionSeed(){
-    
+    public function actionSeed(){
       $admin_group_id = 1;
-      
       $groups = array(
           array("name" => "Administrator", "description" => "Administrator of system" , "id" => $admin_group_id ),
           array("name" => "Viewer", "description" => "TODO: clarify later", "id" => 2)
@@ -52,18 +50,25 @@
       DaTool::p(" Remove '$count' groups ");
     }
     
-    public function actionImportConfig(){
+    public function importConfig(){
       $file = dirname(__FILE__)."/../config/importConfig.php" ;
+      
       $sql = " SELECT * FROM ". DaConfig::IMPORT_TABLE_NAME." ORDER by priority DESC";
       $db = Yii::app()->db;
       
       $command = $db->createCommand($sql);
       $dataReader = $command->query();
-      $tables =  array();
+      $tableImports =  array();
+      
+      $tableFixeds = array();
+      
       foreach($dataReader as $row) {
         $cols = unserialize($row["cols"]);
         $table = " '{$row["table_name"]}' => array( {$this->concatCols($cols)} ) ";
-        $tables[] = $table ;
+        if($row["type"] == DaConfig::IMPORT_TABLE_TYPE_IMPORT)
+          $tableImports[] = $table ;
+        else if ($row["type"] == DaConfig::IMPORT_TABLE_TYPE_FIXED)
+          $tableFixeds[] = $table;
       }
       
       $sql = "SELECT * FROM da_drug_controls " ;
@@ -73,18 +78,23 @@
       $drugConrols = array();
       foreach($dataReader as $row)
         $drugConrols[] = "'{$row["name"]}'";
-      
-      
-      
-      $tableStr = implode("\n\t\t," , $tables );
-      $drugControlStr = implode("\n\t\t,", $drugConrols);
+
+      $newLine = ",\n\t\t" ;  
+      $tableImportStr = implode($newLine , $tableImports );
+      $tableFixedStr = implode($newLine , $tableFixeds );
+      $drugControlStr = implode($newLine, $drugConrols);
       
       $content = <<<EOT
   <?php    
   return array(
-    "tables" => array($tableStr
+    "tables" => array(
+        $tableImportStr
     ),
-    "drugControls" => array($drugControlStr
+    "fixed" => array(
+        $tableFixedStr
+    ),
+    "drugControls" => array(
+        $drugControlStr
     )  
 );      
 EOT;
@@ -92,39 +102,29 @@ EOT;
       file_put_contents($file, $content);
     }
     
-    public function actionGTableNames(){
+    public function actionBuilt(){
+      $this->generateTableNames();
+      $this->orderTable();
+      $this->importConfig();
+    }
+    
+  
+    public function generateTableNames(){
       $tables = $this->tableList();
-
       $connection = Yii::app()->db;
-
-      $sql="INSERT INTO ".DaConfig::IMPORT_ESC_TABLE_NAME." (table_name, created_at, modified_at) VALUES(:name, NOW(),NOW())";
-      $command=$connection->createCommand();
+      $command = $connection->createCommand("TRUNCATE " . DaConfig::IMPORT_TABLE_NAME ) ;
+      $command->execute();
       
-      $command->truncateTable(DaConfig::IMPORT_TABLE_NAME);
-      $command->truncateTable(DaConfig::IMPORT_ESC_TABLE_NAME);
-      
-      if(count($tables["constant"])){
+      if(count($tables)){
+        $sql="INSERT INTO " . DaConfig::IMPORT_TABLE_NAME ." (table_name, cols, type, created_at, modified_at) VALUES(:name,:cols, :type, NOW(),NOW())";
         $command=$connection->createCommand($sql);
-        foreach($tables["constant"] as $table){
-          $command->bindParam(":name",$table,PDO::PARAM_STR);
-          try{
-            $command->execute();
-            DaTool::p("Table : {$table} has been inserted ");
-            DaTool::p($command->getText());
-          }
-          catch(Exception $ex){
-            DaTool::p($ex->getMessage());
-          }
-        }
-      }
-      if(count($tables["server"])){
-        $sql="INSERT INTO ". DaConfig::IMPORT_TABLE_NAME ." (table_name, cols, created_at, modified_at) VALUES(:name,:cols, NOW(),NOW())";
-        $command=$connection->createCommand($sql);
-        foreach($tables["server"] as $table => $cols){
-          $cols_str = serialize($cols);
-          $command->bindParam(":name",$table,PDO::PARAM_STR);
-          $command->bindParam(":cols", $cols_str,PDO::PARAM_STR);
-          
+        foreach($tables as $table ){
+          $cols = serialize($table["cols"]);
+          $tableName    = $table["name"] ; 
+          $type =  $table["type"];
+          $command->bindParam(":name",$tableName,PDO::PARAM_STR);
+          $command->bindParam(":cols", $cols ,PDO::PARAM_STR);
+          $command->bindParam(":type", $type ,PDO::PARAM_STR);
           try{
             $command->execute();
             DaTool::p("Table : {$table} has been inserted ");
@@ -137,11 +137,11 @@ EOT;
       }
     }  
     
-    public function actionPriorityImportTables($table,$priority){
+    public function priorityImportTables($table,$priority){
       
       $tables = array();
       $priorities = array();
-      
+      $matches = null;
       if(preg_match("/^\[(.+)\]/i", $priority, $matches))
         $priorities = explode(",",$matches[1]);
       else{
@@ -169,7 +169,7 @@ EOT;
       
     }
     
-    public function actionOrderTable(){
+    public function orderTable(){
       $tables = array("tblclinic", "tblaimain" , "tblcimain" , "tblpatienttest" , "tblcvmain" , "tblavmain" ) ;
       $priorities = array(100,50,50,30,20,20);
       $this->prioritizeTable($tables, $priorities);
@@ -208,21 +208,21 @@ EOT;
     
     private function tableList(){
       $connection = Yii::app()->db ;
-      $tables = array("server" => array(), "constant" => array());
+      $tables = array();
       
       $sql = "SHOW TABLES LIKE 'tbl%'";
       $command=$connection->createCommand($sql);
       $dataReader = $command->query();
 
-      $tables["server"][DaConfig::TBL_CLINIC] = $this->getColumnsFromTable(DaConfig::TBL_CLINIC);
+      //$tables["server"][DaConfig::TBL_CLINIC] = $this->getColumnsFromTable(DaConfig::TBL_CLINIC);
       
       foreach($dataReader as $row){
         $table = current($row) ;
         if(strpos($table, "tbl_") === false){
           if(!$this->hasIdColumn($table))
-             $tables["constant"][] = $table ;
+            $tables[] = array("name" => $table, "type" => DaConfig::IMPORT_TABLE_TYPE_FIXED, "cols" => $this->getColumnsFromTable($table)) ;
           else
-            $tables["server"][$table] = $this->getColumnsFromTable($table);
+            $tables[] = array("name" => $table, "type" => DaConfig::IMPORT_TABLE_TYPE_IMPORT, "cols" => $this->getColumnsFromTable($table)) ;
         }
       }
       return $tables ;

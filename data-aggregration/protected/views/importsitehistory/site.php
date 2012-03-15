@@ -36,7 +36,7 @@ $this->breadcrumbs = array('Sites');
            $status = $row->lastImport()->getStatusText();
           ?>
           <span class="state <?php echo "{$status}-state"  ?> " >
-            <?php echo CHtml::link(ucfirst($status), $this->createUrl(""), array()) ?>
+            <?php echo CHtml::link(ucfirst($status), $this->createUrl("importsitehistory/index", array("siteconfig_id" => $row->id)), array()) ?>
           </span>
         <?php else: ?>
            -
@@ -44,8 +44,10 @@ $this->breadcrumbs = array('Sites');
       </td>
       <td> 
         <?php if( $row->lastImport() && $row->lastImport()->restorable()): ?> 
-        <span class="disabled round"> In progress </span>
-        <?php else :?>
+          <span class="disabled round"> Waiting to be imported </span>
+        <?php elseif($row->lastImport() && $row->lastImport()->inProgress()): ?>
+          <span class="disabled round"> In progress </span>
+        <?php else  :?>
           <?php echo CHtml::link("Start Import", $this->createUrl("importsitehistory/import", array("siteconfig_id"=>"{$row->id}")),
                 array("class" => "btn-action-delete confirm round", "data-tip" => "Are you sure to import to site: {$row->name}" ) ) ?> 
         <?php endif; ?>

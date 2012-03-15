@@ -5,6 +5,8 @@
    const IMPORT_ESC_TABLE_NAME = "da_import_escs";
    const TBL_CLINIC = "tblclinic" ;
    
+   const IMPORT_TABLE_TYPE_FIXED = "fixed";
+   const IMPORT_TABLE_TYPE_IMPORT = "import" ;
    
    public static function pathDataStore(){
      return dirname(__FILE__)."/../../data/";
@@ -20,7 +22,6 @@
    
    public static function webRoot(){
      return dirname(__FILE__)."/../../";
-   }
-   
+   }  
  }
 ?>

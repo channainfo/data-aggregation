@@ -53,10 +53,11 @@
       $(function(){
         $(".delete, .confirm").click(function(){
           var message = $(this).attr("data-tip") || "Are you sure to take this action";
-          
+          $(".flash-success, .flash-error").hide();
           if(!confirm(message)){
             return false;
           }
+          show_loading();
           return true;
         });
         

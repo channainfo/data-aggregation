@@ -3,7 +3,7 @@
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("importsitehistory/site") ,"icon-import", "Import", 
         "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>
 
-<?php echo DaViewHelper::dashboardIcon($this->createUrl("user/") ,"icon-history", "Import history", 
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("importsitehistory/") ,"icon-history", "Import history", 
         "The report of the history of data aggregation");?>
 
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("user/"), "icon-user", "User", 

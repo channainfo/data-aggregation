@@ -18,15 +18,4 @@ class m120215_074836_create_backup extends CDbMigration
 	public function down(){
     $this->dropTable("da_backups");
 	}
-
-	/*
-	// Use safeUp/safeDown to do migration with transaction
-	public function safeUp()
-	{
-	}
-
-	public function safeDown()
-	{
-	}
-	*/
 }

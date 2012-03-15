@@ -92,7 +92,7 @@ class ImportSiteHistory extends DaActiveRecordModel implements IStatus
   }
   
   public function inProgress(){
-    if($this->status != self::SUCCESS and $this->status != self::FAILED )
+    if($this->status == self::PENDING )
       return true;
     return false;
   }

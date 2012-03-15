@@ -1,64 +1,59 @@
-Yii Web Programming Framework
-=============================
-
-Thank you for choosing Yii - a high-performance component-based PHP framework.
-
-
-INSTALLATION
-------------
-
-Please make sure the release file is unpacked under a Web-accessible
-directory. You shall see the following files and directories:
-
-      demos/               demos
-      framework/           framework source files
-      requirements/        requirement checker
-      CHANGELOG            describing changes in every Yii release
-      LICENSE              license of Yii
-      README               this file
-      UPGRADE              upgrading instructions
+  NCHADS Data aggregration
+  ========================
+  The main app folder is located in [data-aggregration]. we use  [data-aggregration] to
+denote our app root across this doc. 
 
 
-REQUIREMENTS
-------------
+  Installation:
+  -------------
+  
+  - Requirement:
+    All the necessary third parties installation are located in  [data-aggregration]/docs/install 
 
-The minimum requirement by Yii is that your Web server supports
-PHP 5.1.0 or above. Yii has been tested with Apache HTTP server
-on Windows and Linux operating systems.
-
-Please access the following URL to check if your Web server reaches
-the requirements by Yii, assuming "YiiPath" is where Yii is installed:
-
-      http://hostname/YiiPath/requirements/index.php
-
-
-QUICK START
------------
-
-Yii comes with a command line tool called "yiic" that can create
-a skeleton Yii application for you to start with.
-
-On command line, type in the following commands:
-
-        $ cd YiiPath/framework                (Linux)
-        cd YiiPath\framework                  (Windows)
-
-        $ ./yiic webapp ../testdrive          (Linux)
-        yiic webapp ..\testdrive              (Windows)
-
-The new Yii application will be created at "YiiPath/testdrive".
-You can access it with the following URL:
-
-        http://hostname/YiiPath/testdrive/index.php
-
-
-WHAT's NEXT
------------
-
-Please visit the project website for tutorials, class reference
-and join discussions with other Yii users.
+    * Mssql server extension for php by microsoft .
+    * Microsoft SQL Server 2008 R2 Native Client  .
+    * Php 5.x
+    * Apache 2
 
 
 
-The Yii Developer Team
-http://www.yiiframework.com
+  - config database: 
+     configure database connection in the following env :
+        * console.php database for console app
+        * main.php database for app
+        * test.php database for running test
+
+  - Import sql schema to your database.
+     Sql schema is located in [data-aggregration]/docs/server-schema.sql
+
+
+  - Create APP infrastructure
+    open up your terminal and navigator to [data-aggregration]/protected
+      * [data-aggregration]/protected >  yiic migrate  
+          you will see the list of app tables to be created and the confirmation. confirm it by typing yes
+  - Create default user 
+    * [data-aggregration]/protected >  yiic db seed
+      This will create user = admin with password = 123456
+    
+  - Built configuration
+    * [data-aggregration]/protected >  yiic db built
+
+
+  - Import process
+    Import can be run inside wep app or console app. We are talking about console app in this section. 
+    Note: All import processes will be run in background process. We use cron.bat to run it.
+      *
+
+      
+      
+
+     
+        
+        
+
+    
+  
+  
+  
+  
+  

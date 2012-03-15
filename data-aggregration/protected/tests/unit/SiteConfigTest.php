@@ -1,10 +1,10 @@
 <?php
   class SiteConfigTest extends CDbTestCase{
     public $fixtures = array(
-        "site_configs" => "SiteConfig", 
+        "siteConfigs" => "daSiteConfigTest", 
        /*
-        * fixname => "Active record model name" then we can call $this->site_configs 
-        * to return all the fixtures rows created $this->site_configs[] 
+        * fixname => "Active record model name" then we can call $this->siteConfigs 
+        * to return all the fixtures rows created $this->siteConfigs[] 
         */ 
     );
     

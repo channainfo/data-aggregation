@@ -1,16 +1,29 @@
 <?php
  class DaTool {
-   public static function p($str, $return=false){
-     if($return)
-       return $str;
-     echo "\n $str ";
+   
+   public static $messages = array();
+   
+   public static function p($msg){
+     Yii::log($msg);
+     echo "\n {$msg}";
    }
-   public static function  pd(){
+   public static function  pd($msg){
      $debug_traces = debug_backtrace();
      $debug_trace = $debug_traces[0];
-     echo "\n $str in Line: {$debug_trace['line']} File: {$debug_trace['file']}";
+     echo "\n $msg in Line: {$debug_trace['line']} File: {$debug_trace['file']}";
    }
    
+   public static function pErr($msg){
+     echo "\n Err : {$msg}";
+     Yii::log($msg,"error");
+     DaTool::$messages[] = $msg;
+   }
+   
+   public static function getMessags(){
+     echo implode("\n", DaTool::messags);
+   }
+
+
    public static function debug($var,$exit=false, $html_format = true){
     $html = <<<EOT
         <div style='text-align:left;border-top:1px solid #ccc;background-color:white;color:black;overflow:auto;' >
@@ -48,9 +61,7 @@ EOT;
    }
    
    public static function env($argv){
-     
      $default = "console";
-     
      foreach($argv as $value){
         if(strtolower($value) == "env=test"){
           $default = "test";
@@ -58,7 +69,15 @@ EOT;
         }
      }
      return $default;
-     
+   }
+   
+   public static function exeCommand($command){
+     if(strpos(php_uname("s"), "Window") !==false){
+       $WshShell = new COM("WScript.Shell");
+       $WshShell->Run($command, 0, false);
+     }
+     else
+       exec("{$command} > /dev/null & ");
    }
    
  }
