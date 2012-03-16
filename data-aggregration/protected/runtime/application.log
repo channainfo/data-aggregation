@@ -771,3 +771,57 @@ Stack trace:
 #8 {main}
 REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/delete/16
 ---
+2012/03/15 15:05:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\work\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 C:\xampp\htdocs\work\data-aggregration\protected\models\User.php(34): CActiveRecord::model('User')
+#8 C:\xampp\htdocs\work\data-aggregration\protected\components\UserIdentity.php(21): User::model()
+#9 C:\xampp\htdocs\work\data-aggregration\protected\models\LoginForm.php(49): UserIdentity->authenticate()
+#10 C:\xampp\htdocs\work\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 C:\xampp\htdocs\work\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 C:\xampp\htdocs\work\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 C:\xampp\htdocs\work\data-aggregration\protected\controllers\UserController.php(21): CModel->validate()
+#14 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#15 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('login')
+#19 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#20 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/work/data-aggregration/index.php/login
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/login
+---
+2012/03/15 15:07:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "id/view".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('id/view')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/id/1?_=1331820453785
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importsitehistory/index?siteconfig_id=1
+---
+2012/03/15 15:11:55 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\work\data-aggregration\protected\views\importsitehistory\index.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): ImportSiteHistoryController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): ImportSiteHistoryController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportSiteHistoryController.php(26): ImportSiteHistoryController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportSiteHistoryController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): ImportSiteHistoryController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): ImportSiteHistoryController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ImportSiteHistoryController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory
+in C:\xampp\htdocs\work\data-aggregration\protected\views\importsitehistory\index.php (19)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportSiteHistoryController.php (26)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

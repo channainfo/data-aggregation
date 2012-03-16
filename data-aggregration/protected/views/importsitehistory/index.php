@@ -10,26 +10,6 @@
 ?>
 
 <?php if(count($importHistories)): ?>
-<?php if($importHistories[0]->restorable()) : ?>
-  <!-- <div class="restore round" > Restoring ...  </div> -->
-  <script type="text/javascript">
-   $(function(){
-     show_loading("Restoring" );
-      $.ajax({
-        url: "<?php echo Yii::app()->createUrl("", array("id" => $siteconfig->id )) ?>",
-        cache: false,
-        dataType: "json",
-        success: function(response){
-        },
-        complete:function(){
-          hide_loading();
-        }
-      });
-   }); 
-    
-  </script>
-<?php  endif; ?>
-
 <div class="tableWrapper round">
     <table class="tgrid">
       <thead>
