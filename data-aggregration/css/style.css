@@ -19,7 +19,6 @@ th, td{
   padding:5px;
 }
 
-
 a{
   text-decoration: none;
   color: blue;
@@ -190,6 +189,12 @@ div.tableWrapper thead th, div.tableWrapper td {
   background: #eee;
   padding:  5px;
 }
+.errorContent {
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0px 20px ;
+}
+
 .loading{
   background-image: url("../images/ajax-loader.gif");
   background-position: 10px center;

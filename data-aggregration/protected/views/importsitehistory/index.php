@@ -14,12 +14,10 @@
     <table class="tgrid">
       <thead>
         <tr>
-          <th>No </th> 
           <th width="120"> Date </th>
           <th width="50"> Status </th>
           <th> Reason </th>
-          <th> Delete </th>
-
+          <th width="50"> Action </th>
         </tr>
       </thead>
     <?php 
@@ -32,7 +30,6 @@
             $cls = "restoring";
         ?>
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
-          <td> <?php echo $i+1; ?> </td>
           <td> <?php echo date("Y-m-d", strtotime($importHistory->created_at) ); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
           <td> <?php echo nl2br($importHistory->reason); ?></td>

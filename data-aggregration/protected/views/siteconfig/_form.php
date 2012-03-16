@@ -1,4 +1,5 @@
 <div class="form">
+  <div class="formfade"></div>
 <?php $this->renderPartial("//shared/_requireField"); ?>  
 <?php $form = $this->beginWidget("CActiveForm", array("id" => "form-siteconfig")); ?>
   <?php echo CHtml::errorSummary($model); ?>
@@ -45,24 +46,29 @@
   </div>
   
   <script type="text/javascript">
+    function collape(message){
+        content = "<div class='errorContent'>" + message + "</div>";
+        return content;
+    }
     $(function(){
-      var message = "Failed to connect " ;
+      var message = "Failed to connect <br />" ;
       $("#test-connection").click(function(){
          show_loading(null, ".form");
+         $(".formfade").html("");
          $.ajax({
            url: "<?php echo Yii::app()->createUrl("siteconfig/testConnection") ?>",
            cache: false,
-           success: function(response){
-             if(response == "true"){
+           success: function(errResponse){
+             if(errResponse == ""){
                $("#save-btn").attr("disabled", false) ;
-               fadeNotification("You are successfully connected", ".form");
+               fadeNotification("You are successfully connected", ".formfade");
              }
              else{
-               fadeNotification(message, ".form");
+               fadeNotification(message + collape(errResponse), ".formfade", 1000*60*60);
              }
            },
-           failure: function(){
-             fadeNotification(message, ".form");
+           failure: function(errResponse){
+             fadeNotification(message + errResponse, ".formfade");
            },
            complete: function(){
              hide_loading();

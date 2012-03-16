@@ -42,7 +42,7 @@ function createNotification( message, container ) {
   $element.prependTo($container);
   return $element;
 }
-function fadeNotification(message, container, time){
+function fadeNotification(message, container, timer){
   if(typeof timer == "undefined" || !timer )
      timer = 5000;
   $element = createNotification(message, container);

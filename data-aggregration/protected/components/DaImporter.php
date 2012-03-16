@@ -66,7 +66,7 @@
           }
           
           try{
-            $count = $command->execute();
+            $command->execute();
             DaTool::p("removed record(s) from {$tableName} ");
           }
           catch(Exception $ex){
@@ -263,7 +263,7 @@
     * @return SiteConfig 
     * @throws Exception 
     */ 
-   private function _loadSiteConfig(){
+   public function _loadSiteConfig(){
      if($this->siteconfig){
        return $this->siteconfig;
      }

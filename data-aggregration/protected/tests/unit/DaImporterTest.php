@@ -1,9 +1,17 @@
 <?php
   class DaImporterTest extends CDbTestCase {
-    
-    public function testGetDbX(){
-      $importer = new DaImporter(Yii::app()->db);
-      $code = "0002";
-      $importer->_getDbX($code);
+    public function testLoadSiteConfig(){
+      $site = new SiteConfig();
+      $site->setAttributes(array(
+          "name" => "Battambong",
+          "code" => "0001",
+          "host" => "localhost",
+          "db" => "server_test",
+          "user" => "blah"
+      ));
+      
+      $site->save();
+      $importer = new DaImporter(Yii::app()->db, "0001");
     }
-  }
+    
+ }

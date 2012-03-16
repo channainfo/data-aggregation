@@ -50,6 +50,7 @@
     <div id="ajax_loading" class="loading round" >Waiting for server response</div>
     
     <script type="text/javascript">
+      
       $(function(){
         $(".delete, .confirm").click(function(){
 

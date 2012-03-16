@@ -4,20 +4,43 @@
     const MASTER = "master" ;
     public function __construct() {
     }
-
+    /**
+     *
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $db
+     * @throws Exception 
+     */
     public function connect($host, $user, $password , $db){
        if($this->connection)
          unset($this->connection);
        $this->connection = $this->establishConnection($host, $user, $password, $db);
     }
-    
+    /**
+     *
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $db
+     * @return boolean
+     * @throws Exception 
+     */
     public function establishConnection($host, $user, $password , $db){
       $connection = false;     
       if( !empty($host) && !empty($user) && !empty($db)){
         $connOptions = array("Database"=>$db, "UID"=> $user, "PWD"=> $password);
         $connection = sqlsrv_connect($host, $connOptions);
       }
-      return $connection;
+      if(!$connection){
+        $messages = array() ;
+        $errors = sqlsrv_errors();
+        foreach($errors as $error){
+          $messages[] = $error["message"];
+        }
+        throw new Exception( implode("\n", $messages));
+      }
+      return $connection; 
     }
     
     public function isConnected(){

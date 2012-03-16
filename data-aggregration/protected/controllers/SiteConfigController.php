@@ -72,12 +72,13 @@ class SiteConfigController extends DaController {
   public function actionTestConnection(){
     $siteconfig = $_GET["SiteConfig"];
     $db = new DaDbConnection( );
-    $db->connect($siteconfig["host"], $siteconfig["user"], $siteconfig["password"] , $siteconfig["db"]);
-    
-    if($db->isConnected())
-      echo "true";
-    else 
-      echo "false" ;
+    try{
+      $db->connect($siteconfig["host"], $siteconfig["user"], $siteconfig["password"] , $siteconfig["db"]);
+      echo "";
+    }
+    catch(Exception $ex){
+      echo nl2br($ex->getMessage()); 
+    }
   }
   public function actionRestore(){
      $siteconfig_id = (int)$_GET["id"];

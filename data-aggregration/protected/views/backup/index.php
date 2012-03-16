@@ -37,7 +37,7 @@
           <th> Name </th>
           <th width="50"> Status </th>
           <th> Reason </th>
-          <th> Action </th>
+          <th width="50"> Action </th>
 
         </tr>
       </thead>
