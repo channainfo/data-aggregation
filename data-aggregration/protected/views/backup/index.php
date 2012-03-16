@@ -37,6 +37,7 @@
           <th> Name </th>
           <th width="50"> Status </th>
           <th> Reason </th>
+          <th> Action </th>
 
         </tr>
       </thead>
@@ -54,6 +55,7 @@
           <td> <?php echo basename($backup->filename); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
           <td> <?php echo $backup->reason; ?>
+          <td> <?php echo CHtml::link("Delete", $this->createUrl("backup/delete/{$backup->id}"),array("class"=>"btn-action-delete delete round")); ?> </td>  
           </td>
         </tr>
     <?php 

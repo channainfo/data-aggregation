@@ -825,3 +825,12 @@ REQUEST_URI=/work/data-aggregration/index.php/importsitehistory
 in C:\xampp\htdocs\work\data-aggregration\protected\views\importsitehistory\index.php (19)
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportSiteHistoryController.php (26)
 in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/03/16 05:17:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`server_oi_dev`.`da_backups`, CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`)). The SQL statement executed was: DELETE FROM `da_siteconfigs` WHERE `da_siteconfigs`.`id`=1.
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (39)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/03/16 05:18:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`server_oi_dev`.`da_backups`, CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`)). The SQL statement executed was: DELETE FROM `da_siteconfigs` WHERE `da_siteconfigs`.`id`=1.
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (39)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/03/16 05:24:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`server_oi_dev`.`da_import_site_histories`, CONSTRAINT `fk_da_import_site_histories_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`)). The SQL statement executed was: DELETE FROM `da_siteconfigs` WHERE `da_siteconfigs`.`id`=1.
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (39)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

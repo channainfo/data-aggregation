@@ -92,6 +92,9 @@
         $this->saveImportSiteHistory($siteconfig->id);
         $this->_import();
       }
+      catch(DaInvalidSiteException $ex){
+        DaTool::p($ex->getMessage());
+      }
       catch(DaInvalidSiteDatabaseException $ex){
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)-$start, $ex->getMessage());  
       }
@@ -171,6 +174,12 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS , $duration, DaTool::messags());
         DaTool::p("Finished importing");
       }
+      catch(DaInvalidSiteException $ex){
+        DaTool::p($ex->getMessage());
+      }
+      catch(DaInvalidStatusException  $ex){
+        DaTool::pErr($ex->getMessage());        
+      }
       
       catch(DaInvalidSiteDatabaseException $ex) {
         DaTool::pErr($ex->getMessage());
@@ -178,15 +187,7 @@
         DaTool::p("Rolling back");
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
       }
-      catch(DaInvalidStatusException  $ex){
-        DaTool::pErr($ex->getMessage());        
-      }
-      catch(DaInvalidSiteException $ex){
-        DaTool::pErr($ex->getMessage());
-        $transaction->rollback(); 
-        DaTool::p("Rolling back");
-        $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
-      }
+      
       catch(DaInvalidFileException $ex){
         DaTool::pErr($ex->getMessage());
         $transaction->rollback(); 

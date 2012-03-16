@@ -54,6 +54,19 @@
         $this->render("create", array("siteconfig" => $siteconfig, "model" => $model ));
      }
    }
+   public function actionDelete(){
+      $backup = Backup::model()->findByPk((int)$_GET["id"]);
+      if($backup){
+        $backup->delete();
+        Yii::app()->user->setFlash("success", "Import history has been deleted" );
+      }
+      else{
+        throw new CHttpException("Import history with id: {$_GET["id"]} not found");
+      }
+      $this->redirect($this->createUrl("backup/index", array("siteconfig_id" => $backup->siteconfig_id)));
+   }
+   
+   
    /**
     *
     * @param integer $siteconfig_id
