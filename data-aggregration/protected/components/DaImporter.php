@@ -220,20 +220,20 @@
      * @throws CDbException
      */
     private function _importTable($table, $cols){
-      
       $dbx = $this->_loadDbX();
       $sql = " SELECT * FROM {$table}";
       $commandX = $dbx->createCommand($sql);
       $dataReader =  $commandX->query();
 
       $colName  = implode(",  ", $cols);
-      $colParam = implode(", ",array_map("simbolizeCol",$cols));
+      $colParam = implode(", ", array_map("simbolizeCol",$cols));
 
       $sql = "INSERT INTO {$table} ($colName) VALUES ($colParam)" ;
       $command = $this->db->createCommand($sql);
       
       $j = 0;
       $isFixedTable = $this->_isFixedTable($table);
+      
       foreach($dataReader as $row){        
         $i =0;
         

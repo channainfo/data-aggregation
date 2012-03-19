@@ -893,3 +893,563 @@ REQUEST_URI=/work/data-aggregration/index.php/siteconfig/testConnection?SiteConf
 in C:\xampp\htdocs\work\data-aggregration\protected\models\DaDbConnection.php (22)
 in C:\xampp\htdocs\work\data-aggregration\protected\models\DaDbConnection.php (11)
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (76)
+2012/03/17 01:00:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:05:04 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:10:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:15:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:20:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:25:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:30:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:35:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:40:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:45:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:50:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 01:55:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:00:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:05:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:10:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:15:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:20:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:25:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/17 02:30:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/18 05:48:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 05:49:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 05:49:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 05:53:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 06:06:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 06:07:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 06:12:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/18 06:59:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 02:15:02 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:20:02 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:25:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:30:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:35:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:40:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:45:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 02:50:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 04:35:02 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/03/19 04:39:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:39:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:41:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:42:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:43:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:44:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:44:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:44:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 04:53:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:21:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:30:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:42:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 05:44:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 06:52:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 06:59:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/19 08:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

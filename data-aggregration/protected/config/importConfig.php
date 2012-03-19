@@ -51,7 +51,7 @@
 		 'tblvisitreason' => array( 'visitreasonen','idvisitreasontype' ) 
     ),
     "drugControls" => array(
-        '3TC',
+    '3TC',
 		'ABC',
 		'AZT',
 		'd4T',

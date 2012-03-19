@@ -42,7 +42,10 @@
       }
       return $connection; 
     }
-    
+    /**
+     *
+     * @return boolean 
+     */
     public function isConnected(){
       return $this->connection ;
     }
