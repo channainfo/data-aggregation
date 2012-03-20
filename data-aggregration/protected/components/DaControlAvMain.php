@@ -1,6 +1,6 @@
 <?php
  class DaControlAvMain extends DaControl {
-   public $code = 20 ;
+   public $code = DaConfig::CTRL_EXCEPTION_AVMAIN ;
    /**
     * ART number should be 9 digits
     */
@@ -9,7 +9,7 @@
     *
     * @throws DaInvalidControlException 
     */
-   public function check(){
+   public function check($option=array()){
      $this->checkARTNumber();
    }
    
@@ -20,7 +20,7 @@
    public function checkARTNumber(){
      $number = trim($this->row["ART"]);
      if(strlen($number) != 9){
-       throw DaInvalidControlException("Invalid [ART] number. [ART] number should be 9 characters in length");
+       throw DaInvalidControlException("Invalid [ART] number. [ART] number should be 9 characters in length", $this->code);
      }
    }
  }

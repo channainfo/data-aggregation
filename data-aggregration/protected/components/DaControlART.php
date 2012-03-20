@@ -5,11 +5,12 @@
    * ART date should not be in year 1900 
    * +++ ART number for children : start with 'p'
    */ 
+   public $code = DaConfig::CTRL_EXCEPTION_ART ;
    
    /**
     * @throws DaInvalidControlException 
     */
-    public function check() {
+    public function check($option=array()) {
       $this->checkARTNumber();
     }
   
@@ -22,11 +23,11 @@
       if(strtolower($art[0])== 'p'){
         $code =substr($art, 1);
         if(strlen($code) != 10){
-          throw new DaInvalidControlException("Invalid [ART] number: [ART]= {$art} for child should have 10 characters in length ");
+          throw new DaInvalidControlException("Invalid [ART] number: [ART]= {$art} for child should have 10 characters in length ", $this->code);
         }
       }
       if(strlen($art) != 9){
-        throw new DaInvalidControlException("Invalid [ART] number: [ART]={$art} should have 9 characters in length");
+        throw new DaInvalidControlException("Invalid [ART] number: [ART]={$art} should have 9 characters in length", $this->code);
       }
       
     }

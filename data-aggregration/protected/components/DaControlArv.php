@@ -1,30 +1,29 @@
 <?php
- class DaControlVArv extends DaControl{
+ abstract class DaControlArv extends DaControl{
    /**
     * Table: tblAvCrv, tblCvCrv
     * ARV ( 3TC , ABC, AZT, d4T, ddl, EFV , IDV,  Kaletra(LPV/r), LPV,  NFV, NVP, RTV, SQV,. TDF) 
     */
-   
-   public function check($options){
-     $this->checkARV($options["drugControls"]);
-   }
-   
+    
    /**
     *
     * @param array 
     * @return boolean
     * @throws DaInvalidControlException 
     */
-   public function checkARV($drugControls){
-     $n = count($drugControls);
+   public function checkARV($options){
+     if( !isset($options["drugControls"]) || !is_array($options["drugControls"])){
+       throw new Exception("Invalid parameters. parameters need to be an array with index [drugControls] and its value is an array of drug name ");
+     }
+     $n = count($options["drugControls"]);
      $arv =  trim($this->row["ARV"]);
      
      for($i=0; $i<$n; $i++){
-       if($arv == $drugControls[$i]){
+       if($arv == $options["drugControls"][$i]){
          return true;
        }
      }
-     throw new DaInvalidControlException("Invalid [ARV] name. [ARV] {$arv} is not in ( ".implode(",",$drugControls))." )";
+     throw new DaInvalidControlException("Invalid [ARV] name. [ARV] {$arv} is not in ( " . implode( "," , $options["drugControls"]) ) . " )";
    }
    /**
     *

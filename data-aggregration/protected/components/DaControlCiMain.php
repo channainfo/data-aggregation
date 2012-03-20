@@ -5,12 +5,12 @@
     * if OffYesNo = Yes --> Officein <> ''
     * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 digits
     */
-    public $code = 50 ;
+    public $code = DaConfig::CTRL_EXCEPTION_CIMAIN ;
     
     /**
      * @throws DaInvalidControlException 
      */
-    public function check(){
+    public function check($option=array()){
       $this->checkDateVisit();
       $this->checkOfficein();
       $this->checkDateARV();
@@ -21,9 +21,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateVisit(){
-       $date = trim($this->row["DateVisit"]);
-       $year = substr($date, 0, 4);
-       
+       $year = DaTool::getYear($this->row["DateVisit"]);
        if($year == "1900" ){
          throw new DaInvalidControlException("Invalid [DateVisit]. Year of [DateVisit] should not be 1900", $this->code);
        }
@@ -44,8 +42,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateARV(){
-      $date = trim($this->row["DateARV"]);
-      $year = substr($date ,0, 4);
+      $year = DaTool::getYear($this->row["DateARV"]);
       if($year == "1900"){
         $arv = trim($this->row["ARVNumber"]);
         if( $arv == "" )

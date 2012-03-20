@@ -13,6 +13,11 @@
      echo "\n $msg in Line: {$debug_trace['line']} File: {$debug_trace['file']}";
    }
    
+   public static function getYear($date){
+     $year = substr($date, 0, 4);
+     return $year ; 
+   }
+   
    public static function pErr($msg){
      echo "\n Err : {$msg}";
      Yii::log($msg,"error");

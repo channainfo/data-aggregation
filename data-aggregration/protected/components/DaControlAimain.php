@@ -1,6 +1,6 @@
 <?php
  class DaControlAiMain extends DaControl{
-    public $code = 50 ;
+    public $code = DaConfig::CTRL_EXCEPTION_AIMAIN ;
     /**
      * Table: tblAImain
      * dateFirstVisit should not be in year 1900
@@ -11,7 +11,7 @@
     /**
      * @throws  DaInvalidControlException
      */
-    public function check() {
+    public function check($option=array()) {
       $this->checkDateFirstVisit();
       $this->checkTranIn();
       $this->checkDateStartART();
@@ -34,8 +34,7 @@
      * @throws DaInvalidControlException 
      */   
     public function  checkDateFirstVisit(){
-       $date = $this->row["dateFirstVisit"];
-       $year = substr($date,0,4 );
+       $year = DaTool::getYear($this->row["dateFirstVisit"]);
        if($year == "1900"){
          throw new DaInvalidControlException("Invalid [dateFirstVisit]. Year of [dateFirstVisit] should not be 1900 ", $this->code);
        }
@@ -45,8 +44,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateStartART(){
-      $date = $row["DateStaART"];
-      $year = substr($date,0, 4);
+      $year = DaTool::getYear($this->row["DateStaART"]);
       if($year != "1900" ){
         if($this->row["ArtNumber"] == "")
           throw new DaInvalidControlException("[ArtNumber] could not be empty ", $this->code);

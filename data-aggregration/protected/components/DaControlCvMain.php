@@ -3,12 +3,12 @@
    /**
     * ARTNum should be 10 digits 
     */
-   
+   public $code = DaConfig::CTRL_EXCEPTION_CVMAIN ;
    /**
     *
     * @throws DaInvalidControlException 
     */
-   public function check(){
+   public function check($option=array()){
      $this->checkARTNum();
    }
    
@@ -19,7 +19,7 @@
    public function checkARTNum(){
      $art = trim($this->row["ARTNum"]);
      if( strlen($art) != 10){
-       throw new DaInvalidControlException("Invalid [ARTNum]. [ARTNum] should be 10 characters in length ");
+       throw new DaInvalidControlException("Invalid [ARTNum]. [ARTNum] should be 10 characters in length ", $this->code);
      }
    }
    
