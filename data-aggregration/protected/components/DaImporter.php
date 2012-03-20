@@ -39,7 +39,7 @@
     * @throws DaInvalidFileException
     */
    private function _getProcessTables($includeFixed=false){
-     $configs = $this->_loadTableConfig();
+     $configs = DaConfig::importConfig();
      if($includeFixed)
        return array_merge($configs["fixed"], $configs["tables"]);
      return $configs["tables"];
@@ -87,18 +87,21 @@
     public function create(){
       $start = microtime(true);
       try{
+        $siteconfig = $this->_loadSiteConfig(); 
         $this->_loadDbX();
-        $siteconfig = $this->_loadSiteConfig();  
         $this->saveImportSiteHistory($siteconfig->id);
         $this->_import();
       }
       catch(DaInvalidSiteException $ex){
-        DaTool::p($ex->getMessage());
+        DaTool::pException($ex);
       }
       catch(DaInvalidSiteDatabaseException $ex){
+        DaTool::pException($ex);
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)-$start, $ex->getMessage());  
       }
       catch(Exception $ex){
+        echo "\n kdkkdkdkdk dfkdskf " ;
+        DaTool::pException($ex);
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)-$start, $ex->getMessage());
       }
     }
@@ -114,7 +117,24 @@
      * @throws Exception
      */
     public function start(){
-      $this->_import();
+      $startTime = microtime(true);
+      try{
+        $this->_loadSiteConfig();
+        $this->_loadDbX();
+        $this->checkSiteDatabase();
+        $this->_import();
+      }
+      catch(DaInvalidSiteException $ex){
+        DaTool::p($ex->getMessage());
+      }
+      catch(DaInvalidStatusException  $ex){
+        DaTool::pErr($ex->getMessage());        
+      }
+      
+      catch(DaInvalidSiteDatabaseException $ex) {
+        DaTool::pErr($ex->getMessage());
+        $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
+      }
     }
     
     /**
@@ -144,20 +164,16 @@
      * @throws Exception
      */
     
-    private function _import($includeFixed = true){
+    private function _import($includeFixed = false){
       $startTime = microtime(true);
-      $this->_startIgnoreForeignKey();
-      
       $total = 0;       
       $transaction = false;
       DaTool::p("Preparing import");
       try{
-        $this->_loadDbX();
-        $this->checkSiteDatabase();
-        $tables = $this->_getProcessTables($includeFixed);
-
         $this->_startImporting();
+        $tables = $this->_getProcessTables($includeFixed);
         $transaction = $this->db->beginTransaction();
+        
         foreach($tables as $table => $cols){
           try{
             $count = $this->_importTable($table, $cols);
@@ -171,29 +187,21 @@
         }
         $transaction->commit();
         $duration = microtime(true)-$startTime ;
-        $this->_endImporting(ImportSiteHistory::SUCCESS , $duration, DaTool::messags());
+        $this->_endImporting(ImportSiteHistory::SUCCESS , $duration, DaTool::getMessags());
         DaTool::p("Finished importing");
-      }
-      catch(DaInvalidSiteException $ex){
-        DaTool::p($ex->getMessage());
-      }
-      catch(DaInvalidStatusException  $ex){
-        DaTool::pErr($ex->getMessage());        
-      }
-      
-      catch(DaInvalidSiteDatabaseException $ex) {
-        DaTool::pErr($ex->getMessage());
-        $transaction->rollback(); 
-        DaTool::p("Rolling back");
-        $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
       }
       
       catch(DaInvalidFileException $ex){
+        DaTool::pException($ex);
+        $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
+      }
+      catch(DaInvalidFixedTableException $ex){
         DaTool::pErr($ex->getMessage());
         $transaction->rollback(); 
         DaTool::p("Rolling back");
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
       }
+      
       catch(DaInvalidFixedTableException $ex){
         DaTool::pErr($ex->getMessage());
         $transaction->rollback(); 
@@ -206,8 +214,6 @@
         DaTool::p("Rolling back");
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)- $startTime , $ex->getMessage());
       }
-      
-      $this->_endIgnoreForeignKey();
       DaTool::p("\n Resume");
       DaTool::p(" - {$total} record(s) have been imported in total ");
     }
@@ -228,23 +234,38 @@
       $colName  = implode(",  ", $cols);
       $colParam = implode(", ", array_map("simbolizeCol",$cols));
 
-      $sql = "INSERT INTO {$table} ($colName) VALUES ($colParam)" ;
+      $sql = "REPLACE INTO {$table} ($colName) VALUES ($colParam)" ;
       $command = $this->db->createCommand($sql);
       
       $j = 0;
       $isFixedTable = $this->_isFixedTable($table);
-      
+      $controlImport = DaControlImport::getControlInstance($table);
       foreach($dataReader as $row){        
         $i =0;
         
+        if($controlImport){
+          try{
+              if($j==0){
+                echo "\n table: {$table} \n";
+                print_r($row);
+                
+                }
+              $controlImport->setRecord($row);
+              $controlImport->check();
+              break;
+          }
+          catch(DaInvalidControlException $ex){
+              DaTool::pErr($ex->getMessage());
+          }
+        }
         foreach($row as  &$value){
           $command->bindParam(":{$cols[$i]}", $value, PDO::PARAM_STR ); //use $cols index instead of key of row so we can pre downcase with downcase each records 
           $i++;
         }
-        
+
         if(!$isFixedTable)
           $command->bindParam(":id", $this->code );
-        
+
         try {
           $command->execute();
         }
@@ -279,7 +300,7 @@
     /**
      *
      * @return CDbConnection
-     * @throws Exception 
+     * @throws DaInvalidSiteException, DaInvalidSiteException 
      */
     public function _loadDbX(){
       if($this->dbX ){
@@ -293,12 +314,13 @@
       $username = $siteconfig->attributes["user"];
       $password = $siteconfig->attributes["password"];
       
-      $dbEx=new CDbConnection($dsn,$username,$password);
-      if($dbEx)
+      $dbEx = new CDbConnection($dsn,$username,$password);
+      try{
         $dbEx->active=true;
-      else
-        throw  new Exception("Could not connect to  : {$siteconfig->attributes["host"]}");
-      
+      }
+      catch(CDbException $ex){
+        throw  new DaInvalidSiteDatabaseException("Could not connect to : {$siteconfig->attributes["host"]} " . $ex->getMessage());
+      }
       $this->dbX = $dbEx;
       return $this->dbX;
     }
@@ -307,16 +329,21 @@
      * @throws Exception 
      */
     private function _startImporting(){
-      $siteConfig = $this->_loadSiteConfig($this->code);
-      if($siteConfig->lastImport()){
-        if($siteConfig->lastImport()->status == ImportSiteHistory::PENDING )
+      
+      $siteconfig = $this->_loadSiteConfig();
+      
+      if($siteconfig->lastImport()){
+        if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING )
           throw new DaInvalidStatusException("Site {$this->code} import in progress");
-        else if( $siteConfig->lastImport()->status == ImportSiteHistory::START){
-          $import = $siteConfig->lastImport();
-          $import->status = ImportSiteHistory::PENDING;
-          $import->save();
-        }
+        else if($siteconfig->lastImport()->status != ImportSiteHistory::START ){
+          throw new DaInvalidStatusException("Site {$this->code} import in had been finished with status: " . 
+                  $siteconfig->lastImport()->getStatusText(). " On date : " . " [ {$siteconfig->lastImport()->modified_at} ]" );
+        }  
       }
+      $import = $siteconfig->lastImport();
+      $import->status = ImportSiteHistory::PENDING;
+      //$import->save();
+      $this->_startIgnoreForeignKey();
     }
     /**
      *
@@ -324,29 +351,13 @@
      * @return boolean 
      */
     private function _endImporting($status, $duration , $reason="" ){
-      $siteConfig = $this->_loadSiteConfig();
-      $import = $siteConfig->lastImport(false);
+      $siteconfig = $this->_loadSiteConfig();
+      $import = $siteconfig->lastImport(false);
       $import->status = $status ;
       $import->duration = $duration;
       $import->reason = $reason;
-      return $import->save();
-    }
-    /**
-     *
-     * @return array
-     * @throws DaInvalidFileException 
-     */
-    private function _loadTableConfig(){
-      if($this->configs)
-        return $this->configs;
-      
-      $configFile = dirname(__FILE__)."/../config/importConfig.php" ;
-      if(file_exists($configFile))
-        $this->configs = require_once($configFile) ;
-      else
-        throw new DaInvalidFileException(" Could not find include file : {$configFile}");
-      
-      return $this->configs ;
+      $import->save();
+      $this->_endIgnoreForeignKey();
     }
     /**
      * @throws CDbException
@@ -368,14 +379,18 @@
      * @return boolean 
      */
     private function _isFixedTable($table){
-      $configs = $this->_loadTableConfig();
+      $configs = DaConfig::importConfig();
       foreach($configs["fixed"] as $tableName => $cols){
         if($tableName == $table)
           return true;
       }
       return false;
     }
-    
+    /**
+     *
+     * @return boolean
+     * @throws DaInvalidSiteDatabaseException 
+     */
     public function checkSiteDatabase(){
       $dbEx = $this->_loadDbX();
       $siteconfig = $this->_loadSiteConfig();

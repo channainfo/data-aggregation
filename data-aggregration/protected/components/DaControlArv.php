@@ -1,7 +1,7 @@
 <?php
  abstract class DaControlArv extends DaControl{
    /**
-    * Table: tblAvCrv, tblCvCrv
+    * Table: tblAvArv, tblCvArv
     * ARV ( 3TC , ABC, AZT, d4T, ddl, EFV , IDV,  Kaletra(LPV/r), LPV,  NFV, NVP, RTV, SQV,. TDF) 
     */
     
@@ -11,12 +11,11 @@
     * @return boolean
     * @throws DaInvalidControlException 
     */
-   public function checkARV($options){
-     if( !isset($options["drugControls"]) || !is_array($options["drugControls"])){
-       throw new Exception("Invalid parameters. parameters need to be an array with index [drugControls] and its value is an array of drug name ");
-     }
+   public function checkARV(){
+     $options = DaConfig::importConfig();
+     
      $n = count($options["drugControls"]);
-     $arv =  trim($this->row["ARV"]);
+     $arv =  trim($this->record["ARV"]);
      
      for($i=0; $i<$n; $i++){
        if($arv == $options["drugControls"][$i]){
@@ -31,15 +30,17 @@
     * @return boolean
     * @throws DaInvalidControlException 
     */
-   public function checkARVJustify($drugControls){
-     $n = count($drugControls);
-     $arv =  trim($this->row["ARV"]);
+   public function checkARVJustify(){
+     $options = DaConfig::importConfig();
+     $n = count($options["drugControls"]);
+     $n = count($options["drugControls"]);
+     $arv =  trim($this->record["ARV"]);
      for($i=0; $i<$n; $i++){
-       if(strtolower($arv) == strtolower($drugControls[$i])){
-         $this->row["ARV"] = $drugControls[$i];
+       if(strtolower($arv) == strtolower($options["drugControls"][$i])){
+         $this->record["ARV"] = $options["drugControls"][$i];
          return true;
        }
      }
-     throw new DaInvalidControlException("Invalid [ARV] name. [ARV] {$arv} is not in ( ".implode(",",$drugControls))." )";
+     throw new DaInvalidControlException("Invalid [ARV] name. [ARV] {$arv} is not in ( ".implode(",",$options["drugControls"]))." )";
    }
  }

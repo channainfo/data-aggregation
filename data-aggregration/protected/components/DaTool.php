@@ -7,6 +7,21 @@
      Yii::log($msg);
      echo "\n {$msg}";
    }
+   
+   /**
+    *
+    * @param Exception $ex 
+    */
+   public static function pException($ex, $return = false){
+     $message = "[Error] : " . $ex->getMessage() . "\n "
+              . "[Code]  : " . $ex->getCode() . "\n "
+              . "[Line]  : " . $ex->getLine() . "\n "
+              . "[File]  : " . $ex->getFile() 
+              ;
+     if($return)
+       return $message;
+     self::p($message);         
+   }
    public static function  pd($msg){
      $debug_traces = debug_backtrace();
      $debug_trace = $debug_traces[0];
@@ -25,7 +40,7 @@
    }
    
    public static function getMessags(){
-     echo implode("\n", DaTool::messags);
+     echo implode("\n", DaTool::$messages);
    }
 
 

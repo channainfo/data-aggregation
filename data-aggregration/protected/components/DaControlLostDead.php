@@ -11,7 +11,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkLDDate(){
-      $year = DaConfig::getYear($this->row["LDdate"]);
+      $year = DaTool::getYear($this->record["LDdate"]);
       if($year == "1900"){
         throw new DaInvalidControlException("Invalid [LDDate]. [LDDate]={$year} should not be in 1900 ", $this->code);
       }

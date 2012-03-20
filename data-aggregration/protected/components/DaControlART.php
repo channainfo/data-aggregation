@@ -19,7 +19,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkARTNumber(){
-      $art = trim($this->row["ART"]);
+      $art = trim($this->record["ART"]);
       if(strtolower($art[0])== 'p'){
         $code =substr($art, 1);
         if(strlen($code) != 10){

@@ -2,7 +2,7 @@
  class DaControlCiMain extends DaControl{
    /*
     * DateVisit should not be in year 1900
-    * if OffYesNo = Yes --> Officein <> ''
+    * if OffYesNo = Yes --> OfficeIn <> ''
     * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 digits
     */
     public $code = DaConfig::CTRL_EXCEPTION_CIMAIN ;
@@ -12,7 +12,7 @@
      */
     public function check($option=array()){
       $this->checkDateVisit();
-      $this->checkOfficein();
+      $this->checkOfficeIn();
       $this->checkDateARV();
     }
    
@@ -21,7 +21,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateVisit(){
-       $year = DaTool::getYear($this->row["DateVisit"]);
+       $year = DaTool::getYear($this->record["DateVisit"]);
        if($year == "1900" ){
          throw new DaInvalidControlException("Invalid [DateVisit]. Year of [DateVisit] should not be 1900", $this->code);
        }
@@ -30,10 +30,10 @@
      *
      * @throws DaInvalidControlException 
      */
-    public function checkOfficein(){
-      if($this->row["OffYesNo"] == "Yes"){
-        if($this->row["Officein"] == ""){
-          throw new DaInvalidControlException("Invalid [Officein]. [Officein] should not be empty when [OffYesNo]= Yes", $this->code);
+    public function checkOfficeIn(){
+      if($this->record["OffYesNo"] == "Yes"){
+        if($this->record["OfficeIn"] == ""){
+          throw new DaInvalidControlException("Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes", $this->code);
         }
       }
     }
@@ -42,14 +42,14 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateARV(){
-      $year = DaTool::getYear($this->row["DateARV"]);
+      $year = DaTool::getYear($this->record["DateARV"]);
       if($year == "1900"){
-        $arv = trim($this->row["ARVNumber"]);
+        $arv = trim($this->record["ARVNumber"]);
         if( $arv == "" )
-          throw new DaInvalidControlException("Invalid [ARVNumber]. [ARVNumber] should not be empty ", $this->code);
+          throw new DaInvalidControlException("Invalid [ARVNumber] '{$arv}'. [ARVNumber] should not be empty ", $this->code);
         else{
           if(strlen($arv) == 10 )
-            throw new DaInvalidControlException("Invalid [ARVNumber]  should be 9 characters length", $this->code);
+            throw new DaInvalidControlException("Invalid [ARVNumber] '{$arv}'  should be 9 characters length", $this->code);
         }
       }
     }

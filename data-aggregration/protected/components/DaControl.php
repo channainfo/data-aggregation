@@ -2,10 +2,13 @@
   abstract class DaControl {
     public $record = array();
     
-    public function __construct($record) {
+    public function __construct($record=array()) {
       $this->record = $record;
     }
-    
+   
+    public function setRecord($record){
+      $this->record = $record;
+    }
     /**
      * throws DaInvalidControlException 
      */

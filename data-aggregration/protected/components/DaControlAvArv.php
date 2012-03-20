@@ -3,6 +3,6 @@
    public $code = DaConfig::CTRL_EXCEPTION_CVARV;
    
    public function check($options=array()){
-     $this->checkARV($options);
+     $this->checkARV();
    }
  }
