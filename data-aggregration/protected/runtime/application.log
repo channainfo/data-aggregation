@@ -1453,3 +1453,92 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2012/03/21 03:40:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`server_oi_test`.`tblavlostdead`, CONSTRAINT `FK_tblAVLostDead_tblAVmain` FOREIGN KEY (`AV_ID`, `ID`) REFERENCES `tblavmain` (`AV_ID`, `ID`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: REPLACE INTO tblavlostdead (clinicid,  status,  lddate,  av_id,  id) VALUES (:clinicid, :status, :lddate, :av_id, :id).
+2012/03/21 04:17:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'server_oi_test.da_site_configs' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `da_site_configs`.
+2012/03/21 04:17:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'group_id' cannot be null. The SQL statement executed was: INSERT INTO `da_users` (`name`, `login`, `password`, `group_id`, `email`, `active`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+2012/03/21 04:18:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'server_oi_test.da_site_configs' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `da_site_configs`.
+2012/03/21 04:18:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'group_id' cannot be null. The SQL statement executed was: INSERT INTO `da_users` (`name`, `login`, `password`, `group_id`, `email`, `active`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+2012/03/21 04:19:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'server_oi_test.da_site_configs' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `da_site_configs`.
+2012/03/21 04:19:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'group_id' cannot be null. The SQL statement executed was: INSERT INTO `da_users` (`name`, `login`, `password`, `group_id`, `email`, `active`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+2012/03/21 05:34:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.av_id tblavlostdead as L2  GROUP BY av_id' at line 1. The SQL statement executed was:  SELECT * from tblavlostdead as L1   INNER JOIN L1.av_id = L2.av_id tblavlostdead as L2  GROUP BY av_id .
+2012/03/21 05:35:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.av_id tblavlostdead as L2  GROUP BY L1.av_id' at line 1. The SQL statement executed was:  SELECT * from tblavlostdead as L1   INNER JOIN L1.av_id = L2.av_id tblavlostdead as L2  GROUP BY L1.av_id .
+2012/03/21 06:01:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status = 'dead'  group by clinicid , av_id, id  ORDER BY lldate desc' at line 1. The SQL statement executed was:  SELECT * from tblavlostdead as L1   status = 'dead'  group by clinicid , av_id, id  ORDER BY lldate desc .
+2012/03/21 06:04:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status = 'dead'  group by clinicid , av_id, id  ORDER BY lldate desc' at line 1. The SQL statement executed was:  SELECT * from tblavlostdead as L1   status = 'dead'  group by clinicid , av_id, id  ORDER BY lldate desc .
+2012/03/21 08:26:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lldate' in 'order clause'. The SQL statement executed was:  SELECT * from tblavlostdead as L1   WHERE status = 'dead'  group by clinicid , av_id, id  ORDER BY lldate desc .
+2012/03/21 08:49:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DeadFirst.lldate' in 'where clause'. The SQL statement executed was:  SELECT L2.*  from tblavlostdead as L2 INNER JOIN   ( SELECT *  from tblavlostdead as L1   WHERE status = 'dead'  group by clinicid , av_id, id  ORDER BY lddate asc ) AS DeadFirst   WHERE L2.status = 'lost'  AND L2.lddate > DeadFirst.lldate  AND L2.clinicid = DeadFirst.clinicid   AND L2.av_id = DeadFirst.av_id   AND L2.id = DeadFirst.id  .
+2012/03/21 08:52:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DeadFirst.lldate' in 'where clause'. The SQL statement executed was:  SELECT L2.*  from tblavlostdead as L2 INNER JOIN   ( SELECT *  from tblavlostdead as L1   WHERE L1.status = 'dead'  group by L1.clinicid , L1.av_id, L1.id  ORDER BY L1.lddate asc ) DeadFirst    WHERE L2.status = 'lost'  AND L2.lddate > DeadFirst.lldate  AND L2.clinicid = DeadFirst.clinicid   AND L2.av_id = DeadFirst.av_id   AND L2.id = DeadFirst.id  .
+2012/03/21 09:04:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DeadFirst.lldate' in 'where clause'. The SQL statement executed was:  SELECT L2.*  from 
+ tblavlostdead as L2 INNER JOIN   ( SELECT *  from 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' 
+ group by L1.clinicid , L1.av_id, L1.id 
+ ORDER BY L1.lddate asc ) DeadFirst   
+ WHERE L2.status = 'lost' 
+ AND L2.lddate > DeadFirst.lldate 
+ AND L2.clinicid = DeadFirst.clinicid  
+ AND L2.av_id = DeadFirst.av_id  
+ AND L2.id = DeadFirst.id  .
+2012/03/21 09:06:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DeadFirst.lldate' in 'where clause'. The SQL statement executed was:  SELECT L2.*  from 
+ tblavlostdead as L2 JOIN   ( SELECT *  from 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' 
+ group by L1.clinicid , L1.av_id, L1.id 
+ ORDER BY L1.lddate asc ) DeadFirst   
+ WHERE L2.status = 'lost' 
+ AND L2.lddate > DeadFirst.lldate 
+ AND L2.clinicid = DeadFirst.clinicid  
+ AND L2.av_id = DeadFirst.av_id  
+ AND L2.id = DeadFirst.id  .
+2012/03/21 09:13:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DeadFirst.lldate' in 'where clause'. The SQL statement executed was:  SELECT L2.*  from 
+ tblavlostdead as L2 JOIN   ( SELECT L1.*  from 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' 
+ group by L1.clinicid , L1.av_id, L1.id 
+ ORDER BY L1.lddate asc ) AS DeadFirst   
+ WHERE L2.status = 'lost' 
+ AND L2.lddate > DeadFirst.lldate 
+ AND L2.clinicid = DeadFirst.clinicid  
+ AND L2.av_id = DeadFirst.av_id  
+ AND L2.id = DeadFirst.id  .
+2012/03/21 09:20:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND T1.lddate > T2.lldate 
+ AND T1.clinicid = T2.clinicid  
+ AND T1.av_id = T2.a' at line 10. The SQL statement executed was:  SELECT * FROM  ( SELECT L2.*  from 
+ tblavlostdead as L2  
+ WHERE L2.status = 'lost' 
+ group by L2.clinicid , L2.av_id, L2.id 
+ ORDER BY L2.lddate desc )   AS T1 INNER JOIN  ( SELECT L1.*  from 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' 
+ group by L1.clinicid , L1.av_id, L1.id 
+ ORDER BY L1.lddate asc )  AS T2
+ AND T1.lddate > T2.lldate 
+ AND T1.clinicid = T2.clinicid  
+ AND T1.av_id = T2.av_id  
+ AND T1.id = T2.id  .
+2012/03/21 09:39:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) FROM  ( SELECT L2.*  FROM 
+ tblavlostdead as L2  
+ WHERE L2.status = 'lost' )' at line 1. The SQL statement executed was:  SELECT distinct(*) FROM  ( SELECT L2.*  FROM 
+ tblavlostdead as L2  
+ WHERE L2.status = 'lost' )   AS T1 INNER JOIN  ( SELECT L1.*  FROM 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' )  AS T2
+ WHERE T1.lddate > T2.lddate 
+ AND T1.clinicid = T2.clinicid  
+ AND T1.av_id = T2.av_id  
+ AND T1.id = T2.id  .
+2012/03/21 09:45:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s). The SQL statement executed was:  SELECT DISTINCT(T1.clinicid, T1.av_id, T1.id, T1.lddate)  FROM  ( SELECT L2.*  FROM 
+ tblavlostdead as L2  
+ WHERE L2.status = 'lost' )   AS T1 INNER JOIN  ( SELECT L1.*  FROM 
+ tblavlostdead as L1  
+ WHERE L1.status = 'dead' )  AS T2
+ WHERE T1.lddate > T2.lddate 
+ AND T1.clinicid = T2.clinicid  
+ AND T1.av_id = T2.av_id  
+ AND T1.id = T2.id  .
+2012/03/21 09:58:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'L1'. The SQL statement executed was:  SELECT Lost.*, Lost.lddate as LostDate, Dead.lddate as DeadDate  FROM 
+  ( SELECT L1.*  FROM tblavlostdead as L2 WHERE L2.status = 'lost' )  AS Lost INNER JOIN  ( SELECT L1.*  FROM tblavlostdead as L1 WHERE L1.status = 'dead' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ AND Lost.av_id = Dead.av_id  
+ AND Lost.id = Dead.id  
+ GROUP BY Lost.clinicid, Lost.av_id, Lost.id .

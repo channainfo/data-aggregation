@@ -51,7 +51,7 @@
    public function removeSite($includeFixed = false){
       $this->fstart();
       try{
-        $this->_startIgnoreForeignKey();
+        DaDbHelper::startIgnoringForeignKey($this->db);
         $tables  = $this->_getProcessTables($includeFixed);
         $command = false ;
         foreach($tables as $tableName => $cols){
@@ -77,7 +77,7 @@
       catch(Exception $ex){
         DaTool::p($ex->getMessage());
       }
-      $this->_endIgnoreForeignKey();
+      DaDbHelper::endIgnoringForeignKey($this->db);
     }
     /**
      *
@@ -150,14 +150,14 @@
     private function _truncate($includeFixed=false){
       DaTool::p("Preparing ");
       $tables = $this->_getProcessTables($includeFixed);
-      $this->_startIgnoreForeignKey();
+      DaDbHelper::startIgnoringForeignKey($this->db);
       foreach($tables as $tableName => $cols){
         DaTool::p("truncating {$tableName}");
         $sql = "truncate {$this->db->quoteTableName($tableName)} " ;
         $command = $this->db->createCommand($sql);
         $command->execute();  
       }
-      $this->_endIgnoreForeignKey();
+      DaDbHelper::endIgnoringForeignKey($this->db);
     }
         
     /** This function is used with multiple place so intend to catch it exception here
@@ -231,10 +231,8 @@
       $commandX = $dbx->createCommand($sql);
       $dataReader =  $commandX->query();
 
-      $colName  = implode(",  ", $cols);
-      $colParam = implode(", ", array_map("simbolizeCol",$cols));
-
-      $sql = "REPLACE INTO {$table} ($colName) VALUES ($colParam)" ;
+      $sql = DaSqlHelper::sqlFromTableCols($table, $cols);
+      
       $command = $this->db->createCommand($sql);
       
       $j = 0;
@@ -342,8 +340,9 @@
       }
       $import = $siteconfig->lastImport();
       $import->status = ImportSiteHistory::PENDING;
-      //$import->save();
-      $this->_startIgnoreForeignKey();
+      $import->save();
+      
+      DaDbHelper::startIgnoringForeignKey($this->db);
     }
     /**
      *
@@ -357,21 +356,7 @@
       $import->duration = $duration;
       $import->reason = $reason;
       $import->save();
-      $this->_endIgnoreForeignKey();
-    }
-    /**
-     * @throws CDbException
-     */
-    private function _startIgnoreForeignKey(){
-      $command = $this->db->createCommand("SET FOREIGN_KEY_CHECKS = 0;");
-      $command->execute();
-    }
-    /**
-     * @throws CDbException
-     */
-    private function _endIgnoreForeignKey(){
-      $command = $this->db->createCommand("SET FOREIGN_KEY_CHECKS = 1;");
-      $command->execute();
+      DaDbHelper::endIgnoringForeignKey($this->db);
     }
     /**
      *
@@ -406,16 +391,5 @@
          \n You must make them the same values by change site code to : {$row["ART"]}
         ");
       return true;   
-    }
-  }
-  
-  if(!function_exists("simbolizeCol")){
-    function simbolizeCol($name){
-      return ":{$name}";
-    }
-  }
-  if(!function_exists("lowerCaseCol")){
-    function lowerCaseCol($name){
-      return strtolower($name);
     }
   }
