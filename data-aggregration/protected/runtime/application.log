@@ -1644,3 +1644,23 @@ REQUEST_URI=/work/data-aggregration/index.php/rejectcondition/index?import_site_
 in C:\xampp\htdocs\work\data-aggregration\protected\views\rejectCondition\index.php (34)
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectConditionController.php (20)
 in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/03/22 11:37:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`server_oi_dev`.`da_reject_conditions`, CONSTRAINT `fk_da_reject_conditions_import_site_history_id` FOREIGN KEY (`import_site_history_id`) REFERENCES `da_import_site_histories` (`id`)). The SQL statement executed was: DELETE FROM `da_import_site_histories` WHERE `da_import_site_histories`.`id`=31.
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportSiteHistoryController.php (33)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/03/22 11:37:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`server_oi_dev`.`da_reject_conditions`, CONSTRAINT `fk_da_reject_conditions_import_site_history_id` FOREIGN KEY (`import_site_history_id`) REFERENCES `da_import_site_histories` (`id`)). The SQL statement executed was: DELETE FROM `da_import_site_histories` WHERE `da_import_site_histories`.`id`=31' in C:\xampp\htdocs\work\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('31')
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ImportSiteHistoryController.php(33): CActiveRecord->delete()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ImportSiteHistoryController->actionDelete()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('delete')
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/delete/31
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/importsitehistory/index?siteconfig_id=2
+---

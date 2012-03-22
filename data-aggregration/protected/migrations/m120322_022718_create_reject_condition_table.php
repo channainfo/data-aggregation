@@ -15,7 +15,7 @@ class m120322_022718_create_reject_condition_table extends CDbMigration {
         "modified_at" => "datetime",
         "created_at" => "datetime"
     ));
-    $this->addForeignKey($this->_fk_key_name, "{$this->_tableName}", "import_site_history_id", "da_import_site_histories", "id");
+    $this->addForeignKey($this->_fk_key_name, "{$this->_tableName}", "import_site_history_id", "da_import_site_histories", "id", "CASCADE");
 	}
 
 	public function down(){
