@@ -20,7 +20,7 @@
    public function checkARTNumber(){
      $number = trim($this->record["ARTNum"]);
      if(strlen($number) != 9){
-       throw new DaInvalidControlException("Invalid [ARTNum] number: '{$number}' . [ARTNum] number should be 9 characters in length", $this->code);
+       throw new DaInvalidControlException("Invalid [ARTNum] number . [ARTNum] = ['{$number}'] should be 9 characters in length", $this->code);
      }
    }
  }

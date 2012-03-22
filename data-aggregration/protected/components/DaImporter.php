@@ -18,6 +18,7 @@
    public $startTime = false;
    public $endTime = false;
    public $method = "";
+   public $rejects = array();
    
    public function fstart(){
    }
@@ -140,8 +141,8 @@
     /**
      * @throw Exception 
      */
-    public function truncate(){
-      $this->_truncate();
+    public function truncate( $all = false){
+      $this->_truncate($all);
     }
     
     /**
@@ -185,6 +186,7 @@
             DaTool::pErr($ex->getMessage());
           }
         }
+        DaTool::p("committing ");
         $transaction->commit();
         $duration = microtime(true)-$startTime ;
         $this->_endImporting(ImportSiteHistory::SUCCESS , $duration, DaTool::getMessags());
@@ -240,20 +242,13 @@
       $controlImport = DaControlImport::getControlInstance($table);
       foreach($dataReader as $row){        
         $i =0;
-        
         if($controlImport){
           try{
-              if($j==0){
-                echo "\n table: {$table} \n";
-                print_r($row);
-                
-                }
               $controlImport->setRecord($row);
               $controlImport->check();
-              break;
           }
           catch(DaInvalidControlException $ex){
-              DaTool::pErr($ex->getMessage());
+              $this->addRejects($table, $row, $ex->getMessage(), $ex->getCode());
           }
         }
         foreach($row as  &$value){
@@ -266,6 +261,7 @@
 
         try {
           $command->execute();
+          $j++;
         }
         catch(CDbException $ex){
           if(!$isFixedTable)
@@ -273,8 +269,9 @@
           else
             DaTool::pErr($ex->getMessage()); // throw new DaInvalidFixedTableException($ex->getMessage());
         }
-        $j++;
+        
       }
+      $this->flushTableRejects($table);
       return $j ;
     }
    /**
@@ -391,5 +388,45 @@
          \n You must make them the same values by change site code to : {$row["ART"]}
         ");
       return true;   
+    }
+    
+    private function addRejects($table, $record, $message,  $code){
+      $this->rejects[] = array("code" => $code, "record" => $record, "message" => $message);
+    }
+    
+    private function flushTableRejects($table){
+      if(empty($this->rejects))
+        return;
+      
+      $sql = DaSqlHelper::sqlFromTableCols("da_reject_conditions", 
+              array("tableName", 
+                    "record", 
+                    "code", 
+                    "message", 
+                    "import_site_history_id", 
+                    "created_at", 
+                    "modified_at"),
+              false);
+      
+     
+      $command = $this->db->createCommand($sql);
+      $import_site_history_id = $this->_loadSiteConfig()->lastImport()->id;
+      $now = date("Y-m-d H:i:s");
+
+      foreach($this->rejects as &$rejectCondition){
+        $record = serialize($rejectCondition["record"]);
+        
+        $command->bindParam( "tableName" , $table , PDO::PARAM_STR);
+        $command->bindParam( "record" , $record , PDO::PARAM_STR);
+        $command->bindParam( "code" , $rejectCondition["code"], PDO::PARAM_STR);
+        $command->bindParam( "message" , $rejectCondition["message"], PDO::PARAM_STR);
+        $command->bindParam( "import_site_history_id" , $import_site_history_id , PDO::PARAM_STR  );
+        $command->bindParam( "created_at" , $now , PDO::PARAM_STR);
+        $command->bindParam( "modified_at" , $now , PDO::PARAM_STR);
+        
+        $command->execute();
+      }
+      
+      $this->rejects = array();
     }
   }

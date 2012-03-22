@@ -46,10 +46,10 @@
       if($year == "1900"){
         $arv = trim($this->record["ARVNumber"]);
         if( $arv == "" )
-          throw new DaInvalidControlException("Invalid [ARVNumber] '{$arv}'. [ARVNumber] should not be empty ", $this->code);
+          throw new DaInvalidControlException("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should not be empty ", $this->code);
         else{
           if(strlen($arv) == 10 )
-            throw new DaInvalidControlException("Invalid [ARVNumber] '{$arv}'  should be 9 characters length", $this->code);
+            throw new DaInvalidControlException("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should be 9 characters length", $this->code);
         }
       }
     }

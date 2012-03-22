@@ -76,8 +76,6 @@ class LostDeadTest extends CDbTestCase {
      $errorRecords = Yii::app()->db->createCommand($sql)->queryAll();
      
      $this->assertEquals(count($errorRecords), 4 );
-     $fixturesData = $this->daFixture->getFixtures(); 
-     
      
      $this->assertEquals($errorRecords[0]["ClinicID"], 1 );
      $this->assertEquals($errorRecords[1]["ClinicID"], 3 );

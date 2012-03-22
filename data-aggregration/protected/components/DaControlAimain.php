@@ -16,10 +16,9 @@
       $this->checkTranIn();
       $this->checkDateStartART();
     }
-    
 
     /**
-     *
+     * 
      * @throws DaInvalidControlException 
      */
     public function checkTranIn(){
@@ -51,7 +50,7 @@
         else{
           $startART = trim($this->record["ArtNumber"]);
           if(strlen($startART) != 9)
-            throw new DaInvalidControlException("[ArtNumber] must be 9 character in length: [ArtNumber]({$startART})", $this->code);
+            throw new DaInvalidControlException("[ArtNumber] must be 9 character in length: [ArtNumber] = ['{$startART}']", $this->code);
         }
       }
     }

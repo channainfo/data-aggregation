@@ -22,12 +22,12 @@
       $art = trim($this->record["ART"]);
       if(strtolower($art[0])== 'p'){
         $code =substr($art, 1);
-        if(strlen($code) != 10){
-          throw new DaInvalidControlException("Invalid [ART] number: [ART]= {$art} for child should have 10 characters in length ", $this->code);
+        if(strlen($code) != 9){
+          throw new DaInvalidControlException("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length ", $this->code);
         }
       }
       if(strlen($art) != 9){
-        throw new DaInvalidControlException("Invalid [ART] number: [ART]={$art} should have 9 characters in length", $this->code);
+        throw new DaInvalidControlException("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length", $this->code);
       }
       
     }

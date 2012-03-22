@@ -136,7 +136,7 @@ div.breadcrumb{
   color: #aaa;
   
 }
-.btn-action-edit, .btn-action-delete, .btn-action-new, .btn-action {
+.btn-action-edit, .btn-action-delete, .btn-action-new, .btn-action, .btn-thirdparty {
   background-color:#09d;
   padding:3px 6px;
   color:white;

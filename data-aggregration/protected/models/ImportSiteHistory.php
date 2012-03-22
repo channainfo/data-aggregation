@@ -59,6 +59,7 @@ class ImportSiteHistory extends DaActiveRecordModel implements IStatus
 		// class name for the relations automatically generated below.
 		return array(
 			'siteconfig' => array(self::BELONGS_TO, 'SiteConfig', 'siteconfig_id'),
+      'rejectConditions' => array(self::HAS_MANY, 'RejectCondition', 'import_site_history_id' )  
 		);
 	}
 

@@ -1,9 +1,12 @@
 <?php
  class DaSqlHelper {
-   public static function sqlFromTableCols($table, $cols){
+   public static function sqlFromTableCols($table, $cols, $REPLACE=true){
+     
+     $insert = $REPLACE ? " REPLACE " : " INSERT " ;
+     
      $colName  = implode(",  ", $cols);
      $colParam = implode(", ", array_map("simbolizeCol",$cols));
-     $sql = "REPLACE INTO {$table} ($colName) VALUES ($colParam)" ;
+     $sql = "{$insert} INTO {$table} ($colName) VALUES ($colParam)" ;
      return $sql ;
    }
  }

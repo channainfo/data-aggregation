@@ -11,23 +11,31 @@
     */
    public function check($option=array()) {
      $this->checkLDDate();
-     $this->checkLostDead();
    }
-   
-   public function checkLostDead(){
+   /**
+    * Lost and dead need to check  checkLostDead
+    * @param CDbConnection $db
+    * @return boolean
+    * @throws DaInvalidControlException 
+    */
+   public function checkLostDead($db){
      
-     for($i=0; $n = count($this->loadErrors()), $i < $n ; $i++){
+     for($i=0; $n = count($this->loadErrors($db)), $i < $n ; $i++){
        if( $this->record["clinicid"] == $this->errorRecords[$i]["clinicid"] &&
            $this->record["av_id"] == $this->errorRecords[$i]["av_id"] && 
            $this->record["status"] == $this->errorRecords[$i]["status"] &&  
            $this->record["lddate"] == $this->errorRecords[$i]["lddate"]) {
-           throw new DaInvalidControlException(" Invalid CvLostDead. [Lost date]{$this->record["lddate"]["LostDate"]} after [Dead]{$this->record["lddate"]["DeadDate"]}  ");
+           throw new DaInvalidControlException(" Invalid CvLostDead. [Lost date] = ['{$this->record["lddate"]["LostDate"]}'] after [Dead] = ['{$this->record["lddate"]["DeadDate"]}']  ");
        }
      }
      return true;
    }
-   
-   public function loadErrors(){
+   /**
+    *
+    * @param CDbConnection $db
+    * @return array
+    */
+   public function loadErrors($db){
      if($this->errorRecords !==false){
        return $this->errorRecords;
      }
@@ -43,7 +51,7 @@
           . "\n GROUP BY Lost.clinicid, Lost.cid "   
           ;
      $this->sql = $sql ;     
-     $this->errorRecords = Yii::app()->db->createCommand($this->sql)->queryAll();
+     $this->errorRecords = $db->createCommand($this->sql)->queryAll();
      return $this->errorRecords;
    }
    

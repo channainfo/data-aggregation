@@ -38,6 +38,33 @@ EOT;
     return $template;
     
   } 
+  /**
+   *
+   * @param array $var 
+   */
+  public static function  outputVars($var){
+    if(!empty($var)): ?>
+      <div class="tableWrapper round" >
+        <table class="tgrid" >
+            <?php
+            $i = 0 ;
+            foreach($var as $key => $value): ?>
+            <tr class="<?php echo $i%2? "odd": "event"; ?>">
+              <td> <?php echo $key ?> </td>
+              <td> <?php echo $value; ?> </td>
+            </tr>
+            <?php $i++; endforeach; ?>
+        </table>
+      </div>
+    <?php endif;
+  }
+  
+  public static function htmlControlErrorOutput($err, $return= true){
+    $str =  str_replace(array("[", "]"), array("<b>","</b>"), $err);
+    if($return)
+      return $str;
+    echo $str;
+  }
   
  }
  

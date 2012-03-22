@@ -17,7 +17,7 @@
           <th width="120"> Date </th>
           <th width="50"> Status </th>
           <th> Reason </th>
-          <th width="50"> Action </th>
+          <th width="120"> Action </th>
         </tr>
       </thead>
     <?php 
@@ -33,7 +33,10 @@
           <td> <?php echo date("Y-m-d", strtotime($importHistory->created_at) ); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
           <td> <?php echo nl2br($importHistory->reason); ?></td>
-          <td> <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ") ) ?> </td>
+          <td> 
+            <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ") ) ?>
+            <?php echo CHtml::link("Rejects" , $this->createUrl("rejectcondition/index", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-action round ")); ?> 
+          </td>
         </tr>
     <?php 
     $i++;

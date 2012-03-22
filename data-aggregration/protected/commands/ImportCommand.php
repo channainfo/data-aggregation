@@ -40,9 +40,9 @@
       $daImporter->removeSite($code);
     }
 
-    public function actionTruncate(){
+    public function actionTruncate($all=false){
       $daImporter = new DaImporter(Yii::app()->db);
-      $daImporter->truncate();
+      $daImporter->truncate($all);
     }
 
     public function actionCreate($code){

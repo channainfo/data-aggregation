@@ -35,7 +35,10 @@ $this->menu = array(
       <td> <?php echo $row->email; ?>  </td>
       <td> 
         <?php echo CHtml::link("Edit", $this->createUrl("user/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
-        <?php echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete delete round ") ) ?> 
+        <?php 
+          if(Yii::app()->user->id != $row->id)
+            echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete delete round ") ) 
+         ?> 
       </td>
     </tr>
   <?php $i++; endforeach; ?>

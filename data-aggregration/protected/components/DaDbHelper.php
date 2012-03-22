@@ -6,7 +6,7 @@
    }
    
    public static function endIgnoringForeignKey($db){
-     $command = $this->db->createCommand("SET FOREIGN_KEY_CHECKS = 1;");
+     $command = $db->createCommand("SET FOREIGN_KEY_CHECKS = 1;");
      $command->execute();
    }
  }
