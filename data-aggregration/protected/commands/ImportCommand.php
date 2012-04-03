@@ -13,7 +13,6 @@
     public $dbX = false;
     public $siteconfig = false ;
     public $configs = false;
-    
     public $startTime ;
     public $endTime ;
     
@@ -21,7 +20,6 @@
       DaTool::p("\n Action {$action} running ") ;
       $this->startTime = microtime(true);
       return parent::beforeAction($action, $params);
-      
     }
     
     public function afterAction($action, $params) {
@@ -51,7 +49,12 @@
     }
     
     public function actionStart($code){
-      $daImporter = new DaImporter(Yii::app()->db, $code);
+      $daImporter = new DaImportSequence(Yii::app()->db, $code);
       $daImporter->start();
-    } 
+    }
+    
+    public function actionImportFixed($code){
+      $daImportSequence = new DaImportSequence(Yii::app()->db, $code);
+      $daImportSequence->importTablesFixed();
+    }
   }

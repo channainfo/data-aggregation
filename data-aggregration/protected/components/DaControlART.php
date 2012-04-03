@@ -6,12 +6,15 @@
    * +++ ART number for children : start with 'p'
    */ 
    public $code = DaConfig::CTRL_EXCEPTION_ART ;
+   public $key = "ART";
+   public $index = 2 ;
+
    
    /**
     * @throws DaInvalidControlException 
     */
     public function check($option=array()) {
-      $this->checkARTNumber();
+      return $this->checkARTNumber();
     }
   
     /**
@@ -19,16 +22,19 @@
      * @throws DaInvalidControlException 
      */
     public function checkARTNumber(){
+      $valid = true ;
       $art = trim($this->record["ART"]);
       if(strtolower($art[0])== 'p'){
         $code =substr($art, 1);
         if(strlen($code) != 9){
-          throw new DaInvalidControlException("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length ", $this->code);
+          $this->addError("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length ");
+          $valid = false ;
         }
       }
       if(strlen($art) != 9){
-        throw new DaInvalidControlException("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length", $this->code);
+        $this->addError("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length");
+        $valid = false ;
       }
-      
+      return $valid ;
     }
  }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2012 at 03:11 PM
+-- Generation Time: Apr 03, 2012 at 04:06 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -696,7 +696,8 @@ CREATE TABLE IF NOT EXISTS `tblclinic` (
 CREATE TABLE IF NOT EXISTS `tblcommune` (
   `IDCommune` int(10) NOT NULL,
   `IDDistrict` int(10) NOT NULL,
-  `CommuneEN` varchar(100) NOT NULL
+  `CommuneEN` varchar(100) NOT NULL,
+  PRIMARY KEY (`IDCommune`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -913,7 +914,8 @@ CREATE TABLE IF NOT EXISTS `tblcvtbdrugs` (
 CREATE TABLE IF NOT EXISTS `tbldistrict` (
   `IDDistrict` int(10) NOT NULL,
   `IDProvince` int(10) NOT NULL,
-  `DistrictEN` varchar(100) NOT NULL
+  `DistrictEN` varchar(100) NOT NULL,
+  PRIMARY KEY (`IDDistrict`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1010,7 +1012,8 @@ CREATE TABLE IF NOT EXISTS `tblprovince` (
   `IDProvince` int(10) NOT NULL,
   `ProvinceEN` varchar(100) NOT NULL,
   `ProvinceKH` varchar(100) NOT NULL,
-  `Distance` varchar(50) NOT NULL
+  `Distance` varchar(50) NOT NULL,
+  PRIMARY KEY (`IDProvince`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1082,6 +1085,18 @@ CREATE TABLE IF NOT EXISTS `tblvillage` (
 CREATE TABLE IF NOT EXISTS `tblvisitreason` (
   `VisitReasonEN` varchar(100) NOT NULL,
   `IDVisitReasonType` tinyint(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_migration`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_migration` (
+  `version` varchar(255) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

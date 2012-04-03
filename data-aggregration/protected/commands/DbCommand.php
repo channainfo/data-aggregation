@@ -50,9 +50,17 @@
       DaTool::p(" Remove '$count' groups ");
     }
     
+    public function primaryKey($table){
+      
+      
+    }
+    
     public function importConfig(){
       $file = dirname(__FILE__)."/../config/importConfig.php" ;
       
+      
+      $ids = array();
+      $tables = array();
       $sql = " SELECT * FROM ". DaConfig::IMPORT_TABLE_NAME." ORDER by priority DESC";
       $db = Yii::app()->db;
       
@@ -65,11 +73,20 @@
       foreach($dataReader as $row) {
         $cols = unserialize($row["cols"]);
         $table = " '{$row["table_name"]}' => array( {$this->concatCols($cols)} ) ";
+        
+        $primaryKey = DaDbHelper::primaryKey($db, $row["table_name"]);
+        $ids[] = " '{$row["table_name"]}' => '{$primaryKey}' ";
+        
         if($row["type"] == DaConfig::IMPORT_TABLE_TYPE_IMPORT)
           $tableImports[] = $table ;
         else if ($row["type"] == DaConfig::IMPORT_TABLE_TYPE_FIXED)
           $tableFixeds[] = $table;
       }
+      
+      
+      
+      
+      
       
       $sql = "SELECT * FROM da_drug_controls " ;
       $command = $db->createCommand($sql);
@@ -82,7 +99,25 @@
       $newLine = ",\n\t\t" ;  
       $tableImportStr = implode($newLine , $tableImports );
       $tableFixedStr = implode($newLine , $tableFixeds );
+      $idsStr = implode($newLine , $ids );
       $drugControlStr = implode($newLine, $drugConrols);
+      
+      
+      
+      
+      
+      //get primary key 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       $content = <<<EOT
   <?php    
@@ -93,6 +128,9 @@
     "fixed" => array(
         $tableFixedStr
     ),
+    "keys" => array(
+        $idsStr
+    ),   
     "drugControls" => array(
         $drugControlStr
     )  

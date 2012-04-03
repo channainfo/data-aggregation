@@ -9,8 +9,8 @@
     * @throws DaInvalidControlException
     * @param array $option 
     */
-   public function check($option=array()) {
-     $this->checkLDDate();
+   public function check($options=array()) {
+     return $this->checkLDDate() && $this->checkLostDead($options["dbX"]);
    }
    /**
     * Lost and dead need to check  checkLostDead
@@ -19,16 +19,19 @@
     * @throws DaInvalidControlException 
     */
    public function checkLostDead($db){
-     
-     for($i=0; $n = count($this->loadErrors($db)), $i < $n ; $i++){
-       if( $this->record["clinicid"] == $this->errorRecords[$i]["clinicid"] &&
-           $this->record["av_id"] == $this->errorRecords[$i]["av_id"] && 
-           $this->record["status"] == $this->errorRecords[$i]["status"] &&  
-           $this->record["lddate"] == $this->errorRecords[$i]["lddate"]) {
-           throw new DaInvalidControlException(" Invalid CvLostDead. [Lost date] = ['{$this->record["lddate"]["LostDate"]}'] after [Dead] = ['{$this->record["lddate"]["DeadDate"]}']  ");
+     $valid = true ;
+     $n = count($this->loadErrors($db));
+     for($i=0; $i < $n ; $i++){
+       if( $this->record["clinicid"] == $this->errorRecords[$i]["clinicid"]
+           && $this->record["cid"] == $this->errorRecords[$i]["cid"] 
+       //    && $this->record["status"] == $this->errorRecords[$i]["status"] 
+       //    && $this->record["lddate"] == $this->errorRecords[$i]["lddate"]
+       ) {
+           $this->addError(" Invalid CvLostDead. [Lost date] = ['{$this->record["lddate"]["LostDate"]}'] after [Dead] = ['{$this->record["lddate"]["DeadDate"]}']  ");
+           $valid = false;
        }
      }
-     return true;
+     return $valid;
    }
    /**
     *
@@ -43,11 +46,11 @@
      $sqlDeadFirst = " ( SELECT *  FROM tblcvlostdead as L1 WHERE L1.status = 'dead' ) ";
      $sqlLostLast  = " ( SELECT *  FROM tblcvlostdead as L2 WHERE L2.status = 'lost' ) ";
           
-     $sql = " SELECT Lost.*, Lost.lddate as LostDate, Dead.lddate as DeadDate  FROM "
+     $sql = " SELECT Lost.clinicid, Lost.cid  FROM "
           . "\n {$sqlLostLast} AS Lost , {$sqlDeadFirst} AS Dead "
           . "\n WHERE Lost.lddate > Dead.lddate "
           . "\n AND Lost.clinicid = Dead.clinicid  "
-          . "\n AND Lost.av_id = Dead.av_id  "
+          . "\n AND Lost.cid = Dead.cid  "
           . "\n GROUP BY Lost.clinicid, Lost.cid "   
           ;
      $this->sql = $sql ;     

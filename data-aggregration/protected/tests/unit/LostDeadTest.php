@@ -73,6 +73,8 @@ class LostDeadTest extends CDbTestCase {
           . "\n GROUP BY Lost.ClinicID, Lost.av_id "   
           ;
          
+     echo "\n {$sql}";
+     
      $errorRecords = Yii::app()->db->createCommand($sql)->queryAll();
      
      $this->assertEquals(count($errorRecords), 4 );

@@ -59,13 +59,80 @@ EOT;
     <?php endif;
   }
   
-  public static function htmlControlErrorOutput($err, $return= true){
+  
+ public static function outputTraceRecords($errorRecords){
+   if(!empty($errorRecords)): 
+     foreach($errorRecords as $table => $records):  
+     ?>
+      <h2 class="title"> <?php echo $table; ?> </h2>
+       <?php self::recordDetails($records); ?>
+     <?php endforeach; ?>
+   <?php endif;
+ }
+
+ public static function recordDetails($records, $return =false){
+   ob_start();
+   ?>
+   <div class="tableWrapper round" >
+        <table class="tgrid" >
+          
+          <!-- Table head -->
+          <thead>
+          <?php foreach($records as $record):?> 
+          <tr>
+            <?php foreach($record as $key => $value) : ?>
+            <th> <?php echo $key; ?> </th>
+            <?php endforeach; ?>  
+          </tr>
+          <?php break; endforeach; ?>
+          </thead>
+          
+          <!-- end Table head --> 
+          <tbody>
+          <?php 
+          $j = 0;
+          foreach($records as $record): ?>
+            <tr class='<?php echo ($j++ %2 ==0)? "even":"odd" ;?>' >
+               <?php foreach($record as $value): ?>
+                <td> <?php echo $value; ?> </td>
+               <?php endforeach; ?>
+            </tr>
+          <?php endforeach; ?>
+          </tbody>   
+        </table>  
+      </div>
+  <?php  
+  $str = ob_get_clean();
+  if($return)
+    return $str;
+  echo $str;
+ }
+
+
+ public static function htmlControlErrorOutput($err, $return= true){
     $str =  str_replace(array("[", "]"), array("<b>","</b>"), $err);
     if($return)
       return $str;
     echo $str;
   }
-  
+  //----------------------------------------------------------------------------
+  public static function outputMessagePatient($errs, $return =false){
+    ob_start();
+    if(count($errs)):
+    ?>
+    <ul>
+      <?php foreach($errs as $err): ?>
+      <li style="text-align: left;" > <?php echo $err; ?> </li>
+      <?php      endforeach; ?>
+    </ul>
+  <?php
+    endif;
+    $str = ob_get_clean();
+    if($return)
+      return $str;
+    echo $str;
+  }
+  //---------------------------------------------------------------------------- 
  }
  
  

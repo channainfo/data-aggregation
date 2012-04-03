@@ -34,6 +34,9 @@
        case "tblart" :
          self::$instance = new DaControlART();
          break;
+       case "tblcart" :
+         self::$instance = new DaControlART();
+         break;
        case "tblavlostdead" :
          self::$instance = new DaControlAvLostDead();
          break;

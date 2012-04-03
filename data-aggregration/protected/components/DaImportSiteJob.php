@@ -7,7 +7,7 @@
    }
 
    public function perform(){
-     $importer  = new DaImporter(Yii::app()->db, $this->code);
+     $importer  = new DaImportSequence(Yii::app()->db, $this->code);
      $importer->start();
    }
    

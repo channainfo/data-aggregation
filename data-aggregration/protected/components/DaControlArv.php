@@ -22,7 +22,8 @@
          return true;
        }
      }
-     throw new DaInvalidControlException("Invalid [ARV] . [ARV] = ['{$arv}'] is not in '( " . implode( "," , $options["drugControls"]). ")'", $this->code );
+     $this->addError("Invalid [ARV] . [ARV] = ['{$arv}'] is not in '( " . implode( "," , $options["drugControls"]). ")'");
+     return false ;
    }
    /**
     *
@@ -41,6 +42,8 @@
          return true;
        }
      }
-     throw new DaInvalidControlException("Invalid [ARV] name. [ARV] = ['{$arv}'] is not in '[( ".implode(",",$options["drugControls"]))." )]'";
+     $option_str = implode(",",$options["drugControls"]);
+     $this->addError("Invalid [ARV] name. [ARV] = ['{$arv}'] is not in '[( {$option_str} )]'" );
+     return false ;
    }
  }

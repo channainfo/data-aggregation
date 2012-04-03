@@ -9,4 +9,14 @@
      $command = $db->createCommand("SET FOREIGN_KEY_CHECKS = 1;");
      $command->execute();
    }
+   /**
+    *
+    * @param string $table
+    * @param CDbConnection $db 
+    */
+   public static function primaryKey($db , $table){
+     $sql = "SHOW INDEX FROM {$table} ";
+     $row = $db->createCommand($sql)->queryRow();
+     return $row["Column_name"];
+   }
  }

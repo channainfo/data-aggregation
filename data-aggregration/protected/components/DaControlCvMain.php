@@ -4,12 +4,14 @@
     * ARTNum should be 10 digits 
     */
    public $code = DaConfig::CTRL_EXCEPTION_CVMAIN ;
+   public $key = "Cid" ;
+   public $index = 80 ;
    /**
     *
     * @throws DaInvalidControlException 
     */
    public function check($option=array()){
-     $this->checkARTNum();
+     return $this->checkARTNum();
    }
    
    /**
@@ -19,8 +21,10 @@
    public function checkARTNum(){
      $art = trim($this->record["ARTNum"]);
      if( strlen($art) != 10){
-       throw new DaInvalidControlException("Invalid [ARTNum] . [ARTNum] = ['{$art}'] should be 10 characters in length ", $this->code);
+       $this->addError("Invalid [ARTNum] . [ARTNum] = ['{$art}'] should be 10 characters in length ");
+       return false;
      }
+     return true ;
    }
    
  }

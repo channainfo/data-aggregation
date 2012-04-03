@@ -18,12 +18,16 @@
    public $startTime = false;
    public $endTime = false;
    public $method = "";
-   public $rejects = array();
+  
+   public $daErrorInjection = null;
    
    public function fstart(){
+     
    }
+   
    public function fend(){
 
+     
    }
    /**
     *
@@ -39,16 +43,13 @@
     * @return array 
     * @throws DaInvalidFileException
     */
-   private function _getProcessTables($includeFixed=false){
+   protected function _getProcessTables($includeFixed=false){
      $configs = DaConfig::importConfig();
      if($includeFixed)
        return array_merge($configs["fixed"], $configs["tables"]);
      return $configs["tables"];
    }
  
-   /**
-    * @return type 
-    */
    public function removeSite($includeFixed = false){
       $this->fstart();
       try{
@@ -62,9 +63,9 @@
             $command = $this->db->createCommand($sql);
             $command->bindParam(":code", $this->code, PDO::PARAM_STR);
           }
-          else{
+          else
             $command = $this->db->createCommand("TRUNCATE ". $tableName);
-          }
+          
           
           try{
             $command->execute();
@@ -79,7 +80,7 @@
         DaTool::p($ex->getMessage());
       }
       DaDbHelper::endIgnoringForeignKey($this->db);
-    }
+   }
     /**
      *
      * @throws Exception
@@ -101,7 +102,6 @@
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)-$start, $ex->getMessage());  
       }
       catch(Exception $ex){
-        echo "\n kdkkdkdkdk dfkdskf " ;
         DaTool::pException($ex);
         $this->_endImporting(ImportSiteHistory::FAILED, microtime(true)-$start, $ex->getMessage());
       }
@@ -148,7 +148,7 @@
     /**
      * @throws Exception 
      */
-    private function _truncate($includeFixed=false){
+    protected function _truncate($includeFixed=false){
       DaTool::p("Preparing ");
       $tables = $this->_getProcessTables($includeFixed);
       DaDbHelper::startIgnoringForeignKey($this->db);
@@ -160,12 +160,13 @@
       }
       DaDbHelper::endIgnoringForeignKey($this->db);
     }
-        
+    
+    
     /** This function is used with multiple place so intend to catch it exception here
      * @throws Exception
      */
     
-    private function _import($includeFixed = false){
+    protected function _import($includeFixed = false){
       $startTime = microtime(true);
       $total = 0;       
       $transaction = false;
@@ -227,7 +228,7 @@
      * @return int 
      * @throws CDbException
      */
-    private function _importTable($table, $cols){
+    protected function _importTable($table, $cols){
       $dbx = $this->_loadDbX();
       $sql = " SELECT * FROM {$table}";
       $commandX = $dbx->createCommand($sql);
@@ -240,6 +241,7 @@
       $j = 0;
       $isFixedTable = $this->_isFixedTable($table);
       $controlImport = DaControlImport::getControlInstance($table);
+      
       foreach($dataReader as $row){        
         $i =0;
         if($controlImport){
@@ -249,8 +251,10 @@
           }
           catch(DaInvalidControlException $ex){
               $this->addRejects($table, $row, $ex->getMessage(), $ex->getCode());
+              continue;
           }
         }
+        
         foreach($row as  &$value){
           $command->bindParam(":{$cols[$i]}", $value, PDO::PARAM_STR ); //use $cols index instead of key of row so we can pre downcase with downcase each records 
           $i++;
@@ -269,7 +273,6 @@
           else
             DaTool::pErr($ex->getMessage()); // throw new DaInvalidFixedTableException($ex->getMessage());
         }
-        
       }
       $this->flushTableRejects($table);
       return $j ;
@@ -323,7 +326,7 @@
      *
      * @throws Exception 
      */
-    private function _startImporting(){
+    protected function _startImporting(){
       
       $siteconfig = $this->_loadSiteConfig();
       
@@ -346,7 +349,7 @@
      * @param integer $status
      * @return boolean 
      */
-    private function _endImporting($status, $duration , $reason="" ){
+    protected function _endImporting($status, $duration , $reason="" ){
       $siteconfig = $this->_loadSiteConfig();
       $import = $siteconfig->lastImport(false);
       $import->status = $status ;
@@ -360,7 +363,7 @@
      * @param string $table
      * @return boolean 
      */
-    private function _isFixedTable($table){
+    protected function _isFixedTable($table){
       $configs = DaConfig::importConfig();
       foreach($configs["fixed"] as $tableName => $cols){
         if($tableName == $table)
@@ -390,11 +393,11 @@
       return true;   
     }
     
-    private function addRejects($table, $record, $message,  $code){
+    protected function addRejects($table, $record, $message,  $code){
       $this->rejects[] = array("code" => $code, "record" => $record, "message" => $message);
     }
     
-    private function flushTableRejects($table){
+    protected function flushTableRejects($table){
       if(empty($this->rejects))
         return;
       
