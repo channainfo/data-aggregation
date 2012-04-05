@@ -3,7 +3,7 @@
    /*
     * DateVisit should not be in year 1900
     * if OffYesNo = Yes --> OfficeIn <> ''
-    * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 digits
+    * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 character(p+9digits)
     */
     public $code = DaConfig::CTRL_EXCEPTION_CIMAIN ;
     public $key = "ClinicID";
@@ -52,7 +52,7 @@
     public function checkDateARV(){
       $valid = true ;
       $year = DaTool::getYear($this->record["DateARV"]);
-      if($year == "1900"){
+      if($year != "1900"){
         $arv = trim($this->record["ARVNumber"]);
         if( $arv == "" ){
           $this->addError("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should not be empty ");
@@ -60,7 +60,7 @@
         }
         else{
           if(strlen($arv) == 10 ){
-            $this->addError("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should be 9 characters length");
+            $this->addError("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should be 10 characters length");
             $valid = false;
           }
         }

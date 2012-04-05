@@ -86,7 +86,6 @@
       $import = $siteconfig->lastImport();
       $import->status = ImportSiteHistory::PENDING;
       //$import->save();
-      
       DaDbHelper::startIgnoringForeignKey($this->db);
    }
    /**
@@ -105,26 +104,23 @@
       $import->duration = $duration;
       $import->reason = $reason;
       //$import->save();
-      
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
-    
    public function start(){
-     
-     //try{
+     try{
         $this->_startImporting();
-        //$this->importTablesFixed();
+        $this->importTablesFixed();
         $this->importAiMain();
         $this->importCiMain();
         $this->_endImporting(ImportSiteHistory::SUCCESS);
-//     }
-//     catch(DaInvalidStatusException $ex){
-//       DaTool::pErr($ex->getMessage());
-//     }
-//     catch(Exception $ex){
-    //    DaTool::pException($ex);
-    //    $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
-    // }
+     }
+     catch(DaInvalidStatusException $ex){
+       DaTool::pErr($ex->getMessage());
+     }
+     catch(Exception $ex){
+        DaTool::pException($ex);
+        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
+     }
    }
    public function importTablesFixed(){
      $configs = DaConfig::importConfig();
@@ -161,6 +157,7 @@
         }
      }
    }
+   
    public function beginTransaction(){
      $this->transaction = $this->db->beginTransaction();
      $this->transaction->active = true;
@@ -300,15 +297,12 @@
         $control = DaControlImport::getControlInstance($table);
         if($control){
           $control->setRecord($record);
-          
           if($control->check(array("dbX" => $this->dbX )))
             $this->addRecord($record, $table);
-          
           else{
             $this->addRecordErrors($record, $table) ;
             $errors = array_merge($errors, $control->getErrors()); 
           }
-          
         }
         else
           $this->addRecord($record, $table);

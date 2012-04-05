@@ -24,7 +24,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkTranIn(){
-      if($this->record["OffYesNo"] == "Yes"){
+      if(strtolower(trim($this->record["OffYesNo"])) == "yes"){
         if($this->record["OffTransferin"] == ""){
           $this->addError("Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty ");
           return false ;

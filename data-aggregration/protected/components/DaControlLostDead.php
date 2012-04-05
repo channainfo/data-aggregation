@@ -13,7 +13,7 @@
     public function checkLDDate(){
       $year = DaTool::getYear($this->record["LDdate"]);
       if($year == "1900"){
-        $this->addError("Invalid [LDDate]. [LDDate]={$year} should not be in 1900 ");
+        $this->addError("Invalid [LDDate]. [LDDate]={$this->record["LDdate"]} should not be in 1900 ");
         return false;
       }
       return true ;

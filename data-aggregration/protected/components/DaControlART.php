@@ -31,7 +31,7 @@
           $valid = false ;
         }
       }
-      if(strlen($art) != 9){
+      else if(strlen($art) != 9){
         $this->addError("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length");
         $valid = false ;
       }

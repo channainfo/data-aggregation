@@ -5,7 +5,7 @@
     
     
     public function __construct($record=array()) {
-      $this->record = $record;
+      $this->setRecord($record);
     }
    
     /**
