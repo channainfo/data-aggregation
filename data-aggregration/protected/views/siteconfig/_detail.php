@@ -4,7 +4,7 @@
 <table>
   <tr>
     <th>Code</td>
-    <td> : <?php echo CHtml::link($siteconfig->code, $this->createUrl("siteconfig/update/{$siteconfig->id}")); ?></td>
+    <td> : <?php echo $siteconfig->code ; ?></td>
   </tr>
   <tr>
     <th width="150" >Name</td>
@@ -12,7 +12,7 @@
   </tr>
   <tr>
     <th>Db</td>
-    <td> : <?php echo $siteconfig->db ?> </td>
+    <td> : <?php echo CHtml::link($siteconfig->db, $this->createUrl("siteconfig/update/{$siteconfig->id}")); ?> </td>
   </tr>
   <tr>
     <th>Server</td>

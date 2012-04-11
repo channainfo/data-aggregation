@@ -82,8 +82,10 @@ class SiteConfigController extends DaController {
   }
   public function actionRestore(){
      $siteconfig_id = (int)$_GET["id"];
-     $siteconfig = SiteConfig::model()->findByPk($siteconfig_id);
-     $errors = array("message"=>"");    
+     $site = new SiteConfig();
+     $siteconfig = $site->findByPk($siteconfig_id);//   SiteConfig::model()->findByPk($siteconfig_id);
+     $errors = array("message"=>""); 
+     
      if($siteconfig){
         $lastBackup = $siteconfig->lastBackUp(false);
         if($lastBackup && $lastBackup->restorable()){
@@ -95,7 +97,6 @@ class SiteConfigController extends DaController {
           $lastBackup->status = Backup::PENDING;
           $lastBackup->save();
           $connection = null;
-          
           $file =  DaConfig::pathDataStore().$backupAttrs["filename"] ;
           $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], $siteAttrs["password"], $siteAttrs["db"], 
                  $file ,$connection );
@@ -109,17 +110,27 @@ class SiteConfigController extends DaController {
           }
           $lastBackup->duration = $endTime-$startTime;
           $lastBackup->save();
-        }else{
+        }
+        else
           $errors["message"] = "No back up to restore" ;
-        }  
-     }else{
-       $errors["message"] = "Site not found";       
+        
      }
-     if(count($errors))
-       Yii::app ()->user->setFlash("error", "Failed to restore the file");
      else
-       Yii::app()->user->setFlash("success", "Database has been restored successfully");
+       $errors["message"] = "Site not found";       
      
+     if(count($errors)){
+       Yii::app ()->user->setFlash("error", "Failed to restore the file");
+     }
+     else{
+       try{
+         $siteconfig->updateSiteCodeName();
+         Yii::app()->user->setFlash("success", "Database has been restored successfully");
+       }
+       catch(DaInvalidSiteDatabaseException $ex){
+         $errors["message"] = $ex->getMessage();
+         Yii::app()->user->setFlash("error", $ex->getMessage());
+       }
+     } 
      echo json_encode($errors);
   }
   public function loadModel($id)

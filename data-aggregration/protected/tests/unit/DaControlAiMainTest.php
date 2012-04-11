@@ -12,7 +12,7 @@
       $this->instance = DaControlImport::getControlInstance("tblaimain");
    }
     
-   public function testAimain(){
+   public function testCheck(){
      
      $this->instance->setRecord($this->valid);
      $success = $this->instance->check();

@@ -1,9 +1,10 @@
 <?php
+ //@todo : OffYesNo
  class DaControlCiMain extends DaControl{
    /*
     * DateVisit should not be in year 1900
     * if OffYesNo = Yes --> OfficeIn <> ''
-    * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 character(p+9digits)
+    * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 character
     */
     public $code = DaConfig::CTRL_EXCEPTION_CIMAIN ;
     public $key = "ClinicID";
@@ -37,7 +38,8 @@
      * @throws DaInvalidControlException 
      */
     public function checkOfficeIn(){
-      if($this->record["OffYesNo"] == "Yes"){
+      $offYesNo = new DaOffYesNo($this->record["OffYesNo"]);
+      if($offYesNo->valid()){
         if($this->record["OfficeIn"] == ""){
           $this->addError("Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes");
           return false;
@@ -59,7 +61,7 @@
           $valid = false ;
         }
         else{
-          if(strlen($arv) == 10 ){
+          if(strlen($arv) != 10 ){
             $this->addError("Invalid [ARVNumber]. [ARVNumber] = ['{$arv}'] should be 10 characters length");
             $valid = false;
           }

@@ -3,6 +3,7 @@
 <?php $this->renderPartial("//shared/_requireField"); ?>  
 <?php $form = $this->beginWidget("CActiveForm", array("id" => "form-siteconfig")); ?>
   <?php echo CHtml::errorSummary($model); ?>
+  <!--
   <div class="row">
     <?php echo $form->labelEx($model, "code");  ?>
     <?php echo $form->textField($model, "code", array("size" => 60, "autocomplete" => "off"));  ?>
@@ -14,6 +15,7 @@
     <?php echo $form->textField($model, "name", array("size" => 60, "autocomplete" => "off"));  ?>
     <?php echo $form->error($model, "name");  ?>
   </div>
+ --> 
 
   <div class="row">
     <?php echo $form->labelEx($model, "host");  ?>
@@ -41,11 +43,17 @@
 
   <div class="row">
     <label></label>
+    <?php echo CHtml::button("New Restoration", array("onclick" => "GoToRestorationPage()")); ?>
     <?php echo CHtml::button("Test connection", array("id" => "test-connection")); ?>
     <?php echo CHtml::submitButton("Save", array("class" => "btn-save")); ?>
   </div>
   
   <script type="text/javascript">
+    
+    function GoToRestorationPage(){
+      window.location.href = "<?php echo Yii::app()->createUrl("backup/create?siteconfig_id={$model->id}") ?>" ;
+    }
+    
     function collape(message){
         content = "<div class='errorContent'>" + message + "</div>";
         return content;

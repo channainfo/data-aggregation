@@ -51,7 +51,10 @@
     public function actionStart($code){
       $daImporter = new DaImportSequence(Yii::app()->db, $code);
       $daImporter->start();
+      $daImporter->rejectPatients();
     }
+    
+    
     
     public function actionImportFixed($code){
       $daImportSequence = new DaImportSequence(Yii::app()->db, $code);

@@ -10,7 +10,7 @@
     * @param array $option 
     */
    public function check($options=array()) {
-     return $this->checkLDDate() && $this->checkLostDead($options["dbX"]);
+     return $this->checkLDDate() && $this->checkLostDead($options);
    }
    /**
     * Lost and dead need to check  checkLostDead
@@ -18,16 +18,17 @@
     * @return boolean
     * @throws DaInvalidControlException 
     */
-   public function checkLostDead($db){
+   public function checkLostDead($options){
      $valid = true ;
-     $n = count($this->loadErrors($db));
+     $n = count($this->loadErrors($options));
+     
      for($i=0; $i < $n ; $i++){
-       if( $this->record["clinicid"] == $this->errorRecords[$i]["clinicid"]
-           && $this->record["cid"] == $this->errorRecords[$i]["cid"] 
+       if( $this->record["ClinicID"] == $this->errorRecords[$i]["ClinicID"]
+           && $this->record["CID"] == $this->errorRecords[$i]["CID"] 
        //    && $this->record["status"] == $this->errorRecords[$i]["status"] 
        //    && $this->record["lddate"] == $this->errorRecords[$i]["lddate"]
        ) {
-           $this->addError(" Invalid CvLostDead. [Lost date] = ['{$this->record["lddate"]["LostDate"]}'] after [Dead] = ['{$this->record["lddate"]["DeadDate"]}']  ");
+           $this->addError(" Invalid EvLostDead. [Date] = ['{$this->record["LDdate"]}'] , [Status] = [{$this->record['Status']}] ");
            $valid = false;
        }
      }
@@ -38,15 +39,18 @@
     * @param CDbConnection $db
     * @return array
     */
-   public function loadErrors($db){
+   public function loadErrors($options){
      if($this->errorRecords !==false){
        return $this->errorRecords;
      }
      
-     $sqlDeadFirst = " ( SELECT *  FROM tblcvlostdead as L1 WHERE L1.status = 'dead' ) ";
-     $sqlLostLast  = " ( SELECT *  FROM tblcvlostdead as L2 WHERE L2.status = 'lost' ) ";
+     $db = $options["dbX"];
+     $parentId = $options["parentId"] ;
+     
+     $sqlDeadFirst = " ( SELECT *  FROM tblcvlostdead as L1 WHERE L1.status = 'dead' AND cid='{$parentId}' ) ";
+     $sqlLostLast  = " ( SELECT *  FROM tblcvlostdead as L2 WHERE L2.status = 'lost' AND cid='{$parentId}' ) ";
           
-     $sql = " SELECT Lost.clinicid, Lost.cid  FROM "
+     $sql = " SELECT Lost.ClinicID as ClinicID , Lost.cid as CID  FROM "
           . "\n {$sqlLostLast} AS Lost , {$sqlDeadFirst} AS Dead "
           . "\n WHERE Lost.lddate > Dead.lddate "
           . "\n AND Lost.clinicid = Dead.clinicid  "

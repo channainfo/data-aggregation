@@ -43,7 +43,7 @@ class SiteConfig extends DaActiveRecordModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('code, user, db, host ', 'required'),
+			array('user, db, host ', 'required'),
       array("code", "length", "max" => 4),
 			array('code, name, host, user, password, db', 'length', 'max'=>255),
 			array('created_at, modified_at', 'safe'),
@@ -71,6 +71,25 @@ class SiteConfig extends DaActiveRecordModel
     $this->lastBackup = $model->findByAttributes(array(),$criteria);
     return $this->lastBackup ;
   }
+  /**
+   * 
+   */
+  public function updateSiteCodeName(){
+    $db = DaDbMsSqlConnect::connect($this->host, $this->db, $this->user, $this->password);
+    $table = "tblClinic";
+    $sql = "SELECT TOP 1 * FROM {$table}   " ;
+    $command = $db->createCommand($sql);
+    try{
+      $row = $command->queryRow();
+      $this->name = trim($row["Clinic"]);
+      $this->code = trim($row["ART"]);
+    }
+    catch(CException $ex){
+      throw new DaInvalidSiteDatabaseException("Could not find any site from host: [{$this->host}] , db: [{$this->db}]  in table: [{$table}] ");
+    }
+    $this->save();
+  }
+  
   /**
    *
    * @param boolean $cache
@@ -100,10 +119,6 @@ class SiteConfig extends DaActiveRecordModel
 		);
 	}
   
-  
-  
-  
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

@@ -1,4 +1,7 @@
 <?php
+/**
+ * @property SiteConfig $siteconfig 
+ */
   class SiteConfigTest extends CDbTestCase{
     public $fixtures = array(
         "siteConfigs" => "daSiteConfigTest", 
@@ -9,24 +12,26 @@
     );
     
     public $validAttributes, $siteconfig;
-
-    public function tearDown(){
-      
-    }
-    
     public function setUp() {
      $this->attributes =  array(
-                              "code" => "0001",
-                              "name" => "Battambong",
-                              "db" => "SERVER_OI",
-                              "host" => "WORK-NIPH",
+                              "code" => "",
+                              "name" => "",
+                              "db" => "site2",
+                              "host" => "localhost",
                               "user" => "sa",
                               "password" => "123456"
                           );
      $this->siteconfig = new SiteConfig();
      
     }
-
+    public function testUpdateSiteCodeName(){
+      $this->siteconfig->attributes = $this->attributes;
+      $this->siteconfig->save();
+      $this->siteconfig->updateSiteCodeName();
+      $this->assertNotEquals(empty($this->siteconfig->name), false);
+      $this->assertNotEquals(empty($this->siteconfig->code), false);
+    }
+    
     public function testCreateSiteConfigWithValidAttribute(){
       $count = $this->siteconfig->count();
       $this->siteconfig->setAttributes($this->attributes);
@@ -36,9 +41,9 @@
     
     public function testCreateSiteConfigRequiredValidAttributes(){
       /**
-       * It required code, db, host, user
+       * It required db, host, user
        */
-       $requires = array("code", "host", "db", "user");
+       $requires = array( "host", "db", "user");
        foreach($requires as $key){
          // attributes does not exist
 

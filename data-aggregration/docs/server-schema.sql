@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2012 at 04:06 AM
+-- Generation Time: Apr 10, 2012 at 12:02 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -19,6 +19,187 @@ SET time_zone = "+00:00";
 --
 -- Database: `server_oi_dev`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_backups`
+--
+
+CREATE TABLE IF NOT EXISTS `da_backups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(255) NOT NULL,
+  `status` int(4) DEFAULT '0',
+  `siteconfig_id` int(11) NOT NULL,
+  `duration` float DEFAULT NULL,
+  `reason` text,
+  `modified_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_da_bakups_siteconfig_id` (`siteconfig_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_djjobs`
+--
+
+CREATE TABLE IF NOT EXISTS `da_djjobs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `handler` text NOT NULL,
+  `queue` varchar(255) DEFAULT 'default',
+  `attempts` int(11) DEFAULT '0',
+  `run_at` datetime DEFAULT NULL,
+  `locked_at` datetime DEFAULT NULL,
+  `locked_by` varchar(255) DEFAULT NULL,
+  `failed_at` datetime DEFAULT NULL,
+  `error` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_drug_controls`
+--
+
+CREATE TABLE IF NOT EXISTS `da_drug_controls` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_groups`
+--
+
+CREATE TABLE IF NOT EXISTS `da_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_import_site_histories`
+--
+
+CREATE TABLE IF NOT EXISTS `da_import_site_histories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status` int(4) DEFAULT '0',
+  `siteconfig_id` int(11) NOT NULL,
+  `duration` float DEFAULT NULL,
+  `reason` text,
+  `modified_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_da_import_site_histories_siteconfig_id` (`siteconfig_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_import_tables`
+--
+
+CREATE TABLE IF NOT EXISTS `da_import_tables` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `table_name` varchar(255) DEFAULT NULL,
+  `cols` text,
+  `created_at` datetime DEFAULT NULL,
+  `priority` int(4) DEFAULT '0',
+  `type` varchar(255) DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_reject_conditions`
+--
+
+CREATE TABLE IF NOT EXISTS `da_reject_conditions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tableName` varchar(255) NOT NULL,
+  `code` int(4) DEFAULT '0',
+  `message` text,
+  `record` text,
+  `import_site_history_id` int(11) NOT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_da_reject_conditions_import_site_history_id` (`import_site_history_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_reject_patients`
+--
+
+CREATE TABLE IF NOT EXISTS `da_reject_patients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tableName` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` int(4) DEFAULT '0',
+  `message` text,
+  `record` text,
+  `err_records` text,
+  `import_site_history_id` int(11) NOT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_siteconfigs`
+--
+
+CREATE TABLE IF NOT EXISTS `da_siteconfigs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `host` varchar(255) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `db` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `da_users`
+--
+
+CREATE TABLE IF NOT EXISTS `da_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `salt` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `last_login_at` datetime DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -921,6 +1102,143 @@ CREATE TABLE IF NOT EXISTS `tbldistrict` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbleimain`
+--
+
+CREATE TABLE IF NOT EXISTS `tbleimain` (
+  `ClinicID` char(10) NOT NULL,
+  `DateVisit` datetime DEFAULT NULL,
+  `DOB` datetime DEFAULT NULL,
+  `Sex` char(13) DEFAULT NULL,
+  `AddGuardian` char(13) DEFAULT NULL,
+  `House` char(4) DEFAULT NULL,
+  `Street` char(5) DEFAULT NULL,
+  `Grou` char(6) DEFAULT NULL,
+  `Village` char(20) DEFAULT NULL,
+  `Commune` char(20) DEFAULT NULL,
+  `District` char(20) DEFAULT NULL,
+  `Province` char(20) DEFAULT NULL,
+  `NameContPs1` char(30) DEFAULT NULL,
+  `ContAddress1` char(150) DEFAULT NULL,
+  `ContPhone1` char(20) DEFAULT NULL,
+  `Fage` int(10) DEFAULT NULL,
+  `FHIV` int(10) DEFAULT NULL,
+  `Fstatus` int(10) DEFAULT NULL,
+  `Mage` int(10) DEFAULT NULL,
+  `MOI` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `MART` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Hospital` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `Mstatus` int(10) DEFAULT NULL,
+  `PlaceDelivery` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `PMTCT` char(10) CHARACTER SET utf8 DEFAULT NULL,
+  `DateDelivery` datetime DEFAULT NULL,
+  `StatusDelivery` int(10) DEFAULT NULL,
+  `Lenght` char(5) CHARACTER SET utf8 DEFAULT NULL,
+  `Weight` char(5) CHARACTER SET utf8 DEFAULT NULL,
+  `Bpregnancy` int(10) DEFAULT NULL,
+  `Dtpregnancy` int(10) DEFAULT NULL,
+  `Dpregnancy` int(10) DEFAULT NULL,
+  `ART` int(10) DEFAULT NULL,
+  `ARVpro` int(10) DEFAULT NULL,
+  `None` int(10) DEFAULT NULL,
+  `SyrupNVP` int(10) DEFAULT NULL,
+  `Cotrim` int(10) DEFAULT NULL,
+  `OffYesNo` int(10) DEFAULT NULL,
+  `TransferIn` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `HIVTest` int(10) DEFAULT NULL,
+  `ID` char(4) NOT NULL,
+  PRIMARY KEY (`ClinicID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblevarv`
+--
+
+CREATE TABLE IF NOT EXISTS `tblevarv` (
+  `ARV` char(25) DEFAULT NULL,
+  `Form` char(10) DEFAULT NULL,
+  `Dose` char(10) DEFAULT NULL,
+  `Freq` char(10) DEFAULT NULL,
+  `TotalTable` char(10) DEFAULT NULL,
+  `Status` char(2) CHARACTER SET utf8 DEFAULT NULL,
+  `Dat` datetime DEFAULT NULL,
+  `Reason` char(40) CHARACTER SET utf8 DEFAULT NULL,
+  `Remark` char(6) CHARACTER SET utf8 DEFAULT NULL,
+  `Eid` char(15) NOT NULL,
+  `ID` char(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblevlostdead`
+--
+
+CREATE TABLE IF NOT EXISTS `tblevlostdead` (
+  `ClinicID` char(10) NOT NULL,
+  `Status` char(50) NOT NULL,
+  `LDdate` datetime DEFAULT NULL,
+  `EID` char(15) NOT NULL,
+  `ID` char(4) NOT NULL,
+  PRIMARY KEY (`ClinicID`,`Status`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblevmain`
+--
+
+CREATE TABLE IF NOT EXISTS `tblevmain` (
+  `ClinicID` char(10) DEFAULT NULL,
+  `DateVisit` datetime DEFAULT NULL,
+  `TypeVisit` char(10) DEFAULT NULL,
+  `Temperat` char(5) DEFAULT NULL,
+  `Pulse` char(10) DEFAULT NULL,
+  `Resp` char(10) DEFAULT NULL,
+  `Weight` char(5) DEFAULT NULL,
+  `Height` char(5) DEFAULT NULL,
+  `Head` char(5) DEFAULT NULL,
+  `Malnutrition` int(10) DEFAULT NULL,
+  `Mild` char(10) DEFAULT NULL,
+  `Moderate` char(10) DEFAULT NULL,
+  `Severe` char(10) DEFAULT NULL,
+  `BCG` int(10) DEFAULT NULL,
+  `Poli` int(10) DEFAULT NULL,
+  `Measies` int(10) DEFAULT NULL,
+  `VaccinOther` char(10) CHARACTER SET utf8 DEFAULT NULL,
+  `ReceivingNVP` int(10) DEFAULT NULL,
+  `ReceivingNone` int(10) DEFAULT NULL,
+  `ARVProOther` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `Breast` int(10) DEFAULT NULL,
+  `Formula` int(10) DEFAULT NULL,
+  `Mixed` int(10) DEFAULT NULL,
+  `food` int(10) DEFAULT NULL,
+  `Complementatry` int(10) DEFAULT NULL,
+  `DNA1` char(10) DEFAULT NULL,
+  `AnDNA1` char(10) DEFAULT NULL,
+  `DNA2` char(10) DEFAULT NULL,
+  `AnDNA2` char(10) DEFAULT NULL,
+  `DNA` char(10) DEFAULT NULL,
+  `AnDNA` char(10) DEFAULT NULL,
+  `DateCollected` datetime DEFAULT NULL,
+  `DateSent` datetime DEFAULT NULL,
+  `DateReceived` datetime DEFAULT NULL,
+  `Result` char(10) DEFAULT NULL,
+  `DateDelivered` datetime DEFAULT NULL,
+  `ResultAntibody` char(10) DEFAULT NULL,
+  `DateResult` datetime DEFAULT NULL,
+  `DateApp` datetime DEFAULT NULL,
+  `EID` char(15) CHARACTER SET utf8 NOT NULL,
+  `ID` char(4) NOT NULL,
+  PRIMARY KEY (`EID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblpatienttest`
 --
 
@@ -1179,6 +1497,24 @@ CREATE TABLE IF NOT EXISTS `tempvcct` (
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `da_backups`
+--
+ALTER TABLE `da_backups`
+  ADD CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `da_import_site_histories`
+--
+ALTER TABLE `da_import_site_histories`
+  ADD CONSTRAINT `fk_da_import_site_histories_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `da_reject_conditions`
+--
+ALTER TABLE `da_reject_conditions`
+  ADD CONSTRAINT `fk_da_reject_conditions_import_site_history_id` FOREIGN KEY (`import_site_history_id`) REFERENCES `da_import_site_histories` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `tblaiarvtreatment`

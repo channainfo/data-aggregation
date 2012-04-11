@@ -46,13 +46,17 @@
    
    public static function  addRecord($records, $table, $sitecode=false ){
      $sql = DaSqlHelper::insertTableWithIndexParam($table );
+     echo "\n {$sql} ";
      $command = Yii::app()->db->createCommand($sql);
      $i = 1;
-     foreach($records  as  &$value)
+     
+     foreach($records  as  &$value){
        $command->bindParam($i++, $value, PDO::PARAM_STR ); //use $cols index instead of key of row so we can pre downcase with downcase each records 
+     }
      
      if($sitecode)
-      $command->bindParam($i, $sitecode, PDO::PARAM_STR );
+       $command->bindParam($i, $sitecode, PDO::PARAM_STR );
+     
      $command->execute();
    }
  }

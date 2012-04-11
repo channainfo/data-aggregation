@@ -12,7 +12,7 @@ class m120229_075950_create_import_site_histories_table extends CDbMigration{
         "modified_at" => "datetime",
         "created_at" => "datetime"
     ));
-    $this->addForeignKey("fk_{$this->_import_site_histories}_siteconfig_id", "$this->_import_site_histories", "siteconfig_id", "da_siteconfigs", "id");
+    $this->addForeignKey("fk_{$this->_import_site_histories}_siteconfig_id", "$this->_import_site_histories", "siteconfig_id", "da_siteconfigs", "id", "CASCADE");
   }
 
 	public function down(){

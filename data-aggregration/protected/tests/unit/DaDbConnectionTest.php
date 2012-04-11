@@ -3,7 +3,7 @@
      
      public function testConnectionSuccess(){
        
-       $host = "WORK-NIPH";
+       $host = "localhost";
        $user = "sa" ;
        $passwrod = "123456" ;
        $databases = array("master", "site_new_oi");
@@ -15,9 +15,11 @@
           unset($db);
        }
      }
-     
+     /**
+     * @expectedException Exception
+     */
      public function testConnectionFailed(){
-       $host = "WORK-NIPH";
+       $host = "localhost";
        $user = "sa" ;
        $passwrod = "" ;
        $database = "server_oi";

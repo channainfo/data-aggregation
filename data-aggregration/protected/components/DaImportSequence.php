@@ -53,22 +53,9 @@
       if($this->dbX ){
         return $this->dbX;
       }
-      
       $siteconfig = $this->_loadSiteConfig($code);
-      $dbX = false;
-      
-      $dsn = "sqlsrv:Server={$siteconfig->attributes["host"]};Database={$siteconfig->attributes["db"]}";
-      $username = $siteconfig->attributes["user"];
-      $password = $siteconfig->attributes["password"];
-      
-      $dbX = new CDbConnection($dsn,$username,$password);
-      try{
-        $dbX->active=true;
-      }
-      catch(CDbException $ex){
-        throw  new DaInvalidSiteDatabaseException("Could not connect to : {$siteconfig->attributes["host"]} " . $ex->getMessage());
-      }
-      $this->dbX = $dbX;
+      $this->dbX = DaDbMsSqlConnect::connect($siteconfig->attributes["host"], $siteconfig->attributes["db"],
+              $siteconfig->attributes["user"], $siteconfig->attributes["password"]);
       return $this->dbX;
     }
    
@@ -76,17 +63,21 @@
       $this->start = microtime(true);
       $siteconfig = $this->siteconfig;
       if($siteconfig->lastImport()){
+
         if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING )
           throw new DaInvalidStatusException("Site {$siteconfig->code} import in progress");
         else if($siteconfig->lastImport()->status != ImportSiteHistory::START ){
           throw new DaInvalidStatusException("Site {$siteconfig->code} import in had been finished with status: " . 
                   $siteconfig->lastImport()->getStatusText(). " On date : " . " [ {$siteconfig->lastImport()->modified_at} ]" );
-        }  
+        }
+        
+        $import = $siteconfig->lastImport();
+        $import->status = ImportSiteHistory::PENDING;
+        //$import->save();
+        DaDbHelper::startIgnoringForeignKey($this->db);
       }
-      $import = $siteconfig->lastImport();
-      $import->status = ImportSiteHistory::PENDING;
-      //$import->save();
-      DaDbHelper::startIgnoringForeignKey($this->db);
+      else
+        throw new DaInvalidStatusException("Could not find any import");
    }
    /**
      *
@@ -109,9 +100,12 @@
    public function start(){
      try{
         $this->_startImporting();
-        $this->importTablesFixed();
-        $this->importAiMain();
-        $this->importCiMain();
+        //$this->importTablesFixed();
+        
+        //$this->importAiMain();
+        //$this->importCiMain();
+        $this->importEiMain();
+        
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
@@ -198,7 +192,6 @@
            
            if(count($errors)){
              $this->rollback();
-             
              $this->addRejectPatient($table, $record, $errors);
            }
            else
@@ -221,14 +214,44 @@
        return "tblavmain";
      else if($table == "tblcimain")
        return "tblcvmain";
+     else if($table == "tbleimain")
+       return "tblevmain";
    }
-
+   //===========main tables======================================================
+   public function importEiMain(){
+      return $this->importIMain("tbleimain") ;
+   }
    public function importCiMain(){
       return $this->importIMain("tblcimain") ;
    }
    public function importAiMain() {
       return $this->importIMain("tblaimain");
    }
+   //===========================================================================
+   public function rejectPatients(){
+     $import_site_history = $this->siteconfig->lastImport()->id ;
+     
+     $reject = new RejectPatient();
+     $patients = $reject->findAll("	import_site_history_id = :import_site_history_id", array("import_site_history_id" => $import_site_history));
+     
+     echo "patient errors : ".count($patients) ;
+     
+     foreach($patients as $patient){
+       print_r($patient->attributes);
+       echo "\n message: ";
+       print_r(unserialize($patient->attributes["message"]));
+       echo "\n error: ";
+       print_r(unserialize($patient->attributes["err_records"]));
+       echo "\n record";
+       print_r(unserialize($patient->attributes["record"]));
+       
+       
+     }
+     
+     
+   }
+   
+   //===========================================================================
    public function importTestPatient($parentId){
      $table = "tblpatienttest" ;
      
@@ -247,6 +270,7 @@
    
    public function importVisitMain($parentId, $table){
      $sqlX = DaRecordReader::getReader($table);
+     echo "\n {$sqlX}" ;
      $commandX = $this->dbX->createCommand($sqlX);
      $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
      $dataReader = $commandX->query();
@@ -273,6 +297,7 @@
      $parentChildren = DaRecordReader::IMainChildrenPartial($table);
      return $this->importBulk($parentChildren["children"], $parentId);
    }
+   
    public function importChildren($parentId, $parentTable){
      $parentChildren = DaRecordReader::getChildren($parentTable);
      return $this->importBulk($parentChildren["children"], $parentId);
@@ -281,6 +306,7 @@
    public function importBulk($children, $parentId){
       $errors = array();
       foreach($children as $childTable ){
+        echo "\n child: {$childTable} " ;
         $errors = array_merge( $errors, $this->importChild($childTable, $parentId));
       }
       return $errors;
@@ -288,7 +314,7 @@
    
    public function importChild($table, $parentId){
       $sqlX = DaRecordReader::getReader($table);
-
+      
       $commandX = $this->dbX->createCommand($sqlX);
       $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
       $dataReader = $commandX->query();
@@ -297,7 +323,14 @@
         $control = DaControlImport::getControlInstance($table);
         if($control){
           $control->setRecord($record);
-          if($control->check(array("dbX" => $this->dbX )))
+          
+          $options = array();
+          if(get_parent_class($control) == "DaControlLostDead"){
+            $options["dbX"] = $this->dbX;
+            $options["parentId"] = $parentId;
+          }
+          
+          if($control->check($options))
             $this->addRecord($record, $table);
           else{
             $this->addRecordErrors($record, $table) ;
@@ -342,6 +375,7 @@
       $now = date("Y-m-d H:i:s");
       $record = serialize($record);
       $message = serialize($message);
+
       $import_id = $this->siteconfig->lastImport()->id ;
       $errorRecords = serialize($this->recordErrors);
       

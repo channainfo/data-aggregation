@@ -19,36 +19,50 @@
      }
      self::$tableName = $tableName;  
      switch ($tableName){
+       
        case "tblaimain" :
          self::$instance = new DaControlAiMain();
          break;
        case "tblcimain" :
          self::$instance = new DaControlCiMain();
          break;
+       case "tbleimain" :
+         self::$instance = new DaControlEiMain();
+         break;
+       
        case "tblavmain" :
          self::$instance = new DaControlAvMain();
          break;
        case "tblcvmain" :
          self::$instance = new DaControlCvMain();
          break;
-       case "tblart" :
-         self::$instance = new DaControlART();
+       case "tblevmain" :
+         self::$instance = new DaControlEvMain();
          break;
+       
+       
+       case "tblart" :
        case "tblcart" :
          self::$instance = new DaControlART();
          break;
        case "tblavlostdead" :
          self::$instance = new DaControlAvLostDead();
          break;
+       
        case "tblcvlostdead" :
          self::$instance = new DaControlCvLostDead();
          break;
-       case "tblavarv" :
-         self::$instance = new DaControlAvArv();
+       
+       case "tblevlostdead" :
+         self::$instance = new DaControlEvLostDead();
          break;
+       
+       case "tblavarv":
        case "tblcvarv" :
-         self::$instance = new DaControlCvArv();
+       case "tblcvarv" :
+         self::$instance = new DaControlArv();
          break;
+       
        default :
          self::$instance = null ;
          self::$tableName = null ;

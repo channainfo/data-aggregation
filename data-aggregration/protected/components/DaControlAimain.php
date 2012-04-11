@@ -1,15 +1,11 @@
 <?php
- class DaControlAiMain extends DaControl{
-    public $code = DaConfig::CTRL_EXCEPTION_AIMAIN ;
-    public $key = "CLinicID";
-    public $index = 0 ;
-    
+ class DaControlAiMain extends DaControl{   
     /**
      * Table: tblAImain
      * DateFirstVisit should not be in year 1900
      * OffYesNo = Yes --> OffTranserin <> ''
      * DateStaART <> 1900 --> ArtNumber <> '' and it should be 9 digits
-     */
+    */
     
     /**
      * @throws  DaInvalidControlException
@@ -24,7 +20,8 @@
      * @throws DaInvalidControlException 
      */
     public function checkTranIn(){
-      if(strtolower(trim($this->record["OffYesNo"])) == "yes"){
+      $offYesNo = new DaOffYesNo($this->record["OffYesNo"]);
+      if($offYesNo->valid()){
         if($this->record["OffTransferin"] == ""){
           $this->addError("Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty ");
           return false ;

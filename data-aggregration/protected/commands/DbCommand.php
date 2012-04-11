@@ -123,13 +123,13 @@
   <?php    
   return array(
     "tables" => array(
-        $tableImportStr
+      $tableImportStr
     ),
     "fixed" => array(
-        $tableFixedStr
+      $tableFixedStr
     ),
     "keys" => array(
-        $idsStr
+      $idsStr
     ),   
     "drugControls" => array(
         $drugControlStr
