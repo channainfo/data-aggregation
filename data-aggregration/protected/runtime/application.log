@@ -114,3 +114,40 @@ Stack trace:
  AND Lost.clinicid = Dead.clinicid  
  AND Lost.eid = Dead.eid  
  GROUP BY Lost.clinicid, Lost.eid .
+2012/04/11 11:16:24 [error] [php] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CApplication.php(431): CWebApplication->getComponent()
+#4 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(615): CWebApplication->getDb()
+#5 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(2263): RejectPatient->getDbConnection()
+#6 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct()
+#7 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(394): model()
+#8 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(78): RejectPatient->getMetaData()
+#9 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(5): RejectPatient->__construct()
+#10 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#11 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#13 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#14 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#15 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=3
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (5)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/18 06:18:21 [error] [php] Array to string conversion (C:\xampp\htdocs\work\framework\db\CDbCommand.php:251)
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php(201): DaImportSequence->addRejectPatient()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php(225): DaImportSequence->importIMain()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php(108): DaImportSequence->importEiMain()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSiteJob.php(11): DaImportSequence->start()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(244): DaImportSiteJob->perform()
+#5 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(212): DJJob->run()
+#6 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(21): DJWorker->start()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (378)
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (201)
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (225)

@@ -46,7 +46,6 @@
    
    public static function  addRecord($records, $table, $sitecode=false ){
      $sql = DaSqlHelper::insertTableWithIndexParam($table );
-     echo "\n {$sql} ";
      $command = Yii::app()->db->createCommand($sql);
      $i = 1;
      

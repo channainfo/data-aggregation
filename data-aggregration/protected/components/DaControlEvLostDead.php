@@ -30,6 +30,7 @@
        ) {
            $this->addError( " Invalid EvLostDead. [Date] = ['{$this->record["LDdate"]}'] , [Status] = [{$this->record['Status']}] " );
            $valid = false;
+           break;
        }
      }
      return $valid;
@@ -44,6 +45,7 @@
      if( $this->parentId == $options["parentId"] &&  !empty($this->errorRecords)){
        return $this->errorRecords;
      }
+     
      $db = $options["dbX"];
      $this->parentId = $options["parentId"] ;
      

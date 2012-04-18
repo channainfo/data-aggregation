@@ -59,7 +59,7 @@
        
        case "tblavarv":
        case "tblcvarv" :
-       case "tblcvarv" :
+       case "tblevarv" :
          self::$instance = new DaControlArv();
          break;
        

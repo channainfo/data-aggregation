@@ -13,11 +13,8 @@
      * @throws DaInvalidControlException 
      */
     public function check($option=array()){
-      return $this->checkDateVisit() && 
-      $this->checkTransferIn() ;
-      
+      return $this->checkDateVisit() && $this->checkTransferIn() ;
     }
-    
    
     /**
      *
@@ -25,6 +22,7 @@
      */
     public function checkDateVisit(){
        $year = DaTool::getYear($this->record["DateVisit"]);
+       echo " year :--------- {$year} ---------";
        if($year == "1900" ){
          $this->addError("Invalid [DateVisit]. Year of [DateVisit] should not be 1900");
          return false;

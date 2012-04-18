@@ -51,6 +51,7 @@
     public function actionStart($code){
       $daImporter = new DaImportSequence(Yii::app()->db, $code);
       $daImporter->start();
+      echo "\n\n ------------------------ reject patient";
       $daImporter->rejectPatients();
     }
     

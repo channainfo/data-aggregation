@@ -20,6 +20,7 @@
    public $end = null ;
    public $rejectCount = 0;
    public $recordErrors = array();
+   public $errors = array();
    
    public function __construct($db, $code ) {
      $this->db = $db ;
@@ -173,9 +174,12 @@
       $commandX= $this->dbX->createCommand("SELECT * FROM {$table}");
       $dataReader = $commandX->query();
       $control = DaControlImport::getControlInstance($table);
-      $errors = array();
-      $this->recordErrors = array();
+      
       foreach($dataReader as $record){
+        
+         $this->recordErrors = array(); 
+         $this->errors = array();
+         
          $control->setRecord($record);
          if($control->check()){
            $this->beginTransaction();
@@ -184,27 +188,29 @@
            $parentId = $this->getParentKeyValue($table, $record);
            $visitTable = $this->getTypeVisit($table);
            
-           $errs1 = $this->importVisitMain($parentId, $visitTable);
-           $errs2 = $this->importIMainChildrenPartial($parentId, $table);
-           $errs3 = $this->importTestPatient($parentId);
+           $this->importVisitMain($parentId, $visitTable);
            
-           $errors = array_merge($errs1,$errs2, $errs3);
+           if(!$this->hasError())
+            $this->importIMainChildrenPartial($parentId, $table);
+
+           if(!$this->hasError())
+            $this->importTestPatient($parentId) ; 
            
-           if(count($errors)){
+           if(!$this->hasError())
+              $this->commit(); 
+           
+           else{
              $this->rollback();
-             $this->addRejectPatient($table, $record, $errors);
+             $this->addRejectPatient($record, $table );
            }
-           else
-            $this->commit();
          }
          else{
-           $errors = $control->getErrors();
-           $this->addRejectPatient($table, $record, $errors);
+           $this->errors = $control->getErrors();
+           $this->addRecordErrors($record, $table);
+           $this->addRejectPatient($record, $table);
          }
       }
-
       DaDbHelper::endIgnoringForeignKey($this->db);
-      return $errors;
    }
    public function addRecordErrors($record, $table){
      $this->recordErrors[$table][] = $record;
@@ -219,13 +225,13 @@
    }
    //===========main tables======================================================
    public function importEiMain(){
-      return $this->importIMain("tbleimain") ;
+      $this->importIMain("tbleimain") ;
    }
    public function importCiMain(){
-      return $this->importIMain("tblcimain") ;
+      $this->importIMain("tblcimain") ;
    }
    public function importAiMain() {
-      return $this->importIMain("tblaimain");
+      $this->importIMain("tblaimain");
    }
    //===========================================================================
    public function rejectPatients(){
@@ -237,18 +243,15 @@
      echo "patient errors : ".count($patients) ;
      
      foreach($patients as $patient){
+       echo "\n --------------- patient record ------------------- \n" ;
        print_r($patient->attributes);
-       echo "\n message: ";
+       echo "\n message : ";
        print_r(unserialize($patient->attributes["message"]));
-       echo "\n error: ";
+       echo "\n error record : ";
        print_r(unserialize($patient->attributes["err_records"]));
-       echo "\n record";
+       echo "\n patient : ";
        print_r(unserialize($patient->attributes["record"]));
-       
-       
      }
-     
-     
    }
    
    //===========================================================================
@@ -259,66 +262,62 @@
      $commandX = $this->dbX->createCommand($sqlX);
      $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
      $dataReader = $commandX->query();
-     $errors =  array();
+
      foreach($dataReader as $record){
         $this->addRecord($record, $table);
         $id = $this->getParentKeyValue($table, $record);
-        $errors = array_merge($errors, $this->importChildren($id, $table) );
+        $this->importChildren($id, $table) ;
      } 
-     return $errors;
    }
    
    public function importVisitMain($parentId, $table){
      $sqlX = DaRecordReader::getReader($table);
-     echo "\n {$sqlX}" ;
+     
      $commandX = $this->dbX->createCommand($sqlX);
      $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
      $dataReader = $commandX->query();
      $control = DaControlImport::getControlInstance($table);
-     $errors = array();
      
      foreach($dataReader as $record){
        $control->setRecord($record);
        if($control->check()){
           $this->addRecord($record, $table);
           $id = $this->getParentKeyValue($table, $record);
-          $temErros = $this->importChildren($id, $table);
-          $errors = array_merge($errors, $temErros);
+          $this->importChildren($id, $table);
+          if($this->hasError())
+            break;
        }
        else{
+         $this->errors = $control->getErrors() ; 
          $this->addRecordErrors($record, $table) ;
-         return $control->getErrors();
+         break;
        }
      }
-     return $errors;
    }
    
    public function importIMainChildrenPartial($parentId, $table){
      $parentChildren = DaRecordReader::IMainChildrenPartial($table);
-     return $this->importBulk($parentChildren["children"], $parentId);
+     $this->importBulk($parentChildren["children"], $parentId);
    }
    
    public function importChildren($parentId, $parentTable){
      $parentChildren = DaRecordReader::getChildren($parentTable);
-     return $this->importBulk($parentChildren["children"], $parentId);
+     $this->importBulk($parentChildren["children"], $parentId);
    }
    
    public function importBulk($children, $parentId){
-      $errors = array();
       foreach($children as $childTable ){
-        echo "\n child: {$childTable} " ;
-        $errors = array_merge( $errors, $this->importChild($childTable, $parentId));
+        $this->importChild($childTable, $parentId);
+        if($this->hasError())
+          break;
       }
-      return $errors;
    }
    
    public function importChild($table, $parentId){
       $sqlX = DaRecordReader::getReader($table);
-      
       $commandX = $this->dbX->createCommand($sqlX);
       $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
       $dataReader = $commandX->query();
-      $errors = array();
       foreach($dataReader as $record){
         $control = DaControlImport::getControlInstance($table);
         if($control){
@@ -334,13 +333,13 @@
             $this->addRecord($record, $table);
           else{
             $this->addRecordErrors($record, $table) ;
-            $errors = array_merge($errors, $control->getErrors()); 
+            $this->errors = $control->getErrors(); 
+            break;
           }
         }
         else
           $this->addRecord($record, $table);
       }
-      return $errors;
    }
    
    /**
@@ -363,18 +362,17 @@
      DaSqlHelper::addRecord($record, $table, $this->siteconfig->code);
    }
    
-   public function addRejectPatient($name , $record, $message){
+   public function addRejectPatient($record, $name ){
       
       $sql = DaSqlHelper::sqlFromTableCols("da_reject_patients", 
-         array("record", "err_records" , "message","tableName", "name" ,"import_site_history_id", "created_at", "modified_at" ),false);
-         
-             // array("tableName", "name", "record", "code", "message", "import_site_history_id", "created_at", "modified_at"),false);
+         array("record", "err_records" , "message","tableName", "name" ,"import_site_history_id", "created_at", "modified_at" ),
+         false );
      
       $command = $this->db->createCommand($sql);
       
       $now = date("Y-m-d H:i:s");
       $record = serialize($record);
-      $message = serialize($message);
+      $message = serialize($this->errors);
 
       $import_id = $this->siteconfig->lastImport()->id ;
       $errorRecords = serialize($this->recordErrors);
@@ -399,5 +397,9 @@
      $configs = DaConfig::importConfig();
      $key = $configs["keys"][$table];
      return $record[$key];
+   }
+   
+   public function hasError(){
+     return !empty($this->errors);
    }
  }
