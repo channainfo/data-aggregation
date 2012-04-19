@@ -35,7 +35,7 @@
      $import->importIMain("tbleimain");
      
      $rejectPatients = $import->rejectPatients();
-     $patients = $import->insertedPatients("tbleimain");
+     $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
      
      $this->assertEquals(count($patients), 3);
      $this->assertEquals($patients[0]["ClinicID"], "123");
@@ -75,18 +75,30 @@
      $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevarv"][0]["ARV"] , "Jjjj"), true );
      $this->assertEquals( $this->strEqual($patient6["record"]["ClinicID"], "123456789" ), true);
      
-     /**
-      * Reject patients
-      * clinicid:
-      * - 12            : DateVisit Failed
-      * - 12345         : DateVisit Failed
-      * - 123456        : Lost-dead Failed
-      * - 1234567       : ARV name, DeadLost Failed
-      * - 12345678      : Lost-dead Failed
-      * - 123456789     : ARv name invalid
-      * - 
-      */
+     $visits = $this->getVisitMain("tblevmain", $this->site->code, "123");
+     $this->assertEquals( count($visits),2);
+     $this->assertEquals( $this->strEqual($visits[0]["ClinicID"],"123"), true);
+     $this->assertEquals( $this->strEqual($visits[1]["ClinicID"],"123"), true);
      
+     $visits = $this->getVisitMain("tblevmain", $this->site->code, "1234567890");
+     $this->assertEquals( count($visits),1);
+     $this->assertEquals( $this->strEqual($visits[0]["ClinicID"],"1234567890"), true);
+     $this->assertEquals( $this->strEqual($visits[0]["EID"],"14"), true);
+     
+     
+     $lostdeads = $this->getEvLostDead($this->site->code, "1234567890");
+     $this->assertEquals(count($lostdeads), 2);
+     $this->assertEquals($this->strEqual($lostdeads[0]["ClinicID"], "1234567890"), true);
+     $this->assertEquals($this->strEqual($lostdeads[0]["EID"], "14"), true);
+     $this->assertEquals($this->strEqual($lostdeads[0]["Status"], "dead"), true);
+     
+     $this->assertEquals($this->strEqual($lostdeads[1]["ClinicID"], "1234567890"), true);
+     $this->assertEquals($this->strEqual($lostdeads[1]["EID"], "14"), true);
+     $this->assertEquals($this->strEqual($lostdeads[1]["Status"], "lost"), true);
+     
+     $arvs = $this->getEvARV($this->site->code, 14);
+     $this->assertEquals(count($arvs), 1);
+     $this->assertEquals($arvs[0]["ARV"], "ddI");
      
    }
    
@@ -100,9 +112,39 @@
            );
      
    }
+   private function getEvLostDead($code, $clinicid){
+     $sql = " select * from tblevlostdead WHERE ID = ? AND ClinicID = ?" ;
+     $command = Yii::app()->db->createCommand($sql);
+     $command->bindParam(1, $code);
+     $command->bindParam(2, $clinicid);
+     return $command->queryAll();
+   }
+   
+   private function getEvARV($code, $eid){
+     $sql = " select * from tblevarv WHERE ID = ? AND Eid = ?" ;
+     $command = Yii::app()->db->createCommand($sql);
+     $command->bindParam(1, $code);
+     $command->bindParam(2, $eid);
+     return $command->queryAll();
+   }
+   
+   private function getInsertedPatients($table, $code){
+     $sql = "SELECT * FROM  {$table} WHERE ID = ? " ;
+     $command = Yii::app()->db->createCommand($sql);
+     $command->bindParam(1, $code , PDO::PARAM_STR );
+     $records = $command->queryAll();
+     return $records ;
+   }
+   private function getVisitMain($table, $code, $clinicid){
+     $sql = " select * from {$table} WHERE ID = ? AND ClinicID = ?" ;
+     $command = Yii::app()->db->createCommand($sql);
+     $command->bindParam(1, $code);
+     $command->bindParam(2, $clinicid);
+     return $command->queryAll();
+   }
    
    public function cleanUp(){
-     $tables = array("da_reject_patients", "da_import_site_histories", "da_siteconfigs", "tbleimain", "tblevmain" , "tblevlostdead");
+     $tables = array("da_reject_patients", "da_import_site_histories", "da_siteconfigs", "tbleimain", "tblevmain" , "tblevlostdead", "tblevarv");
      $this->truncateTables($tables);
    }
    

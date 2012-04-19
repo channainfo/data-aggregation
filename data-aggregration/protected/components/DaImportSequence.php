@@ -237,17 +237,7 @@
      $records = $command->queryAll();
      return $records ;
      
-   }
-   
-   public function insertedPatients($table){
-     $sql = "SELECT * FROM  {$table} WHERE ID = ? " ;
-     $command = Yii::app()->db->createCommand($sql);
-     $code = $this->siteconfig->code;
-     $command->bindParam(1, $code , PDO::PARAM_STR );
-     $records = $command->queryAll();
-     return $records ;
-   }
-   
+   }   
    //===========================================================================
    public function importTestPatient($parentId){
      $table = "tblpatienttest" ;

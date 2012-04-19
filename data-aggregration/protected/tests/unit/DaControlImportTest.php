@@ -4,7 +4,7 @@
      $elements = array(
        "tables" => array("tblaimain", "tblcimain", "tblavmain", "tblcvmain", "tblart", "tblcart", "tblavlostdead", "tblcvlostdead", "tblavarv", "tblcvarv"  ),
        "instances" => array("DaControlAiMain", "DaControlCiMain", "DaControlAvMain", "DaControlCvMain", "DaControlART",
-           "DaControlART", "DaControlAvLostDead", "DaControlCvLostDead", "DaControlAvArv", "DaControlCvArv" )  
+           "DaControlART", "DaControlAvLostDead", "DaControlCvLostDead", "DaControlArv", "DaControlArv" )  
      );
      
      foreach($elements["tables"] as $index => $table ){

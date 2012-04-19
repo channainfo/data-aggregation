@@ -28,8 +28,8 @@
       $this->siteconfig->attributes = $this->attributes;
       $this->siteconfig->save();
       $this->siteconfig->updateSiteCodeName();
-      $this->assertNotEquals(empty($this->siteconfig->name), false);
-      $this->assertNotEquals(empty($this->siteconfig->code), false);
+      $this->assertEquals(empty($this->siteconfig->name), false);
+      $this->assertEquals(empty($this->siteconfig->code), false);
     }
     
     public function testCreateSiteConfigWithValidAttribute(){

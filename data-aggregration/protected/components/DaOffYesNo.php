@@ -10,7 +10,7 @@
     }
     
     public function valid(){
-      return $this->value == "yes" ;
+      return strtolower($this->value) == "yes" ;
     }
     
   }

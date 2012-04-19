@@ -31,8 +31,6 @@
     public function testCreateSiteConfigPostFailed(){
       $this->open("?r=siteconfig/create");
       $this->open("?r=siteconfig/create");
-      $this->type("name=SiteConfig[code]", "");
-      $this->type("name=SiteConfig[name]", "Battambong");
       $this->type("name=SiteConfig[host]", "WORK-NIPH");
       $this->type("name=SiteConfig[user]", "sa" );
       $this->type("name=SiteConfig[db]", "SERVER_OI");
