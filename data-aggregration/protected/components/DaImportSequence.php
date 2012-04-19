@@ -22,6 +22,8 @@
    public $recordErrors = array();
    public $errors = array();
    
+   public $currentPatient ;
+   
    public function __construct($db, $code ) {
      $this->db = $db ;
      $this->_loadSiteConfig($code);
@@ -101,11 +103,12 @@
    public function start(){
      try{
         $this->_startImporting();
-        //$this->importTablesFixed();
         
-        //$this->importAiMain();
-        //$this->importCiMain();
-        $this->importEiMain();
+        $this->importTablesFixed();
+        
+        $this->importIMain("tblaimain");
+        $this->importIMain("tblcimain") ;
+        $this->importIMain("tbleimain") ;
         
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
@@ -186,6 +189,7 @@
            
            $this->addRecord($record, $table);
            $parentId = $this->getParentKeyValue($table, $record);
+           $this->currentPatient = $parentId ;
            $visitTable = $this->getTypeVisit($table);
            
            $this->importVisitMain($parentId, $visitTable);
@@ -223,35 +227,25 @@
      else if($table == "tbleimain")
        return "tblevmain";
    }
-   //===========main tables======================================================
-   public function importEiMain(){
-      $this->importIMain("tbleimain") ;
-   }
-   public function importCiMain(){
-      $this->importIMain("tblcimain") ;
-   }
-   public function importAiMain() {
-      $this->importIMain("tblaimain");
-   }
    //===========================================================================
    public function rejectPatients(){
      $import_site_history = $this->siteconfig->lastImport()->id ;
      
-     $reject = new RejectPatient();
-     $patients = $reject->findAll("	import_site_history_id = :import_site_history_id", array("import_site_history_id" => $import_site_history));
+     $sql = "SELECT * FROM  da_reject_patients WHERE import_site_history_id = ? " ;
+     $command = Yii::app()->db->createCommand($sql);
+     $command->bindParam(1, $import_site_history , PDO::PARAM_STR );
+     $records = $command->queryAll();
+     return $records ;
      
-     echo "patient errors : ".count($patients) ;
-     
-     foreach($patients as $patient){
-       echo "\n --------------- patient record ------------------- \n" ;
-       print_r($patient->attributes);
-       echo "\n message : ";
-       print_r(unserialize($patient->attributes["message"]));
-       echo "\n error record : ";
-       print_r(unserialize($patient->attributes["err_records"]));
-       echo "\n patient : ";
-       print_r(unserialize($patient->attributes["record"]));
-     }
+   }
+   
+   public function insertedPatients($table){
+     $sql = "SELECT * FROM  {$table} WHERE ID = ? " ;
+     $command = Yii::app()->db->createCommand($sql);
+     $code = $this->siteconfig->code;
+     $command->bindParam(1, $code , PDO::PARAM_STR );
+     $records = $command->queryAll();
+     return $records ;
    }
    
    //===========================================================================
@@ -326,7 +320,8 @@
           $options = array();
           if(get_parent_class($control) == "DaControlLostDead"){
             $options["dbX"] = $this->dbX;
-            $options["parentId"] = $parentId;
+            //$options["parentId"] = $parentId;
+            $options["clinicid"] = $this->currentPatient ;
           }
           
           if($control->check($options))

@@ -42,7 +42,7 @@
 
    //====================xIMain=================================================
    public static function EiMainChildren(){ //ClinicId
-     $result = self::CiMainChildrenPartial();
+     $result = self::EiMainChildrenPartial();
      $result["children"][] = "tblevmain" ;
      
      return $result ;

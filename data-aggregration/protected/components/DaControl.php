@@ -30,13 +30,9 @@
     public function getErrors(){
       return $this->errors;
     }
-    
-    /**
-     *
-     * @return string 
-     */
-    public function getIdByIndex(){
-       return $this->record[$this->index];
+
+    public function recordsError(){
+      return array();
     }
     
     public function addError($message){

@@ -20,11 +20,7 @@
          "password" => "123456",
          "host" => "localhost"
      );
-     $this->site->save();
-     print_r($this->site->getErrors());
-     echo $this->site->id;
-     print_r($this->site->attributes);
-     
+     $this->site->save();     
      $this->import = new ImportSiteHistory();
      $this->import->attributes = array(
          "status" => ImportSiteHistory::START,
@@ -34,21 +30,88 @@
      
    }
    
-   public function testImportIMain(){
+   public function testImportEIMain(){
      $import = new DaImportSequence(Yii::app()->db, $this->site->code );
-     $errors = $import->importIMain("tbleimain");
-     print_r($errors);
+     $import->importIMain("tbleimain");
+     
+     $rejectPatients = $import->rejectPatients();
+     $patients = $import->insertedPatients("tbleimain");
+     
+     $this->assertEquals(count($patients), 3);
+     $this->assertEquals($patients[0]["ClinicID"], "123");
+     $this->assertEquals($patients[1]["ClinicID"], "1234");
+     $this->assertEquals($patients[2]["ClinicID"], "1234567890");
+     
+     $this->assertEquals(count($rejectPatients), 6);
+     
+     $patient1 = $this->unserializePatient($rejectPatients[0]);
+     $this->assertEquals( preg_match("/DateVisit/i", $patient1["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient1["err_records"]["tbleimain"][0]["ClinicID"] , "12"), true );
+     $this->assertEquals( $this->strEqual($patient1["record"]["ClinicID"], "12" ), true);
+     
+     $patient2 = $this->unserializePatient($rejectPatients[1]);
+     $this->assertEquals( preg_match("/DateVisit/i", $patient2["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient2["err_records"]["tbleimain"][0]["ClinicID"] , "12345"), true );
+     $this->assertEquals( $this->strEqual($patient2["record"]["ClinicID"], "12345" ), true);
+     
+     $patient3 = $this->unserializePatient($rejectPatients[2]);
+     $this->assertEquals( preg_match("/Status/i", $patient3["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient3["err_records"]["tblevlostdead"][0]["ClinicID"] , "123456"), true );
+     $this->assertEquals( $this->strEqual($patient3["record"]["ClinicID"], "123456" ), true);
+     
+
+     $patient4 = $this->unserializePatient($rejectPatients[3]);
+     $this->assertEquals( preg_match("/\[ARV\]/i", $patient4["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient4["err_records"]["tblevarv"][0]["ARV"] , "ppp"), true );
+     $this->assertEquals( $this->strEqual($patient4["record"]["ClinicID"], "1234567" ), true);
+     
+     $patient5 = $this->unserializePatient($rejectPatients[4]);
+     $this->assertEquals( preg_match("/Status/i", $patient5["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient5["err_records"]["tblevlostdead"][0]["ClinicID"] , "12345678"), true );
+     $this->assertEquals( $this->strEqual($patient5["record"]["ClinicID"], "12345678" ), true);
+     
+     $patient6 = $this->unserializePatient($rejectPatients[5]);
+     $this->assertEquals( preg_match("/\[ARV\]/i", $patient6["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevarv"][0]["ARV"] , "Jjjj"), true );
+     $this->assertEquals( $this->strEqual($patient6["record"]["ClinicID"], "123456789" ), true);
+     
+     /**
+      * Reject patients
+      * clinicid:
+      * - 12            : DateVisit Failed
+      * - 12345         : DateVisit Failed
+      * - 123456        : Lost-dead Failed
+      * - 1234567       : ARV name, DeadLost Failed
+      * - 12345678      : Lost-dead Failed
+      * - 123456789     : ARv name invalid
+      * - 
+      */
+     
+     
+   }
+   
+   private function strEqual($str1, $str2){
+     return trim($str1) == trim($str2) ;
+   }
+   private function unserializePatient($patient){
+      return array( "message" => unserialize($patient["message"]),
+              "err_records" => unserialize($patient["err_records"]),
+              "record" => unserialize($patient["record"])
+           );
+     
    }
    
    public function cleanUp(){
+     $tables = array("da_reject_patients", "da_import_site_histories", "da_siteconfigs", "tbleimain", "tblevmain" , "tblevlostdead");
+     $this->truncateTables($tables);
+   }
+   
+   public function truncateTables($tables){
      $db = Yii::app()->db;
-     
      DaDbHelper::startIgnoringForeignKey($db);
-     $sqls = array("da_reject_patients", "da_import_site_histories", "da_siteconfigs");
-     foreach($sqls as $sql){
-       $db->createCommand("truncate table {$sql} ")->execute();
+     foreach($tables as $table){
+       $db->createCommand("truncate table {$table} ")->execute();
      }
      DaDbHelper::endIgnoringForeignKey($db);
-     
    }
  }
