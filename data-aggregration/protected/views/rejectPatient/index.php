@@ -40,7 +40,7 @@
                 <h2 class="title" > Error details </h2>
                 <div> <?php echo $errorMessage; ?> </div> 
                   
-                <h2 class="title" > Record detail </h2>
+                <h2 class="title" > Patient </h2>
                 <div >
                       <?php 
                           $record = unserialize($rejectPatient->record);

@@ -4,8 +4,8 @@
    public static $messages = array();
    
    public static function p($msg){
-     //Yii::log($msg);
-     //echo "\n {$msg}";
+     Yii::log($msg);
+     echo "\n {$msg}";
    }
    
    /**

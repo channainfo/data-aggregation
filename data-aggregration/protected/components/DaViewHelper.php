@@ -9,7 +9,6 @@
             $description
           </p>
         </div>
-        
       </div> 
      
 EOT;
@@ -42,7 +41,7 @@ EOT;
    *
    * @param array $var 
    */
-  public static function  outputVars($var){
+ public static function  outputVars($var){
     if(!empty($var)): ?>
       <div class="tableWrapper round" >
         <table class="tgrid" >
@@ -57,14 +56,14 @@ EOT;
         </table>
       </div>
     <?php endif;
-  }
+ }
   
   
  public static function outputTraceRecords($errorRecords){
    if(!empty($errorRecords)): 
      foreach($errorRecords as $table => $records):  
      ?>
-      <h2 class="title"> <?php echo $table; ?> </h2>
+      <h2 class="title"> Table: <?php echo $table; ?> </h2>
        <?php self::recordDetails($records); ?>
      <?php endforeach; ?>
    <?php endif;
@@ -81,7 +80,7 @@ EOT;
           <?php foreach($records as $record):?> 
           <tr>
             <?php foreach($record as $key => $value) : ?>
-            <th> <?php echo $key; ?> </th>
+            <td> <?php echo $key; ?> </td>
             <?php endforeach; ?>  
           </tr>
           <?php break; endforeach; ?>
@@ -116,7 +115,7 @@ EOT;
     echo $str;
   }
   //----------------------------------------------------------------------------
-  public static function outputMessagePatient($errs, $return =false){
+ public static function outputMessagePatient($errs, $return =false){
     ob_start();
     if(count($errs)):
     ?>

@@ -76,7 +76,7 @@
         
         $import = $siteconfig->lastImport();
         $import->status = ImportSiteHistory::PENDING;
-        //$import->save();
+        $import->save();
         DaDbHelper::startIgnoringForeignKey($this->db);
       }
       else
@@ -97,7 +97,7 @@
       $import->status = $status ;
       $import->duration = $duration;
       $import->reason = $reason;
-      //$import->save();
+      $import->save();
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
@@ -228,10 +228,10 @@
        return "tblevmain";
    }
    //===========================================================================
-   public function rejectPatients(){
+   public function rejectPatients($offset, $limit){
      $import_site_history = $this->siteconfig->lastImport()->id ;
      
-     $sql = "SELECT * FROM  da_reject_patients WHERE import_site_history_id = ? " ;
+     $sql = "SELECT * FROM  da_reject_patients WHERE import_site_history_id = ? limit {$offset}, {$limit} " ;
      $command = Yii::app()->db->createCommand($sql);
      $command->bindParam(1, $import_site_history , PDO::PARAM_STR );
      $records = $command->queryAll();

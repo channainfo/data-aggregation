@@ -167,7 +167,7 @@ tr.even{
 }
 
 div.tableWrapper thead th, div.tableWrapper td {
-  padding: 9px;
+  padding: 5px 2px;
 }
 .tgrid{
   width: 100%; 
