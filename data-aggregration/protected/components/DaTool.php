@@ -14,9 +14,9 @@
     */
    public static function pException($ex, $return = false){
      $message = "[Error] : " . $ex->getMessage() . "\n "
-              . "[Code]  : " . $ex->getCode() . "\n "
-              . "[Line]  : " . $ex->getLine() . "\n "
-              . "[File]  : " . $ex->getFile() 
+//              . "[Code]  : " . $ex->getCode() . "\n "
+//              . "[Line]  : " . $ex->getLine() . "\n "
+//              . "[File]  : " . $ex->getFile() 
               ;
      if($return)
        return $message;

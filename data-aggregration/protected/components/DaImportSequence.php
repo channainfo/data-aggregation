@@ -98,6 +98,7 @@
       $import->duration = $duration;
       $import->reason = $reason;
       $import->save();
+      echo "\n status save" ;
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
@@ -116,6 +117,7 @@
        DaTool::pErr($ex->getMessage());
      }
      catch(Exception $ex){
+        echo "\ncatcha" ;
         DaTool::pException($ex);
         $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
@@ -162,7 +164,8 @@
    }
    
    public function rollback(){
-     $this->transaction->rollback();
+     if($this->transaction)
+      $this->transaction->rollback();
      $this->transaction = null;
    }
    public function commit(){
@@ -182,30 +185,34 @@
         
          $this->recordErrors = array(); 
          $this->errors = array();
-         
          $control->setRecord($record);
          if($control->check()){
-           $this->beginTransaction();
-           
-           $this->addRecord($record, $table);
-           $parentId = $this->getParentKeyValue($table, $record);
-           $this->currentPatient = $parentId ;
-           $visitTable = $this->getTypeVisit($table);
-           
-           $this->importVisitMain($parentId, $visitTable);
-           
-           if(!$this->hasError())
-            $this->importIMainChildrenPartial($parentId, $table);
+            $this->beginTransaction();
+            try {
+                $this->addRecord($record, $table);
+                $parentId = $this->getParentKeyValue($table, $record);
+                $this->currentPatient = $parentId ;
+                $visitTable = $this->getTypeVisit($table);
 
-           if(!$this->hasError())
-            $this->importTestPatient($parentId) ; 
-           
-           if(!$this->hasError())
-              $this->commit(); 
-           
-           else{
+                $this->importVisitMain($parentId, $visitTable);
+
+                if(!$this->hasError())
+                  $this->importIMainChildrenPartial($parentId, $table);
+
+                if(!$this->hasError())
+                  $this->importTestPatient($parentId) ; 
+
+                if(!$this->hasError())
+                    $this->commit(); 
+
+                else{
+                  $this->rollback();
+                  $this->addRejectPatient($record, $table );
+                }
+           }
+           catch(Exception $ex){
+             DaTool::pException($ex);
              $this->rollback();
-             $this->addRejectPatient($record, $table );
            }
          }
          else{

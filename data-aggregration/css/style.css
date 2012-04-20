@@ -163,11 +163,11 @@ tr.odd{
   background-color:#EFFDFF;
 }
 tr.even{
-  background-color: #E6ECFF;
+  background-color:#E6ECFF;
 }
 
 div.tableWrapper thead th, div.tableWrapper td {
-  padding: 5px 2px;
+  padding: 6px 3px;
 }
 .tgrid{
   width: 100%; 
@@ -256,4 +256,11 @@ div.tableWrapper thead th, div.tableWrapper td {
   color: #ccc;
   padding: 5px 10px;
   font-weight: bold;
+ }
+ ul{
+   padding: 0px;
+   margin: 0px;
+ }
+ li{
+   list-style-type: none;
  }
