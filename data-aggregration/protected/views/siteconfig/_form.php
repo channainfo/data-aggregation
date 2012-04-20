@@ -40,14 +40,18 @@
     <?php echo $form->passwordField($model, "password", array("size" => 60, "autocomplete" => "off"));  ?>
     <?php echo $form->error($model, "password");  ?>
   </div>
-
+ 
+ 
   <div class="row">
     <label></label>
-    <?php echo CHtml::button("New Restoration", array("onclick" => "GoToRestorationPage()")); ?>
+    <?php if(!$model->isNewRecord) :?>
+      <?php echo CHtml::button("New Restoration", array("onclick" => "GoToRestorationPage()")); ?>
+    <?php endif; ?>
     <?php echo CHtml::button("Test connection", array("id" => "test-connection")); ?>
     <?php echo CHtml::submitButton("Save", array("class" => "btn-save")); ?>
   </div>
   
+ 
   <script type="text/javascript">
     
     function GoToRestorationPage(){
