@@ -1,14 +1,19 @@
 <?php
- class DaControlEvMain extends DaControl {
+ class DaControlEvMain extends DaControlVisitMain {
    /**
-    * ARTNum should be 9 digits
+    *  DateVisit 1900
+    *  Age count to last visit <= 2years
     */
    
    /**
     *
     * @throws DaInvalidControlException 
     */
-   public function check($option=array()){
-     return true ;
+   public function check($options=array()){
+     return $this->checkDateVisit() && $this->checkAge($options["dob"]) ;
+   }
+   
+   public function checkAge($dob){
+     return DaChecker::under2Year($dob, $this->record["DateVisit"]);
    }
  }

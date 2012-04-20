@@ -70,6 +70,7 @@
      $this->assertEquals( $this->strEqual($patient5["err_records"]["tblevlostdead"][0]["ClinicID"] , "12345678"), true );
      $this->assertEquals( $this->strEqual($patient5["record"]["ClinicID"], "12345678" ), true);
      
+     
      $patient6 = $this->unserializePatient($rejectPatients[5]);
      $this->assertEquals( preg_match("/\[ARV\]/i", $patient6["message"][0])> 0 , true );
      $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevarv"][0]["ARV"] , "Jjjj"), true );

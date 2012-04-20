@@ -3,11 +3,8 @@
   /**
    * Control ART number: 9 digits for adult and 10 digits for children
    * ART date should not be in year 1900 
-   * +++ ART number for children : start with 'p'
+   * ART number for children : start with 'p'
    */ 
-   public $code = DaConfig::CTRL_EXCEPTION_ART ;
-   public $key = "ART";
-   public $index = 2 ;
 
    
    /**
@@ -23,17 +20,12 @@
      */
     public function checkARTNumber(){
       $valid = true ;
-      $art = trim($this->record["ART"]);
-      if(strtolower($art[0])== 'p'){
-        $code =substr($art, 1);
-        if(strlen($code) != 9){
-          $this->addError("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length ");
-          $valid = false ;
-        }
+      try{
+        $valid = DaChecker::artNum($this->record["ART"]);
       }
-      else if(strlen($art) != 9){
-        $this->addError("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length");
+      catch(Exception $ex){
         $valid = false ;
+        $this->addError($ex->getMessage());
       }
       return $valid ;
     }

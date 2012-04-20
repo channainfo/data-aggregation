@@ -53,11 +53,11 @@
     */
     public function loadErrorLostDead($dbX, $clinicId){
      if( $this->clinicId == $clinicId && !empty($clinicId)  ){
-       DaTool::p("cached error for clinicid : {$clinicId}");
+       //DaTool::p("cached error for clinicid : {$clinicId}");
        return $this->error;
      }
     
-     DaTool::p("uncached error for clinicid : {$clinicId}");
+     //DaTool::p("uncached error for clinicid : {$clinicId}");
      $this->clinicId = $clinicId ;
      $tableName = $this->tableName();
      
@@ -86,10 +86,10 @@
     */
    public function loadRecords($dbX,$clinicId){
       if($this->clinicId == $clinicId && !empty($clinicId) ){
-        DaTool::p("cached load records for clinicid: {$clinicId}");
+        //DaTool::p("cached load records for clinicid: {$clinicId}");
         return $this->errorRecords ;
       }
-      DaTool::p("uncached load records for clinicid: {$clinicId}");
+      //DaTool::p("uncached load records for clinicid: {$clinicId}");
       $this->clinicId = $clinicId ;
       $tableName = $this->tableName() ;
       

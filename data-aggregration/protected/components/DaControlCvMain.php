@@ -1,30 +1,6 @@
 <?php
- class DaControlCvMain extends DaControl {
-   /**
-    * ARTNum should be 10 digits 
-    */
-   public $code = DaConfig::CTRL_EXCEPTION_CVMAIN ;
-   public $key = "Cid" ;
-   public $index = 80 ;
-   /**
-    *
-    * @throws DaInvalidControlException 
-    */
+ class DaControlCvMain extends DaControlVisitMain {
    public function check($option=array()){
-     return $this->checkARTNum();
+     return $this->checkARTNumber() && $this->checkDateVisit();
    }
-   
-   /**
-    *
-    * @throws DaInvalidControlException 
-    */
-   public function checkARTNum(){
-     $art = trim($this->record["ARTNum"]);
-     if( strlen($art) != 10){
-       $this->addError("Invalid [ARTNum] . [ARTNum] = ['{$art}'] should be 10 characters in length ");
-       return false;
-     }
-     return true ;
-   }
-   
  }

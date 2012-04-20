@@ -6,9 +6,6 @@
     * if OffYesNo = Yes --> OfficeIn <> ''
     * if DateARV <> 1900 --> ARVNumber <> '' and it should be 10 character
     */
-    public $code = DaConfig::CTRL_EXCEPTION_CIMAIN ;
-    public $key = "ClinicID";
-    public $index = 0 ;
     
     /**
      * @throws DaInvalidControlException 
@@ -38,8 +35,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkOfficeIn(){
-      $offYesNo = new DaOffYesNo($this->record["OffYesNo"]);
-      if($offYesNo->valid()){
+      if(DaChecker::offYesNo($this->record["OffYesNo"])){
         if($this->record["OfficeIn"] == ""){
           $this->addError("Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes");
           return false;

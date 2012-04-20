@@ -20,8 +20,7 @@
      * @throws DaInvalidControlException 
      */
     public function checkTranIn(){
-      $offYesNo = new DaOffYesNo($this->record["OffYesNo"]);
-      if($offYesNo->valid()){
+      if(DaChecker::offYesNo($this->record["OffYesNo"])){
         if($this->record["OffTransferin"] == ""){
           $this->addError("Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty ");
           return false ;

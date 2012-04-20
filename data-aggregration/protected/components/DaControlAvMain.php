@@ -1,7 +1,9 @@
 <?php
- class DaControlAvMain extends DaControl {
+ class DaControlAvMain extends DaControlVisitMainART {
    /**
-    * ARTNum should be 9 digits
+    * ARTNum should be 9, 10 digits or empty
+    * p9digits
+    * Al VistiMain
     */
    
    /**
@@ -9,20 +11,6 @@
     * @throws DaInvalidControlException 
     */
    public function check($option=array()){
-     return $this->checkARTNumber();
-   }
-     
-   
-   /**
-    *
-    * @throws DaInvalidControlException 
-    */
-   public function checkARTNumber(){
-     $number = trim($this->record["ARTNum"]);
-     if(strlen($number) != 9){
-       $this->addError("Invalid [ARTNum] number . [ARTNum] = ['{$number}'] should be 9 characters in length");
-       return false;
-     }
-     return true ;
+     return $this->checkARTNumber() && $this->checkDateVisit();
    }
  }

@@ -76,7 +76,7 @@
         
         $import = $siteconfig->lastImport();
         $import->status = ImportSiteHistory::PENDING;
-        $import->save();
+        //$import->save();
         DaDbHelper::startIgnoringForeignKey($this->db);
       }
       else
@@ -97,8 +97,7 @@
       $import->status = $status ;
       $import->duration = $duration;
       $import->reason = $reason;
-      $import->save();
-      echo "\n status save" ;
+      //$import->save();
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
@@ -117,7 +116,6 @@
        DaTool::pErr($ex->getMessage());
      }
      catch(Exception $ex){
-        echo "\ncatcha" ;
         DaTool::pException($ex);
         $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
@@ -135,7 +133,6 @@
      DaDbHelper::endIgnoringForeignKey($this->db);
    }
    protected function _importTableFixed($table, $cols){
-     DaTool::p("Import {$table}");
      $sql = " SELECT * FROM {$table} ";
      $commandX =  $this->dbX->createCommand($sql);
      $dataReaderX = $commandX->query();
@@ -174,7 +171,6 @@
    }
    
    public function importIMain($table){
-      DaTool::p("Import {$table}");
       DaDbHelper::startIgnoringForeignKey($this->db);
      
       $commandX= $this->dbX->createCommand("SELECT * FROM {$table}");
@@ -191,9 +187,8 @@
             try {
                 $this->addRecord($record, $table);
                 $parentId = $this->getParentKeyValue($table, $record);
-                $this->currentPatient = $parentId ;
                 $visitTable = $this->getTypeVisit($table);
-
+                $this->currentPatient = $record ;
                 $this->importVisitMain($parentId, $visitTable);
 
                 if(!$this->hasError())
@@ -235,7 +230,7 @@
        return "tblevmain";
    }
    //===========================================================================
-   public function rejectPatients($offset, $limit){
+   public function rejectPatients($offset=0, $limit=10){
      $import_site_history = $this->siteconfig->lastImport()->id ;
      
      $sql = "SELECT * FROM  da_reject_patients WHERE import_site_history_id = ? limit {$offset}, {$limit} " ;
@@ -271,7 +266,11 @@
      
      foreach($dataReader as $record){
        $control->setRecord($record);
-       if($control->check()){
+       $options = array();
+       if(get_class($control) == "DaControlEvMain")
+          $options["dob"] = $this->currentPatient["DOB"];
+       
+       if($control->check($options)){
           $this->addRecord($record, $table);
           $id = $this->getParentKeyValue($table, $record);
           $this->importChildren($id, $table);
@@ -317,10 +316,9 @@
           $options = array();
           if(get_parent_class($control) == "DaControlLostDead"){
             $options["dbX"] = $this->dbX;
-            //$options["parentId"] = $parentId;
-            $options["clinicid"] = $this->currentPatient ;
+            print_r($this->currentPatient);
+            $options["clinicid"] = $this->currentPatient["CLinicID"] ;
           }
-          
           if($control->check($options))
             $this->addRecord($record, $table);
           else{
