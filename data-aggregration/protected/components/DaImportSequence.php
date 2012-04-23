@@ -23,6 +23,7 @@
    public $errors = array();
    
    public $currentPatient ;
+   public $patientTable ;
    
    public function __construct($db, $code ) {
      $this->db = $db ;
@@ -107,8 +108,8 @@
         $this->importTablesFixed();
         
         $this->importIMain("tblaimain");
-        $this->importIMain("tblcimain") ;
-        $this->importIMain("tbleimain") ;
+        //$this->importIMain("tblcimain") ;
+        //$this->importIMain("tbleimain") ;
         
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
@@ -173,6 +174,7 @@
    public function importIMain($table){
       DaDbHelper::startIgnoringForeignKey($this->db);
      
+      $this->patientTable = $table ;
       $commandX= $this->dbX->createCommand("SELECT * FROM {$table}");
       $dataReader = $commandX->query();
       $control = DaControlImport::getControlInstance($table);
@@ -186,16 +188,16 @@
             $this->beginTransaction();
             try {
                 $this->addRecord($record, $table);
-                $parentId = $this->getParentKeyValue($table, $record);
+                $patientId = $this->getTableKeyValue($table, $record);
                 $visitTable = $this->getTypeVisit($table);
                 $this->currentPatient = $record ;
-                $this->importVisitMain($parentId, $visitTable);
+                $this->importVisitMain($patientId, $visitTable);
 
                 if(!$this->hasError())
-                  $this->importIMainChildrenPartial($parentId, $table);
+                  $this->importIMainChildrenPartial($patientId, $table);
 
                 if(!$this->hasError())
-                  $this->importTestPatient($parentId) ; 
+                  $this->importTestPatient($patientId) ; 
 
                 if(!$this->hasError())
                     $this->commit(); 
@@ -251,16 +253,16 @@
 
      foreach($dataReader as $record){
         $this->addRecord($record, $table);
-        $id = $this->getParentKeyValue($table, $record);
+        $id = $this->getTableKeyValue($table, $record);
         $this->importChildren($id, $table) ;
      } 
    }
    
-   public function importVisitMain($parentId, $table){
+   public function importVisitMain($patientId, $table){
      $sqlX = DaRecordReader::getReader($table);
      
      $commandX = $this->dbX->createCommand($sqlX);
-     $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
+     $commandX->bindParam(1, $patientId, PDO::PARAM_STR);
      $dataReader = $commandX->query();
      $control = DaControlImport::getControlInstance($table);
      
@@ -272,7 +274,7 @@
        
        if($control->check($options)){
           $this->addRecord($record, $table);
-          $id = $this->getParentKeyValue($table, $record);
+          $id = $this->getTableKeyValue($table, $record);
           $this->importChildren($id, $table);
           if($this->hasError())
             break;
@@ -304,6 +306,7 @@
    }
    
    public function importChild($table, $parentId){
+      //DaTool::p($table);
       $sqlX = DaRecordReader::getReader($table);
       $commandX = $this->dbX->createCommand($sqlX);
       $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
@@ -312,12 +315,11 @@
         $control = DaControlImport::getControlInstance($table);
         if($control){
           $control->setRecord($record);
-          
           $options = array();
+          
           if(get_parent_class($control) == "DaControlLostDead"){
             $options["dbX"] = $this->dbX;
-            print_r($this->currentPatient);
-            $options["clinicid"] = $this->currentPatient["CLinicID"] ;
+            $options["clinicid"] = $this->getTableKeyValue($this->patientTable, $this->currentPatient);
           }
           if($control->check($options))
             $this->addRecord($record, $table);
@@ -383,7 +385,7 @@
      return $this->rejectCount;
    }
    
-   public function getParentKeyValue($table, $record){
+   public function getTableKeyValue($table, $record){
      $configs = DaConfig::importConfig();
      $key = $configs["keys"][$table];
      return $record[$key];

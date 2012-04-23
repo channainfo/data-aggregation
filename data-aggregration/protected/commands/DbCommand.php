@@ -50,17 +50,9 @@
       DaTool::p(" Remove '$count' groups ");
     }
     
-    public function primaryKey($table){
-      
-      
-    }
-    
     public function importConfig(){
       $file = dirname(__FILE__)."/../config/importConfig.php" ;
-      
-      
       $ids = array();
-      $tables = array();
       $sql = " SELECT * FROM ". DaConfig::IMPORT_TABLE_NAME." ORDER by priority DESC";
       $db = Yii::app()->db;
       
@@ -82,11 +74,6 @@
         else if ($row["type"] == DaConfig::IMPORT_TABLE_TYPE_FIXED)
           $tableFixeds[] = $table;
       }
-      
-      
-      
-      
-      
       
       $sql = "SELECT * FROM da_drug_controls " ;
       $command = $db->createCommand($sql);
@@ -227,8 +214,8 @@ EOT;
       $connection = Yii::app()->db;
       $sql = "UPDATE ".DaConfig::IMPORT_TABLE_NAME ." SET 	priority = :priority WHERE table_name = :table" ;
       $command = $connection->createCommand($sql) ;
-      
-      for($i=0; $n = count($tables), $i<$n; $i++){
+      $n = count($tables);
+      for($i=0; $i<$n; $i++){
         $command->bindParam(":priority", $priorities[$i], PDO::PARAM_INT );
         $command->bindParam(":table", $tables[$i], PDO::PARAM_STR );
         try{

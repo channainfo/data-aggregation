@@ -36,8 +36,9 @@
      
      $rejectPatients = $import->rejectPatients();
      $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
-     
+          
      $this->assertEquals(count($patients), 3);
+     
      $this->assertEquals($patients[0]["ClinicID"], "123");
      $this->assertEquals($patients[1]["ClinicID"], "1234");
      $this->assertEquals($patients[2]["ClinicID"], "1234567890");
@@ -45,12 +46,12 @@
      $this->assertEquals(count($rejectPatients), 6);
      
      $patient1 = $this->unserializePatient($rejectPatients[0]);
-     $this->assertEquals( preg_match("/DateVisit/i", $patient1["message"][0])> 0 , true );
+     $this->assertEquals( preg_match("/Year should not be 1900/i", $patient1["message"][0])> 0 , true );
      $this->assertEquals( $this->strEqual($patient1["err_records"]["tbleimain"][0]["ClinicID"] , "12"), true );
      $this->assertEquals( $this->strEqual($patient1["record"]["ClinicID"], "12" ), true);
      
      $patient2 = $this->unserializePatient($rejectPatients[1]);
-     $this->assertEquals( preg_match("/DateVisit/i", $patient2["message"][0])> 0 , true );
+     $this->assertEquals( preg_match("/Year should not be 1900/i", $patient2["message"][0])> 0 , true );
      $this->assertEquals( $this->strEqual($patient2["err_records"]["tbleimain"][0]["ClinicID"] , "12345"), true );
      $this->assertEquals( $this->strEqual($patient2["record"]["ClinicID"], "12345" ), true);
      
@@ -71,9 +72,10 @@
      $this->assertEquals( $this->strEqual($patient5["record"]["ClinicID"], "12345678" ), true);
      
      
+     
      $patient6 = $this->unserializePatient($rejectPatients[5]);
-     $this->assertEquals( preg_match("/\[ARV\]/i", $patient6["message"][0])> 0 , true );
-     $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevarv"][0]["ARV"] , "Jjjj"), true );
+     $this->assertEquals( preg_match("/Patient is not under 2 years old/i", $patient6["message"][0])> 0 , true );
+     $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevmain"][0]["ClinicID"] , "123456789"), true );
      $this->assertEquals( $this->strEqual($patient6["record"]["ClinicID"], "123456789" ), true);
      
      $visits = $this->getVisitMain("tblevmain", $this->site->code, "123");

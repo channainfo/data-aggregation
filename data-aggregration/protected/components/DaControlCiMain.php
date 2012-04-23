@@ -14,10 +14,7 @@
       return $this->checkDateVisit() && 
       $this->checkOfficeIn() &&
       $this->checkDateARV();
-      
     }
-    
-   
     /**
      *
      * @throws DaInvalidControlException 

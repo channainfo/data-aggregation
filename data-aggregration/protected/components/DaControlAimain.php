@@ -13,8 +13,6 @@
     public function check($option=array()) {
        return $this->checkDateFirstVisit() &&  $this->checkTranIn() &&  $this->checkDateStartART();
     }
-    
-
     /**
      * 
      * @throws DaInvalidControlException 

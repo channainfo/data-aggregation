@@ -18,13 +18,6 @@
     }
     /**
      *
-     * @return string 
-     */
-    public function getIdByName(){
-       return $this->record[$this->key]; 
-    }
-    /**
-     *
      * @return array 
      */
     public function getErrors(){

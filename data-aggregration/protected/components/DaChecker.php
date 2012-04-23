@@ -1,6 +1,10 @@
 <?php
   class DaChecker {
-    
+    /**
+     *
+     * @param type $value
+     * @return type 
+     */
     public static function offYesNo($value){
       return strtolower($value) == "yes" ;
     }
@@ -11,31 +15,47 @@
      * @throws Exception 
      */
     public static function artNum($value){
-      $valid = true ;
+      $message = self::artError($value);
+      if($message)
+        throw new Exception($message);
+      return true ;
+    }
+    
+    public static function artError($value){
+      $message = "" ;
       $art = trim($value);
       if(strtolower($art[0])== 'p'){
         $code =substr($art, 1);
         if(strlen($code) != 9){
-          throw new Exception("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length ");
+          $message = "Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length";
         }
       }
       else if(strlen($art) != 9){
-        throw new Exception("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length");
+        $message = "Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length";
       }
-      return $valid ;
+      return $message ;
     }
     
+    /**
+     *
+     * @param string $date
+     * @return boolean
+     * @throws Exception 
+     */
     public static function dateVisit($date){
       $year = DaTool::getYear($date);
       if($year == "1900" ){
-         throw new Exception("Invalid [DateVisit]. Year of [DateVisit] should not be 1900");
+         throw new Exception("Invalid [Date]='{$date}'. Year should not be 1900");
       }
       return true ;
     }
-    
+    /**
+     *
+     * @param string $dob
+     * @param string $visit
+     * @return boolean 
+     */
     public static function under2Year($dob, $visit){
-      if(trim($dob) == "")
-        return true ;
       $current = strtotime($visit);
       $born = strtotime($dob);
       $age = $current-$born ;
@@ -43,9 +63,5 @@
         return false ;
       else
         return true;
-      
-      
-      
     }
-    
   }

@@ -160,3 +160,15 @@ in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.
 2012/04/19 12:37:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`server_oi_test`.`da_backups`, CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
 2012/04/19 12:38:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`server_oi_test`.`da_backups`, CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
 2012/04/19 12:38:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`server_oi_test`.`da_backups`, CONSTRAINT `fk_da_bakups_siteconfig_id` FOREIGN KEY (`siteconfig_id`) REFERENCES `da_siteconfigs` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `da_backups` (`status`, `filename`, `siteconfig_id`, `created_at`, `modified_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+2012/04/21 04:25:02 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(15): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)

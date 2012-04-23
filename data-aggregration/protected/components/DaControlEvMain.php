@@ -14,6 +14,10 @@
    }
    
    public function checkAge($dob){
-     return DaChecker::under2Year($dob, $this->record["DateVisit"]);
+     $under2Year =  DaChecker::under2Year($dob, $this->record["DateVisit"]);
+     if(!$under2Year){
+       $this->addError("Patient is not under 2 years old. [Date visit] : {$this->record["DateVisit"]}, [DOB] : {$dob}");
+     }
+     return $under2Year ;
    }
  }

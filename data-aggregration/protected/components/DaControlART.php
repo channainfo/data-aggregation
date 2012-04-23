@@ -11,12 +11,22 @@
     * @throws DaInvalidControlException 
     */
     public function check($option=array()) {
-      return $this->checkARTNumber();
+      return $this->checkARTNumber() && $this->checkARTDate();
+    }
+    
+    public function checkARTDate(){
+      $valid = true ;
+      try{ DaChecker::dateVisit($this->record["ARTDate"]);
+      }
+      catch(Exception $ex){
+        $valid = false;
+        $this->addError($ex->getMessage());
+      }
+      return $valid ;
     }
   
     /**
-     *
-     * @throws DaInvalidControlException 
+     * @return boolean 
      */
     public function checkARTNumber(){
       $valid = true ;
