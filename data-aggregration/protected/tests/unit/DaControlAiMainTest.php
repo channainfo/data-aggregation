@@ -1,5 +1,6 @@
 <?php
-  class DaControlAiMainTest extends CDbTestCase {
+ 
+ class DaControlAiMainTest extends CDbTestCase {
    public $valid = array("OffYesNo"=>"Yes",
                           "OffTransferin" => "yes", 
                           "DateFirstVisit" => "2009-09-09", 
@@ -13,7 +14,6 @@
    }
     
    public function testCheck(){
-     
      $this->instance->setRecord($this->valid);
      $success = $this->instance->check();
      $this->assertEquals($success, true);
@@ -43,6 +43,4 @@
      $this->assertEquals($success, false);
      $this->assertEquals(count($this->instance->errors),1);
    }
-   
-   
-  }
+}

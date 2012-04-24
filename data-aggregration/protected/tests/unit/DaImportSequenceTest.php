@@ -36,9 +36,9 @@
      
      $rejectPatients = $import->rejectPatients();
      $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
-          
-     $this->assertEquals(count($patients), 3);
      
+     $this->assertEquals(count($patients), 3);
+
      $this->assertEquals($patients[0]["ClinicID"], "123");
      $this->assertEquals($patients[1]["ClinicID"], "1234");
      $this->assertEquals($patients[2]["ClinicID"], "1234567890");

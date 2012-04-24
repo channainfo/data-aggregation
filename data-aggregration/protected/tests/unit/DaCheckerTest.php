@@ -4,10 +4,10 @@
    public function testUnder2Year(){
      $visits = array(
          array( "dob" => "2008-10-10" , "dateVisit" => "2010-10-10" , "result" => true ) ,
-         array( "dob" => "2009-10-10" , "dateVisit" => "2009-09-09" , "result" => true ) ,
+         array( "dob" => "2009-10-10" , "dateVisit" => "2009-09-09" , "result" => false ) , // imposible dob > datevisit 
          array( "dob" => "2010-10-10" , "dateVisit" => "2012-09-09" , "result" => true ) ,
-         array( "dob" => "2005-10-10" , "dateVisit" => "2007-12-12" , "result" => false ) ,
-         array( "dob" => "2005-10-10" , "dateVisit" => "2007-10-11" , "result" => false ) ,
+         array( "dob" => "2005-10-10" , "dateVisit" => "2007-10-19" , "result" => false ) ,
+         array( "dob" => "2005-10-10" , "dateVisit" => "2007-10-13" , "result" => false ) ,
          
          
      );

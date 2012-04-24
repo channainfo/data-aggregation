@@ -1,7 +1,4 @@
 <?php
- /**
-  * @todo check data type of OffYesNo
-  */
  class DaControlEiMain extends DaControl{
    /*
     * DateVisit should not be in year 1900

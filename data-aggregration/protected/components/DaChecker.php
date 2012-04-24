@@ -59,9 +59,9 @@
       $current = strtotime($visit);
       $born = strtotime($dob);
       $age = $current-$born ;
-      if($age > 3600*24*365*2 )
-        return false ;
+      if($age <= 3600*24*365*2 && $age > 0  )
+        return true ;
       else
-        return true;
+        return false;
     }
   }

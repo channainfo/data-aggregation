@@ -1,5 +1,5 @@
 <?php
- abstract  class DaControlVisitMainART extends DaControlVisitMain{
+ class DaControlVisitMainART extends DaControlVisitMain{
    public function checkARTNumber(){
      $art = trim($this->record["ARTNum"]);
      if($art == "")
@@ -12,5 +12,8 @@
        $this->addError($ex->getMessage());
        return false ;
      }
+   }
+   public function check($option=array()){
+     return $this->checkARTNumber() && $this->checkDateVisit();
    }
  }

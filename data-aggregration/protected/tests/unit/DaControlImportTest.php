@@ -2,14 +2,22 @@
  class DaControlImportTest extends CDbTestCase {
    public function testValidGetControlInstance(){
      $elements = array(
-       "tables" => array("tblaimain", "tblcimain", "tblavmain", "tblcvmain", "tblart", "tblcart", "tblavlostdead", "tblcvlostdead", "tblavarv", "tblcvarv"  ),
-       "instances" => array("DaControlAiMain", "DaControlCiMain", "DaControlAvMain", "DaControlCvMain", "DaControlART",
-           "DaControlART", "DaControlAvLostDead", "DaControlCvLostDead", "DaControlArv", "DaControlArv" )  
+         array("tblaimain", "DaControlAiMain"),
+         array("tblcimain", "DaControlCiMain"),
+         array("tblavmain", "DaControlAvMain"),
+         array("tblcvmain", "DaControlCvMain"),
+         array("tblart", "DaControlART"),
+         array("tblcart", "DaControlART"),
+         array("tblavlostdead", "DaControlAvLostDead"),
+         array("tblcvlostdead", "DaControlCvLostDead"),
+         array("tblavarv", "DaControlArv"),
+         array("tblcvarv", "DaControlArv"),
+         array("tblevarv", "DaControlArv"),
      );
      
-     foreach($elements["tables"] as $index => $table ){
-       $instance = DaControlImport::getControlInstance( $table );
-       $this->assertEquals(get_class($instance), $elements["instances"][$index]);
+     foreach($elements as $element ){
+       $instance = DaControlImport::getControlInstance( $element[0] );
+       $this->assertEquals(get_class($instance), $element[1]);
      }
    }
  
