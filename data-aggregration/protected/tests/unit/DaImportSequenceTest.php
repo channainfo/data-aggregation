@@ -1,4 +1,8 @@
 <?php
+/**
+ * @property SiteConfig $site 
+ * @property ImportSiteHistory $import
+ */
  class DaImportSequenceTest extends CDbTestCase {
    
    public $site;
@@ -10,7 +14,9 @@
    
    public function setUp() {
      parent::setUp();
-     
+     $this->createSite2();
+   }
+   public function createSite2(){
      $this->site = new SiteConfig();
      $this->site->attributes = array(
          "code" => "1901",
@@ -27,14 +33,169 @@
          "siteconfig_id" => $this->site->id 
      );
      $this->import->save() ;
-     
    }
-   
-   public function testImportEIMain(){
+
+  public function testImportAiMain(){
+    $this->removeRejectPatients("tbleimain");
+    
+    $daImporter = new DaImporter(Yii::app()->db);
+    $daImporter->truncate(true);
+    
+    $import = new DaImportSequence(Yii::app()->db, $this->site->code);
+    $import->importIMain("tblaimain");
+    
+    $patients = $this->getInsertedPatients("tblaimain", $this->site->code);
+    
+    $this->assertEquals( count($patients), 5);
+    $this->assertEquals( $this->strEqual($patients[0]["CLinicID"], "000002"), true);
+    $this->assertEquals( $this->strEqual($patients[1]["CLinicID"], "000003"), true);
+    $this->assertEquals( $this->strEqual($patients[2]["CLinicID"], "000004"), true);
+    $this->assertEquals( $this->strEqual($patients[3]["CLinicID"], "000008"), true);
+    $this->assertEquals( $this->strEqual($patients[4]["CLinicID"], "0000010"), true);
+    
+    
+    
+    $totalPatients = array(
+        "000002" => array(
+            "tblavmain" => array( 
+                                  "tblavlostdead" => 2 , 
+                                  "tblavarv" => 2 , 
+                                  "tblAVTBdrugs" => 1, 
+                                  "tblappoint" =>1, 
+                                  "tblAVOIdrugs" => 2, 
+                                  "tblAVTB" => 1 ),
+            "tblaimain" => array( "tblavmain" => 2, 
+                                  "tblavlostdead" => 2,
+                                  "tblaiothermedical" => 3, 
+                                  "tblart" => 1, 
+                                  "tblAIIsoniazid" => 1,
+                                  "tblAIARVTreatment" => 1,
+                                  "tblAIDrugAllergy" => 1, 
+                                  "tblAICotrimo" => 1, 
+                                  "tblAIOthPasMedical" => 1,
+                                  "tblAIFamily" => 3, 
+                                  "tblAITBPastMedical" => 1,
+                                  "tblAIFluconazole" => 1, 
+                                  "tblAITraditional" =>1,
+                                  "tblPatientTest" => 4,
+                                ),
+            "tblpatienttest" => array(
+                                "tblTestCXR" => 7,
+                                "tbltestAbdominal" => 3 
+             )
+            ),
+        "000003" => array(
+            "tblavmain" => array( 
+                                  "tblavlostdead" => 1 , 
+                                  "tblavarv" => 1 , 
+                                  "tblAVTBdrugs" => 0, 
+                                  "tblappoint" =>1, 
+                                  "tblAVOIdrugs" => 2, 
+                                  "tblAVTB" => 2 ),
+            "tblaimain" => array( "tblavmain" => 9, 
+                                  "tblavlostdead" => 1,
+                                  "tblaiothermedical" => 0, 
+                                  "tblart" => 0, 
+                                  "tblAIIsoniazid" => 1,
+                                  "tblAIARVTreatment" => 0,
+                                  "tblAIDrugAllergy" => 1, 
+                                  "tblAICotrimo" => 1, 
+                                  "tblAIOthPasMedical" => 1,
+                                  "tblAIFamily" => 4, 
+                                  "tblAITBPastMedical" => 1,
+                                  "tblAIFluconazole" => 1, 
+                                  "tblAITraditional" =>1,
+                                  "tblPatientTest" => 3,
+                                ),
+            "tblpatienttest" => array(
+                                "tblTestCXR" => 4,
+                                "tbltestAbdominal" => 2 
+             )
+            ),
+    );
+    foreach($totalPatients as $clinicid => $record){
+      foreach($record["tblavmain"] as $table => $count ){
+        $rows = $this->getAVChildRecords($table, $clinicid, $this->site->code);
+        $this->assertEquals(count($rows), $count);
+        
+      }
+      foreach($record["tblaimain"] as $table => $count){
+        $rows = $this->getAiChildRecords($table, $clinicid, $this->site->code);
+        $this->assertEquals(count($rows), $count);
+      }
+      
+      foreach($record["tblpatienttest"] as $table => $count){
+        $rows = $this->getPatientTestChildRecords($table, $clinicid, $this->site->code);
+        $this->assertEquals(count($rows), $count);
+      }
+      
+    }
+    
+    
+    /** success patients 
+     * 000002,
+     * ---AVMain
+     *     2:tblavmain , 1:tblavlostdead, 2:tblavarv, 1:tblAVTBdrugs, 1:tblappoint, 2:tblAVOIdrugs, 0:tblAVTB 
+     * ---AiMain
+     *     3:tblaiothermedical, 1:tblart, 1:tblAIIsoniazid, 1:tblAIDrugAllergy, 1:tblAICotrimo
+     *     1:tblAIOthPasMedical, 2:tblAIFamily, 1:tblAITBPastMedical, 1:tblAIFluconazole, 1:tblAITraditional       
+     * 000003, 
+     * 000004, 
+     * 000008,
+     * 000010 
+     *  
+     */
+     
+    
+    
+    
+    
+    
+    
+    
+    $rejectPatients = $import->rejectPatients("tblaimain");
+    $this->assertEquals(count($rejectPatients),5);
+    
+    $rejectPatient = $this->unserializePatient($rejectPatients[0]);
+    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00001"),true);
+    $this->assertEquals(preg_match("/DateFirstVisit/i", $rejectPatient["message"]["0"]),1);
+    $this->assertEquals( $this->strEqual($rejectPatient["err_records"]["tblaimain"][0]["CLinicID"],"00001"),true);
+    
+    $rejectPatient = $this->unserializePatient($rejectPatients[1]);
+    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00005"),true);
+    
+    $rejectPatient = $this->unserializePatient($rejectPatients[2]);
+    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00006"),true);
+    
+    $rejectPatient = $this->unserializePatient($rejectPatients[3]);
+    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00007"),true);
+    
+    $rejectPatient = $this->unserializePatient($rejectPatients[4]);
+    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00009"),true);
+    
+    
+    
+    
+    
+    
+    
+    /** rejectPatients
+     * 000001 : tblaimain DateFirstVisit 1900
+     * 000005 : tblavlostdead status
+     * 000006 : tblaimain  Artnumber 1234567890
+     * 000007 : tblavarv   Arv = [blah] invalid
+     * 000009 : tblavlostdead 
+     * 
+     */
+  }
+  
+  public function testImportEIMain(){
+     $this->removeRejectPatients("tblaimain");
+     
      $import = new DaImportSequence(Yii::app()->db, $this->site->code );
      $import->importIMain("tbleimain");
      
-     $rejectPatients = $import->rejectPatients();
+     $rejectPatients = $import->rejectPatients("tbleimain");
      $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
      
      $this->assertEquals(count($patients), 3);
@@ -159,4 +320,41 @@
      }
      DaDbHelper::endIgnoringForeignKey($db);
    }
+   
+   public function removeRejectPatients($table){
+     $db = Yii::app()->db ;
+     $sql = "DELETE  FROM da_reject_patients WHERE tableName= ?";
+     $command = $db->createCommand($sql);
+     $command->bindParam(1, $table, PDO::PARAM_STR);
+     $command->execute();
+   }
+   
+   private function getAVChildRecords($table, $clinicId, $id){
+     $sql = "Select * from {$table} where av_id in (SELECT av_id from tblavmain where tblavmain.clinicid = '{$clinicId}' AND id='{$id}' )" ;
+     $commandX = Yii::app()->db->createCommand($sql);
+//     echo "\n".$sql ;
+     
+//     $commandX->bindParam(1, $clinicId, PDO::PARAM_STR );
+//     $commandX->bindParam(2, $id, PDO::PARAM_STR );
+     
+     return $commandX->queryAll();
+   }
+   
+   private function getAiChildRecords($table, $clinicId, $id){
+     $sql = "Select * from {$table} where clinicid = '{$clinicId}' AND id ='{$id}' " ;
+     $commandX = Yii::app()->db->createCommand($sql);
+//     echo "\n" .$sql ;
+//     $commandX->bindParam(1, $clinicId, PDO::PARAM_STR );
+//     $commandX->bindParam(2, $id, PDO::PARAM_STR );
+     
+     return $commandX->queryAll();
+   }
+
+   private function getPatientTestChildRecords($table, $clinicId, $id){
+     $sql = "Select * from {$table} where testid in (SELECT testid from tblPatientTest where tblPatientTest.clinicid = '{$clinicId}' AND id='{$id}' )" ;
+     $commandX = Yii::app()->db->createCommand($sql);
+     return $commandX->queryAll();
+   }
+   
+   
  }

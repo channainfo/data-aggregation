@@ -172,3 +172,7 @@ Stack trace:
 
 in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
 in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
+2012/04/25 12:37:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
+2012/04/25 12:37:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
+2012/04/25 12:40:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
+2012/04/25 12:40:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).

@@ -10,7 +10,7 @@
     /**
      * @throws  DaInvalidControlException
      */
-    public function check($option=array()) {
+    public function check($options=array()) {
        return $this->checkDateFirstVisit() &&  $this->checkTranIn() &&  $this->checkDateStartART();
     }
     /**

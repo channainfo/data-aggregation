@@ -39,7 +39,8 @@
       $this->loadErrorLostDead($options["dbX"], $options["clinicid"]);
       $tableName = $this->tableName();
       if($this->error){
-        $this->addError( " Invalid {$tableName}. [Date] = '{$this->record["LDdate"]}'  , [Status] = '{$this->record['Status']}' " );
+        $status = trim($this->record['Status']) ;
+        $this->addError( " Invalid {$tableName}. [Date] = '{$this->record["LDdate"]}'  , [Status] = '{$status}'" );
         $valid = false;
       }
       return $valid;

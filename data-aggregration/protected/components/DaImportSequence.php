@@ -30,6 +30,13 @@
      $this->_loadSiteConfig($code);
      $this->_loadDbX($code);
    }
+   /**
+    *
+    * @return CDbConnection 
+    */
+   public function getDbX(){
+     return $this->dbX;
+   }
    
    /**
     *
@@ -232,12 +239,13 @@
        return "tblevmain";
    }
    //===========================================================================
-   public function rejectPatients($offset=0, $limit=10){
+   public function rejectPatients($table, $offset=0, $limit=10){
      $import_site_history = $this->siteconfig->lastImport()->id ;
      
-     $sql = "SELECT * FROM  da_reject_patients WHERE import_site_history_id = ? limit {$offset}, {$limit} " ;
+     $sql = "SELECT * FROM  da_reject_patients WHERE tablename=? AND import_site_history_id = ? limit {$offset}, {$limit} " ;
      $command = Yii::app()->db->createCommand($sql);
-     $command->bindParam(1, $import_site_history , PDO::PARAM_STR );
+     $command->bindParam(1, $table, PDO::PARAM_STR);
+     $command->bindParam(2, $import_site_history , PDO::PARAM_STR );
      $records = $command->queryAll();
      return $records ;
      
@@ -250,7 +258,7 @@
      $commandX = $this->dbX->createCommand($sqlX);
      $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
      $dataReader = $commandX->query();
-
+     
      foreach($dataReader as $record){
         $this->addRecord($record, $table);
         $id = $this->getTableKeyValue($table, $record);
