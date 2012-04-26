@@ -20,12 +20,14 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateVisit(){
-       $year = DaTool::getYear($this->record["DateVisit"]);
-       if($year == "1900" ){
-         $this->addError("Invalid [DateVisit]. Year of [DateVisit] should not be 1900");
-         return false;
+       try { 
+         DaChecker::dateVisit($this->record["DateVisit"]);
+         return true;
        }
-       return true ;
+       catch(Exception $ex){
+         $this->addError($ex->getMessage());
+         return false ;
+       }
     }
     /**
      *

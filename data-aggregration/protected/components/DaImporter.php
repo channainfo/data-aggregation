@@ -153,10 +153,14 @@
       $tables = $this->_getProcessTables($includeFixed);
       DaDbHelper::startIgnoringForeignKey($this->db);
       foreach($tables as $tableName => $cols){
-        DaTool::p("truncating {$tableName}");
         $sql = "truncate {$this->db->quoteTableName($tableName)} " ;
         $command = $this->db->createCommand($sql);
-        $command->execute();  
+        try {$command->execute();
+          echo "\n truncate : {$tableName} " ;
+        }
+        catch(Exception $ex){
+          echo "\n ". $ex->getMessage();
+        }
       }
       DaDbHelper::endIgnoringForeignKey($this->db);
     }

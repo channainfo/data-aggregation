@@ -79,7 +79,7 @@
       $model->status = ImportSiteHistory::START ;
       
       if($model->save())
-        Yii::app()->user->setFlash("success", "Import has been run" );
+        Yii::app()->user->setFlash("success", "Import has been added to queue to run" );
       
       else
         Yii::app()->user->setFlash("error", "Could not created import");

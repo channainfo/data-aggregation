@@ -176,3 +176,18 @@ in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (15)
 2012/04/25 12:37:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
 2012/04/25 12:40:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
 2012/04/25 12:40:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Abdo2' cannot be null. The SQL statement executed was: REPLACE INTO tbltestabdominal (testid,abdo,abdo1,abdo2,id) VALUES (?,?,?,?,?).
+2012/04/26 06:29:25 [error] [php] include(DJWorker.php): failed to open stream: No such file or directory (C:\xampp\htdocs\work\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(20): spl_autoload_call()
+
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (20)
+2012/04/26 06:54:33 [error] [php] Undefined index: cliinicID (C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php:399)
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSiteJob.php(11): DaImportSequence->start()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(245): DaImportSiteJob->perform()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(212): DJJob->run()
+#3 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(21): DJWorker->start()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (399)
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (198)
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaImportSequence.php (117)

@@ -84,7 +84,7 @@
         
         $import = $siteconfig->lastImport();
         $import->status = ImportSiteHistory::PENDING;
-        //$import->save();
+        $import->save();
         DaDbHelper::startIgnoringForeignKey($this->db);
       }
       else
@@ -105,42 +105,52 @@
       $import->status = $status ;
       $import->duration = $duration;
       $import->reason = $reason;
-      //$import->save();
+      $import->save();
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
      try{
         $this->_startImporting();
-        
         $this->importTablesFixed();
         
         $this->importIMain("tblaimain");
-        //$this->importIMain("tblcimain") ;
-        //$this->importIMain("tbleimain") ;
+        $this->importIMain("tblcimain") ;
+        $this->importIMain("tbleimain") ;
         
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-       DaTool::pErr($ex->getMessage());
+       DaTool::debug($ex->getMessage(),0,0);
      }
      catch(Exception $ex){
-        DaTool::pException($ex);
+        DaTool::debug($ex->getMessage(),0,0);
         $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
    }
+   /**
+    *
+    * @throws Exception 
+    */
    public function importTablesFixed(){
      $configs = DaConfig::importConfig();
      $fixedTables = $configs["fixed"];
      
-     DaDbHelper::startIgnoringForeignKey($this->db);
-     
      foreach($fixedTables as $table => $cols){
-       $this->_importTableFixed($table, $cols);
+       try { $this->_importTableFixed($table, $cols);
+       }
+       catch(Exception $ex){
+         throw $ex ;
+       }
      }
-     
-     DaDbHelper::endIgnoringForeignKey($this->db);
    }
+   /**
+    *
+    * @param string $table
+    * @param array $cols
+    * @throws CDbException 
+    */
    protected function _importTableFixed($table, $cols){
+     DaTool::p("Import: {$table}");
      $sql = " SELECT * FROM {$table} ";
      $commandX =  $this->dbX->createCommand($sql);
      $dataReaderX = $commandX->query();
@@ -158,7 +168,7 @@
           $commandInsert->execute();
         }
         catch(CDbException $ex){
-          DaTool::pException($ex);
+          throw $ex;
         }
      }
    }
@@ -190,6 +200,8 @@
         
          $this->recordErrors = array(); 
          $this->errors = array();
+         $this->currentPatient = $record ;
+         
          $control->setRecord($record);
          if($control->check()){
             $this->beginTransaction();
@@ -197,7 +209,6 @@
                 $this->addRecord($record, $table);
                 $patientId = $this->getTableKeyValue($table, $record);
                 $visitTable = $this->getTypeVisit($table);
-                $this->currentPatient = $record ;
                 $this->importVisitMain($patientId, $visitTable);
 
                 if(!$this->hasError())
@@ -215,8 +226,9 @@
                 }
            }
            catch(Exception $ex){
-             DaTool::pException($ex);
+             DaTool::debug($ex->getMessage(),0,0);
              $this->rollback();
+             $this->addRejectPatient($record, $table );
            }
          }
          else{
@@ -314,7 +326,7 @@
    }
    
    public function importChild($table, $parentId){
-      //DaTool::p($table);
+      DaTool::p($table);
       $sqlX = DaRecordReader::getReader($table);
       $commandX = $this->dbX->createCommand($sqlX);
       $commandX->bindParam(1, $parentId, PDO::PARAM_STR);
@@ -359,7 +371,14 @@
       $command->execute();
    }
    public function addRecord($record, $table){
-     DaSqlHelper::addRecord($record, $table, $this->siteconfig->code);
+     try{
+       DaSqlHelper::addRecord($record, $table, $this->siteconfig->code);
+     }
+     catch(Exception $ex){
+       $this->rollback();
+       $this->addRecordErrors($record, $table);
+       $this->addRejectPatient($this->currentPatient, $this->patientTable);
+     }
    }
    
    public function addRejectPatient($record, $name ){

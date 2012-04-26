@@ -201,7 +201,7 @@ class DJWorker extends DJBase {
 
                 $count += 1;
                 $job = $this->getNewJob($this->queue);
-                print_r($job);
+ 
                 if (!$job) {
                     $this->log("[JOB] Failed to get a job, queue::{$this->queue} may be empty", self::DEBUG);
                     sleep($this->sleep);
@@ -210,6 +210,7 @@ class DJWorker extends DJBase {
 
                 $job_count += 1;
                 $job->run();
+                
             }
         } catch (Exception $e) {
             $this->log("[JOB] unhandled exception::\"{$e->getMessage()}\"", self::ERROR);
@@ -220,7 +221,7 @@ class DJWorker extends DJBase {
 }
 
 class DJJob extends DJBase {
-
+    public $handler = false ;
     public function __construct($worker_name, $job_id, $options = array()) {
         $options = array_merge(array(
             "max_attempts" => 5
@@ -242,9 +243,11 @@ class DJJob extends DJBase {
         # run the handler
         try {
             $handler->perform();
-
             # cleanup
             $this->finish();
+            if( method_exists($this->handler, "success")){
+              $this->handler->success($this);
+            }
             return true;
 
         } catch (DJRetryException $e) {
@@ -256,14 +259,21 @@ class DJJob extends DJBase {
             if($attempts == $this->max_attempts) {
                 $this->log("[JOB] job::{$this->job_id} $msg Giving up.");
                 $this->finishWithError($msg);
+                
+                if( method_exists($this->handler, "failed")){
+                  $this->handler->failed($this);
+                }
             } else {
                 $this->log("[JOB] job::{$this->job_id} $msg Try again in {$e->getDelay()} seconds.", self::WARN);
                 $this->retryLater($e->getDelay());
+                if( method_exists($this->handler, "retry")){
+                  $this->handler->retry($this);
+                }
             }
             return false;
 
         } catch (Exception $e) {
-
+          DaTool::debug($e);
             $this->finishWithError($e->getMessage());
             return false;
 
@@ -274,7 +284,6 @@ class DJJob extends DJBase {
         $this->log("[JOB] attempting to acquire lock for job::{$this->job_id} on {$this->worker_name}", self::INFO);
 
         $params = array($this->worker_name, $this->job_id, $this->worker_name);
-        print_r($params);
         $query = " UPDATE "   . DJBase::_TABLE_NAME . 
                  " SET    locked_at = NOW() " .
                  " , locked_by = ? " .
@@ -344,11 +353,16 @@ class DJJob extends DJBase {
     }
 
     public function getHandler() {
+       if($this->handler)
+         return $this->handler;
         $rs = $this->runQuery(
             "SELECT handler FROM "   . DJBase::_TABLE_NAME. "  WHERE id = ?",
             array($this->job_id)
         );
-        foreach ($rs as $r) return unserialize($r["handler"]);
+        foreach ($rs as $r) { 
+          $this->handler =  unserialize($r["handler"]);
+          return $this->handler ;
+        }
         return false;
     }
 
