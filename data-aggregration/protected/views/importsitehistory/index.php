@@ -28,7 +28,10 @@
     <?php 
     $i =0 ;
     foreach ($importHistories as $importHistory): ?>
-        <?php $status = $importHistory->getStatusText();  ?>
+        <?php 
+          $status = $importHistory->getStatusText();  
+          $reasonId = "reason{$importHistory->id}";
+        ?>
         <?php
           $cls ="";
           if($importHistories[0]->restorable() && $i == 0)
@@ -37,7 +40,28 @@
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
           <td> <?php echo date("Y-m-d", strtotime($importHistory->created_at) ); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
-          <td> <?php echo nl2br($importHistory->reason); ?></td>
+          <td> 
+            
+            <div  >
+               <?php
+                  $maxLength = 150 ;
+                  if(strlen($importHistory->reason)> $maxLength ): ?>
+                  <p> 
+                    <?php echo  htmlspecialchars(substr($importHistory->reason, 0 , $maxLength)); ?> 
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                    <span> <a href="#<?php echo $reasonId ?>" class="readmore_reason " > Show more </a> </span>  
+                  </p>
+                  <div style="display:none;">
+                    <div id="<?php echo $reasonId ; ?>" > 
+                      <p>  <?php echo htmlspecialchars($importHistory->reason); ?>  </p>  
+                    </div>
+                  </div>
+                  <?php else: ?>
+                  <p> <?php echo htmlspecialchars($importHistory->reason); ?> </p>
+                  <?php endif; ?>
+            </div>  
+          
+          </td>
           <td> 
              <?php 
                 $info = $importHistory->getInfo();  
@@ -81,6 +105,19 @@
     </div>  
     <div class="clear"></div>
     <br />
+    <script>
+    jQuery(function(){
+      
+      $(".readmore_reason").fancybox({
+            'titlePosition'		: 'inside',
+            'transitionIn'		: 'none',
+            'transitionOut'		: 'none',
+            "width"           : 500 ,
+            "height"           : 400
+       });
+        
+    });
+  </script>
   </div>
 <?php endif; ?>
 

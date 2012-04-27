@@ -89,7 +89,7 @@
         
         $import = $siteconfig->lastImport();
         $import->status = ImportSiteHistory::PENDING;
-        //$import->save();
+        $import->save();
         DaDbHelper::startIgnoringForeignKey($this->db);
         
       }
@@ -112,7 +112,7 @@
       $import->duration = $duration;
       $import->reason = $reason;
       $import->info = serialize($this->patientTotal);
-      //$import->save();
+      $import->save();
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
@@ -120,11 +120,11 @@
         DaTool::hp("Importing site: {$this->siteconfig->code}, {$this->siteconfig->name}");
 
         $this->_startImporting();
-        //$this->importTablesFixed();
+        $this->importTablesFixed();
         
-        //$this->importIMain("tblaimain");
+        $this->importIMain("tblaimain");
         $this->importIMain("tblcimain") ;
-        //$this->importIMain("tbleimain") ;
+        $this->importIMain("tbleimain") ;
         
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
@@ -151,12 +151,7 @@
      $fixedTables = $configs["fixed"];
      
      foreach($fixedTables as $table => $cols){
-       try { 
-         $this->_importTableFixed($table, $cols);
-       }
-       catch(Exception $ex){
-         throw $ex ;
-       }
+        $this->_importTableFixed($table, $cols);
      }
    }
    /**
@@ -185,7 +180,7 @@
           $commandInsert->execute();
         }
         catch(CDbException $ex){
-          throw $ex;
+          throw new DaInvalidDbException($ex->getMessage());
         }
      }
    }
