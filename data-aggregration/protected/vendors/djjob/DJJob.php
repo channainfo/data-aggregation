@@ -73,8 +73,20 @@ class DJBase {
         }
         return self::$db;
     }
+    
+   public static function lastInsertedJob(){
+     return self::$db->lastInsertId() ;
+   }
+   
+   public static function removeJob($job_id){
+        self::runUpdate(
+            "DELETE FROM "   . DJBase::_TABLE_NAME. "  WHERE id = ?",
+            array($job_id)
+        );
+   }
 
-    public static function runQuery($sql, $params = array()) {
+
+   public static function runQuery($sql, $params = array()) {
         $stmt = self::getConnection()->prepare($sql);
         $stmt->execute($params);
 
@@ -319,6 +331,8 @@ class DJJob extends DJBase {
         );
         $this->log("[JOB] completed job::{$this->job_id}", self::INFO);
     }
+    
+    
 
     public function finishWithError($error) {
         $this->runUpdate("
@@ -411,6 +425,8 @@ class DJJob extends DJBase {
 
         return true;
     }
+    
+    
 
     public static function status($queue = "default") {
         $rs = self::runQuery("

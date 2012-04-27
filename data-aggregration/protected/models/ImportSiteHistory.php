@@ -11,6 +11,8 @@
  * @property string $reason
  * @property string $modified_at
  * @property string $created_at
+ * @property integer $job_id
+ * @property string $info
  *
  * The followings are the available model relations:
  * @property Siteconfigs $siteconfig
@@ -35,6 +37,10 @@ class ImportSiteHistory extends DaActiveRecordModel implements IStatus
 		return 'da_import_site_histories';
 	}
 
+  public function afterDelete() {
+    DJJob::removeJob($this->job_id);
+    return parent::afterDelete();
+  }
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -49,6 +55,13 @@ class ImportSiteHistory extends DaActiveRecordModel implements IStatus
 			array('reason, modified_at, created_at', 'safe'),
 		);
 	}
+  
+  public function getInfo(){
+    if($this->info){
+      return unserialize($this->info);
+    }
+    return false;
+  } 
 
 	/**
 	 * @return array relational rules.

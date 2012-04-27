@@ -111,7 +111,7 @@
 		'ABC',
 		'AZT',
 		'd4T',
-		'ddl',
+		'ddI',
 		'EFV',
 		'IDV',
 		'Kaletra(LPV/r)',

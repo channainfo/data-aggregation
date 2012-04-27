@@ -74,21 +74,27 @@
         return ;
       }
       
+      DJJob::enqueue(new DaImportSiteJob($siteconfig->code));
+      $job_id = DJJob::lastInsertedJob();
+
       $model = new ImportSiteHistory();
+      $model->job_id = $job_id ;
       $model->siteconfig_id = $siteconfig_id;
       $model->status = ImportSiteHistory::START ;
       
-      if($model->save())
+      if($model->save()){
         Yii::app()->user->setFlash("success", "Import has been added to queue to run" );
+      }
       
-      else
+      else{
+        DJJob::removeJob($job_id);
         Yii::app()->user->setFlash("error", "Could not created import");
+      }
       
       //$command = DaConfig::webRoot()."protected/yiic import start --code={$siteconfig->code}";
-      DJJob::enqueue(new DaImportSiteJob($siteconfig->code));
+      
       
       $this->redirect($this->createUrl("importsitehistory/index", array("siteconfig_id" => $siteconfig_id)));
-      
       
     }
   }

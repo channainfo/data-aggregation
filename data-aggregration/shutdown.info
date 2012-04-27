@@ -1,0 +1,12 @@
+Array
+(
+    [id] => 4
+    [code] => 1401
+    [name] => Neak Loeung RH
+    [host] => localhost
+    [user] => sa
+    [password] => 123456
+    [created_at] => 2012-04-20 03:27:13
+    [modified_at] => 2012-04-23 05:02:08
+    [db] => site3
+)

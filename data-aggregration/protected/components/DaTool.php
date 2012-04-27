@@ -8,6 +8,12 @@
      echo "\n {$msg}";
    }
    
+   public static function hp($msg, $chr='_'){
+     self::p($msg);
+     self::p(str_repeat($chr, strlen($msg) ) );
+     echo "\n" ;
+     
+   }
    /**
     *
     * @param Exception $ex 
