@@ -13,6 +13,15 @@
      return dirname(__FILE__)."/../../data/";
    }
    
+   public static function mkDir($dir){
+     if(!file_exists($dir))
+        mkdir($dir);
+   }
+   
+   public static function pathDataStoreExport(){
+     return self::pathDataStore()."export/";
+   }
+   
    public static function importConfig(){
       if(self::$importConfig)
         return self::$importConfig ;

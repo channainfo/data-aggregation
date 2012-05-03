@@ -83,8 +83,6 @@
             <?php $checked_column = true ; ?>
             <?php echo CHtml::label("All columns", $table."_columns" ); ?>
             <?php echo CHtml::checkBox("" ,$checked_column, array("id" => "{$table}_columns","data-rel"=> "{$table}_column_list" )); ?>
-            
-            
           </div>
 
           <div class="row" style="border: 1px solid #ccc;padding:10px;" > 
@@ -122,6 +120,14 @@
           }
         })
       }
+      
+      function affectedItem(child, afftected){
+        $(child).click(function(){
+           if(!this.checked){
+             $(afftected).attr("checked", false);
+           }
+        });
+      }
 
       function fancyBox(){
         $(".fancy_table_list").fancybox({
@@ -147,6 +153,10 @@
         <?php endforeach; ?>    
 
         fancyBox();
+        affectedItem(".table_list", "#ExportHistory_all_table");
+        affectedItem(".site_list", "#ExportHistory_all_site");
+        
+        
 
         $("#btn-submit").click(function(){
           var valid = validate();

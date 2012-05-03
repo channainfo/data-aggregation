@@ -1,0 +1,13 @@
+================= Import control criteria change requested by Mr Phana ==========================
+control with ART  (tblaart, tblcart)
+  - year of art should not = 1900 (ARTDate)
+
+control EiMain 
+ - datevisit should not =1900
+
+control EvMain (tblevmain)
+ - age to the last visit should <= 2 years
+ - date visit  should  not = 1900
+
+ control EvLostDead
+   - date of lost could not bigger than date of dead

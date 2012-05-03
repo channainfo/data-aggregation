@@ -31,7 +31,7 @@ $this->breadcrumbs = array('Sites');
       <td> <?php echo $row->getReversableText(); ?>  </td>
       <td> <?php echo $row->site_text; ?>  </td>
       <td> <?php echo "<span class='state {$row->getStatusText()}-state'>". ucfirst($row->getStatusText()). "</span>" ; ?>  </td>
-      <td> <?php echo $row->file ; ?>  </td>
+      <td> <?php  echo ($row->file)? CHtml::link($row->file, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
       <td> 
         <?php echo CHtml::link("Delete",$this->createUrl( "exporthistory/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
       </td>

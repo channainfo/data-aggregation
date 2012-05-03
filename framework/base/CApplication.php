@@ -59,6 +59,7 @@
  * @property CDateFormatter $dateFormatter The locale-dependent date formatter.
  * The current {@link getLocale application locale} will be used.
  * @property CDbConnection $db The database connection.
+ * @property EZip $zip The zip Archieve
  * @property CErrorHandler $errorHandler The error handler application component.
  * @property CSecurityManager $securityManager The security manager application component.
  * @property CStatePersister $statePersister The state persister application component.

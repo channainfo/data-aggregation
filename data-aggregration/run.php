@@ -13,5 +13,8 @@ require_once($yii);
 Yii::createConsoleApplication($config);
 
 Yii::import("application.vendors.*");
-$importer  = new DaImportSequence(Yii::app()->db, "1901");
-$importer->start();
+
+//$importer  = new DaImportSequence(Yii::app()->db, "1901");
+//$importer->start();
+
+$export = new DaExportSite(4, Yii::app()->db);
