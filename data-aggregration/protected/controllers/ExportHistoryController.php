@@ -61,7 +61,11 @@
    public function actionDelete(){
        $model = ExportHistory::model()->findByPk((int)$_GET["id"]);
        if($model){
+         if($model->file){
+           @unlink(DaConfig::pathDataStoreExport().$model->file);
+         }
          $model->delete();
+         
          Yii::app()->user->setFlash("success", "Export history has been deleted" );
        }
        else{

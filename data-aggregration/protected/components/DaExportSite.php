@@ -47,6 +47,9 @@
      $this->export->file = $zipfile;
      $this->export->status = ExportHistory::SUCCESS;
      $this->export->save();
+     
+     $this->cleanFiles();
+     
    }
    
    public function getSiteCodeString(){
