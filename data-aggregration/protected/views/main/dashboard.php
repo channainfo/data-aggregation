@@ -12,9 +12,12 @@
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-config", "Site Config & Restoration", 
         "Connection configuration of all sites databases and their restoration"); ?>
   
-<?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-export", "Export data", 
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("exporthistory/"), "icon-export", "Export data", 
         "Export database to a specific format"); ?>
-  
+
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("conversion/"), "icon-export-convertion", "Conversion", 
+        "Conversion of reversible annonymization export to normal format"); ?>
+
   
 <script type="text/javascript" >
   $(function(){

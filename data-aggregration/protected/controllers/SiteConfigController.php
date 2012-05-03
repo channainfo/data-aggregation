@@ -11,8 +11,6 @@ class SiteConfigController extends DaController {
         $this->redirect($this->createUrl("index"));
       }else
         Yii::app()->user->setFlash("error", "Failed to save site configuration"); 
-      
-      
     }
     $this->render("create", array("model" => $model));
   }

@@ -67,6 +67,10 @@
           show_loading();
           return true;
         });
+          
+        $("form").submit(function(){
+          show_loading();
+        });   
         
         $(".btn-save, .btn-action, .btn-action-edit, .btn-action-new, .btn-link, .breadcrumbs>a, .dashboard-title a").click(function(){
           show_loading();

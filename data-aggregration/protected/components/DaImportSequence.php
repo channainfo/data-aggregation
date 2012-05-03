@@ -471,10 +471,13 @@
    public function hasError(){
      return !empty($this->errors);
    }
+   
+   
  }
  
  
 //========================================================================= 
+/* 
 function da_import_shutdown(){
   global $_siteconfig;
   $text = "unexpected";
@@ -484,3 +487,4 @@ function da_import_shutdown(){
   echo $text ;
 }
 register_shutdown_function('da_import_shutdown');
+*/

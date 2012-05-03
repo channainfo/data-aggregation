@@ -17,8 +17,7 @@
  * The followings are the available model relations:
  * @property Siteconfigs $siteconfig
  */
-class ImportSiteHistory extends DaActiveRecordModel implements IStatus
-{
+class ImportSiteHistory extends DaModelStatus {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -88,15 +87,6 @@ class ImportSiteHistory extends DaActiveRecordModel implements IStatus
 			'reason' => 'Reason',
 		);
 	}
-
-  /**
-   *
-   * @return string 
-   */
-  public function getStatusText(){
-    $status = array( self::START => "start", self::PENDING => "pending" , self::FAILED => "failed", self::SUCCESS => "success", );
-    return $status[$this->status];
-  }
   /**
    *
    * @return boolean 

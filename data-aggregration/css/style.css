@@ -79,6 +79,9 @@ a{
 .icon-config{
   background-image:url(../images/dashboard-config48.png);
 }
+.icon-export-convertion{
+   background-image:url(../images/dashboard-conversion.png);
+}
 
 .icon-dashboard .descritpion{
   font-size: 1em;
@@ -268,4 +271,16 @@ div.tableWrapper thead th, div.tableWrapper td {
    font-size: 18px;
    font-weight: bold;
    text-decoration: underline;
+ }
+ .dacalender{
+   font-weight: normal;
+   font-size: 14px ;
+   color : #333;
+   background-image: url(../images/calendar-icon.png);
+   background-repeat: no-repeat;
+   padding-left: 20px;
+ }
+ .exportTableItem{
+   float:left; 
+   width: 200px;
  }

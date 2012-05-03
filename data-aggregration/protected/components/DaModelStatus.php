@@ -1,5 +1,5 @@
 <?php
- interface IStatus{
+ class DaModelStatus extends DaActiveRecordModel {
    /**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -10,10 +10,9 @@
   const FAILED = 2 ;
   const SUCCESS = 3 ;
   
-  public function getStatusText();
-  /**
-   *
-   * @return boolean 
-   */
-  public function restorable();
+  public function getStatusText(){
+    $status = array( self::START => "start", self::PENDING => "pending" , self::FAILED => "failed", self::SUCCESS => "success", );
+    return $status[$this->status];
+  }
+  
 }

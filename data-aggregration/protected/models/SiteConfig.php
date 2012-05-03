@@ -53,6 +53,19 @@ class SiteConfig extends DaActiveRecordModel
 		);
 	}
   /**
+   * return array as key with site id and value with site code combined with site name
+   * @return array 
+   */
+  public static function siteListBox(){
+    $sites = SiteConfig::model()->findAll();
+    $data = array();
+    foreach($sites as $site){
+      $data[$site->id] = "{$site->code} - {$site->name}" ; 
+    }
+    return $data;
+  }  
+  
+  /**
    *
    * @param boolean $cache
    * @return Backup 

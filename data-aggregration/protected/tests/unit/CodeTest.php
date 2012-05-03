@@ -25,4 +25,9 @@
       $this->assertEquals(method_exists($a, "not exist"), false);
     }
   }
+  
+  $data = array("a"=>1,"b"=>2, "c" => 3);
+  
+  print_r(array_keys($data));
+  
 ?>

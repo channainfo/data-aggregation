@@ -293,3 +293,1051 @@ REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/index?siteconfig
 in C:\xampp\htdocs\work\data-aggregration\protected\models\ImportSiteHistory.php (60)
 in C:\xampp\htdocs\work\data-aggregration\protected\models\ImportSiteHistory.php (60)
 in C:\xampp\htdocs\work\data-aggregration\protected\views\importsitehistory\index.php (40)
+2012/04/30 04:25:01 [error] [php] PDO::__construct(): [2002] No connection could be made because the target machine actively refused it.
+ (trying to connect via tcp://localhost:3306) (C:\xampp\htdocs\work\framework\db\CDbConnection.php:422)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\work\framework\db\CDbConnection.php(309): CDbConnection->setActive()
+#2 C:\xampp\htdocs\work\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\work\framework\base\CModule.php(104): CConsoleApplication->getComponent()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php(5): CConsoleApplication->__get()
+#5 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(19): require_once()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJobConfig.php (5)
+in C:\xampp\htdocs\work\data-aggregration\jobrunner.php (19)
+2012/04/30 06:58:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/04/30 06:58:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/04/30 07:00:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/04/30 07:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:00:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/04/30 07:01:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+HTTP_REFERER=http://localhost/work/data-aggregration/
+---
+2012/04/30 07:01:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:01:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "exporthistory".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 07:02:18 [error] [php] Undefined variable: sites (C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): ExportHistoryController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): ExportHistoryController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(5): ExportHistoryController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+in C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php (6)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (5)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 09:12:20 [error] [php] Undefined index: siteconfig_id (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (9)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 09:12:21 [error] [php] Undefined index: siteconfig_id (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (9)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 09:25:00 [error] [exception.CException] exception 'CException' with message 'Property "ExportHistory.host" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('host')
+#1 C:\xampp\htdocs\work\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('host')
+#2 C:\xampp\htdocs\work\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(ExportHistory), 'host')
+#3 C:\xampp\htdocs\work\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(ExportHistory), 'host', Array)
+#4 C:\xampp\htdocs\work\framework\web\widgets\CActiveForm.php(568): CHtml::activeTextField(Object(ExportHistory), 'host', Array)
+#5 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\_form.php(11): CActiveForm->textField(Object(ExportHistory), 'host', Array)
+#6 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\create.php(8): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(30): CController->render('create', Array)
+#15 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#16 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('create')
+#20 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory/c...')
+#21 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 12:20:00 [error] [exception.CException] exception 'CException' with message 'Property "ExportHistory.sites" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('sites')
+#1 C:\xampp\htdocs\work\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('sites')
+#2 C:\xampp\htdocs\work\framework\web\helpers\CHtml.php(1402): CHtml::resolveValue(Object(ExportHistory), 'sites')
+#3 C:\xampp\htdocs\work\framework\web\widgets\CActiveForm.php(674): CHtml::activeDropDownList(Object(ExportHistory), 'sites', Array, Array)
+#4 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\_form.php(31): CActiveForm->dropDownList(Object(ExportHistory), 'sites', Array, Array)
+#5 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\create.php(8): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(31): CController->render('create', Array)
+#14 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#15 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('create')
+#19 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory/c...')
+#20 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/exporthistory
+---
+2012/04/30 12:34:44 [warning] [application] Failed to set unsafe attribute "sites" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:34:44 [warning] [application] Failed to set unsafe attribute "tableList" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:34:44 [error] [php] Undefined index: table_list (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (25)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:40:58 [warning] [application] Failed to set unsafe attribute "sites" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:40:58 [warning] [application] Failed to set unsafe attribute "table_list" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:41:59 [error] [php] Undefined variable: row (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/index
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (16)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:57:39 [warning] [application] Failed to set unsafe attribute "sites" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:57:39 [warning] [application] Failed to set unsafe attribute "table_list" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/04/30 12:57:40 [error] [exception.CException] exception 'CException' with message 'Property "ExportHistory.type_site" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('type_site')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php(27): CActiveRecord->__get('type_site')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(16): CController->render('index', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionIndex()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory/i...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/exporthistory/create
+---
+2012/05/01 04:53:32 [error] [php] Undefined variable: table (C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\_form.php:48)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): ExportHistoryController->renderFile()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\create.php(8): ExportHistoryController->renderPartial()
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require()
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): ExportHistoryController->renderInternal()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): ExportHistoryController->renderFile()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): ExportHistoryController->renderPartial()
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(41): ExportHistoryController->render()
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\_form.php (48)
+in C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\create.php (8)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (41)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "all_site" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "all_table" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "table_list" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblpatienttest" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaiarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaiisoniazid" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaiothermedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaiothpasmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblaitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblappoint" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavoidrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblavtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblciarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblciothpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvarvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcvtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tbleimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblevarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblevlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblevmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tbltestabdominal" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tbltestcxr" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblclinic" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblcommune" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tbldistrict" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblprovince" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tbluser" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblvillage" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [warning] [application] Failed to set unsafe attribute "tblvisitreason" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:01:47 [error] [php] Undefined index: sites (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (25)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "all_site" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "all_table" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "table_list" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblpatienttest" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaiarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaiisoniazid" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaiothermedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaiothpasmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblaitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblappoint" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavoidrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblavtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblciarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblciothpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvarvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcvtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tbleimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblevarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblevlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblevmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tbltestabdominal" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tbltestcxr" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblclinic" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblcommune" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tbldistrict" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblprovince" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tbluser" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblvillage" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [warning] [application] Failed to set unsafe attribute "tblvisitreason" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:02:48 [error] [php] Undefined index: sites (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (25)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "all_site" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "all_table" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "table_list" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblpatienttest" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaiarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaiisoniazid" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaiothermedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaiothpasmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblaitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblappoint" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavoidrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblavtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcart" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblciarvtreatment" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcicotrimo" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcidrugallergy" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcifamily" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcifluconazole" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblciothpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcitbpastmedical" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcitraditional" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvarvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvoi" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvtb" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcvtbdrugs" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tbleimain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblevarv" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblevlostdead" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblevmain" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tbltestabdominal" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tbltestcxr" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblclinic" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblcommune" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tbldistrict" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblprovince" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tbluser" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblvillage" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [warning] [application] Failed to set unsafe attribute "tblvisitreason" of "ExportHistory".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (22)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 10:04:04 [error] [php] Undefined index: sites (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (25)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 12:15:41 [error] [php] Undefined index: 1 (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (25)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 12:16:10 [error] [php] Undefined index: sites (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (33)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/01 12:21:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "delete".' in C:\xampp\htdocs\work\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(271): CController->missingAction('delete')
+#1 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('delete')
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory/d...')
+#3 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/delete/1
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/exporthistory/index
+---
+2012/05/02 04:20:10 [error] [exception.CException] exception 'CException' with message 'ExportHistory and its behaviors do not have a method or closure named "getStatusText".' in C:\xampp\htdocs\work\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(226): CComponent->__call('getStatusText', Array)
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php(31): CActiveRecord->__call('getStatusText', Array)
+#2 C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php(31): ExportHistory->getStatusText()
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(19): CController->render('index', Array)
+#8 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionIndex()
+#9 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#13 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('exporthistory/i...')
+#14 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/exporthistory/create
+---
+2012/05/02 04:46:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php:105)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require()
+#1 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): ExportHistoryController->renderInternal()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(870): ExportHistoryController->renderFile()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(783): ExportHistoryController->renderPartial()
+#4 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(19): ExportHistoryController->render()
+#5 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionIndex()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#9 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#10 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/index
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (105)
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (97)
+in C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php (30)
+2012/05/02 05:09:16 [error] [php] Undefined index: id (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/view/view
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (23)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/02 05:09:26 [error] [php] Undefined index: id (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/view/view
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (23)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/02 06:40:01 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(787): ExportHistory->insert()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(46): ExportHistory->save()
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (108)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (46)
+2012/05/02 06:41:36 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(787): ExportHistory->insert()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(46): ExportHistory->save()
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (108)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (46)
+2012/05/02 06:42:22 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(787): ExportHistory->insert()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(46): ExportHistory->save()
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (108)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (46)
+2012/05/02 06:42:26 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(787): ExportHistory->insert()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(46): ExportHistory->save()
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionCreate()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/create
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\models\ExportHistory.php (108)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (46)
+2012/05/02 06:42:46 [error] [php] Use of undefined constant php - assumed 'php' (C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php:32)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): ExportHistoryController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): ExportHistoryController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php(19): ExportHistoryController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ExportHistoryController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): ExportHistoryController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): ExportHistoryController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ExportHistoryController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/exporthistory/index
+in C:\xampp\htdocs\work\data-aggregration\protected\views\exporthistory\index.php (32)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ExportHistoryController.php (19)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/02 09:52:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'da_users' already exists. The SQL statement executed was: CREATE TABLE `da_users` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` varchar(255) NOT NULL,
+	`group_id` int(11) NOT NULL,
+	`password` varchar(255) NOT NULL,
+	`email` varchar(255),
+	`salt` varchar(255) NOT NULL,
+	`name` varchar(255),
+	`created_at` datetime,
+	`modified_at` datetime,
+	`last_login_at` datetime
+).
+2012/05/02 09:52:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'da_users' already exists. The SQL statement executed was: CREATE TABLE `da_users` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` varchar(255) NOT NULL,
+	`group_id` int(11) NOT NULL,
+	`password` varchar(255) NOT NULL,
+	`email` varchar(255),
+	`salt` varchar(255) NOT NULL,
+	`name` varchar(255),
+	`created_at` datetime,
+	`modified_at` datetime,
+	`last_login_at` datetime
+)' in C:\xampp\htdocs\work\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbCommand.php(1251): CDbCommand->execute()
+#1 C:\xampp\htdocs\work\framework\db\CDbMigration.php(229): CDbCommand->createTable('da_users', Array, NULL)
+#2 C:\xampp\htdocs\work\data-aggregration\protected\migrations\m120206_061319_create_users_table.php(19): CDbMigration->createTable('da_users', Array)
+#3 C:\xampp\htdocs\work\framework\cli\commands\MigrateCommand.php(362): m120206_061319_create_users_table->up()
+#4 C:\xampp\htdocs\work\framework\cli\commands\MigrateCommand.php(100): MigrateCommand->migrateUp('m120206_061319_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 C:\xampp\htdocs\work\framework\console\CConsoleCommand.php(141): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 C:\xampp\htdocs\work\framework\console\CConsoleCommandRunner.php(65): CConsoleCommand->run(Array)
+#8 C:\xampp\htdocs\work\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\work\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\work\data-aggregration\protected\yiic.php(11): require_once('C:\xampp\htdocs...')
+#12 {main}
+---
+2012/05/02 09:53:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'da_users' already exists. The SQL statement executed was: CREATE TABLE `da_users` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` varchar(255) NOT NULL,
+	`group_id` int(11) NOT NULL,
+	`password` varchar(255) NOT NULL,
+	`email` varchar(255),
+	`salt` varchar(255) NOT NULL,
+	`name` varchar(255),
+	`created_at` datetime,
+	`modified_at` datetime,
+	`last_login_at` datetime
+).
+2012/05/02 09:53:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'da_users' already exists. The SQL statement executed was: CREATE TABLE `da_users` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`login` varchar(255) NOT NULL,
+	`group_id` int(11) NOT NULL,
+	`password` varchar(255) NOT NULL,
+	`email` varchar(255),
+	`salt` varchar(255) NOT NULL,
+	`name` varchar(255),
+	`created_at` datetime,
+	`modified_at` datetime,
+	`last_login_at` datetime
+)' in C:\xampp\htdocs\work\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\CDbCommand.php(1251): CDbCommand->execute()
+#1 C:\xampp\htdocs\work\framework\db\CDbMigration.php(229): CDbCommand->createTable('da_users', Array, NULL)
+#2 C:\xampp\htdocs\work\data-aggregration\protected\migrations\m120206_061319_create_users_table.php(19): CDbMigration->createTable('da_users', Array)
+#3 C:\xampp\htdocs\work\framework\cli\commands\MigrateCommand.php(362): m120206_061319_create_users_table->up()
+#4 C:\xampp\htdocs\work\framework\cli\commands\MigrateCommand.php(100): MigrateCommand->migrateUp('m120206_061319_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 C:\xampp\htdocs\work\framework\console\CConsoleCommand.php(141): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 C:\xampp\htdocs\work\framework\console\CConsoleCommandRunner.php(65): CConsoleCommand->run(Array)
+#8 C:\xampp\htdocs\work\framework\console\CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(162): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\work\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\work\data-aggregration\protected\yiic.php(11): require_once('C:\xampp\htdocs...')
+#12 {main}
+---
