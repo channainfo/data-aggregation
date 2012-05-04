@@ -1,7 +1,6 @@
 <?php
 
-class m120430_041142_export_history extends CDbMigration
-{
+class m120430_041142_export_history extends CDbMigration {
   private $_tableName = "da_export_history" ;
 	public function up(){
     $this->createTable($this->_tableName, array(
