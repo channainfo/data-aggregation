@@ -135,6 +135,8 @@ class ExportHistory extends DaModelStatus{
   
   public function afterDelete() {
     DJJob::removeJob($this->job_id);
+    if($this->file)
+       @unlink(DaConfig::pathDataStoreExport().$this->file);
     return parent::afterDelete();
   }
 

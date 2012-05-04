@@ -1341,3 +1341,14 @@ Stack trace:
 #11 C:\xampp\htdocs\work\data-aggregration\protected\yiic.php(11): require_once('C:\xampp\htdocs...')
 #12 {main}
 ---
+2012/05/04 05:39:47 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\work\framework\db\schema\CDbCommandBuilder.php:663)
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSite.php(19): ExportHistory->findByPk()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSiteJob.php(9): DaExportSite->__construct()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(257): DaExportSiteJob->perform()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php(224): DJJob->run()
+#4 C:\xampp\htdocs\work\data-aggregration\jobrunner.php(22): DJWorker->start()
+
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSite.php (19)
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSiteJob.php (9)
+in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php (257)

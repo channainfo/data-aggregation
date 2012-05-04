@@ -131,6 +131,32 @@ EOT;
       $this->generateTableNames();
       $this->orderTable();
       $this->importConfig();
+      $this->builtAnonymize();
+    }
+    /**
+     * Building mysql function to encode data 
+     */
+    public function builtAnonymize(){
+       $sqls[] = "  DROP FUNCTION  IF EXISTS da_anonymize ;" ;
+       $sqls[] = '  
+                    CREATE FUNCTION da_anonymize(inputChar VARCHAR(255), reversible TINYINT) RETURNS varchar(255)
+                    BEGIN
+                      DECLARE tmpStr VARCHAR(255);
+                      DECLARE tmpKey VARCHAR(255) DEFAULT "NCHADS_DA";
+
+                      IF reversible = 1 THEN
+                          SET tmpStr = HEX(ENCODE(inputChar, tmpKey));
+                      ELSE
+                          SET tmpStr = HEX(ENCODE(inputChar, inputChar));
+                      END IF;
+                      RETURN tmpStr;
+                    END
+                    ';
+       
+        foreach($sqls as $sql){
+          $command = Yii::app()->db->createCommand($sql); 
+          $command->execute();
+        }
     }
     
   
