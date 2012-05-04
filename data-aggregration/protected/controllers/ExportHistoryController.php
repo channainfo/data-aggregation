@@ -27,25 +27,10 @@
    public function actionCreate(){
      $model = new ExportHistory();
      if(isset($_POST["ExportHistory"])){
-       
-       $tables = $_POST["ExportHistory"]["table_list"]["tables"];
-       $tableList = array();
-       
-       foreach($tables as $table => $value){
-         $tableList[$table] = $_POST["ExportHistory"]["table_list"]["columns"][$table];
-       }
-  
-       $model->reversable = $_POST["ExportHistory"]["reversable"];
-       $model->date_start = DaDbWrapper::now();
-       $model->all_site   = $_POST["ExportHistory"]["all_site"];
-       $model->all_table  = $_POST["ExportHistory"]["all_table"];
-       $model->site_text  = implode( "<br /> ", $_POST["ExportHistory"]["site_list"]);
-       $model->setTableList($tableList);
-       $model->setSites($_POST["ExportHistory"]["site_list"]);
-       
+       $model->setData($_POST["ExportHistory"]);
        if($model->save()){
          Yii::app()->user->setFlash("success", "Export have been created");
-         DJJob::enqueue(new DaExportSiteJob($_POST["ExportHistory"]["site_list"]));
+         DJJob::enqueue(new DaExportSiteJob($model->id));
          $job_id = DJJob::lastInsertedJob();
          $model->job_id = $job_id ;
          $model->status = ImportSiteHistory::START ;

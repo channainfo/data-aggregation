@@ -1352,3 +1352,78 @@ Stack trace:
 in C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSite.php (19)
 in C:\xampp\htdocs\work\data-aggregration\protected\components\DaExportSiteJob.php (9)
 in C:\xampp\htdocs\work\data-aggregration\protected\vendors\djjob\DJJob.php (257)
+2012/05/04 07:30:08 [error] [php] Undefined index: Setting (C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): SettingController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): SettingController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): SettingController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/setting/export
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php (5)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/04 09:24:56 [error] [php] Undefined variable: column (C:\xampp\htdocs\work\data-aggregration\protected\views\setting\export.php:32)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): SettingController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): SettingController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php(13): SettingController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): SettingController->actionExport()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): SettingController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): SettingController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): SettingController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/setting/export
+in C:\xampp\htdocs\work\data-aggregration\protected\views\setting\export.php (32)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php (13)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/04 09:25:58 [error] [php] Undefined index: tblpatienttest (C:\xampp\htdocs\work\data-aggregration\protected\views\setting\export.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): SettingController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): SettingController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php(13): SettingController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): SettingController->actionExport()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): SettingController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): SettingController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): SettingController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/setting/export
+in C:\xampp\htdocs\work\data-aggregration\protected\views\setting\export.php (39)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php (13)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/04 09:30:38 [error] [php] Missing argument 2 for CWebUser::setFlash(), called in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php on line 6 and defined (C:\xampp\htdocs\work\framework\web\auth\CWebUser.php:665)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(287): SettingController->runAction()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(266): SettingController->runActionWithFilters()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): SettingController->run()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/setting/export
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SettingController.php (6)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/04 12:50:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "conversion".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/05/04 12:50:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "conversion".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---

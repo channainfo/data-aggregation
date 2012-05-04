@@ -25,7 +25,7 @@
    }
    
    public function createZip(){
-     $file = date("Y-m-d-H-i-s")."-".$this->serial.".zip";
+     $file = $this->export->id."-".date("Y-m-d-H-i-s")."-".$this->serial.".zip";
      $archive = new DaArchive();
      $zipfile = DaConfig::pathDataStoreExport().$file;
      $archive->createZip($this->files, $zipfile  );
@@ -46,6 +46,7 @@
      $zipfile = $this->createZip();
      $this->export->file = $zipfile;
      $this->export->status = ExportHistory::SUCCESS;
+     $this->export->date_end = DaDbWrapper::now();
      $this->export->save();
      
      $this->cleanFiles();
@@ -67,6 +68,8 @@
     */
    public function exportTable($tableName, $columns){
     $where = "";
+    DaTool::hp("Exporting : ". $tableName );
+   
     if($this->export->all_site && $this->isSiteTable($tableName)  ){
       $sitecodestring = $this->getSiteCodeString();
       $where = " WHERE id IN ({$sitecodestring})" ;
@@ -78,10 +81,10 @@
     DaConfig::mkDir($tmppath);
     
     $fullpath = $tmppath.$filename;
-    
+    $settings = DaConfig::importSetting();
     $sql = " SELECT {$this->getColumnsHeader($columns)} " .
            " \n UNION ALL " .
-           " \n SELECT {$this->getColumnsSelect($tableName, $columns)} " .
+           " \n SELECT {$this->getColumnsSelect($tableName, $columns, $settings)} " .
            " \n FROM {$tableName} {$where} " .
            " \n INTO OUTFILE '" . addslashes($fullpath) ."' ".
            " \n FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '\"' ";
@@ -91,11 +94,12 @@
     $this->files [] = $fullpath ;
    }
    
-   public function isColumnsAnonymize($tableName, $columns, $column){
-     for($i=0; $i< count($columns) ; $i++){
-        if($columns[$i]== $column and $i == 0)
-          return true;
-     }
+   public function isColumnsAnonymize($tableName, $column, $settings){
+    if($settings && isset($settings[$tableName])){
+      if(array_search($column, $settings[$tableName]) !==false){
+        return true ;
+      }
+    }
      return false ;
    }
   /**
@@ -116,20 +120,25 @@
     * @param array $columns
     * @return string 
     */
-   public function getColumnsSelect($tableName, $columns){
+   public function getColumnsSelect($tableName, $columns, $settings){
      $select = array();
      foreach($columns as $column){
-       if($this->isColumnsAnonymize($tableName, $columns, $column))
-          if($this->export->reversable == 1)      
-            $select[] = "da_anonymize({$column}, 1)" ;
-          else
-            $select[] = "da_anonymize({$column}, 0)" ;
+       // Is anonymize export type, check if column is set to anonymize, otherwise it is its self
+       if($this->export->reversable == ExportHistory::ANONYM_REVERSABLE  || $this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE ){
+          if($this->isColumnsAnonymize($tableName, $column, $settings)){
+              if( $this->export->reversable == ExportHistory::ANONYM_REVERSABLE )      
+                $select[] = "da_anonymize({$column}, 1)" ;
+              else if ($this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE)
+                $select[] = "da_anonymize({$column}, 0)" ;
+          }
+          else  
+            $select[] = $column ;
+       }
        else
          $select[] = $column;
      }
      return implode(", ", $select) ;
    }
-   
    
    /**
     *

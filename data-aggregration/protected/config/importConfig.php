@@ -107,6 +107,19 @@
 		 'tblvisitreason' => '' 
     ),   
     "drugControls" => array(
-        
+        '3TC',
+		'ABC',
+		'AZT',
+		'd4T',
+		'ddI',
+		'EFV',
+		'IDV',
+		'Kaletra(LPV/r)',
+		'LPV',
+		'NFV',
+		'NVP',
+		'RTV',
+		'SQV',
+		'TDF'
     )  
 );      

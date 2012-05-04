@@ -74,7 +74,7 @@
         return ;
       }
       
-      DJJob::enqueue(new DaImportSiteJob($siteconfig->code),"import");
+      DJJob::enqueue(new DaImportSiteJob($siteconfig->code));
       $job_id = DJJob::lastInsertedJob();
 
       $model = new ImportSiteHistory();

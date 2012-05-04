@@ -82,7 +82,9 @@ a{
 .icon-export-convertion{
    background-image:url(../images/dashboard-conversion.png);
 }
-
+.icon-setting{
+   background-image:url(../images/dashboard-setting.png);
+}
 .icon-dashboard .descritpion{
   font-size: 1em;
   color: gray;
@@ -280,7 +282,10 @@ div.tableWrapper thead th, div.tableWrapper td {
    background-repeat: no-repeat;
    padding-left: 20px;
  }
+ 
+ 
  .exportTableItem{
    float:left; 
    width: 200px;
+   line-height: 1.5 ;
  }

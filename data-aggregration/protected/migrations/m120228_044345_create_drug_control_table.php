@@ -17,7 +17,7 @@ class m120228_044345_create_drug_control_table extends CDbMigration{
     $command = $db->createCommand($sql);
    
     $drugs = array(
-        "3TC", "ABC", "AZT", "d4T", "ddl", "EFV", "IDV", "Kaletra(LPV/r)", 
+        "3TC", "ABC", "AZT", "d4T", "ddI", "EFV", "IDV", "Kaletra(LPV/r)", 
         "LPV", "NFV", "NVP", "RTV", "SQV", "TDF"
     );
     

@@ -4,15 +4,16 @@
    public static $messages = array();
    
    public static function p($msg){
-     Yii::log($msg);
-     echo "\n {$msg}";
+     if(DaConfig::$env != "test"){
+        Yii::log($msg);
+        echo "\n {$msg}";
+     }
    }
    
    public static function hp($msg, $chr='_'){
      self::p($msg);
      self::p(str_repeat($chr, strlen($msg) ) );
-     echo "\n" ;
-     
+     self::p("");
    }
    /**
     *

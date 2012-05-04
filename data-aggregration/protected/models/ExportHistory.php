@@ -24,7 +24,9 @@
 class ExportHistory extends DaModelStatus{
 	
   public $listSites = array()  ;
-  
+  const NORMAL = 0 ;
+  const ANONYM_REVERSABLE =1 ;
+  const ANONYM_NOT_REVERSABLE = 2 ;
   
  
   
@@ -34,10 +36,29 @@ class ExportHistory extends DaModelStatus{
 	 * @return ExportHistory the static model class
 	 */
   public static $REVERSABLE_TYPES = array(
-     0 => "Normal",
-     1 => "Anonymization Reversable",
-     2 => "Anonymization not reversable"  
+     self::NORMAL => "Normal",
+     self::ANONYM_REVERSABLE => "Anonymization Reversable",
+     self::ANONYM_NOT_REVERSABLE => "Anonymization not reversable"  
    );
+  
+  
+  public function setData($attrs){
+       $tables = $attrs["table_list"]["tables"];
+       $tableList = array();
+       
+       foreach($tables as $table => $value){
+         $tableList[$table] = $attrs["table_list"]["columns"][$table];
+       }
+  
+       $this->reversable = $attrs["reversable"];
+       $this->date_start = DaDbWrapper::now();
+       $this->all_site   = $attrs["all_site"];
+       $this->all_table  = $attrs["all_table"];
+       $this->site_text  = implode( "<br /> ", $attrs["site_list"]);
+       $this->setTableList($tableList);
+       $this->setSites($attrs["site_list"]);
+  }
+  
   
   
 	public static function model($className=__CLASS__){

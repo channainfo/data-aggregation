@@ -15,7 +15,7 @@
        if(file_exists($filename))
         $this->zip->addFile($filename, basename($filename));
        else
-         echo "file : " . $filename ." was not added coz it does not exist : " ;
+         DaTool::p("file : " . $filename ." was not added coz it does not exist : ") ;
      }
    }
    /**

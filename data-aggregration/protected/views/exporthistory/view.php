@@ -23,7 +23,7 @@
     </tr>
     <tr> 
       <td width="120"> File </td>
-      <td> : <?php echo $model->file ; ?> </td>
+      <td> : <?php echo CHtml::link($model->file, $this->createUrl("exporthistory/dwl/{$model->id}")) ; ?> </td>
     </tr>
   </table>
   <p> &nbsp; </p>
@@ -32,9 +32,9 @@
      //DaTool::debug($model->getTableList());
      //DaTool::debug($model->getSites());
      //DaTool::debug(ExportHistory::tableList());
-     foreach($model->getSites() as $site){
-       echo "\n site id : {$site->code}";
-     }
+     //foreach($model->getSites() as $site){
+     //  echo "\n site id : {$site->code}";
+     //}
      
      $allTables = ExportHistory::tableList();
      $selectedTables = $model->getTableList();
