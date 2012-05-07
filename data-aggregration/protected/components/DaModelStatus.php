@@ -12,7 +12,7 @@
   
   public function getStatusText(){
     $status = array( self::START => "start", self::PENDING => "pending" , self::FAILED => "failed", self::SUCCESS => "success", );
-    return $status[$this->status];
+    return $status[(int)$this->status];
   }
   
 }

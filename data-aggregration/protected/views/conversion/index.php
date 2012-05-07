@@ -2,9 +2,9 @@
 /**
  * @param DaModelStatus $row 
  */
-$this->breadcrumbs = array('Export');
+$this->breadcrumbs = array('Conversion');
 ?>
-<?php echo DaViewHelper::titleActionGroup("Export History List", CHtml::link("New", $this->createUrl("exporthistory/create"), array("class" => "btn-action-new round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("Conversion List", CHtml::link("New", $this->createUrl("conversion/create"), array("class" => "btn-action-new round"))) ?>
 
 <?php if(count($rows)): ?>
 <div class="tableWrapper round">
@@ -14,10 +14,9 @@ $this->breadcrumbs = array('Export');
         <th width="30"  >  # </th>
         <th> Date Start </th>
         <th> Date End </th>
-        <th> Reversable </th>
-        <th> Site </th>
         <th> Status </th>
-        <th> File </th>
+        <th> Source </th>
+        <th> Result </th>
         <th width="100" > Action </th>
       </tr>
     </thead>
@@ -25,15 +24,14 @@ $this->breadcrumbs = array('Export');
   $i =0 ;
    foreach($rows as $row): ?>
     <tr class="<?php echo $i%2?"even":"odd" ?>">
-      <td> <?php echo CHtml::link("{$row->id}",$this->createUrl( "exporthistory/view/{$row->id}"), array() ) ?> </td>
+      <td> <?php echo $i+1 + $pages->getOffset();  ?> </td>
       <td> <?php echo $row->date_start; ?>  </td>
       <td> <?php echo $row->date_end; ?>  </td>
-      <td> <?php echo $row->getReversableText(); ?>  </td>
-      <td> <?php echo $row->site_text; ?>  </td>
       <td> <?php echo "<span class='state {$row->getStatusText()}-state'>". ucfirst($row->getStatusText()). "</span>" ; ?>  </td>
-      <td> <?php  echo ($row->file)? CHtml::link($row->file, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
+      <td> <?php echo ($row->src)? CHtml::link($row->src, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
+      <td> <?php echo ($row->des)? CHtml::link($row->des, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Delete",$this->createUrl( "exporthistory/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php echo CHtml::link("Delete",$this->createUrl( "conversion/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
       </td>
     </tr>
   <?php $i++; endforeach; ?>

@@ -13,7 +13,9 @@
     <table class="tgrid">
       <thead>
         <tr>
-          <th width="120"> Table </th>
+          <th> No </th>
+          <th > Clinic ID </th>
+          <th width="90"> Patient type </th>
           <th > Message </th>
           <th width="90"> Record error </th>
         </tr>
@@ -30,7 +32,16 @@
       
       ?>
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
-          <td> <?php echo $rejectPatient->tableName;  ?> </td>
+          <td> <?php echo 1+$i+$pages->getOffset(); ?> </td>
+          <td> 
+            <?php
+                $record = $rejectPatient->patientRecord() ; 
+                if(count($record))
+                   echo DaRecordReader::getIdFromRecord($rejectPatient->tableName, $record);
+                
+            ?> 
+          </td>
+          <td> <?php echo $rejectPatient->patientType();  ?> </td>
           <td> <?php echo $errorMessage; ?>   </td>
           <td> 
             <?php $readId = "record-{$rejectPatient->id}" ;  ?>

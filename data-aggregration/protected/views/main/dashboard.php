@@ -18,7 +18,7 @@
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("conversion/"), "icon-export-convertion", "Conversion", 
         "Conversion of reversible annonymization export to normal format"); ?>
 
-<?php echo DaViewHelper::dashboardIcon($this->createUrl("setting/export"), "icon-export-convertion", "Export setting", 
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("setting/export"), "icon-export-setting", "Export setting", 
         "Export setting with anonymization"); ?>
   
   

@@ -52,6 +52,26 @@ class RejectPatient extends DaActiveRecordModel
 			array('id, tableName, name, code, message, record, import_site_history_id, modified_at, created_at', 'safe', 'on'=>'search'),
 		);
 	}
+  
+  public function patientType(){
+    $table = array("tblaimain" => "Adult", "tblcimain" => "Child", "tbleimain" => "Expo");
+    if(isset($table[$this->tableName]))
+      return $table[$this->tableName] ;
+    return "";
+  }
+  
+  public function errRecord(){
+    if($this->err_record){
+      return unserialize($this->err_record);
+    }
+    return array();
+  }
+  
+  public function patientRecord(){
+    if($this->record)
+      return unserialize ($this->record);
+    return array();
+  }
 
 	/**
 	 * @return array relational rules.

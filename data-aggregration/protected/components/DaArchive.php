@@ -5,9 +5,11 @@
  class DaArchive  {
    private $zip ;
    
-   public function createZip($srcfiles, $zipfile){
+   public function __construct() {
      $this->zip = new ZipArchive();
-     
+   }
+   
+   public function createZip($srcfiles, $zipfile){
      if ($this->zip->open($zipfile, ZIPARCHIVE::CREATE)!==TRUE) {
          throw new Exception("Could not create file : {$zipfile}");
      }
@@ -18,6 +20,22 @@
          DaTool::p("file : " . $filename ." was not added coz it does not exist : ") ;
      }
    }
+   /**
+    *
+    * @param string $src location of zip
+    * @param string $to  destination file
+    * @throws Exception  
+    */
+   public function extractZip($src, $to){
+     if ($this->zip->open($src) === TRUE) {
+        DaConfig::mkDir($to);
+        $this->zip->extractTo($to);
+     }
+     else   
+      throw new Exception("Could not open :". $src);
+   }
+   
+   
    /**
     *
     * @return ZipArchive 

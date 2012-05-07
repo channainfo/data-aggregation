@@ -62,7 +62,7 @@
      header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // some day in the past
      header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
      header("Content-type: application/octet-stream");
-     header("Content-Disposition: attachment; filename={$fullName}");
+     header("Content-Disposition: attachment; filename={$model->file}");
      header("Content-Transfer-Encoding: binary");
      //readfile($fullName);
      $handle = fopen($fullName, "rb");

@@ -142,7 +142,7 @@ EOT;
                     CREATE FUNCTION da_anonymize(inputChar VARCHAR(255), reversible TINYINT) RETURNS varchar(255)
                     BEGIN
                       DECLARE tmpStr VARCHAR(255);
-                      DECLARE tmpKey VARCHAR(255) DEFAULT "NCHADS_DA";
+                      DECLARE tmpKey VARCHAR(255) DEFAULT "'.DaConfig::PASS_KEY.'";
 
                       IF reversible = 1 THEN
                           SET tmpStr = HEX(ENCODE(inputChar, tmpKey));
@@ -152,6 +152,17 @@ EOT;
                       RETURN tmpStr;
                     END
                     ';
+       
+       $sqls[] = '
+                    CREATE FUNCTION da_reverse(inputChar VARCHAR(255)) RETURNS varchar(255)
+                    BEGIN
+                      DECLARE tmpStr VARCHAR(255);
+                      DECLARE tmpKey VARCHAR(255) DEFAULT "'.DaConfig::PASS_KEY.'"
+                      SET tmpStr = UNHEX(DECODE(inputChar, tmpKey));
+                      RETURN tmpStr;
+                    END
+                 ';
+       
        
         foreach($sqls as $sql){
           $command = Yii::app()->db->createCommand($sql); 

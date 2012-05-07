@@ -1427,3 +1427,278 @@ Stack trace:
 REQUEST_URI=/work/data-aggregration/index.php/conversion
 HTTP_REFERER=http://localhost/work/data-aggregration/index.php
 ---
+2012/05/07 04:12:58 [error] [exception.CException] exception 'CException' with message 'Property "RejectPatient.patientRecord" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('patientRecord')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php(36): CActiveRecord->__get('patientRecord')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(20): CController->render('index', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('rejectpatient/i...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=1
+---
+2012/05/07 04:14:09 [error] [exception.CException] exception 'CException' with message 'Property "RejectPatientController.tableName" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php(38): CComponent->__get('tableName')
+#1 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(20): CController->render('index', Array)
+#6 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('rejectpatient/i...')
+#12 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=1
+---
+2012/05/07 04:18:13 [error] [php] Undefined variable: page (C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): RejectPatientController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): RejectPatientController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(20): RejectPatientController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=1
+in C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php (10)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (20)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 04:20:42 [error] [php] Use of undefined constant i - assumed 'i' (C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php:35)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): RejectPatientController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): RejectPatientController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(20): RejectPatientController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=1
+in C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php (35)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (20)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 06:17:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "conversion".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/05/07 06:17:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "conversion".' in C:\xampp\htdocs\work\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion')
+#1 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php
+---
+2012/05/07 06:46:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\xampp\htdocs\work\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(271): CController->missingAction('create')
+#1 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('create')
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion/crea...')
+#3 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion/create
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/conversion
+---
+2012/05/07 06:49:44 [error] [php] Undefined variable: siteconfig (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (45)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:31:43 [error] [php] include(fileType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\work\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\validators\CValidator.php(171): import()
+#1 C:\xampp\htdocs\work\framework\base\CModel.php(285): createValidator()
+#2 C:\xampp\htdocs\work\framework\base\CModel.php(259): Conversion->createValidators()
+#3 C:\xampp\htdocs\work\framework\base\CModel.php(544): Conversion->getValidators()
+#4 C:\xampp\htdocs\work\framework\base\CModel.php(466): Conversion->getSafeAttributeNames()
+#5 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(30): Conversion->setAttributes()
+#6 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionCreate()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#9 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#10 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (30)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:33:43 [error] [php] include(fileType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\work\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\validators\CValidator.php(171): import()
+#1 C:\xampp\htdocs\work\framework\base\CModel.php(285): createValidator()
+#2 C:\xampp\htdocs\work\framework\base\CModel.php(259): Conversion->createValidators()
+#3 C:\xampp\htdocs\work\framework\base\CModel.php(544): Conversion->getValidators()
+#4 C:\xampp\htdocs\work\framework\base\CModel.php(466): Conversion->getSafeAttributeNames()
+#5 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(30): Conversion->setAttributes()
+#6 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionCreate()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#9 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#10 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/create
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (30)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:35:07 [warning] [application] Failed to set unsafe attribute "src" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (30)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:35:07 [warning] [application] Failed to set unsafe attribute "src" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (33)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:35:07 [error] [php] Undefined index: file (C:\xampp\htdocs\work\data-aggregration\protected\models\Conversion.php:59)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\base\CModel.php(158): CInlineValidator->validate()
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(35): Conversion->validate()
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionCreate()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/create
+in C:\xampp\htdocs\work\data-aggregration\protected\models\Conversion.php (59)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (35)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:35:55 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): ConversionController->renderInternal()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(870): ConversionController->renderFile()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(783): ConversionController->renderPartial()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(19): ConversionController->render()
+#4 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionIndex()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#9 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/index
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\views\conversion\index.php (30)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (19)
+2012/05/07 09:36:49 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (33)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 09:36:49 [error] [php] Undefined index:  (C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): ConversionController->renderInternal()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(870): ConversionController->renderFile()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(783): ConversionController->renderPartial()
+#3 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(19): ConversionController->render()
+#4 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionIndex()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#7 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#9 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/index
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaModelStatus.php (15)
+in C:\xampp\htdocs\work\data-aggregration\protected\views\conversion\index.php (30)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (19)
+2012/05/07 09:37:26 [error] [exception.CException] exception 'CException' with message 'Property "Conversion.file" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('file')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\views\conversion\index.php(31): CActiveRecord->__get('file')
+#2 C:\xampp\htdocs\work\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\work\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\work\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(19): CController->render('index', Array)
+#7 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionIndex()
+#8 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('index')
+#12 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion/inde...')
+#13 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion/index
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/conversion/create
+---
+2012/05/07 10:06:40 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:06:40 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:09:58 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:09:58 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:31:16 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:31:16 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:31:29 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 10:31:29 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 11:49:52 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 11:49:52 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 12:21:53 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 12:21:53 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 12:23:35 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/07 12:23:35 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

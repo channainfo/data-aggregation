@@ -5,19 +5,24 @@
    const IMPORT_ESC_TABLE_NAME = "da_import_escs";
    const TBL_CLINIC = "tblclinic" ;
    
+   const PASS_KEY = "NCHADS_DA" ;
+   
    const IMPORT_TABLE_TYPE_FIXED = "fixed";
    const IMPORT_TABLE_TYPE_IMPORT = "import" ;
    private static $importConfig = false;
    private static $importSetting = false;
    public static $env = "production";
-
+   /**
+    *
+    * @return string value in web root dir -> webroot/data/ 
+    */
    public static function pathDataStore(){
      return dirname(__FILE__)."/../../data/";
    }
    
    public static function mkDir($dir){
      if(!file_exists($dir))
-        mkdir($dir);
+        mkdir($dir, 0777, true);
    }
    
    public static function pathDataStoreExport(){

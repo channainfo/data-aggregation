@@ -162,6 +162,11 @@
      return array_search($table, $parent) !==false ;
    }
    
+   public static function getIdFromRecord($table, $record){
+     $configs = DaConfig::importConfig();
+     $key = $configs["keys"][$table];
+     return $record[$key];
+   }
   
    
  }

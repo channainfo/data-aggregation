@@ -463,9 +463,7 @@
    }
    
    public function getTableKeyValue($table, $record){
-     $configs = DaConfig::importConfig();
-     $key = $configs["keys"][$table];
-     return $record[$key];
+     return DaRecordReader::getIdFromRecord($table, $record);
    }
    
    public function hasError(){
