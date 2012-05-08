@@ -153,11 +153,12 @@ EOT;
                     END
                     ';
        
+       $sqls[] = "  DROP FUNCTION  IF EXISTS da_reverse ;" ;
        $sqls[] = '
                     CREATE FUNCTION da_reverse(inputChar VARCHAR(255)) RETURNS varchar(255)
                     BEGIN
                       DECLARE tmpStr VARCHAR(255);
-                      DECLARE tmpKey VARCHAR(255) DEFAULT "'.DaConfig::PASS_KEY.'"
+                      DECLARE tmpKey VARCHAR(255) DEFAULT "'.DaConfig::PASS_KEY.'" ;
                       SET tmpStr = UNHEX(DECODE(inputChar, tmpKey));
                       RETURN tmpStr;
                     END

@@ -119,16 +119,18 @@ EOD;
        $selecedFields = $this->getColumnsSelectReverse($tableName, $columns);
     }
     $columnHeader ="{$this->getColumnsHeader($columns)}";
+    
     echo "\n".$columnHeader; 
     echo "\n\n";
     
-    $sql = " SELECT  {$columnHeader}" .
+    $sql = " SELECT  {$columnHeader} " .
            " \n UNION ALL " .
            " \n SELECT {$selecedFields} " .
            " \n FROM {$from} {$where} " .
            " \n INTO OUTFILE '" . addslashes($fullpath) ."' ".
            " \n FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '\"' ";
            
+     echo "\n $sql" ;      
     $command =$this->db->createCommand($sql);
     $command->execute();
     $this->files [] = $fullpath ;
@@ -198,7 +200,7 @@ EOD;
      $this->export->status = ExportHistory::SUCCESS;
      $this->export->date_end = DaDbWrapper::now();
      $this->export->save();
-     $this->cleanFiles();
+     //$this->cleanFiles();
    }
    public function createMetaFile(){
      $file = DaConfig::pathDataStoreExport() . "tmp/" . DaConfig::META_EXPORT_FN ;
