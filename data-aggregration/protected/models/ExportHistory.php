@@ -72,6 +72,10 @@ class ExportHistory extends DaModelStatus{
     return self::$REVERSABLE_TYPES[(int)$this->reversable];
   }
   
+  public static function ReversableText($reversable){
+    return self::$REVERSABLE_TYPES[(int)$reversable];
+  }
+  
 
 	/**
 	 * @return string the associated database table name

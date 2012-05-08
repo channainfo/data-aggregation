@@ -71,7 +71,8 @@
     }
     
     public function testIsColumnsAnonymize(){
-      $exportSite = new DaExportSite($this->exportHistory->id, Yii::app()->db);
+      $exportSite = new DaExportSite(Yii::app()->db);
+      $exportSite->export($this->exportHistory->id);
       
       $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid", $this->settings);
       $this->assertEquals($result, true);
@@ -85,7 +86,8 @@
       $columns = array( 'clinicid','grou','namecontps1','maritalstatus','namelocationhbc','artnumber','idu','pretranditional' );
       
       //Anonymize reversable
-      $exportSite = new DaExportSite($this->exportHistory->id, Yii::app()->db);
+      $exportSite = new DaExportSite(Yii::app()->db);
+      $exportSite->export($this->exportHistory->id);
       
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
@@ -98,7 +100,8 @@
       $history1->setData($attrs);
       $history1->save();
       
-      $exportSite = new DaExportSite($history1->id, Yii::app()->db);
+      $exportSite = new DaExportSite(Yii::app()->db);
+      $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
       $str = "da_anonymize(clinicid, 0), da_anonymize(grou, 0), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
@@ -111,7 +114,8 @@
       $history1->setData($attrs);
       $history1->save();
       
-      $exportSite = new DaExportSite($history1->id, Yii::app()->db);
+      $exportSite = new DaExportSite( Yii::app()->db);
+      $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
       $str = "clinicid, grou, namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";

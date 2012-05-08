@@ -19,8 +19,21 @@
       return parent::afterAction($action, $params);
     }    
     
-    public function actionStart($exportId){
-      $export = new DaExportSite($exportId, Yii::app()->db);
-      $export->start();
+    /**
+     *
+     * @param integer $id  ExportSite Id 
+     */
+    public function actionStart($id){
+      $export = new DaExportSite(Yii::app()->db);
+      $export->export($id);
     }
+    /**
+     *
+     * @param integer $id 
+     */
+    public function actionConversion($id){
+      $export = new DaExportSite(Yii::app()->db);
+      $export->reverse($id);
+    }
+    
   }

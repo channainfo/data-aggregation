@@ -6,6 +6,7 @@
    const TBL_CLINIC = "tblclinic" ;
    
    const PASS_KEY = "NCHADS_DA" ;
+   const META_EXPORT_FN  = "config.ini" ;
    
    const IMPORT_TABLE_TYPE_FIXED = "fixed";
    const IMPORT_TABLE_TYPE_IMPORT = "import" ;

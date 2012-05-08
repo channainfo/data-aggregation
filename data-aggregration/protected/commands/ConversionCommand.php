@@ -19,8 +19,8 @@
       return parent::afterAction($action, $params);
     }    
     
-    public function actionStart($conversionId){
-      $conversionId = new DaConversion($conversionId, Yii::app()->db);
-      $conversionId->start();
+    public function actionStart($id){
+      $conversion = new DaConversion($id, Yii::app()->db);
+      $conversion->start();
     }
   }
