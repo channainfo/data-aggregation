@@ -15,7 +15,7 @@
      }
      foreach($srcfiles as $filename){
        if(file_exists($filename)){
-        DaTool::p("File : " . $filename . "added to zip"); 
+        DaTool::p("File : " . $filename . " added to zip"); 
         $this->zip->addFile($filename, basename($filename));
        }
        else

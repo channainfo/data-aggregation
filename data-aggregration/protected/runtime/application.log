@@ -1802,3 +1802,33 @@ in C:\xampp\htdocs\work\data-aggregration\index.php (13)
 2012/05/09 06:52:32 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
 in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/09 08:10:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION server_oi_test.da_anonymize does not exist. The SQL statement executed was:  SELECT  'clinicid' , 'grou' , 'namecontps1' , 'maritalstatus' , 'namelocationhbc'  
+ UNION ALL  
+ SELECT da_anonymize(clinicid, 1), da_anonymize(grou, 1), namecontps1, maritalstatus, namelocationhbc  
+ FROM tblaimain  WHERE id IN (-1,'')  
+ INTO OUTFILE 'C:\\xampp\\htdocs\\work\\data-aggregration\\protected\\components/../../data/export/tmp/tblaimain.csv'  
+ FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '"' .
+2012/05/09 08:10:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION server_oi_test.da_anonymize does not exist. The SQL statement executed was:  SELECT  'clinicid' , 'grou' , 'namecontps1' , 'maritalstatus' , 'namelocationhbc'  
+ UNION ALL  
+ SELECT da_anonymize(clinicid, 1), da_anonymize(grou, 1), namecontps1, maritalstatus, namelocationhbc  
+ FROM tblaimain  WHERE id IN (-1,'')  
+ INTO OUTFILE 'C:\\xampp\\htdocs\\work\\data-aggregration\\protected\\components/../../data/export/tmp/tblaimain.csv'  
+ FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '"' .
+2012/05/09 10:48:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION server_oi_test.da_anonymize does not exist. The SQL statement executed was:  SELECT  'clinicid' , 'grou' , 'namecontps1' , 'maritalstatus' , 'namelocationhbc'  
+ UNION ALL  
+ SELECT da_anonymize(clinicid, 1), da_anonymize(grou, 1), namecontps1, maritalstatus, namelocationhbc  
+ FROM tblaimain  WHERE id IN (-1,'','1901')  
+ INTO OUTFILE 'C:\\xampp\\htdocs\\work\\data-aggregration\\protected\\components/../../data/export/tmp/tblaimain.csv'  
+ FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '"' .
+2012/05/09 10:48:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION server_oi_test.da_anonymize does not exist. The SQL statement executed was:  SELECT  'clinicid' , 'grou' , 'namecontps1' , 'maritalstatus' , 'namelocationhbc'  
+ UNION ALL  
+ SELECT da_anonymize(clinicid, 1), da_anonymize(grou, 1), namecontps1, maritalstatus, namelocationhbc  
+ FROM tblaimain  WHERE id IN (-1,'','1901')  
+ INTO OUTFILE 'C:\\xampp\\htdocs\\work\\data-aggregration\\protected\\components/../../data/export/tmp/tblaimain.csv'  
+ FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '"' .
+2012/05/09 11:15:20 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/09 11:15:20 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

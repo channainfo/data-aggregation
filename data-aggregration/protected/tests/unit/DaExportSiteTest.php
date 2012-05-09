@@ -74,7 +74,7 @@
       $exportSite = new DaExportSite(Yii::app()->db);
       $exportSite->export($this->exportHistory->id);
       
-      $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid", $this->settings);
+      $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid");
       $this->assertEquals($result, true);
       
       $result = $exportSite->isColumnsAnonymize("tblaimain", "cl-not-exist", $this->settings);
@@ -91,7 +91,7 @@
       
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "da_anonymize(clinicid, 1), da_anonymize(grou, 1), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
+      $str = "HEX(ENCODE(clinicid, 'NCHADS_DA')), HEX(ENCODE(grou, 'NCHADS_DA')), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
       $this->assertEquals($result, $str);
       
       // Anonymize not reversable
@@ -104,7 +104,7 @@
       $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "da_anonymize(clinicid, 0), da_anonymize(grou, 0), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
+      $str = "HEX(ENCODE(clinicid, clinicid)), HEX(ENCODE(grou, grou)), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
       $this->assertEquals($result, $str);
       
       

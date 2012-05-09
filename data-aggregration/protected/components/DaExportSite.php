@@ -145,7 +145,7 @@ EOD;
      $fields = array();
      foreach($columns as $column){
        if(isset($this->settings[$tableName][$column]))
-         $fields[] = " da_reverse({$column})" ;
+         $fields[] = $this->decodeAnonymize($column) ; //" da_reverse({$column})" ;
        else
          $fields[] = $column ;
      }
@@ -286,11 +286,11 @@ EOD;
        if($this->export->reversable == ExportHistory::ANONYM_REVERSABLE  || $this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE ){
           if($this->isColumnsAnonymize($tableName, $column)){
               if( $this->export->reversable == ExportHistory::ANONYM_REVERSABLE ){
-                $select[] = "da_anonymize({$column}, 1)" ;
+                $select[] = $this->encodeReversable($column); // "da_anonymize({$column}, 1)" ;
                 $this->metadata[$tableName][$column] = 1 ;
               }
               else if ($this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE){
-                $select[] = "da_anonymize({$column}, 0)" ;
+                $select[] = $this->encodeNotReversable($column) ; // "da_anonymize({$column}, 0)" ;
                 $this->metadata[$tableName][$column] = 0 ;
               }
           }
@@ -302,6 +302,19 @@ EOD;
      }
      return implode(", ", $select) ;
    }
+   
+   public function encodeReversable($column){
+     return "HEX(ENCODE($column, '". DaConfig::PASS_KEY ."'))";
+   }
+   public function encodeNotReversable($column){
+     return "HEX(ENCODE($column, $column))";
+   }
+   public function decodeAnonymize($column){
+     return "DECODE(UNHEX($column), '". DaConfig::PASS_KEY ."')" ;
+   }
+   
+   
+   
    /**
     *
     * @param string $table
