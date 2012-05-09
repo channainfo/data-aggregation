@@ -13,6 +13,7 @@
  * @property string $des
  * @property string $created_at
  * @property string $modified_at
+ * @property string $message
  */
 class Conversion extends DaModelStatus
 {
@@ -32,7 +33,7 @@ class Conversion extends DaModelStatus
     if($this->src)
        @unlink(DaConfig::pathDataStore().$this->src);
     if($this->des)
-       @unlink(DaConfig::pathDataStore().$this->des);
+       @unlink(DaConfig::pathDataStoreExport().$this->des);
     
     return parent::afterDelete();
   }

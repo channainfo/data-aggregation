@@ -159,7 +159,7 @@ EOT;
                     BEGIN
                       DECLARE tmpStr VARCHAR(255);
                       DECLARE tmpKey VARCHAR(255) DEFAULT "'.DaConfig::PASS_KEY.'" ;
-                      SET tmpStr = UNHEX(DECODE(inputChar, tmpKey));
+                      SET tmpStr = DECODE(UNHEX(inputChar), tmpKey);
                       RETURN tmpStr;
                     END
                  ';

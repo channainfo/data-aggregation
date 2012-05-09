@@ -18,6 +18,7 @@
  * @property integer $all_site
  * @property integer $all_table
  * @property string $site_text
+ * @property string $message
  * 
  * 
  */

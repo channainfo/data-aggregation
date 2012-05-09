@@ -29,11 +29,11 @@
    public function writeHeaderDataConversion(){
      $this->metadata["header_info"]["export_id"] = $this->settings["header_info"]["export_id"] ;
      $this->metadata["header_info"]["type"] = ExportHistory::NORMAL ;
-     $this->metadata["header_info"]["name"] = ExportHistory::ReversableText($this->settings["header_info"]["type"]);
+     $this->metadata["header_info"]["name"] = ExportHistory::ReversableText(ExportHistory::NORMAL);
    }
    
    public function createZip(){
-     $file = $this->metadata["header_info"]["export_id"]."-".date("Y-m-d-H-i-s").".zip";
+     $file = $this->metadata["header_info"]["export_id"]."-".ExportHistory::ReversableText($this->metadata["header_info"]["type"])."-".date("Y-m-d-H-i-s").".zip";
      $archive = new DaArchive();
      $zipfile = DaConfig::pathDataStoreExport().$file;
      $archive->createZip($this->files, $zipfile  );
@@ -55,23 +55,26 @@
     */
    public function createTempTable($columns, $tableName){
      $fields = array();
-    
+     $table = $this->generateTempTable($tableName);
      foreach($columns as $field){
        $fields[] = " {$field} text " ;
      }
      $field_str = implode("\n,", $fields);
-     $sql = " CREATE TABLE IF NOT EXISTS " . $tableName . "(".$field_str.")";
+     $sql = " CREATE TEMPORARY TABLE IF NOT EXISTS " . $table . "(".$field_str.")";
      $command = $this->db->createCommand($sql);
      $command->execute();
    }
    
    public function loadIntoTable($columns , $tableName, $file){
      $fileLoad = addslashes($file);
+     $table = $this->generateTempTable($tableName);
+     
      $fields = implode(",", $columns) ;
+     DaTool::p("Load table :". $table);
      $sql = <<< EOD
      
      LOAD DATA INFILE  '$fileLoad' 
-     INTO TABLE  $tableName 
+     INTO TABLE  $table 
      FIELDS TERMINATED BY ',' ENCLOSED BY '"' 
      LINES TERMINATED BY '\\n'
      ($fields) ;
@@ -80,8 +83,8 @@ EOD;
 
      $command = $this->db->createCommand($sql);
      $command->execute();
-     
-     $sql = "DELETE FROM ".$tableName. " LIMIT 1 " ;
+     DaTool::p("Remove first column :" . $table );
+     $sql = "DELETE FROM ".$table. " LIMIT 1 " ;
      $command = $this->db->createCommand($sql);
      $command->execute();
    }
@@ -102,20 +105,22 @@ EOD;
     $tmppath = DaConfig::pathDataStoreExport()."tmp/" ;
     DaConfig::mkDir($tmppath);
     $filename = $tableName . ".csv";
-    
+   
     $fullpath = $tmppath.$filename;
+    @unlink($fullpath); // silently remove the old file
+    
     $where = "" ;
-    if(!$reversible){
+    if($reversible == false){
       if($this->export->all_site && $this->isSiteTable($tableName)  ){
         $sitecodestring = $this->getSiteCodeString();
         $where = " WHERE id IN ({$sitecodestring})" ;
       }
-      $from = "{$tableName}" ;
+      $from = $tableName ;
       $selecedFields = $this->getColumnsSelect($tableName, $columns);
       
     }
     else{
-       $from = " {$tableName} LIMIT 1, 18446744073709551615 " ;
+       $from = $this->generateTempTable($tableName) ; // Get table from temp table." LIMIT 1, 18446744073709551615 " ;
        $selecedFields = $this->getColumnsSelectReverse($tableName, $columns);
     }
     $columnHeader ="{$this->getColumnsHeader($columns)}";
@@ -159,8 +164,22 @@ EOD;
      
      
      $config = $dir.DaConfig::META_EXPORT_FN ;
-     if(file_exists($config))
+     if(file_exists($config)){
        $this->settings = parse_ini_file($config, true);
+       unlink($config);
+       if($this->settings["header_info"]["type"] != ExportHistory::ANONYM_REVERSABLE){
+         $msg = "Could not do conversion because the type of zip file is : " . ExportHistory::ReversableText($this->settings["header_info"]["type"]) ;
+         DaTool::p($msg);
+         $this->updateConversion($conversion, Conversion::FAILED , $msg) ;
+         exit ;
+       }
+     }
+     else{
+        $msg = "Could not do conversion because system could not find config.ini metadata "  ;
+        DaTool::p($msg);
+        $this->updateConversion($conversion, Conversion::FAILED , $msg) ;
+        exit ;
+     }
 
      $this->writeHeaderDataConversion(); 
      for($i=0; $i< $archive->getZip()->numFiles ; $i++){
@@ -169,16 +188,27 @@ EOD;
           $csvFile = $dir.$stat["name"];    
           $tableName = basename($csvFile, ".csv");
           $this->processCSV($csvFile, $tableName);
+          unlink($csvFile);
         }
      }
+     
+     
      $this->createMetaFile();
      $zipfile = $this->createZip();
-     
-     $conversion->status = Conversion::SUCCESS;
-     $conversion->des = $zipfile ;
+     $this->updateConversion($conversion, Conversion::SUCCESS , "", $zipfile ) ;
+     $this->cleanFiles();
+   }
+
+   public function updateConversion($conversion, $status, $message="", $file ="" ){
+     $conversion->status   = $status ;
+     $conversion->des      = $file ;
+     $conversion->message  = $message ;
      $conversion->date_end = DaDbWrapper::now();
      $conversion->save();
-     $this->cleanFiles();
+   } 
+   
+   public function generateTempTable($tableName){
+     return "da_temp_".$tableName;
    }
    
    public function export($exportId){
@@ -190,17 +220,17 @@ EOD;
      $this->settings = DaConfig::importSetting();
      
      foreach($this->export->getTableList() as $tableName => $columns){
-       $this->exportTable($tableName, array_keys($columns));
+       $this->exportTable($tableName, array_keys($columns), false);
      } 
      $this->createMetaFile();
-
+     DaTool::p("Creating zip");
      $zipfile = $this->createZip();
-     
+     DaTool::p("Zip created : ". $zipfile );
      $this->export->file = $zipfile;
      $this->export->status = ExportHistory::SUCCESS;
      $this->export->date_end = DaDbWrapper::now();
      $this->export->save();
-     //$this->cleanFiles();
+     $this->cleanFiles();
    }
    public function createMetaFile(){
      $file = DaConfig::pathDataStoreExport() . "tmp/" . DaConfig::META_EXPORT_FN ;

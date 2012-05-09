@@ -14,8 +14,10 @@
          throw new Exception("Could not create file : {$zipfile}");
      }
      foreach($srcfiles as $filename){
-       if(file_exists($filename))
+       if(file_exists($filename)){
+        DaTool::p("File : " . $filename . "added to zip"); 
         $this->zip->addFile($filename, basename($filename));
+       }
        else
          DaTool::p("file : " . $filename ." was not added coz it does not exist : ") ;
      }
