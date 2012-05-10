@@ -66,4 +66,16 @@
       }
       $this->redirect($this->createUrl("conversion/index"));
    }
+     
+   public function actionSrc(){
+     $model = Conversion::model()->findByPk((int)$_GET["id"]);    
+     $fullName = DaConfig::pathDataStore().$model->src ;
+     $this->download($fullName);
+   }
+   
+   public function actionDes(){
+     $model = Conversion::model()->findByPk((int)$_GET["id"]);    
+     $fullName = DaConfig::pathDataStoreExport().$model->des ;
+     $this->download($fullName);
+   }
  }

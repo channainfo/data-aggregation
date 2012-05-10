@@ -59,7 +59,7 @@
    }
      
    public static function generateFile($filename){
-     return  time()."-".rand(0,10000)."-".$filename;
+     return  time()."-".$filename;
    }
    
    public static function webRoot(){

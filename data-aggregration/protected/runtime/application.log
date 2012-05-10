@@ -1832,3 +1832,54 @@ in C:\xampp\htdocs\work\data-aggregration\index.php (13)
 2012/05/09 11:15:20 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
 in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 03:48:34 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php:88)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(287): ConversionController->runAction()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(266): ConversionController->runActionWithFilters()
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): ConversionController->run()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/conversion/src/3
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (88)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 03:52:05 [error] [exception.CException] exception 'CException' with message 'Property "Conversion.file" is not defined.' in C:\xampp\htdocs\work\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\db\ar\CActiveRecord.php(144): CComponent->__get('file')
+#1 C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php(88): CActiveRecord->__get('file')
+#2 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): ConversionController->actionSrc()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\work\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\work\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('src')
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('conversion/src')
+#8 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/work/data-aggregration/index.php/conversion/src/3
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/conversion
+---
+2012/05/10 04:00:47 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:00:47 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:07:13 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:07:13 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:17:28 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:17:28 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:24:38 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/10 04:24:38 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

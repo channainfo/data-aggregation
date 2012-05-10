@@ -6,8 +6,8 @@
    }
    
    public function perform(){
-     $export = new DaExportSite($this->exportId, Yii::app()->db);
-     $export->start();
+     $export = new DaExportSite(Yii::app()->db);
+     $export->export($this->exportId);
    }
    
    

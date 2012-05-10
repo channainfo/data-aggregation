@@ -168,7 +168,7 @@ EOD;
        $this->settings = parse_ini_file($config, true);
        unlink($config);
        if($this->settings["header_info"]["type"] != ExportHistory::ANONYM_REVERSABLE){
-         $msg = "Could not do conversion because the type of zip file is : " . ExportHistory::ReversableText($this->settings["header_info"]["type"]) ;
+         $msg = "Could not do conversion because the type of exported zip file was : " . ExportHistory::ReversableText($this->settings["header_info"]["type"]) ;
          DaTool::p($msg);
          $this->updateConversion($conversion, Conversion::FAILED , $msg) ;
          exit ;

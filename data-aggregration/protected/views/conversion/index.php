@@ -29,8 +29,8 @@ $this->breadcrumbs = array('Conversion');
       <td> <?php echo $row->date_start; ?>  </td>
       <td> <?php echo $row->date_end; ?>  </td>
       <td> <?php echo "<span class='state {$row->getStatusText()}-state'>". ucfirst($row->getStatusText()). "</span>" ; ?>  </td>
-      <td> <?php echo ($row->src)? CHtml::link($row->src, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
-      <td> <?php echo ($row->des)? CHtml::link($row->des, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
+      <td> <?php echo ($row->src)? CHtml::link($row->src, $this->createUrl("conversion/src/{$row->id}")): "" ; ?>  </td>
+      <td> <?php echo ($row->des)? CHtml::link($row->des, $this->createUrl("conversion/des/{$row->id}")): "" ; ?>  </td>
       <td> <?php echo $row->message; ?> </td>
       <td> 
         <?php echo CHtml::link("Delete",$this->createUrl( "conversion/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
