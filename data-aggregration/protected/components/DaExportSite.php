@@ -210,13 +210,13 @@ EOD;
         $msg = "Could not do conversion because system could not find config.ini metadata "  ;
         DaTool::p($msg);
         $this->updateConversion($conversion, Conversion::FAILED , $msg) ;
-        exit ;
+        return ;
      }
      if($settings["header_info"]["type"] != ExportHistory::ANONYM_REVERSABLE){
          $msg = "Could not do conversion because the type of exported zip file was : " . ExportHistory::ReversableText($settings["header_info"]["type"]) ;
          DaTool::p($msg);
          $this->updateConversion($conversion, Conversion::FAILED , $msg) ;
-         exit ;
+         return ;
      }
 
      $this->writeHeaderDataConversion($settings); 
