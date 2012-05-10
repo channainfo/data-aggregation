@@ -18,7 +18,7 @@ EOT;
    
    public static function pageTitle($title){
      if(!empty($title)){
-       return $title." - ".Yii::app()->name ;
+       return $title . " - " . Yii::app()->name ;
      }
      return Yii::app()->name;
    }

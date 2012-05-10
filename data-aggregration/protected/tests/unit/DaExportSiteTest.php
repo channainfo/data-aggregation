@@ -74,12 +74,28 @@
       $exportSite = new DaExportSite(Yii::app()->db);
       $exportSite->export($this->exportHistory->id);
       
-      $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid");
+      $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid", $this->settings);
       $this->assertEquals($result, true);
       
       $result = $exportSite->isColumnsAnonymize("tblaimain", "cl-not-exist", $this->settings);
       $this->assertEquals($result, false);
+    }
+
+    public function testGetColumnSelectReverse(){
+      $settings = array(
+          'tblaimain'   => array( 'clinicid' => 1,'grou' =>1),
+          'tblcimain'   => array( 'datevisit' => 1,'dob' => 1,'sex' => 1 ) ,
+          'tblcvmain'   => array( 'clinicid' => 1,'datevisit' => 1,'typevisit' => 1) ,
+          'tblaifamily' => array( 'clinicid' => 1,'relativespopart' => 1) ,
+          'tblaiothpasmedical' => array( 'clinicid' => 1,'hivrelatill' => 1,'dateon' => 1 ,'othnothiv' => 1,'id' => 1 ),
+          'tblart' => array( 'clinicid' => 1,'art' => 1 ) 
+          );
+      $exportSite = new DaExportSite(Yii::app()->db);
+      $sql = $exportSite->getColumnsSelectReverse("tblaimain", array("clinicid", "dateVisite","grou", "blah"), $settings);
       
+      $result = "DECODE(UNHEX(clinicid), 'NCHADS_DA'), dateVisite, DECODE(UNHEX(grou), 'NCHADS_DA'), blah";
+      $this->assertEquals($sql, $result);
+          
     }
     
     public function testGetColumnsSelect(){
