@@ -6,7 +6,7 @@
    public static function p($msg){
      if(DaConfig::$env != "test"){
         Yii::log($msg);
-        echo "\n {$msg}";
+        //echo "\n {$msg}";
      }
    }
    

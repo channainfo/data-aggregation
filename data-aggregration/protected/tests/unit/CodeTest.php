@@ -1,3 +1,8 @@
 <?php 
-  print_r(parse_ini_file("config.ini", true));
-  
+//  $blah = true;
+//  if($blah == "some value"){
+//    echo "\n blah flying";
+//  }
+//  else
+//    echo "\n blah never able to fly";
+//  

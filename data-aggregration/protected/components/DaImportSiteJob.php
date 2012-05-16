@@ -14,24 +14,15 @@
    }
    
    public function success($job){
-     echo "\n ========= success ==================== \n" ;
-     print_r($job);
+     echo "\n ======== success  ======================\n";
    }
    
    public function failed($job){
      echo "\n ======== failed ======================\n";
-     print_r($job);
-     $siteconfig = $this->siteconfig;
-     if($siteconfig && $siteconfig->lastImport()){
-        $import = $siteconfig->lastImport();
-        $import->status = ImportSiteHistory::FAILED;
-        $import->save();
-     }
    }
    
    public function retry($job){
      echo "\n ========= retry ===================== \n" ;
-     print_r($job);
      $siteconfig = $this->siteconfig;
      if($siteconfig && $siteconfig->lastImport()){
         if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING ){

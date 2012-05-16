@@ -1,3 +1,0 @@
-- Control on Expo is not clear.
-  * field data type is not clear
-  * miss some fields

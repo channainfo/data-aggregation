@@ -1913,3 +1913,77 @@ in C:\xampp\htdocs\work\data-aggregration\index.php (13)
 2012/05/10 11:19:47 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
 in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
 in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/11 11:39:30 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/11 11:39:30 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/11 11:40:14 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/11 11:40:14 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/16 10:09:47 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:09:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:14:08 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 10:15:36 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:15:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:21:23 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 10:23:13 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:23:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:28:36 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 10:35:53 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:35:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:37:32 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 10:38:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:38:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:39:56 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 10:46:14 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 10:46:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 10:48:21 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tbleimain'.. The SQL statement executed was: SELECT * FROM tbleimain.
+2012/05/16 12:00:17 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblClinic'.. The SQL statement executed was: SELECT TOP 1 * FROM tblClinic   .
+in C:\xampp\htdocs\work\data-aggregration\protected\models\SiteConfig.php (96)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (124)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/16 12:01:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 12:01:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/16 12:01:36 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblClinic'.. The SQL statement executed was: SELECT TOP 1 * FROM tblClinic   .
+in C:\xampp\htdocs\work\data-aggregration\protected\models\SiteConfig.php (96)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\SiteConfigController.php (124)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/16 12:02:00 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was:  SELECT Lost.clinicid  FROM 
+  ( SELECT *  FROM tblevlostdead as L2 WHERE L2.status = 'lost' AND clinicid='123456' )  AS Lost ,  ( SELECT *  FROM tblevlostdead as L1 WHERE L1.status = 'dead' AND clinicid='123456' )  AS Dead 
+ WHERE Lost.lddate > Dead.lddate 
+ AND Lost.clinicid = Dead.clinicid  
+ GROUP BY Lost.clinicid .
+2012/05/16 12:02:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .

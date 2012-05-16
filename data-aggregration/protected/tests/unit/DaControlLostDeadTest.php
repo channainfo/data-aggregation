@@ -91,7 +91,6 @@ class DaControlLostDeadTest extends CDbTestCase {
      );
       foreach($clinicids as  $clinicid ){
        $records = $evLostDead->loadRecords($dbX, $clinicid[0]);
-       //print_r($records);
        $this->assertEquals(count($records), $clinicid[1]);
      }
    }

@@ -78,6 +78,7 @@
    protected function _startImporting(){
       $this->start = microtime(true);
       $siteconfig = $this->siteconfig;
+      
       if($siteconfig->lastImport()){
 
         if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING )
@@ -129,16 +130,15 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-       
        DaTool::debug($ex->getMessage(),0,0);
      }
      catch(DaInvalidDbException $ex){
-       DaTool::debug($ex->getMessage(),0,0);
+       //DaTool::debug($ex->getMessage(),0,0);
        $this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
-        DaTool::debug($ex->getMessage(),0,0);
+        //DaTool::debug($ex->getMessage(),0,0);
         $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
    }
@@ -367,7 +367,6 @@
    }
    
    public function importChild($table, $parentId){
-      DaTool::p($table);
       $sqlX = DaRecordReader::getReader($table);
       $dataReader = $this->getRecordReader($sqlX, $parentId);
       foreach($dataReader as $record){
@@ -411,6 +410,13 @@
       $command->bindParam($i+1, $sitecode, PDO::PARAM_STR ); 
       $command->execute();
    }
+   /**
+    *
+    * @param array $record record data 
+    * @param string $table
+    * @return boolean
+    * @throws DaInvalidDbException 
+    */
    public function addRecord($record, $table){
      try{
        DaSqlHelper::addRecord($record, $table, $this->siteconfig->code);
@@ -418,13 +424,6 @@
      }
      catch(Exception $ex){
        $this->rollback();
-       /*
-       $this->addRecordErrors($record, $table);
-       $this->errors[] = $ex->getMessage();
-       DaTool::p("{$this->patientIter} : ". $ex->getMessage());
-       $this->addRejectPatient($this->currentPatient, $this->patientTable);
-        * 
-        */
        throw new DaInvalidDbException($ex->getMessage());
      }
      return false;

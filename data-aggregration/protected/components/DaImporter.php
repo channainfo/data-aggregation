@@ -156,10 +156,10 @@
         $sql = "truncate {$this->db->quoteTableName($tableName)} " ;
         $command = $this->db->createCommand($sql);
         try {$command->execute();
-          echo "\n truncate : {$tableName} " ;
+          //echo "\n truncate : {$tableName} " ;
         }
         catch(Exception $ex){
-          echo "\n ". $ex->getMessage();
+          //echo "\n ". $ex->getMessage();
         }
       }
       DaDbHelper::endIgnoringForeignKey($this->db);

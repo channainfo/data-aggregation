@@ -20,5 +20,3 @@ require_once $djPath;
 
 $worker = new DJWorker(array("count" => 5, "max_attempts" => 2, "sleep" => 10));
 $worker->start();
-
-var_dump(DJJob::status());
