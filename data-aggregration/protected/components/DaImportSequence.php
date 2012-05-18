@@ -130,7 +130,7 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-       DaTool::debug($ex->getMessage(),0,0);
+       // DaTool::debug($ex->getMessage(),0,0);
      }
      catch(DaInvalidDbException $ex){
        //DaTool::debug($ex->getMessage(),0,0);

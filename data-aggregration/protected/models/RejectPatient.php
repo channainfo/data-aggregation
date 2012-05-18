@@ -53,10 +53,11 @@ class RejectPatient extends DaActiveRecordModel
 		);
 	}
   
-  public function patientType(){
+  
+  public static function patientType($tableName){
     $table = array("tblaimain" => "Adult", "tblcimain" => "Child", "tbleimain" => "Expo");
-    if(isset($table[$this->tableName]))
-      return $table[$this->tableName] ;
+    if(isset($table[$tableName]))
+      return $table[$tableName] ;
     return "";
   }
   

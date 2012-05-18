@@ -20,6 +20,35 @@
      $this->render("index", array("rejectPatients" => $rejectPatients, "pages" => $pages, "importHistory" => $importHistory, "model" => $model));
      
    }
+   public function actionExport(){
+    $file = DaConfig::pathDataStoreExport()."/{$_GET["import_site_history_id"]}_reject_patient.csv" ;
+    if(!file_exists($file)){
+      $command = Yii::app()->db->createCommand()->select('tableName , message, record')
+                  ->from('da_reject_patients p')
+                  ->where('import_site_history_id=:import_site_history_id', array(':import_site_history_id'=>$_GET["import_site_history_id"]) );
+      $dataReader = $command->query();
+
+      $csv = new DaCSV($file);
+
+
+      foreach($dataReader as $record){
+        $rows = array();
+        if($record["record"]){
+          $patient = unserialize($record["record"]);
+          $rows["clinic"] = DaRecordReader::getIdFromRecord($record["tableName"], $patient);
+        }
+        if($record["message"]){
+          $messages = unserialize($record["message"]);
+          $rows["message"] = $messages[0] ;
+        }
+
+        $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
+        $csv->addRow($rows);
+      }
+      $csv->generate();
+    }
+    $this->download($file);
+   }
  }
 ?>
   

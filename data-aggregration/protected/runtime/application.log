@@ -1987,3 +1987,117 @@ in C:\xampp\htdocs\work\data-aggregration\index.php (13)
  AND Lost.clinicid = Dead.clinicid  
  GROUP BY Lost.clinicid .
 2012/05/16 12:02:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: [Microsoft][SQL Server Native Client 10.0][SQL Server]Invalid object name 'tblevlostdead'.. The SQL statement executed was: SELECT * FROM tblevlostdead WHERE clinicid = ? .
+2012/05/18 08:12:47 [error] [php] Undefined variable: siteconfig (C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(870): RejectPatientController->renderFile()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(783): RejectPatientController->renderPartial()
+#2 C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php(20): RejectPatientController->render()
+#3 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionIndex()
+#4 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#6 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#7 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#8 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\views\rejectPatient\index.php (9)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (20)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 08:14:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "export".' in C:\xampp\htdocs\work\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(271): CController->missingAction('export')
+#1 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): CController->run('export')
+#2 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController('importsitehisto...')
+#3 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\work\data-aggregration\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/work/data-aggregration/index.php/importsitehistory/export?siteconfig_id=7
+HTTP_REFERER=http://localhost/work/data-aggregration/index.php/rejectpatient/index?import_site_history_id=9
+---
+2012/05/18 08:33:25 [error] [php] unserialize() [<a href='function.unserialize'>function.unserialize</a>]: Error at offset 0 of 2 bytes (C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (31)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 08:34:02 [error] [php] unserialize() [<a href='function.unserialize'>function.unserialize</a>]: Error at offset 0 of 1 bytes (C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#3 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#5 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (31)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 09:17:59 [error] [php] fputcsv() [<a href='function.fputcsv'>function.fputcsv</a>]: enclosure must be a single character (C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionExport()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#5 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php (10)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (45)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 09:18:44 [error] [php] fputcsv() [<a href='function.fputcsv'>function.fputcsv</a>]: enclosure must be a single character (C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionExport()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#5 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php (10)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (45)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 09:18:57 [error] [php] fputcsv() [<a href='function.fputcsv'>function.fputcsv</a>]: enclosure must be a single character (C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionExport()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#5 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php (10)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (45)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 09:19:25 [error] [php] fputcsv() [<a href='function.fputcsv'>function.fputcsv</a>]: enclosure must be a single character (C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\work\framework\web\actions\CInlineAction.php(50): RejectPatientController->actionExport()
+#1 C:\xampp\htdocs\work\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\work\framework\web\CController.php(287): RejectPatientController->runAction()
+#3 C:\xampp\htdocs\work\framework\web\CController.php(266): RejectPatientController->runActionWithFilters()
+#4 C:\xampp\htdocs\work\framework\web\CWebApplication.php(276): RejectPatientController->run()
+#5 C:\xampp\htdocs\work\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 C:\xampp\htdocs\work\framework\base\CApplication.php(163): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\work\data-aggregration\index.php(13): CWebApplication->run()
+REQUEST_URI=/work/data-aggregration/index.php/rejectpatient/export?import_site_history_id=9
+in C:\xampp\htdocs\work\data-aggregration\protected\components\DaCSV.php (10)
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\RejectPatientController.php (45)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 10:42:33 [warning] [application] Failed to set unsafe attribute "status" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)
+2012/05/18 10:42:33 [warning] [application] Failed to set unsafe attribute "date_start" of "Conversion".
+in C:\xampp\htdocs\work\data-aggregration\protected\controllers\ConversionController.php (37)
+in C:\xampp\htdocs\work\data-aggregration\index.php (13)

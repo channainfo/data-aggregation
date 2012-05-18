@@ -6,8 +6,7 @@
   )
 ?>
 
-<h1 class="action-title round" > Reject conditions </h1>  
-
+<?php echo DaViewHelper::titleActionGroup("Reject conditions", CHtml::link("Download as CSV", $this->createUrl("rejectpatient/export", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-thirdparty round"))) ?>
 <?php if(count($rejectPatients)): ?>
 <div class="tableWrapper round">
     <table class="tgrid">
@@ -41,7 +40,7 @@
                 
             ?> 
           </td>
-          <td> <?php echo $rejectPatient->patientType();  ?> </td>
+          <td> <?php echo RejectPatient::patientType($rejectPatient->tableName);  ?> </td>
           <td> <?php echo $errorMessage; ?>   </td>
           <td> 
             <?php $readId = "record-{$rejectPatient->id}" ;  ?>

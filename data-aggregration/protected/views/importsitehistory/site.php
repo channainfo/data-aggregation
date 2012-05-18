@@ -1,5 +1,7 @@
 <?php
-  $this->breadcrumbs = array('Sites');
+  $this->breadcrumbs = array(
+      "Site"
+  )
 ?>
 <?php
 $this->breadcrumbs = array('Sites');
