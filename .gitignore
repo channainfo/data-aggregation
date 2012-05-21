@@ -4,6 +4,7 @@ nbproject/*
 .buildpath
 data-aggregration/assets/*
 data-aggregration/data/*
+data-aggregration/protected/runtime/application.log
 
 framework/*
 *.log

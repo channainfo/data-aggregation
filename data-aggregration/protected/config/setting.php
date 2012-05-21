@@ -1,5 +1,5 @@
 <?php    
   return array(
      'tblaimain' => array( 'clinicid','grou' ) ,
-	'tblcimain' => array( 'clinicid','datevisit' ) 
+	'tblcimain' => array( 'clinicid','street' ) 
 );      

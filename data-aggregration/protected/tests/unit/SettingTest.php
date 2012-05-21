@@ -6,7 +6,7 @@
                         "table2" => array("a1" =>1 , "a2" => 1, "a3" => 1, "a4" =>1, "a5" =>1)
          );
      Setting::save($settings);
-     $loadedSettings = DaConfig::importSetting();
+     $loadedSettings = DaConfig::importSetting(false);
      
      $this->assertEquals(count($loadedSettings), 2);
      

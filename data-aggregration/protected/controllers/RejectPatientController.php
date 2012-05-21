@@ -28,8 +28,8 @@
                   ->where('import_site_history_id=:import_site_history_id', array(':import_site_history_id'=>$_GET["import_site_history_id"]) );
       $dataReader = $command->query();
 
-      $csv = new DaCSV($file);
-
+      $csv  = new DaCSV($file);
+      $csv->addRow( array("clinic" => "ClinicId", "patientType" => "Patient type", "message" => "Message" ) );  
 
       foreach($dataReader as $record){
         $rows = array();
@@ -37,12 +37,12 @@
           $patient = unserialize($record["record"]);
           $rows["clinic"] = DaRecordReader::getIdFromRecord($record["tableName"], $patient);
         }
+        $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
+        
         if($record["message"]){
           $messages = unserialize($record["message"]);
           $rows["message"] = $messages[0] ;
         }
-
-        $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
         $csv->addRow($rows);
       }
       $csv->generate();

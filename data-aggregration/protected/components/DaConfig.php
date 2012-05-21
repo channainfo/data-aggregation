@@ -47,11 +47,13 @@
         return self::$importSetting ;
       
       $configFile = dirname(__FILE__)."/../config/setting.php" ;
-      if(file_exists($configFile))
-        self::$importSetting = require_once($configFile) ;
+
+      if(file_exists($configFile)){
+        self::$importSetting = require($configFile) ;
+        return self::$importSetting ;
+      }
       else
         throw new DaInvalidFileException(" Could not find include file : {$configFile}");
-      return self::$importSetting ;  
    }
 
    public static function pathDataDb(){

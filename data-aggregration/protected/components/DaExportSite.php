@@ -97,11 +97,11 @@ EOD;
      return array();
    }
    
-   public function processCSV($csvFile, $tableName){
+   public function processCSV($csvFile, $tableName, $settings){
      $rows = $this->getColumnDefinition($csvFile) ;
      $this->createTempTable($rows, $tableName);
      $this->loadIntoTable($rows, $tableName, $csvFile);
-     $this->exportTable($tableName, $rows, true);
+     $this->exportTable($tableName, $rows, $settings, true);
    }
    
    public function exportTable($tableName, $columns, $settings ,$reversible=true){
@@ -225,7 +225,7 @@ EOD;
         if($stat["name"] != DaConfig::META_EXPORT_FN ){
           $csvFile = $dir.$stat["name"];    
           $tableName = basename($csvFile, ".csv");
-          $this->processCSV($csvFile, $tableName);
+          $this->processCSV($csvFile, $tableName, $settings);
           unlink($csvFile);
         }
      }

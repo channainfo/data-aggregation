@@ -12,6 +12,7 @@
     }
   </style>
   <div class="row">
+    <?php $model->reversable = ExportHistory::NORMAL ; ?>
     <?php echo $form->labelEx($model, "reversable");  ?>
     <?php echo $form->radioButtonList($model, "reversable", ExportHistory::$REVERSABLE_TYPES, array(
               'separator' => "" ,
