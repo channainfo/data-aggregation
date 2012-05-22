@@ -3,7 +3,7 @@
 // Any writable CConsoleApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Data aggregration',
+	'name'=>'Data aggregation',
   'import'=>array(  
 		'application.models.*',
 		'application.components.*',

@@ -1,7 +1,7 @@
 <h1 class="action-title round"> Home </h1>
 <div class="dashboard">
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("importsitehistory/site") ,"icon-import", "Import", 
-        "Aggregration tool is for importing the site database into the combined database OI_SERVER");?>
+        "Aggregation tool is for importing the site database into the combined database OI_SERVER");?>
 
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("importsitehistory/") ,"icon-history", "Import history", 
         "The report of the history of data aggregation");?>
