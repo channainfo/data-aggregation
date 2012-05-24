@@ -1,0 +1,33 @@
+#login{
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid  rgb(240,240,240);
+  background: rgb(245,245,245);
+  margin-top: 100px;
+  padding: 10px;
+}
+#login-el{
+ margin: auto; 
+}
+
+div.row{
+  clear: both;
+  margin: 10px;
+}
+
+div.row label{
+  display: block;
+  width: 200px;
+  float: left;
+  padding: 5px;
+}
+#login div.errorMessage{
+  margin-left: 210px 
+}
+div.row .login-input{
+  width: 300px;
+}
+
+
+
+

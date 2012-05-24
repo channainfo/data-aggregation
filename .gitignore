@@ -2,9 +2,9 @@ nbproject/*
 .settings/*
 .project
 .buildpath
-data-aggregration/assets/*
-data-aggregration/data/*
-data-aggregration/protected/runtime/application.log
+data-aggregation/assets/*
+data-aggregation/data/*
+data-aggregation/protected/runtime/application.log
 
 framework/*
 *.log

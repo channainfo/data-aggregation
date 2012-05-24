@@ -1,0 +1,2 @@
+https://github.com/kcherenkov/redis-windows-service
+sc create redis-instance binpath= "\"c:/redis/RedisService_1.1.exe\" c:/redis/redis.conf" start= "auto" DisplayName= "Redis"
