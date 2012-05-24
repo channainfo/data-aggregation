@@ -1,1 +1,0 @@
-php C:\xampp\htdocs\work\data-aggregration\jobrunner.php
