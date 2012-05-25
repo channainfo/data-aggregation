@@ -36,8 +36,52 @@
        $command->bindParam($i+1, $record[$i], PDO::PARAM_STR);
      }
      $command->execute();
+   }
+   
+   public function testNumberLeftColumn(){
+     $samples = array( array( "fields" => array(
+                                      'clinicid','datevisit','dob','sex','addguardian','house','street','grou',
+                                      'village','commune','district','province','phone','namecontps1','contaddress1',
+                                      'contphone1','namecontps2','contaddress2','contphone2','childstatus','fatherstatus',
+                                      'motherstatus','education','refer','hbcteam','ftesdate','fage','foption','fresult',
+                                      'stestdate','sage','soption','sresult','offyesno','officein','datearv','arvnumber',
+                                      'tbpastmedical','vaccinat','infantnutrit','previousarv','precontrimoxazole',
+                                      'prefluconzazole','pretranditional','drugallergy'),
+                              "value" => 1, 
+                              "sitecode" => "0001",
+                              "table" => "tblcimain" ),
+                              
+                       array( 
+                              "fields" => array(
+                                      'clinicid','datevisit','dob','sex','addguardian','house','street','grou',
+                                      'village','commune','district','province','phone','namecontps1','contaddress1',
+                                      'contphone1','namecontps2','contaddress2','contphone2','childstatus','fatherstatus',
+                                      'motherstatus','education','refer','hbcteam','ftesdate','fage','foption','fresult',
+                                      'stestdate','sage','soption','sresult','offyesno','officein','datearv','arvnumber',
+                                      'tbpastmedical','vaccinat','infantnutrit','previousarv','precontrimoxazole',
+                                      'prefluconzazole','pretranditional','drugallergy', "eclinicid"),
+                              "value" => 0, 
+                              "sitecode" => "0001",
+                              "table" => "tblcimain" ),
+         
+                       array( 
+                           "fields" => array( 'idcommune','iddistrict','communeen' ),
+                           "value" => 0,
+                           "sitecode" => false,
+                           "table" => "tblcommune" 
+                           ),
+                        array( 
+                           "fields" => array( 'idcommune','iddistrict' ),
+                           "value" => 1,
+                           "sitecode" => false,
+                           "table" => "tblcommune" 
+                           ),   
+         
+         );
      
-     
-     
+     foreach($samples as $sample){
+      $left = DaSqlHelper::numberLeftColumn($sample["fields"], $sample["table"], $sample["sitecode"]);
+      $this->assertEquals($left, $sample["value"]);
+     }
    }
  }

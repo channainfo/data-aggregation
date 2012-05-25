@@ -49,13 +49,37 @@
      $command = Yii::app()->db->createCommand($sql);
      $i = 1;
      
+     
      foreach($records  as  &$value){
        $command->bindParam($i++, $value, PDO::PARAM_STR ); //use $cols index instead of key of row so we can pre downcase with downcase each records 
      }
+     
+     /***************Prevent provide less data than it column******************/
+     $left = self::numberLeftColumn($records, $table, $sitecode);
+     for($t=0; $t<$left ; $t++){
+       $empty = "" ;
+       $command->bindParam($i++, $empty, PDO::PARAM_STR );
+     }
+     /*************************************************************************/
      
      if($sitecode)
        $command->bindParam($i, $sitecode, PDO::PARAM_STR );
      
      $command->execute();
    }
+   
+   public static function numberLeftColumn($record, $table, $sitecode){
+     $cols = self::colsFromTable($table);
+     
+     $ncol = count($cols);
+     $nfield = count($record);
+     
+     if($sitecode)
+       $left = $ncol - $nfield - 1 ;
+     else
+       $left = $ncol - $nfield ;
+     
+     return $left ;
+   }
+   
  }

@@ -130,16 +130,16 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-       // DaTool::debug($ex->getMessage(),0,0);
+        DaTool::debug($ex->getMessage(),0,0);
      }
      catch(DaInvalidDbException $ex){
-       //DaTool::debug($ex->getMessage(),0,0);
+       DaTool::debug($ex->getMessage(),0,0);
        $this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
-        //DaTool::debug($ex->getMessage(),0,0);
-        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
+       DaTool::debug($ex->getMessage(),0,0);
+       $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
    }
    /**
@@ -161,8 +161,8 @@
     * @throws CDbException 
     */
    protected function _importTableFixed($table, $cols){
-     DaTool::p("Import: {$table}");
-     
+     DaTool::p("Importing : {$table}");
+     $s = microtime(true);
      $sqlX = " SELECT * FROM {$table} ";
      //$commandX =  $this->dbX->createCommand($sqlX);
      $dataReaderX = $this->getRecordReader($sqlX);
@@ -183,6 +183,9 @@
           throw new DaInvalidDbException($ex->getMessage());
         }
      }
+     $f = microtime(true);
+     echo " finished in : " . ($f-$s). " second(s)" ;
+     
    }
    
    public function beginTransaction(){
