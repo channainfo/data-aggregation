@@ -56,6 +56,12 @@ class Backup extends DaModelStatus
     return true;
   }
   
+  public function afterDelete() {
+    if($this->filename)
+       @unlink(DaConfig::pathDataStore().$this->filename);
+    return parent::afterDelete();
+  }
+  
   /**
 	 * @return array relational rules.
 	 */
