@@ -134,7 +134,7 @@
      }
      catch(DaInvalidDbException $ex){
        DaTool::debug($ex->getMessage(),0,0);
-       $this->patientTotal = array(); 
+       //$this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
