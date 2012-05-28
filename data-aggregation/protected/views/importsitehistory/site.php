@@ -46,7 +46,7 @@ $this->breadcrumbs = array('Sites');
       </td>
       <td> 
         <?php if( $row->lastImport() && $row->lastImport()->restorable()): ?> 
-          <span class="disabled"> Waiting to be imported </span>
+          <span class="disabled round"> Waiting to be imported </span>
         <?php elseif($row->lastImport() && $row->lastImport()->inProgress()): ?>
           <span class="disabled round"> In progress </span>
         <?php else  :?>

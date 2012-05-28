@@ -5,7 +5,7 @@
      $model = new RejectPatient();
      
      $criteria = new CDbCriteria();
-     $criteria->order = " modified_at DESC";
+     $criteria->order = " tableName DESC";
      $criteria->condition = "import_site_history_id = ". intval($_GET["import_site_history_id"]);
      
      $totalCount = $model->count($criteria);
