@@ -38,7 +38,7 @@ class UserController extends DaController
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User'])){
-			$model->attributes = $_POST['User'];
+			$model->setAttributes($_POST['User']);
 			if($model->save()){
         Yii::app()->user->setFlash("success", "User has been created");
 				$this->redirect(array('index'));
