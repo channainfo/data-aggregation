@@ -1,9 +1,11 @@
 <?php
  class DaConfig{
-   const PAGE_SIZE = 10 ;
+   const PAGE_SIZE = 15 ;
    const IMPORT_TABLE_NAME = "da_import_tables";
    const IMPORT_ESC_TABLE_NAME = "da_import_escs";
    const TBL_CLINIC = "tblclinic" ;
+   
+   const SALT = "12354aefbc";
    
    const PASS_KEY = "NCHADS_DA" ;
    const META_EXPORT_FN  = "config.ini" ;

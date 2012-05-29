@@ -4,10 +4,8 @@
    public static $messages = array();
    
    public static function p($msg){
-     if(DaConfig::$env != "test"){
-        //Yii::log($msg);
+        Yii::log($msg);
         echo "\n {$msg}";
-     }
    }
    
    public static function hp($msg, $chr='_'){
@@ -20,11 +18,10 @@
     * @param Exception $ex 
     */
    public static function pException($ex, $return = false){
-     $message = "[Error] : " . $ex->getMessage() . "\n "
+     $message = "\n[Error] : " . $ex->getMessage() . "\n "
               . "[Code]  : " . $ex->getCode() . "\n "
               . "[Line]  : " . $ex->getLine() . "\n "
               . "[File]  : " . $ex->getFile() . "\n"
-              . "\n ********************************************************** "
               ;
      if($return)
        return $message;

@@ -27,6 +27,7 @@ class User extends DaActiveRecordModel
 	 * @return User the static model class
 	 */
   public $password_repeat = null ;
+  public $pwdChanged = false ;
   
   
 	public static function model($className=__CLASS__)
@@ -52,10 +53,11 @@ class User extends DaActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('login, group_id, name, password, active', 'required'),
+			array('login, group_id, name,active', 'required'),
+      array("password", "required",  "on" => "insert" ),
       array('login, email', "unique"),   
       array('email', "email") ,  
-      array('password', 'compare'), 
+      array('password', 'compare', "on" => "insert" ), 
       array('password_repeat', 'safe'), //allow bulk assignment  
 			array('group_id', 'numerical', 'integerOnly'=>true),
 			array('login, password, email, salt, name', 'length', 'max'=>255),
@@ -74,29 +76,40 @@ class User extends DaActiveRecordModel
 		);
 	}
   
-  protected function beforeValidate() {  
-    return parent::beforeValidate();
-  }
   protected function saltPassword($salt){
     return md5($salt);
   }
-
-  protected function afterValidate(){
-    if(!$this->hasErrors()){
-      if($this->isNewRecord){
-        $this->salt = $this->saltPassword( $this->login + "." + time());
-        //$this->created_at = $this->modified_at = DaDbWrapper::now();    
-      }
-      //else
-      //  $this->modified_at = DaDbWrapper::now();
-      $this->password = $this->encrypt($this->password, $this->salt);
+  
+  public function setAttributes($attributes, $safe = true ) {
+    foreach($attributes as $name => $value){
+      $this->setAttribute($name, $value);
     }
-    
-    return parent::afterValidate();
+    return true;
+  }
+  public function setAttribute($name, $value) {
+    if($name == "password")
+       $this->pwdChanged = true ;
+    parent::setAttribute($name, $value);
   }
 
-  public  function encrypt($data, $salt){
-    return md5("{$data}.{$salt}");
+  protected function beforeSave() {
+    if($this->isNewRecord){
+        $this->password = $this->createPassword();
+    }
+    elseif($this->pwdChanged){
+      $this->password = $this->createPassword();
+      $this->modified_at = DaDbWrapper::now();
+    }
+    return parent::beforeSave();
+  }
+    
+  public function createPassword(){
+    $this->salt = $this->saltPassword($this->login .DaConfig::SALT);
+    return $this->encrypt($this->password, $this->salt);
+  } 
+  
+  public  function encrypt($rawPwd, $salt){
+    return md5("{$rawPwd}.{$salt}");
   }
 
   /**

@@ -27,7 +27,7 @@
 		<?php echo $form->error($model,'group_id'); ?>
 	</div>
   
-
+ <?php if($model->isNewRecord) :?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255, 'autocomplete' => "off")); ?>
@@ -39,6 +39,9 @@
     <?php echo $form->passwordField($model,"password_repeat", array("size"=>60,"maxlength" => 255, 'autocomplete' => "off")); ?>
     <?php echo $form->error($model, "password_repeat"); ?>
   </div>
+  <?php endif; ?>
+  
+  
   
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>

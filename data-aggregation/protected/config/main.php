@@ -62,13 +62,16 @@ return array(
             'errorAction'=>'site/error',
         ),
 		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-            
-				),
+      'class'=>'CLogRouter',
+      'routes'=>array(
+          array(
+              'class'=>'CFileLogRoute',
+              'levels'=>'trace, info',
+              'categories'=>'system.*',
+          ),
+          
+          
+          
 //       array(
 //          'class'=>'CWebLogRoute',
 //          'categories'=>'system.db.CDbCommand',
