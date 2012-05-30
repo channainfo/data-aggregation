@@ -15,7 +15,7 @@
     );
     parent::setUp();
   }
-
+  
   public function testCreateUser(){
     $count = User::model()->count();
     $user = new User();
@@ -24,7 +24,6 @@
     $this->assertEquals(true, $success  );
     $this->assertEquals($count+1, User::model()->count());
     $this->assertEquals($user->password, $user->encrypt($this->attributes["password"], $user->salt) );
-    
   }
   
   public function testCreaetUserRequiresName(){

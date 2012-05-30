@@ -19,7 +19,8 @@
           <th > Clinic ID </th>
           <th width="90"> Patient type </th>
           <th > Message </th>
-          <th width="90"> Record error </th>
+          <th> Table </th>
+          <th width="90"> More detail </th>
         </tr>
       </thead>
     <?php 
@@ -46,6 +47,17 @@
           <td> <?php echo RejectPatient::patientType($rejectPatient->tableName);  ?> </td>
           <td> <?php echo $errorMessage; ?>   </td>
           <td> 
+             <?php
+                $record = unserialize($rejectPatient->record);
+                $errRecords = unserialize($rejectPatient->err_records);
+                
+                foreach($errRecords as $errTable => $tmp){
+                  echo $errTable;
+                  break;
+                }
+             ?>
+          </td>
+          <td> 
             <?php $readId = "record-{$rejectPatient->id}" ;  ?>
             <div style="display:none;" >  
               <div id="<?php echo $readId; ?>" style="max-height: 500px;" >
@@ -55,20 +67,11 @@
                   
                 <h2 class="title" > Patient </h2>
                 <div >
-                      <?php 
-                          $record = unserialize($rejectPatient->record);
-                          DaViewHelper::recordDetails(array($record));
-                      ?> 
-                
-                
-                      <?php 
-                        $errRecords = unserialize($rejectPatient->err_records);
-                        //echo "<pre>".print_r($errRecords, 1)."</pre>" ;
-                        DaViewHelper::outputTraceRecords($errRecords);
-                      ?>
-                  
+                  <?php 
+                      DaViewHelper::recordDetails(array($record));
+                      DaViewHelper::outputTraceRecords($errRecords);
+                  ?>
                 </div>
-                
               </div>
             </div>  
             <a href="#<?php echo $readId; ?>" class="btn-thirdparty round readmore" > More detail </a>
