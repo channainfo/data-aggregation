@@ -17,9 +17,9 @@
           <th width="120"> Date </th>
           <th width="50"> Status </th>
           <th> Reason </th>
-          <th> Inserted </th>
-          <th> Rejected </th>
-          <th> Total </th>
+          <th width="120"> Inserted </th>
+          <th width="120"> Rejected </th>
+          <th width="120"> Total </th>
           
           
           <th width="120"> Action </th>

@@ -84,4 +84,18 @@
       $this->assertEquals($left, $sample["value"]);
      }
    }
+   
+   public function testIsTableExistInMssql(){
+     $dbX = DaDbMsSqlConnect::connect("localhost", "site2" , "sa" , "123456");
+     $tables = array( "tblaimain"=> true, "tblavmain"=> true, "tblnotexist1" => false,
+                      "tblcimain" => true,"tbleemm" => false, "tblmmnn" => false );
+     
+     foreach($tables as $tableName => $result){
+      $exist = DaSqlHelper::isTableExistInMssql($tableName, $dbX);
+      $this->assertEquals($exist, $result);
+     }
+     
+   }
+   
+   
  }

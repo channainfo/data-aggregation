@@ -74,8 +74,13 @@
               $siteconfig->attributes["user"], $siteconfig->attributes["password"]);
       return $this->dbX;
     }
-   
-   protected function _startImporting(){
+    
+    protected function isTableExistInMssql($tableName){
+      return DaSqlHelper::isTableExistInMssql($tableName, $this->dbX);
+    }
+
+
+    protected function _startImporting(){
       $this->start = microtime(true);
       $siteconfig = $this->siteconfig;
       
@@ -124,8 +129,10 @@
         $this->importTablesFixed();
         
         $this->importIMain("tblaimain");
-        $this->importIMain("tblcimain") ;
-        $this->importIMain("tbleimain") ;
+        $this->importIMain("tblcimain");
+        
+        if($this->isTableExistInMssql("tbleimain"))
+          $this->importIMain("tbleimain");
         
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
@@ -162,6 +169,7 @@
     */
    protected function _importTableFixed($table, $cols){
      DaTool::p("Importing : {$table}");
+
      $s = microtime(true);
      $sqlX = " SELECT * FROM {$table} ";
      //$commandX =  $this->dbX->createCommand($sqlX);
@@ -227,6 +235,7 @@
    
    public function importIMain($table){
       DaTool::p("Import patient: {$table}");
+      $s  = microtime(true);
       DaDbHelper::startIgnoringForeignKey($this->db);
      
       $this->patientTable = $table ;
@@ -236,7 +245,8 @@
       
       $this->patientIter = 1;
       foreach($dataReader as $record){
-         
+         if($this->patientIter %10 == 0)
+            echo "\n {$this->patientIter} patient {$table} imported" ;
          $this->recordErrors = array(); 
          $this->errors = array();
          $this->currentPatient = $record ;
@@ -286,6 +296,8 @@
          }
          $this->patientIter ++;
       }
+      $f = microtime(true);
+      echo " finished in : " . ($f-$s). " second(s)" ;
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function addRecordErrors($record, $table){

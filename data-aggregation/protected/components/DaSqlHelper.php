@@ -81,5 +81,23 @@
      
      return $left ;
    }
+   /**
+    * Check to see if the table exist in the CDbConnection database
+    * 
+    * @param string $tableName
+    * @param CDbConnection $dbX
+    * @return boolean return true if table exist otherwise false
+    */
+   public static function isTableExistInMssql($tableName, $dbX){
+      $sql = "select Top 1 * from $tableName " ;
+      $command = $dbX->createCommand($sql);
+      try{
+        $command->query();
+        return true ;
+      }
+      catch(Exception $ex){
+        return false ;
+      }
+   }
    
  }

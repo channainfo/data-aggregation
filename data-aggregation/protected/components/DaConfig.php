@@ -6,7 +6,6 @@
    const TBL_CLINIC = "tblclinic" ;
    
    const SALT = "12354aefbc";
-   
    const PASS_KEY = "NCHADS_DA" ;
    const META_EXPORT_FN  = "config.ini" ;
    
