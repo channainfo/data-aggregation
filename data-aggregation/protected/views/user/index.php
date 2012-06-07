@@ -34,9 +34,13 @@ $this->menu = array(
       <td> <?php echo $row->getActive(); ?>  </td>
       <td> <?php echo $row->email; ?>  </td>
       <td> 
-        <?php echo CHtml::link("Edit", $this->createUrl("user/update/{$row->id}"), array("class" => "btn-action-edit round") ) ?> 
         <?php 
-          if(Yii::app()->user->id != $row->id)
+          if(Yii::app()->user->isAdmin())
+            echo CHtml::link("Edit", $this->createUrl("user/update/{$row->id}"), array("class" => "btn-action-edit round") )
+                
+        ?> 
+        <?php 
+          if(Yii::app()->user->id != $row->id && Yii::app()->user->isAdmin() && !$row->isAdmin() )
             echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete delete round ") ) 
          ?> 
       </td>

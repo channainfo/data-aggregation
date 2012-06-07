@@ -9,7 +9,7 @@
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("exporthistory/"), "icon-export", "Export", 
         "Export database to a specific format"); ?>
 
-<?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-config", "Site Config & Restoration", 
+<?php echo DaViewHelper::dashboardIcon($this->createUrl("siteconfig/"), "icon-config", "Temporary DB & Restoration", 
         "Connection configuration of all sites databases and their restoration"); ?>
   
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("setting/export"), "icon-export-setting", "Export setting", 

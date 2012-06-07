@@ -3,7 +3,8 @@
 class UserController extends DaController
 {
 	public $layout='//layouts/default';
-	
+
+  
 	public function actionView($id) {
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -150,22 +151,10 @@ class UserController extends DaController
 			'users'=>$users,
       'pages' => $pages  
 		));
+    
+    
 	}
 
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new User('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

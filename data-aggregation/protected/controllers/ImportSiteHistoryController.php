@@ -9,8 +9,10 @@
      $model = new ImportSiteHistory();
      
      $criteria = new CDbCriteria();
-     $criteria->order = " modified_at DESC";
+     $criteria->order = "siteconfig.modified_at DESC";
+     $criteria->with = array("siteconfig") ;
      $siteconfig = NULL;
+     
      if(isset($_GET["siteconfig_id"])){
       $criteria->condition = "siteconfig_id = ". intval($_GET["siteconfig_id"]);
       $siteconfig = SiteConfig::model()->findByPk((int)$_GET["siteconfig_id"]);

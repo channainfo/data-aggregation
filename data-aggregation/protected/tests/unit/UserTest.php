@@ -105,5 +105,19 @@
       $this->assertEquals( $user->password , $user->encrypt("123456", $user->salt) );
       
   }
+  public function testIsAdmin(){
+    $user = new User();
+    $user->setAttributes($this->attributes);
+    $this->assertEquals($user->isAdmin(), true);
+  }
+  
+  public function testIsViewer(){
+    $user = new User();
+    $this->attributes["group_id"] = 2 ;
+    $user->setAttributes($this->attributes);
+    $this->assertEquals($user->isViewer(), true);
+  }
+  
+  
  }
 ?>

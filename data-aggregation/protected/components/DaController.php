@@ -22,7 +22,8 @@ class DaController extends Controller {
 			    return true;
 			}
 		}
-	}
+	} 
+  
   
   public function download($fullName){
      $basename = str_replace(" ","_" , basename($fullName) );

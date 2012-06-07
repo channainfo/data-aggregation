@@ -34,6 +34,7 @@ class UserIdentity extends CUserIdentity{
           $lastLoginAt = $user->last_login_at;
         
         $this->setState("lastLoginAt", $lastLoginAt ); // set CWebUser Yii::app()->user->lastLoginAt 
+        $this->setState("groupId", $user->group_id);
         $this->errorCode = self::ERROR_NONE;
       }
       

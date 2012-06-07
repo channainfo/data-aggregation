@@ -20,6 +20,9 @@ class User extends DaActiveRecordModel
 {
   public static $ROLE = array("Admin", "Normal") ;
   public static $STATUS = array("Inactive", "Active");
+  const ADMIN = "1" ;
+  const VIEWER = "2" ;
+  
  
   /**
 	 * Returns the static model of the specified AR class.
@@ -63,6 +66,23 @@ class User extends DaActiveRecordModel
 			array('login, password, email, salt, name', 'length', 'max'=>255),
 		);
 	}
+  
+  public function isAdmin(){
+    return User::isUserAdmin($this->group_id); 
+  }
+  
+  public function isViewer(){
+    return User::isUserViewer($this->group_id) ; 
+  }
+  
+  public static function isUserViewer($group){
+    return User::VIEWER == $group ;
+  }
+  
+  public static function isUserAdmin($group){
+    return User::ADMIN == $group ;
+  }
+  
 
 	/**
 	 * @return array relational rules.

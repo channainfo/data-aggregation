@@ -16,6 +16,7 @@
         <tr>
           <th width="120"> Date </th>
           <th width="50"> Status </th>
+          <th> Site </th>
           <th> Reason </th>
           <th width="120"> Inserted </th>
           <th width="120"> Rejected </th>
@@ -40,6 +41,7 @@
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
           <td> <?php echo date("Y-m-d", strtotime($importHistory->created_at) ); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
+          <td> <?php echo "{$importHistory->siteconfig->code} - {$importHistory->siteconfig->name} ";  ?></td>
           <td> 
             
             <div  >

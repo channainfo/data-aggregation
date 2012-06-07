@@ -1,7 +1,7 @@
 <?php
-$this->breadcrumbs = array('Sites');
+$this->breadcrumbs = array('databases');
 ?>
-<?php echo DaViewHelper::titleActionGroup("Site List", CHtml::link("New", $this->createUrl("siteconfig/create"), array("class" => "btn-action-new round"))) ?>
+<?php echo DaViewHelper::titleActionGroup("Database List", CHtml::link("New", $this->createUrl("siteconfig/create"), array("class" => "btn-action-new round"))) ?>
 
 <?php if(count($sites)): ?>
 <div class="tableWrapper round">

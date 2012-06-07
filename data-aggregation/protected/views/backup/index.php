@@ -1,10 +1,12 @@
 <?php
   $this->breadcrumbs = array(
-      "Sites" => $this->createUrl("siteconfig/index"),
+      "Databases" => $this->createUrl("siteconfig/index"),
       "Restorations"
-  )
+  );       
 ?>
+
 <?php echo DaViewHelper::titleActionGroup("Restorations history", CHtml::link("New", $this->createUrl("backup/create", array("siteconfig_id" => $siteconfig->id)), array("class" => "btn-action-new round"))) ?>
+
 <?php $this->renderPartial("//siteconfig/_detail", array("siteconfig" => $siteconfig)) ?>
 
 <?php if(count($backups)): ?>
