@@ -84,44 +84,50 @@ class SiteConfigController extends DaController {
      $siteconfig = $site->findByPk($siteconfig_id);//   SiteConfig::model()->findByPk($siteconfig_id);
      $errors = array("message"=>""); 
      
+     
+     
      if($siteconfig){
-        $lastBackup = $siteconfig->lastBackUp(false);
-        if($lastBackup && $lastBackup->restorable()){
-          $backupAttrs = $lastBackup->attributes;
-          $siteAttrs = $siteconfig->attributes;
-          
-          $db = new DaDbConnection();
-          $startTime = microtime(true);
-          $lastBackup->status = Backup::PENDING;
-          $lastBackup->save();
-          $connection = null;
-          $file =  DaConfig::pathDataStore().$backupAttrs["filename"] ;
-          $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], $siteAttrs["password"], $siteAttrs["db"], 
-                 $file ,$connection );
-          
-          $endTime =  microtime(true);
-          if(count($errors)){
-            $lastBackup->status = Backup::FAILED;
-            $lastBackup->reason = $errors["message"];
-          }  else {
-            $lastBackup->status = Backup::SUCCESS;
-          }
-          $lastBackup->duration = $endTime-$startTime;
-          $lastBackup->save();
+        if($siteconfig->status == SiteConfig::PENDING){
+          $errors["message"] = "Error : " . $siteconfig->fullName() ;
         }
-        else
-          $errors["message"] = "No back up to restore" ;
-        
+        else{
+          $lastBackup = $siteconfig->lastBackUp(false);
+          if ($lastBackup && $lastBackup->restorable()){
+            $backupAttrs = $lastBackup->attributes;
+            $siteAttrs = $siteconfig->attributes;
+
+            $db = new DaDbConnection();
+            $startTime = microtime(true);
+            $lastBackup->status = Backup::PENDING;
+            $lastBackup->save();
+            $connection = null;
+            $file =  DaConfig::pathDataStore().$backupAttrs["filename"] ;
+            $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], $siteAttrs["password"], $siteAttrs["db"], 
+                  $file ,$connection );
+
+            $endTime =  microtime(true);
+            if(count($errors)){
+              $lastBackup->status = Backup::FAILED;
+              $lastBackup->reason = $errors["message"];
+            }  else {
+              $lastBackup->status = Backup::SUCCESS;
+            }
+            $lastBackup->duration = $endTime-$startTime;
+            $lastBackup->save();
+          }
+          else
+            $errors["message"] = "No back up to restore" ;
+        }
      }
      else
        $errors["message"] = "Site not found";       
      
      if(count($errors)){
-       Yii::app ()->user->setFlash("error", "Failed to restore the file");
+       Yii::app ()->user->setFlash("error", "Failed to restore :". $errors["message"]);
      }
      else{
        try{
-         $siteconfig->updateSiteCodeName();
+         $siteconfig->updateSiteAttributes();
          Yii::app()->user->setFlash("success", "Database has been restored successfully");
        }
        catch(DaInvalidSiteDatabaseException $ex){

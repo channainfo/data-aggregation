@@ -7,12 +7,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/jquery-ui-1.7.3.custom.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox-1.3.4.css" />
     
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/modernizr.custom.77819.js" ></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/custom.js" ></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.mousewheel-3.0.4.pack.js" ></script>
     <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/fancybox/jquery.fancybox-1.3.4.pack.js" ></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/jquery-ui-1.7.3.custom.min.js" ></script>
     
   </head>
   

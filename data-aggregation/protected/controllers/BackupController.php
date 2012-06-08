@@ -20,13 +20,16 @@
      $this->render("index", array("backups" => $backups, "pages" => $pages, "siteconfig" => $siteconfig, "model" => $model));
      
    }
-   
+   /**
+    * only create backup(not restore here). The successful backup file will be stored
+    * in siteconfig/restore call from backup/index
+    */
    public function actionCreate(){
      $siteconfig_id = (int)$_GET["siteconfig_id"];
      $siteconfig = $this->getSiteConfig($siteconfig_id);
      $backup = $siteconfig->lastBackUp(false);
      
-     if($backup and $backup->restorable()){
+     if(( $backup and $backup->restorable()) || $siteconfig->isImporting() ) {
        $this->render("create", array("backup" => $backup, "siteconfig" => $siteconfig));
      }
      else{

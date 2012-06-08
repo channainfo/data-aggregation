@@ -11,12 +11,86 @@
 
 <?php if(count($importHistories)): ?>
 <div class="tableWrapper round">
+  
+      
+    <?php 
+      $firstImport = $importHistories[0];
+      if($firstImport->status == ImportSiteHistory::PENDING): ?>
+      <div  > 
+        <div class="importTableValue" >Table : </div> 
+        <div class="importTableValue"  id="importTable"  >   </div> 
+      </div>
+      <div class="clear"> <br /> </div>
+      <div>
+          <div id="progressbar" style="width:300px; float: left;margin-right: 10px;" > </div>
+          <div class="importLabel" > 
+            <div class="importTableValue"  id="importCurrent"  > 0 </div>
+            <div class="importTableValue label" >of</div>
+            <div class="importTableValue"  id="importTotal"   >
+          </div>
+            
+          <div class="importLabel" > 
+            <div class="importTableValue label" >  =>  </div> 
+            <div class="importTableValue" id="importPercentage"  > </div> (%) 
+          </div>
+            
+          
+      </div>
+    
+    <div class="clear">&nbsp;</div>  
+      <script type="text/javascript">
+
+        function updateBar(){
+          
+          $.ajax({
+            url: "<?php echo Yii::app()->createUrl("importsitehistory/progress", array("importId" => $firstImport->id )) ?>",
+            cache: false,
+            dataType: "json",
+            success: function(response){
+   
+              if(response["finished"] == true){
+                window.location.reload();   
+              }
+              else{
+                
+                updateProgressBar(response);
+                setTimeout(updateBar, 1000);
+                
+              }
+            },
+            complete:function(response){
+              //console.log("complete", jQuery.parseJSON(response.responseText));
+            }
+          });
+        }
+        function updateProgressBar(response){
+          $("#progressbar").progressbar("value", response["percentage"] );
+          $("#importPercentage").html(response["percentage"]);
+          $("#importTotal").html( response["total_record"]);
+          $("#importCurrent").html( response["current_record"]);
+          $("#importTable").html( response["importing_table"]);
+        }
+
+        $(function(){
+          $("#progressbar").progressbar({
+              value: 0 
+            }
+          );
+          updateBar();
+        }); 
+
+      </script>
+    <?php endif; ?>
+    
+
+
+
     <table class="tgrid">
       <thead>
         <tr>
-          <th width="120"> Date </th>
+          <th width="80"> Date </th>
           <th width="50"> Status </th>
-          <th> Site </th>
+          <th width="150"> Site </th>
           <th> Reason </th>
           <th width="120"> Inserted </th>
           <th width="120"> Rejected </th>

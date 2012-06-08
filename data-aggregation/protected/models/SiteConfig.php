@@ -13,8 +13,11 @@
  * @property string $db
  * @property string $created_at
  * @property string $modified_at
+ * @property integer $status
+ * @property datetime $last_imported
+ * @property datetime $last_restored
  */
-class SiteConfig extends DaActiveRecordModel
+class SiteConfig extends DaModelStatus
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -63,7 +66,23 @@ class SiteConfig extends DaActiveRecordModel
       $data[$site->id] = "{$site->code} - {$site->name}" ; 
     }
     return $data;
-  }  
+  } 
+  /**
+   *
+   * @param string $separator default is -
+   * @return type return "{sitecode} {separator} {sitename}" 
+   */
+  public function fullName($separator="-"){
+    return "{$this->code}".$separator."{$this->name}" ;
+  }
+  
+  public function isImporting(){
+    return SiteConfig::PENDING == $this->status ;
+  }
+  
+  public function isImportable(){   
+    return SiteConfig::START == $this->status;
+  }
   
   /**
    *
@@ -87,21 +106,34 @@ class SiteConfig extends DaActiveRecordModel
   /**
    * 
    */
-  public function updateSiteCodeName(){
+  public function updateSiteAttributes(){
     $db = DaDbMsSqlConnect::connect($this->host, $this->db, $this->user, $this->password);
     $table = "tblClinic";
     $sql = "SELECT TOP 1 * FROM {$table}   " ;
     $command = $db->createCommand($sql);
     try{
       $row = $command->queryRow();
+      
       $this->name = trim($row["Clinic"]);
       $this->code = trim($row["ART"]);
+      
+      //Update site import and restore
+      $this->status = SiteConfig::INIT ;
+      $this->last_restored = DaDbWrapper::now();
+      $this->last_imported = NULL ;
+      
+      
+      $this->save();
     }
+    
+    
+    
     catch(CException $ex){
       throw new DaInvalidSiteDatabaseException("Could not find any site from host: [{$this->host}] , db: [{$this->db}]  in table: [{$table}] ");
     }
-    $this->save();
+    
   }
+  
   
   /**
    *

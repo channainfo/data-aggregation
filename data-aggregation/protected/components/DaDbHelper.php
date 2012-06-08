@@ -19,4 +19,10 @@
      $row = $db->createCommand($sql)->queryRow();
      return $row["Column_name"];
    }
+   
+   public static function countRecord($db, $tableName){
+     $sql = "SELECT COUNT(*) as total FROM {$tableName}" ;
+     $row = $db->createCommand($sql)->queryRow();
+     return $row["total"];
+   }
  }

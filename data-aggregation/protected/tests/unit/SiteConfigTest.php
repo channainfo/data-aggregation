@@ -24,12 +24,16 @@
      $this->siteconfig = new SiteConfig();
      
     }
-    public function testUpdateSiteCodeName(){
+    public function testUpdateSiteAttributes(){
       $this->siteconfig->attributes = $this->attributes;
       $this->siteconfig->save();
-      $this->siteconfig->updateSiteCodeName();
+      $this->siteconfig->updateSiteAttributes();
       $this->assertEquals(empty($this->siteconfig->name), false);
       $this->assertEquals(empty($this->siteconfig->code), false);
+      
+      $this->assertEquals($this->siteconfig->status, SiteConfig::INIT );
+      $this->assertEquals($this->siteconfig->last_imported, NULL);
+      
     }
     
     public function testCreateSiteConfigWithValidAttribute(){
@@ -100,6 +104,25 @@
        $this->assertEquals($lastBackup->filename, "bloo.bak");
        $this->assertEquals($lastBackup->status, 1);
     }
+    
+    public function testIsImportStatus(){
+      $this->siteconfig->status = SiteConfig::PENDING;
+      $this->siteconfig->save();
+      
+      $this->assertEquals( $this->siteconfig->isImportable(), false);
+      $this->assertEquals( $this->siteconfig->isImporting(), true );
+      
+      
+      $this->siteconfig->status = SiteConfig::START;
+      $this->siteconfig->save();
+      
+      $this->assertEquals( $this->siteconfig->isImportable(), true);
+      $this->assertEquals( $this->siteconfig->isImporting(), false );
+      
+      
+      
+    }
+    
 
     private function getAttributeInvalid($key, $destroy = false){
       $valid = $this->attributes ;

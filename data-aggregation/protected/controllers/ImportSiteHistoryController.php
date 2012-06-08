@@ -9,7 +9,8 @@
      $model = new ImportSiteHistory();
      
      $criteria = new CDbCriteria();
-     $criteria->order = "siteconfig.modified_at DESC";
+     $criteria->order = "t.modified_at DESC";
+     
      $criteria->with = array("siteconfig") ;
      $siteconfig = NULL;
      
@@ -32,6 +33,11 @@
     public function actionDelete(){
        $import = ImportSiteHistory::model()->findByPk((int)$_GET["id"]);
        if($import){
+         if($import->status == ImportSiteHistory::START || $import->status == ImportSiteHistory::PENDING){
+           $siteconfig = $import->siteconfig;
+           $siteconfig->status = SiteConfig::INIT;
+           $siteconfig->save();
+         }
          $import->delete();
          Yii::app()->user->setFlash("success", "Import history has been deleted" );
        }
@@ -60,7 +66,7 @@
       $siteconfig = SiteConfig::model()->findByPk($siteconfig_id);
       
       if($siteconfig && $siteconfig->lastImport() && $siteconfig->lastImport()->restorable()){
-        Yii::app()->user->setFlash("error", "The Import has been already added on -  ". $siteconfig->lastImport().created_at); 
+        Yii::app()->user->setFlash("error", "The Import has been already added on -  ". $siteconfig->lastImport()->created_at); 
         $this->redirect($this->createUrl("importsitehistory/site"));
         return ;
       }
@@ -86,6 +92,9 @@
       
       if($model->save()){
         Yii::app()->user->setFlash("success", "Import has been added to queue to run" );
+        $siteconfig->last_imported = DaDbWrapper::now();
+        $siteconfig->status = SiteConfig::START;
+        $siteconfig->save();
       }
       
       else{
@@ -98,5 +107,23 @@
       
       $this->redirect($this->createUrl("importsitehistory/index", array("siteconfig_id" => $siteconfig_id)));
       
+    }
+    
+    public function actionProgress(){
+      $id = (int)$_GET["importId"];
+      $import = ImportSiteHistory::model()->findByPk($id);
+      $infos = array();
+      if($import && $import->status == ImportSiteHistory::PENDING) {
+        $infos = $import->attributes ;
+        if($import->attributes["total_record"] != 0 ){
+         $infos["percentage"] = number_format(($import->attributes["current_record"]*100)/$import->attributes["total_record"], 2);
+        }
+        $infos["finished"] = false ;
+
+      }
+      else {
+        $infos["finished"] = true ;
+      }
+      echo json_encode($infos);
     }
   }

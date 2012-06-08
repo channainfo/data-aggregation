@@ -289,3 +289,21 @@ div.tableWrapper thead th, div.tableWrapper td {
    width: 200px;
    line-height: 1.5 ;
  }
+ .importLabel{
+   float:left; 
+   margin-right: 30px; ; 
+   font-weight:normal;
+ }
+ .importLabelItem{
+   float:left;
+   padding: 3px;
+   background: #ddd ;
+   border: 1px solid #ccc;
+   margin-left: 3px;
+ }
+  .importTableValue{
+   float:left;
+   padding: 3px;
+   margin-left: 3px;
+ }
+ 

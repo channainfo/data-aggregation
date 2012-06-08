@@ -1,10 +1,7 @@
 <?php
   $this->breadcrumbs = array(
-      "Site"
+    "Databases"
   )
-?>
-<?php
-$this->breadcrumbs = array('Sites');
 ?>
 <h1 class="action-title round"> Import data list </h1>
 <?php if(count($sites)): ?>
@@ -20,7 +17,6 @@ $this->breadcrumbs = array('Sites');
         <th> Last import </th>
         <th> Import status </th>
         <th> Action </th>
-        
       </tr>
     </thead>
   <?php 
@@ -31,11 +27,12 @@ $this->breadcrumbs = array('Sites');
       <td> <?php echo $row->name ; ?>  </td>
       <td> <?php echo $row->host; ?>  </td>
       <td> <?php echo $row->db; ?>  </td>
-      <td> <?php echo $row->lastBackup()? $row->lastBackup()->created_at : "-" ; ?> </td>
-      <td> <?php echo $row->lastImport() ? $row->lastImport()->created_at : "-"; ?> </td>
+      <td> <?php echo $row->last_restored ; ?> </td>
+      <td> <?php echo $row->last_imported ?> </td>
       <td> 
-        <?php if($row->lastImport()) : 
-           $status = $row->lastImport()->getStatusText();
+        <?php 
+          if($row->status !== NULL) : 
+            $status = $row->getStatusText();
           ?>
           <span class="state <?php echo "{$status}-state"  ?> " >
             <?php echo CHtml::link(ucfirst($status), $this->createUrl("importsitehistory/index", array("siteconfig_id" => $row->id)), array()) ?>
@@ -45,9 +42,11 @@ $this->breadcrumbs = array('Sites');
         <?php endif; ?>
       </td>
       <td> 
-        <?php if( $row->lastImport() && $row->lastImport()->restorable()): ?> 
+        <?php 
+        
+        if( $row->isImportable()): ?> 
           <span class="disabled round"> Waiting to be imported </span>
-        <?php elseif($row->lastImport() && $row->lastImport()->inProgress()): ?>
+        <?php elseif($row->isImporting()): ?>
           <span class="disabled round"> In progress </span>
         <?php else  :?>
           <?php echo CHtml::link("Start Import", $this->createUrl("importsitehistory/import", array("siteconfig_id"=>"{$row->id}")),

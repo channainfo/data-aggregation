@@ -95,7 +95,12 @@
         
         $import = $siteconfig->lastImport();
         $import->status = ImportSiteHistory::PENDING;
+        
         $import->save();
+        
+        $siteconfig->status = SiteConfig::PENDING ;
+        $siteconfig->save();
+        
         DaDbHelper::startIgnoringForeignKey($this->db);
         
       }
@@ -119,6 +124,13 @@
       $import->reason = $reason;
       $import->info = serialize($this->patientTotal);
       $import->save();
+      
+      //tell site status and last imported
+      $siteconfig->last_imported = DaDbWrapper::now();
+      $siteconfig->status = $status ;
+      $siteconfig->save();
+      
+      
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function start(){
@@ -161,6 +173,7 @@
         $this->_importTableFixed($table, $cols);
      }
    }
+      
    /**
     *
     * @param string $table
@@ -169,7 +182,9 @@
     */
    protected function _importTableFixed($table, $cols){
      DaTool::p("Importing : {$table}");
-
+     $total = DaDbHelper::countRecord($this->dbX, $table);
+     $quantUpdate = $this->getRandomRecordUpdate();
+     
      $s = microtime(true);
      $sqlX = " SELECT * FROM {$table} ";
      //$commandX =  $this->dbX->createCommand($sqlX);
@@ -177,7 +192,7 @@
      
      $insertSql = DaSqlHelper::sqlFromTableCols($table, $cols);
      $commandInsert = $this->db->createCommand($insertSql);
-     
+     $r = 0;
      foreach($dataReaderX as $records){
         $i = 0;
         foreach($records as  &$value){
@@ -186,6 +201,8 @@
         }
         try{
           $commandInsert->execute();
+          $r++;
+          $this->processImportHistoryUpdate($total, $r, $quantUpdate, $table);
         }
         catch(CDbException $ex){
           throw new DaInvalidDbException($ex->getMessage());
@@ -195,7 +212,27 @@
      echo " finished in : " . ($f-$s). " second(s)" ;
      
    }
-   
+   /**
+    *
+    * @param type $total total record
+    * @param type $current current record
+    * @param type $quantity iteration to update
+    * @param type $tableName 
+    */
+   public function processImportHistoryUpdate($total, $current,$quantity, $tableName){
+     if( $current == 1 ||  ($current % $quantity == 0) ){
+       $import = $this->siteconfig->lastImport();
+       
+       $import->total_record = $total;
+       $import->current_record = $current;
+       $import->importing_table = $tableName ;
+       $import->save();
+     }
+     
+   }
+   public function getRandomRecordUpdate(){
+     return rand(5, 15);
+   }
    public function beginTransaction(){
      $this->transaction = $this->db->beginTransaction();
      $this->transaction->active = true;
@@ -237,6 +274,11 @@
       DaTool::p("Import patient: {$table}");
       $s  = microtime(true);
       DaDbHelper::startIgnoringForeignKey($this->db);
+      
+      $totalRecord = DaDbHelper::countRecord($this->dbX, $table);
+      $r = 0 ;
+      $randomUpdate = $this->getRandomRecordUpdate();
+
      
       $this->patientTable = $table ;
       $dataReader = $this->getRecordReader("SELECT * FROM {$table}");
@@ -245,8 +287,9 @@
       
       $this->patientIter = 1;
       foreach($dataReader as $record){
-         if($this->patientIter %10 == 0)
-            echo "\n {$this->patientIter} patient {$table} imported" ;
+         $r++; 
+         $this->processImportHistoryUpdate($totalRecord, $r, $randomUpdate, $table);
+         
          $this->recordErrors = array(); 
          $this->errors = array();
          $this->currentPatient = $record ;
