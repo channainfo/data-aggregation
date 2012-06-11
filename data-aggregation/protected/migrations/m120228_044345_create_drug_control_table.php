@@ -10,22 +10,6 @@ class m120228_044345_create_drug_control_table extends CDbMigration{
         "created_at" => "datetime",
         "modified_at" => "datetime"
     ) );
-    
-    $sql = "INSERT INTO {$this->_tblName} VALUES(NULL, :name, :description, NOW(), NOW())" ;
-    $db = Yii::app()->db;
-    
-    $command = $db->createCommand($sql);
-   
-    $drugs = array(
-        "3TC", "ABC", "AZT", "d4T", "ddI", "EFV", "IDV", "Kaletra(LPV/r)", 
-        "LPV", "NFV", "NVP", "RTV", "SQV", "TDF"
-    );
-    
-    foreach($drugs as $drug){
-      $command->bindParam(":name", $drug, PDO::PARAM_STR);
-      $command->bindParam(":description", $drug, PDO::PARAM_STR);
-      $command->execute();
-    }
 	}
 
 	public function down(){

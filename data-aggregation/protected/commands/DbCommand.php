@@ -43,6 +43,29 @@
       }
     }
     
+    public function actionDrugControl(){
+      $table = "da_drug_controls" ;
+      $sql = " truncate {$table} " ;
+      
+      $db = Yii::app()->db;
+      $db->createCommand($sql)->execute();
+      
+      $sql = "INSERT INTO {$table} VALUES(NULL, :name, :description, NOW(), NOW())" ;
+      $command = $db->createCommand($sql);
+
+      $drugs = array(
+          "3TC", "ABC", "AZT", "d4T", "ddI", "EFV", "IDV", "Kaletra(LPV/r)", "Kaletra (LPV/r)", 
+          "LPV", "NFV", "NVP", "RTV", "SQV", "TDF", "ATV", "ATV/r",
+      );
+
+      foreach($drugs as $drug){
+        $command->bindParam(":name", $drug, PDO::PARAM_STR);
+        $command->bindParam(":description", $drug, PDO::PARAM_STR);
+        $command->execute();
+      }
+    }
+    
+    
     public function actionCleanSeed(){
       $count = User::model()->deleteAll();
       DaTool::p(" Remove '$count' users " );
@@ -127,16 +150,16 @@ EOT;
       file_put_contents($file, $content);
     }
     
-    public function actionBuilt(){
+    public function actionBuild(){
       $this->generateTableNames();
       $this->orderTable();
       $this->importConfig();
-      //$this->builtAnonymize();
+      //$this->buildAnonymize();
     }
     /**
      * Building mysql function to encode data 
      */
-    public function builtAnonymize(){
+    public function buildAnonymize(){
        $sqls[] = "  DROP FUNCTION  IF EXISTS da_anonymize ;" ;
        $sqls[] = '  
                     CREATE FUNCTION da_anonymize(inputChar VARCHAR(255), reversible TINYINT) RETURNS varchar(255)
