@@ -56,8 +56,10 @@
 
  
   <div class="row">
+    <?php if(Yii::app()->user->isAdmin()): ?>
     <label></label>
     <?php echo CHtml::submitButton("Save", array("id" => "btn-submit")); ?>
+    <?php endif;?>
   </div>
 <?php echo CHtml::endForm(); ?>
 <script type="text/javascript">

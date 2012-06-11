@@ -24,6 +24,26 @@ EOT;
    }
    
   public static function titleActionGroup($title, $link_content){
+    if(Yii::app()->user->isAdmin()){
+    $template = <<<EOT
+    <div class="action-title round"> 
+      <div class="action-bar-left"> $title </div>
+      <div class="action-bar-right"> 
+        $link_content
+      </div>
+      <div class="clear"></div>
+    </div>
+
+EOT;
+    }
+    else{
+      $template = "<h1 class='action-title round' >".$title."</h1>" ;
+    }
+    return $template;
+    
+  } 
+  
+  public static function titleActionGroupAll($title, $link_content){
     $template = <<<EOT
     <div class="action-title round"> 
       <div class="action-bar-left"> $title </div>

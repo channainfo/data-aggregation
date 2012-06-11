@@ -13,6 +13,11 @@
  * @property string $created_at
  * @property integer $job_id
  * @property string $info
+ * @property string importing_table
+ * @property integer total_record
+ * @property integer current_record
+ * @property integer importing_record
+ * 
  *
  * The followings are the available model relations:
  * @property Siteconfigs $siteconfig
@@ -27,7 +32,15 @@ class ImportSiteHistory extends DaModelStatus {
 	{
 		return parent::model($className);
 	}
-
+  public function setImportingRecord($record){
+    $this->importing_record = serialize($record);
+  }
+  public function getImportingRecord(){
+    if($this->importing_record){
+      return unserialize($this->importing_record);
+    }
+    return array();
+  }
 	/**
 	 * @return string the associated database table name
 	 */

@@ -75,11 +75,15 @@ class SiteConfig extends DaModelStatus
   public function fullName($separator="-"){
     return "{$this->code}".$separator."{$this->name}" ;
   }
-  
+  /**
+   * @return boolean return if the status is PENDING
+   */
   public function isImporting(){
     return SiteConfig::PENDING == $this->status ;
   }
-  
+  /**
+   * @return boolean return if the status is START
+   */
   public function isImportable(){   
     return SiteConfig::START == $this->status;
   }
@@ -121,8 +125,6 @@ class SiteConfig extends DaModelStatus
       $this->status = SiteConfig::INIT ;
       $this->last_restored = DaDbWrapper::now();
       $this->last_imported = NULL ;
-      
-      
       $this->save();
     }
     

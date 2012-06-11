@@ -307,3 +307,6 @@ div.tableWrapper thead th, div.tableWrapper td {
    margin-left: 3px;
  }
  
+ #importPercentage{
+   font-weight: bold;
+ }

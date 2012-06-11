@@ -56,8 +56,11 @@
           <td> <?php echo date("Y-m-d", strtotime($backup->created_at) ); ?> </td>
           <td> <?php echo basename($backup->filename); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
-          <td> <?php echo $backup->reason; ?>
-          <td> <?php echo CHtml::link("Delete", $this->createUrl("backup/delete/{$backup->id}"),array("class"=>"btn-action-delete delete round")); ?> </td>  
+          <td> <?php echo $backup->reason; ?></td>
+          <td> 
+            <?php if(Yii::app()->user->isAdmin()): ?>
+            <?php echo CHtml::link("Delete", $this->createUrl("backup/delete/{$backup->id}"),array("class"=>"btn-action-delete delete round")); ?> 
+            <?php endif; ?>
           </td>
         </tr>
     <?php 

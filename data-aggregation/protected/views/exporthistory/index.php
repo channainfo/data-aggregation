@@ -14,7 +14,7 @@ $this->breadcrumbs = array('Export');
         <th width="30"  >  # </th>
         <th> Date Start </th>
         <th> Date End </th>
-        <th> Reversable </th>
+        <th> Reversible </th>
         <th> Site </th>
         <th> Status </th>
         <th> File </th>
@@ -28,12 +28,14 @@ $this->breadcrumbs = array('Export');
       <td> <?php echo CHtml::link("{$row->id}",$this->createUrl( "exporthistory/view/{$row->id}"), array() ) ?> </td>
       <td> <?php echo $row->date_start; ?>  </td>
       <td> <?php echo $row->date_end; ?>  </td>
-      <td> <?php echo $row->getReversableText(); ?>  </td>
+      <td> <?php echo $row->getReversibleText(); ?>  </td>
       <td> <?php echo $row->site_text; ?>  </td>
       <td> <?php echo "<span class='state {$row->getStatusText()}-state'>". ucfirst($row->getStatusText()). "</span>" ; ?>  </td>
       <td> <?php  echo ($row->file)? CHtml::link($row->file, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
       <td> 
+        <?php if(Yii::app()->user->isAdmin()): ?>
         <?php echo CHtml::link("Delete",$this->createUrl( "exporthistory/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php endif; ?>
       </td>
     </tr>
   <?php $i++; endforeach; ?>

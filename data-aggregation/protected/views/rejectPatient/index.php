@@ -6,9 +6,9 @@
   );
       
  if($importHistory->attributes["status"]== ImportSiteHistory::START || $importHistory->attributes["status"]== ImportSiteHistory::PENDING): ?>
-<?php echo DaViewHelper::titleActionGroup("Reject conditions", "<span class='disabled round' >Import still in progress</span>") ?>
+<?php echo DaViewHelper::titleActionGroupAll("Reject conditions", "<span class='disabled round' >Import still in progress</span>") ?>
 <?php else: ?>
-<?php echo DaViewHelper::titleActionGroup("Reject conditions", CHtml::link("Download as CSV", $this->createUrl("rejectpatient/export", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-thirdparty round"))) ?>
+<?php echo DaViewHelper::titleActionGroupAll("Reject conditions", CHtml::link("Download as CSV", $this->createUrl("rejectpatient/export", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-thirdparty round"))) ?>
 <?php endif; ?>
 <?php if(count($rejectPatients)): ?>
 <div class="tableWrapper round">

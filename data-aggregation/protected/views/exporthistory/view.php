@@ -1,7 +1,7 @@
 <?php
   $this->breadcrumbs = array(
-      "Export History" => $this->createUrl("exporthistory/index"),
-      "View"
+      "Export" => $this->createUrl("exporthistory/index"),
+      $model->getSiteText(" , ")
   );
  ?>
 
@@ -11,7 +11,7 @@
   <table>
     <tr> 
       <td width="120"> Export type </td>
-      <td> : <?php echo $model->getReversableText(); ?> </td>
+      <td> : <?php echo $model->getReversibleText(); ?> </td>
     </tr>
     <tr> 
       <td width="120"> Site </td>

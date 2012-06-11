@@ -25,9 +25,10 @@ $this->breadcrumbs = array('databases');
       <td> <?php echo $row->user; ?>  </td>
       <td> <?php echo CHtml::link($row->code, $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-link underline")); ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
-      <td> 
-        <?php // echo CHtml::link("Restorations", $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round") ) ?> 
+      <td>
+        <?php if(Yii::app()->user->isAdmin()):?>
         <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php endif; ?>
       </td>
     </tr>
   <?php $i++; endforeach; ?>

@@ -33,7 +33,9 @@ $this->breadcrumbs = array('Conversion');
       <td> <?php echo ($row->des)? CHtml::link($row->des, $this->createUrl("conversion/des/{$row->id}")): "" ; ?>  </td>
       <td> <?php echo $row->message; ?> </td>
       <td> 
+        <?php if(Yii::app()->user->isAdmin()): ?>
         <?php echo CHtml::link("Delete",$this->createUrl( "conversion/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php endif ;?>
       </td>
     </tr>
   <?php $i++; endforeach; ?>

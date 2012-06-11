@@ -38,8 +38,8 @@ class ExportHistory extends DaModelStatus{
 	 */
   public static $REVERSABLE_TYPES = array(
      self::NORMAL => "Normal",
-     self::ANONYM_REVERSABLE => "Anonymization Reversable",
-     self::ANONYM_NOT_REVERSABLE => "Anonymization not reversable"  
+     self::ANONYM_REVERSABLE => "Anonymization Reversible",
+     self::ANONYM_NOT_REVERSABLE => "Anonymization not reversible"  
    );
   
   
@@ -69,7 +69,7 @@ class ExportHistory extends DaModelStatus{
   /**
    *  
    */
-  public function getReversableText(){
+  public function getReversibleText(){
     return self::$REVERSABLE_TYPES[(int)$this->reversable];
   }
   

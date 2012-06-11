@@ -21,7 +21,8 @@
      
    }
    public function actionExport(){
-    $file = DaConfig::pathDataStoreExport()."/reject_patient_{$_GET["import_site_history_id"]}.csv" ;
+    DaConfig::mkDir(DaConfig::pathDataStoreExport()); 
+    $file = DaConfig::pathDataStoreExport()."reject_patient_{$_GET["import_site_history_id"]}.csv" ;
     if(!file_exists($file) || 1){
       $command = Yii::app()->db->createCommand()->select('tableName , message, record, err_records')
                   ->from('da_reject_patients p')
@@ -36,7 +37,7 @@
         $rows = array();
         if($record["record"]){
           $patient = unserialize($record["record"]);
-          $rows["clinic"] = DaRecordReader::getIdFromRecord($record["tableName"], $patient);
+          $rows["clinic"] = "-".DaRecordReader::getIdFromRecord($record["tableName"], $patient);
         }
         $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
         

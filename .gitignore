@@ -4,11 +4,9 @@ nbproject/*
 .buildpath
 data-aggregation/assets/*
 data-aggregation/data/*
-data-aggregation/data/*
-data-aggregation/protected/runtime/application.log
+data-aggregation/protected/runtime/*
 data-aggregation/protected/config/importConfig.php
 data-aggregation/protected/config/setting.php
-
 
 framework/*
 *.log

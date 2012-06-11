@@ -22,7 +22,7 @@
    public function writeHeaderDataExport(){
      $this->metadata["header_info"]["export_id"] = $this->export->id ;
      $this->metadata["header_info"]["type"] = $this->export->reversable ;
-     $this->metadata["header_info"]["name"] = $this->export->getReversableText();
+     $this->metadata["header_info"]["name"] = $this->export->getReversibleText();
    }
    
    public function writeHeaderDataConversion($settings){

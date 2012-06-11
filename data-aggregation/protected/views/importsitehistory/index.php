@@ -1,89 +1,97 @@
 <?php
   $this->breadcrumbs = array(
       "Import data" => $this->createUrl("importsitehistory/site"),
-      "Import History"
-  )
+      "Import History" ) ;
 ?>
 <?php
   if($siteconfig)
     $this->renderPartial("//siteconfig/_detail", array("siteconfig" => $siteconfig))
 ?>
-
 <?php if(count($importHistories)): ?>
 <div class="tableWrapper round">
-  
-      
     <?php 
       $firstImport = $importHistories[0];
       if($firstImport->status == ImportSiteHistory::PENDING): ?>
-      <div  > 
-        <div class="importTableValue" >Table : </div> 
-        <div class="importTableValue"  id="importTable"  >   </div> 
-      </div>
-      <div class="clear"> <br /> </div>
+        <style type="text/css" >
+          .ui-progressbar { position:relative; width: 350px; }
+          .pblabel { position: absolute; display: block; width: 100%; text-align: center; line-height: 1.2em;font-weight:normal; }
+          .ui-progressbar-value{ overflow: hidden; }
+          .ui-progressbar-value .pblabel { position: relative; font-weight: normal; color:red; }
+        </style>
+  
       <div>
-          <div id="progressbar" style="width:300px; float: left;margin-right: 10px;" > </div>
+          <div id="progressbar" style="width:300px; float: left;margin-right: 10px;" >
+            <span class="pblabel">
+              Importing : <span id="importTable"  >  </span> 
+              <span id="importPercentage" > </span> 
+            </span>
+          </div>
           <div class="importLabel" > 
             <div class="importTableValue"  id="importCurrent"  > 0 </div>
             <div class="importTableValue label" >of</div>
             <div class="importTableValue"  id="importTotal"   >
           </div>
-            
-          <div class="importLabel" > 
-            <div class="importTableValue label" >  =>  </div> 
-            <div class="importTableValue" id="importPercentage"  > </div> (%) 
-          </div>
-            
-          
       </div>
     
     <div class="clear">&nbsp;</div>  
       <script type="text/javascript">
-
         function updateBar(){
-          
           $.ajax({
             url: "<?php echo Yii::app()->createUrl("importsitehistory/progress", array("importId" => $firstImport->id )) ?>",
             cache: false,
             dataType: "json",
             success: function(response){
-   
               if(response["finished"] == true){
                 window.location.reload();   
               }
               else{
-                
                 updateProgressBar(response);
-                setTimeout(updateBar, 1000);
-                
+                setTimeout(updateBar, 500);
               }
-            },
-            complete:function(response){
-              //console.log("complete", jQuery.parseJSON(response.responseText));
             }
           });
         }
         function updateProgressBar(response){
           $("#progressbar").progressbar("value", response["percentage"] );
-          $("#importPercentage").html(response["percentage"]);
+          $("#importPercentage").html(response["percentage"]+"%");
           $("#importTotal").html( response["total_record"]);
           $("#importCurrent").html( response["current_record"]);
           $("#importTable").html( response["importing_table"]);
         }
-
-        $(function(){
+        function createProgressbar(){
           $("#progressbar").progressbar({
-              value: 0 
+              value: 0 ,
+              change: function(event, ui) {    
+                var newVal = $(this).progressbar('option', 'value');
+                var color = "#00b" ;
+                if(newVal<30)
+                   color = "#00f" ;
+                else if(newVal<60)
+                  color = "#0f0" ;
+                else if(newVal < 80)
+                  color = "#E38A39";
+                else
+                  color = "#f00";
+                $('.pblabel').css("color", color);
+              }
             }
           );
+        }
+        $(function(){
+          createProgressbar();
           updateBar();
         }); 
-
+      </script>
+    <?php else: ?>
+      <script type="text/javascript">
+        function reloadUpdate(){
+          window.location.reload();
+        }
+        $(function(){
+            setTimeout(reloadUpdate, 5000);
+        });
       </script>
     <?php endif; ?>
-    
-
-
 
     <table class="tgrid">
       <thead>
@@ -95,8 +103,6 @@
           <th width="120"> Inserted </th>
           <th width="120"> Rejected </th>
           <th width="120"> Total </th>
-          
-          
           <th width="120"> Action </th>
         </tr>
       </thead>
@@ -166,8 +172,10 @@
                 }
               ?>
           </td>
-          <td> 
+          <td>
+            <?php if(Yii::app()->user->isAdmin()):?>
             <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ") ) ?>
+            <?php endif;?>
             <?php echo CHtml::link("Rejects" , $this->createUrl("rejectpatient/index", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-action round ")); ?> 
           </td>
         </tr>

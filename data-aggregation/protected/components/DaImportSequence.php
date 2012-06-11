@@ -192,7 +192,7 @@
      
      $insertSql = DaSqlHelper::sqlFromTableCols($table, $cols);
      $commandInsert = $this->db->createCommand($insertSql);
-     $r = 0;
+     $r = 1;
      foreach($dataReaderX as $records){
         $i = 0;
         foreach($records as  &$value){
@@ -200,9 +200,8 @@
           $i++;
         }
         try{
+          $this->processImportHistoryUpdate($total, $r++, $quantUpdate, $table, $records);
           $commandInsert->execute();
-          $r++;
-          $this->processImportHistoryUpdate($total, $r, $quantUpdate, $table);
         }
         catch(CDbException $ex){
           throw new DaInvalidDbException($ex->getMessage());
@@ -219,13 +218,14 @@
     * @param type $quantity iteration to update
     * @param type $tableName 
     */
-   public function processImportHistoryUpdate($total, $current,$quantity, $tableName){
+   public function processImportHistoryUpdate($total, $current,$quantity, $tableName, $record){
      if( $current == 1 ||  ($current % $quantity == 0) ){
        $import = $this->siteconfig->lastImport();
        
        $import->total_record = $total;
        $import->current_record = $current;
        $import->importing_table = $tableName ;
+       $import->setImportingRecord($record);
        $import->save();
      }
      
@@ -276,7 +276,7 @@
       DaDbHelper::startIgnoringForeignKey($this->db);
       
       $totalRecord = DaDbHelper::countRecord($this->dbX, $table);
-      $r = 0 ;
+      $r = 1 ;
       $randomUpdate = $this->getRandomRecordUpdate();
 
      
@@ -287,8 +287,7 @@
       
       $this->patientIter = 1;
       foreach($dataReader as $record){
-         $r++; 
-         $this->processImportHistoryUpdate($totalRecord, $r, $randomUpdate, $table);
+         $this->processImportHistoryUpdate($totalRecord, $r++, $randomUpdate, $table, $record);
          
          $this->recordErrors = array(); 
          $this->errors = array();

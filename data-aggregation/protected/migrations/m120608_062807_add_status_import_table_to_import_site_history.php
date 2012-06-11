@@ -7,12 +7,15 @@ class m120608_062807_add_status_import_table_to_import_site_history extends CDbM
     $this->addColumn($this->_tableName, "importing_table", "string");
     $this->addColumn($this->_tableName, "total_record", "integer(10)");
     $this->addColumn($this->_tableName, "current_record", "integer(10)");
+    $this->addColumn($this->_tableName, "importing_record", "text" );
 	}
 
 	public function down()	{
 		$this->dropColumn($this->_tableName, "importing_table");
     $this->dropColumn($this->_tableName, "total_record");
     $this->dropColumn($this->_tableName, "current_record");
+    $this->dropColumn($this->_tableName, "importing_record");
+    
 	}
 
 	/*
