@@ -7,7 +7,7 @@ class SiteConfigController extends DaController {
                 'users'=>array('@') ),
           
           array('allow', // allow authenticated user to perform 'update' and 'delete' actions
-                'actions'=>array('create', 'delete', 'testconnection', 'restore'),
+                'actions'=>array('create','update', 'delete', 'testconnection', 'restore'),
                 'users'=>array('@'),
                 'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
           ),
