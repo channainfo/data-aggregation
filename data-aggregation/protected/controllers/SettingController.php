@@ -1,5 +1,17 @@
 <?php
  class SettingController extends DaController {
+   public function accessRules(){
+      return array(
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('export'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+   }
    public function actionExport(){
      $settings = DaConfig::importSetting();
      if(isset($_POST["Setting"]["export"])) {

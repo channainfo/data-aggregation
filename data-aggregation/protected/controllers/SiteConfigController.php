@@ -1,6 +1,21 @@
 <?php
 class SiteConfigController extends DaController {
-  public $layout = "//layouts/default" ;
+  public function accessRules(){
+      return array(
+          array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index'),
+                'users'=>array('@') ),
+          
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('create', 'delete', 'testconnection', 'restore'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+   }
 	public function actionCreate(){
    
     $model = new SiteConfig();
@@ -63,8 +78,6 @@ class SiteConfigController extends DaController {
     catch (Exception $ex){
       throw  new CHttpException("Invalid site configuration");
     }
-    
-    
   }
   
   public function actionTestConnection(){
@@ -78,13 +91,12 @@ class SiteConfigController extends DaController {
       echo nl2br($ex->getMessage()); 
     }
   }
+  
   public function actionRestore(){
      $siteconfig_id = (int)$_GET["id"];
      $site = new SiteConfig();
      $siteconfig = $site->findByPk($siteconfig_id);//   SiteConfig::model()->findByPk($siteconfig_id);
      $errors = array("message"=>""); 
-     
-     
      
      if($siteconfig){
         if($siteconfig->status == SiteConfig::PENDING){
@@ -137,8 +149,8 @@ class SiteConfigController extends DaController {
      } 
      echo json_encode($errors);
   }
-  public function loadModel($id)
-	{
+  
+  public function loadModel($id){
 		$model = SiteConfig::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

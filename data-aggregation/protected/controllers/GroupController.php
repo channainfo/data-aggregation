@@ -1,6 +1,21 @@
 <?php
   class GroupController extends Controller{
-    public $layout = "//layouts/default";
+    public function accessRules(){
+      return array(
+          array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index'),
+                'users'=>array('@') ),
+          
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('create'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+    }
     
     public function actionCreate(){
       $model = new Group();
@@ -32,13 +47,6 @@
           "rows" => $rows,
           "pager" => $pager
       ));
-      
-      
-      
-      
-      
-      
-    }
-    
+    }    
   }
 ?>

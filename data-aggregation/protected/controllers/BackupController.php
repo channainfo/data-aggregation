@@ -1,5 +1,21 @@
 <?php
  class BackupController extends DaController{
+   public function accessRules(){
+      return array(
+          array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index'),
+                'users'=>array('@') ),
+          
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('create', 'delete'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+   }
    public function actionIndex(){
      
      $model = new Backup();

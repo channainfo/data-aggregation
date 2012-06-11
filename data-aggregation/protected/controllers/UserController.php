@@ -1,9 +1,25 @@
 <?php
 
-class UserController extends DaController
-{
-	public $layout='//layouts/default';
-
+class UserController extends DaController{
+  public function accessRules(){
+      return array(
+          array('allow',
+                'actions'=>array('login'),
+                'users'=>array('*')),
+          array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index','view','logout','change'),
+                'users'=>array('@') ),
+          
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('create', 'delete', 'update'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+   }
   
 	public function actionView($id) {
 		$this->render('view',array(
@@ -59,8 +75,7 @@ class UserController extends DaController
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
-	{
+	public function actionUpdate($id){
 		$model=$this->loadModel($id);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -74,8 +89,6 @@ class UserController extends DaController
 		}else{
       $model->password = "";
     }
-    
-
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -109,10 +122,8 @@ class UserController extends DaController
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
-	{
-		if(1 || Yii::app()->request->isPostRequest)
-		{
+	public function actionDelete($id){
+		if(1 || Yii::app()->request->isPostRequest){
 			// we only allow deletion via POST request
 			try{
         $this->loadModel($id)->delete();
@@ -121,8 +132,6 @@ class UserController extends DaController
       catch(Exception $ex){
         Yii::app()->user->setFlash("error", "Failed to delete user");
       }
-              
-
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
@@ -151,11 +160,7 @@ class UserController extends DaController
 			'users'=>$users,
       'pages' => $pages  
 		));
-    
-    
 	}
-
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -168,18 +173,4 @@ class UserController extends DaController
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
-  
 }

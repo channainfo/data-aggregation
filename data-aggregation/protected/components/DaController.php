@@ -22,9 +22,10 @@ class DaController extends Controller {
 			    return true;
 			}
 		}
-	} 
-  
-  
+	}
+  public function filters(){
+      return array('accessControl' );
+  }
   public function download($fullName){
      $basename = str_replace(" ","_" , basename($fullName) );
      header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // some day in the past

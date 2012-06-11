@@ -9,11 +9,6 @@
      */
     public function checkAccess($operation, $params=array())
     {   
-        echo "check access \n" ;
-        print_r($operation);
-        print_r($params);
-        echo "\n======================\n";
-        
         if (empty($this->id)) {
             // Not identified => no rights
             return false;

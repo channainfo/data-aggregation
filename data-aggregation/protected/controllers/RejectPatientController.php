@@ -1,7 +1,6 @@
 <?php
  class RejectPatientController extends DaController{
    public function actionIndex(){
-     
      $model = new RejectPatient();
      
      $criteria = new CDbCriteria();
@@ -20,6 +19,7 @@
      $this->render("index", array("rejectPatients" => $rejectPatients, "pages" => $pages, "importHistory" => $importHistory, "model" => $model));
      
    }
+   
    public function actionExport(){
     DaConfig::mkDir(DaConfig::pathDataStoreExport()); 
     $file = DaConfig::pathDataStoreExport()."reject_patient_{$_GET["import_site_history_id"]}.csv" ;
@@ -50,9 +50,7 @@
           $rows["tableName"] = $table;
           break;
         }
-
         $csv->addRow($rows);
-        
       }
       $csv->generate();
     }

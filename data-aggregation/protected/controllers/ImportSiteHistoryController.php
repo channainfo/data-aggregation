@@ -3,9 +3,24 @@
   require_once "djjob/DJJobConfig.php";
 
   class ImportSiteHistoryController extends DaController{
+    public function accessRules(){
+      return array(
+          array('allow',  // allow all users to perform 'list' and 'show' actions
+                'actions'=>array('index', 'progress', 'site'),
+                'users'=>array('@') ),
+          
+          array('allow', // allow authenticated user to perform 'update' and 'delete' actions
+                'actions'=>array('create', 'delete', 'import'),
+                'users'=>array('@'),
+                'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
+          ),
+          
+          array('deny', 
+                'users'=>array('*')),
+      );
+    }
     
     public function actionIndex(){
-     
      $model = new ImportSiteHistory();
      
      $criteria = new CDbCriteria();
@@ -30,7 +45,7 @@
      
    }
    
-    public function actionDelete(){
+   public function actionDelete(){
        $import = ImportSiteHistory::model()->findByPk((int)$_GET["id"]);
        if($import){
          if($import->status == ImportSiteHistory::START || $import->status == ImportSiteHistory::PENDING){
@@ -96,19 +111,16 @@
         $siteconfig->status = SiteConfig::START;
         $siteconfig->save();
       }
-      
       else{
         DJJob::removeJob($job_id);
         Yii::app()->user->setFlash("error", "Could not created import");
       }
-      
       //$command = DaConfig::webRoot()."protected/yiic import start --code={$siteconfig->code}";
-      
-      
       $this->redirect($this->createUrl("importsitehistory/index", array("siteconfig_id" => $siteconfig_id)));
-      
     }
-    
+    /**
+     * progress bar via ajax  
+     */
     public function actionProgress(){
       $id = (int)$_GET["importId"];
       $import = ImportSiteHistory::model()->findByPk($id);
@@ -119,7 +131,6 @@
          $infos["percentage"] = number_format(($import->attributes["current_record"]*100)/$import->attributes["total_record"], 2);
         }
         $infos["finished"] = false ;
-
       }
       else {
         $infos["finished"] = true ;
