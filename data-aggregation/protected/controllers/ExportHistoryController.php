@@ -45,7 +45,7 @@
        $model->setData($_POST["ExportHistory"]);
        if($model->save()){
          Yii::app()->user->setFlash("success", "Export have been created");
-         DJJob::enqueue(new DaExportSiteJob($model->id));
+         DJJob::enqueue(new DaExportSiteJob($model->id), DaConfig::QUEUE_CONVERSION_N_EXPORT );
          $job_id = DJJob::lastInsertedJob();
          $model->job_id = $job_id ;
          $model->status = ImportSiteHistory::START ;

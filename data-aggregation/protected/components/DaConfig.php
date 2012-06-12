@@ -9,6 +9,9 @@
    const PASS_KEY = "NCHADS_DA" ;
    const META_EXPORT_FN  = "config.ini" ;
    
+   const QUEUE_IMPORT = "Import" ;
+   const QUEUE_CONVERSION_N_EXPORT = "Export n Conversion" ;
+   
    const IMPORT_TABLE_TYPE_FIXED = "fixed";
    const IMPORT_TABLE_TYPE_IMPORT = "import" ;
    private static $importConfig = false;

@@ -181,7 +181,7 @@
     * @throws CDbException 
     */
    protected function _importTableFixed($table, $cols){
-     DaTool::p("Importing : {$table}");
+     DaTool::pln("Importing : {$table}");
      $total = DaDbHelper::countRecord($this->dbX, $table);
      $quantUpdate = $this->getRandomRecordUpdate();
      
@@ -208,7 +208,7 @@
         }
      }
      $f = microtime(true);
-     echo " finished in : " . ($f-$s). " second(s)" ;
+     DaTool::p(" finished in : " . ($f-$s). " second(s)") ;
      
    }
    /**
@@ -271,7 +271,7 @@
    }  
    
    public function importIMain($table){
-      DaTool::p("Import patient: {$table}");
+      DaTool::pln("Import patient: {$table}");
       $s  = microtime(true);
       DaDbHelper::startIgnoringForeignKey($this->db);
       
@@ -339,7 +339,7 @@
          $this->patientIter ++;
       }
       $f = microtime(true);
-      echo " finished in : " . ($f-$s). " second(s)" ;
+      DaTool::p(" finished in : " . ($f-$s). " second(s)") ;
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
    public function addRecordErrors($record, $table){

@@ -13,7 +13,6 @@
       <label> Type </label>
       <?php echo $error["type"] ?>
     </div>
-    
   </p>
   
   

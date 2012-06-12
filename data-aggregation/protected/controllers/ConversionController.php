@@ -58,7 +58,7 @@
 
           if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
               if($model->save()){
-                DJJob::enqueue(new DaConversionJob($model->id));
+                DJJob::enqueue(new DaConversionJob($model->id), DaConfig::QUEUE_CONVERSION_N_EXPORT);
                 $job_id = DJJob::lastInsertedJob();
                 $model->job_id = $job_id ;
                 $model->date_start = DaDbWrapper::now();
