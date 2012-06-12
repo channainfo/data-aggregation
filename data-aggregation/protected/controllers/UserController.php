@@ -11,7 +11,7 @@ class UserController extends DaController{
                 'users'=>array('@') ),
           
           array('allow', // allow authenticated user to perform 'update' and 'delete' actions
-                'actions'=>array('create', 'delete', 'update'),
+                'actions'=>array('create', 'delete', 'update', 'reset'),
                 'users'=>array('@'),
                 'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
           ),
@@ -94,8 +94,28 @@ class UserController extends DaController{
 		));
 	}
   
+  public function actionReset(){
+    $model = new ResetForm();
+    $model->user_id = $_GET["id"];
+    if(isset($_POST["ResetForm"])){
+      $attributes = $_POST["ResetForm"];
+      
+      $model->setAttributes($attributes);
+      
+      if($model->validate()){
+        $user = User::model()->findByPk($_POST["ResetForm"]["user_id"]);
+        $user->setAttribute("password", $_POST["ResetForm"]["password"] );
+        
+        if($user->save()){
+          Yii::app()->user->setFlash("success", "Password has been reset");
+          $this->redirect($this->createUrl("user/index"));
+        }
+      }
+    }
+    $this->render("reset", array("model" => $model));
+  }
+  
   public function actionChange(){
-    
     $model = new PasswordChangeForm();
     if(isset($_POST["PasswordChangeForm"])){
       $attributes = $_POST["PasswordChangeForm"];
@@ -104,14 +124,13 @@ class UserController extends DaController{
       $model->setAttributes($attributes);
       
       if($model->validate()){
-        
         $user = User::model()->findByPk($currentUserId);
         $user->password = $_POST["PasswordChangeForm"]["password"];
         $user->password_repeat = $_POST["PasswordChangeForm"]["password"];
-        
-        Yii::app()->user->setFlash("success", "Password has been changed");
-        if($user->save())
+        if($user->save()){
+          Yii::app()->user->setFlash("success", "Password has been changed");
           $this->redirect("index");
+        }
       }
     }
     $this->render("change", array("model" => $model));

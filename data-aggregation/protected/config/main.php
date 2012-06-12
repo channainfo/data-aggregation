@@ -59,9 +59,9 @@ return array(
 		),
 		
 		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
-        ),
+			 // use 'site/error' action to display errors
+       'errorAction'=>'error/error',
+     ),
 		'log'=>array(
       'class'=>'CLogRouter',
       'routes'=>array(
