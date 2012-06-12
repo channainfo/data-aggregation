@@ -21,6 +21,6 @@ require_once $djPath;
 $worker = new DJWorker(array( "queue" => DaConfig::QUEUE_CONVERSION_N_EXPORT,
                               "count" => 999999, 
                               "max_attempts" => 2, 
-                              "sleep" => 100
+                              "sleep" => 60
                               ));
 $worker->start();

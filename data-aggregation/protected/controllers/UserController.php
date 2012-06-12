@@ -21,12 +21,6 @@ class UserController extends DaController{
       );
    }
   
-	public function actionView($id) {
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
   public function actionLogin(){
     
     if(!Yii::app()->user->isGuest){

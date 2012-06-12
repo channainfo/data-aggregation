@@ -6,6 +6,7 @@
    }
    
    public function testCountRecord(){
+     
      $total = DaDbHelper::countRecord(Yii::app()->db, "tblaimain");
      $this->assertEquals($total, 5);
    }
