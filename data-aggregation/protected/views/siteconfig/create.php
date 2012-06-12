@@ -1,4 +1,4 @@
-<h1 class="action-title round"> Site Creation </h1>
+<h1 class="action-title round"> Database Configuration </h1>
 <?php
   $this->breadcrumbs = array(
       "Databases" => $this->createUrl("siteconfig/index"),

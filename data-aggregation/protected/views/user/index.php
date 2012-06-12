@@ -43,7 +43,7 @@ $this->menu = array(
         ?> 
         <?php 
           if(Yii::app()->user->id != $row->id && Yii::app()->user->isAdmin() && !$row->isAdmin() )
-            echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete delete round ") ) 
+            echo CHtml::link("Delete", $this->createUrl("user/delete/{$row->id}"), array("class" => "btn-action-delete delete round ", "data-tip" => "Are you sure to delete this user ?") ) 
          ?>
         
         

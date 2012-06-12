@@ -22,10 +22,10 @@ class SiteConfigController extends DaController {
     if(isset($_POST["SiteConfig"])){
       $model->setAttributes($_POST["SiteConfig"]);
       if($model->save()){
-        Yii::app()->user->setFlash("success", "Site configuration has been saved successfully");
+        Yii::app()->user->setFlash("success", "Database configuration has been saved successfully");
         $this->redirect($this->createUrl("index"));
       }else
-        Yii::app()->user->setFlash("error", "Failed to save site configuration"); 
+        Yii::app()->user->setFlash("error", "Failed to save database configuration"); 
     }
     $this->render("create", array("model" => $model));
   }
@@ -50,7 +50,7 @@ class SiteConfigController extends DaController {
     try{
       $model = $this->loadModel($id);
       $model->delete();
-      Yii::app()->user->setFlash("success", "Site has been removed successfully");
+      Yii::app()->user->setFlash("success", "Database configuration has been removed successfully");
     }
     catch(Exception $ex){
       Yii::app()->user->setFlash("error", "Failed to remove site with: <br /> [ <b>message</b>] : ". $ex->getMessage()
@@ -61,22 +61,21 @@ class SiteConfigController extends DaController {
 
   public function actionUpdate($id){
     try{
-      $model = SiteConfig::model()->findByPk($id);
-      
+      $model = $this->loadModel($id);      
       if(isset($_POST["SiteConfig"])){
         $model->setAttributes($_POST["SiteConfig"]);
         if($model->save()){
-          Yii::app()->user->setFlash("success", "Site has been updated successfully");
+          Yii::app()->user->setFlash("success", "Database configuration has been updated successfully");
           $this->redirect($this->createUrl("index"));
         }
         else
-          Yii::app()->user->setFlash("error", "Failed to update site");
+          Yii::app()->user->setFlash("error", "Failed to update database configuration");
       }
       $this->render("update", array("model" => $model));
       
     }
     catch (Exception $ex){
-      throw  new CHttpException("Invalid site configuration");
+      throw  new CHttpException("Invalid database configuration");
     }
   }
   

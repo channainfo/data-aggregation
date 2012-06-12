@@ -34,7 +34,7 @@ $this->breadcrumbs = array('Export');
       <td> <?php  echo ($row->file)? CHtml::link($row->file, $this->createUrl("exporthistory/dwl/{$row->id}")): "" ; ?>  </td>
       <td> 
         <?php if(Yii::app()->user->isAdmin()): ?>
-        <?php echo CHtml::link("Delete",$this->createUrl( "exporthistory/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php echo CHtml::link("Delete",$this->createUrl( "exporthistory/delete/{$row->id}"), array("class" => "btn-action-delete round delete", "data-tip" =>"Are you sure to delete this export history ?") ) ?> 
         <?php endif; ?>
       </td>
     </tr>

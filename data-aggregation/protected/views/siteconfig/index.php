@@ -27,7 +27,7 @@ $this->breadcrumbs = array('databases');
       <td> <?php echo $row->name ; ?>  </td>
       <td>
         <?php if(Yii::app()->user->isAdmin()):?>
-        <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete", "data-tip" => "Are you sure to delete this database configuration ?") ) ?> 
         <?php endif; ?>
       </td>
     </tr>

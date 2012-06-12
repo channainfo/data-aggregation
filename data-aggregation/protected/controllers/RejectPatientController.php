@@ -37,7 +37,7 @@
         $rows = array();
         if($record["record"]){
           $patient = unserialize($record["record"]);
-          $rows["clinic"] = "-".DaRecordReader::getIdFromRecord($record["tableName"], $patient);
+          $rows["clinic"] = DaRecordReader::getIdFromRecord($record["tableName"], $patient);
         }
         $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
         

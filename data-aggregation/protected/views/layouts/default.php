@@ -3,6 +3,7 @@
   <head>
     <title><?php echo DaViewHelper::pageTitle($this->pageTitle); ?> </title>
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl ?>/css/form.css" />
@@ -19,9 +20,9 @@
   </head>
   
   <body>
-    <div id="main">
+    <div id="main" class="width">
       <div class="head" > 
-        <h1><a href="" title="nchads" ><?php echo CHtml::image(Yii::app()->request->baseUrl."/images/nchads.jpg","NCHADs") ?> </a></h1>
+        <h1><a href="<?php echo $this->createUrl("/"); ?>" title="nchads" ><?php echo CHtml::image(Yii::app()->request->baseUrl."/images/nchads.jpg","NCHADs") ?> </a></h1>
       </div>
       <div class="breadcrumb" >
         <div style="float: left;" >
@@ -51,7 +52,19 @@
         endif;
       ?>
       <?php echo $content; ?>
-     </div> 
+      <div class="clear" >&nbsp;</div>
+      
+    </div> 
+    
+    <footer  id="footer" class="width"> 
+      <div >
+          <div>
+            <div style="float: right;" >
+              <?php echo Yii::app()->name; ?> version 1.0b </div>
+          </div>  
+          <div class="clear"> </div>
+      </div> 
+    </footer>  
     
     <div id="ajax_loading" class="loading round" >Waiting for server response</div>
     
@@ -81,6 +94,5 @@
       });
   
     </script>
-    
   </body>
 </html>

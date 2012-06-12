@@ -174,7 +174,7 @@
           </td>
           <td>
             <?php if(Yii::app()->user->isAdmin()):?>
-            <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ") ) ?>
+            <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ", "data-tip" => "Are you sure to delete this import history ?") ) ?>
             <?php endif;?>
             <?php echo CHtml::link("Rejects" , $this->createUrl("rejectpatient/index", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-action round ")); ?> 
           </td>

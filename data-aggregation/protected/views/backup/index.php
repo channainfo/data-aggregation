@@ -35,7 +35,7 @@
     <table class="tgrid">
       <thead>
         <tr>
-          <th width="120"> Date </th>
+          <th width="150"> Date </th>
           <th> Name </th>
           <th width="50"> Status </th>
           <th> Reason </th>
@@ -53,13 +53,13 @@
             $cls = "restoring";
         ?>
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
-          <td> <?php echo date("Y-m-d", strtotime($backup->created_at) ); ?> </td>
+          <td> <?php echo date("Y-m-d, H:i:s", strtotime($backup->created_at) ); ?> </td>
           <td> <?php echo basename($backup->filename); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
           <td> <?php echo $backup->reason; ?></td>
           <td> 
             <?php if(Yii::app()->user->isAdmin()): ?>
-            <?php echo CHtml::link("Delete", $this->createUrl("backup/delete/{$backup->id}"),array("class"=>"btn-action-delete delete round")); ?> 
+            <?php echo CHtml::link("Delete", $this->createUrl("backup/delete/{$backup->id}"),array("class"=>"btn-action-delete delete round", "data-tip" => "Are you sure to delete backup history ?")); ?> 
             <?php endif; ?>
           </td>
         </tr>

@@ -34,7 +34,7 @@ $this->breadcrumbs = array('Conversion');
       <td> <?php echo $row->message; ?> </td>
       <td> 
         <?php if(Yii::app()->user->isAdmin()): ?>
-        <?php echo CHtml::link("Delete",$this->createUrl( "conversion/delete/{$row->id}"), array("class" => "btn-action-delete round delete") ) ?> 
+        <?php echo CHtml::link("Delete",$this->createUrl( "conversion/delete/{$row->id}"), array("class" => "btn-action-delete round delete", "data-tip" => "Are you sure delete this conversion ?") ) ?> 
         <?php endif ;?>
       </td>
     </tr>

@@ -48,11 +48,13 @@ a{
 .action-bar-right{
   float:right;
 }
-
-#main{
+.width{
   width: 1020px; 
   margin: 0 auto;
   padding: 5px 10px;
+}
+#main{
+  
 }
 .clear{
   clear: both;
@@ -94,9 +96,9 @@ a{
 .icon-wrapper{
   float:left;
   width: 495px;
-  margin: 5px 5px 0 0;
+  margin: 0px 5px 0 0;
   cursor: pointer;
-  padding:3px;
+  padding:0px;
 }
 .background{
   background-color: #eee;
@@ -110,7 +112,7 @@ a{
   text-decoration: underline;
 }
 .head{
-  height: 135px;
+  height: 110px;
 }
 .action-title{
   font-size: 18px;
@@ -309,4 +311,7 @@ div.tableWrapper thead th, div.tableWrapper td {
  
  #importPercentage{
    font-weight: bold;
+ }
+ #footer{
+   margin-bottom: 10px;
  }
