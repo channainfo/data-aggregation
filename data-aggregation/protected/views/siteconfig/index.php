@@ -13,7 +13,7 @@ $this->breadcrumbs = array('databases');
         <th> Db user </th>
         <th> Site </th>
         <th> Site name </th>
-        <th width="100" > Action </th>
+        <th width="110" > Action </th>
       </tr>
     </thead>
   <?php 
@@ -23,9 +23,10 @@ $this->breadcrumbs = array('databases');
       <td> <?php echo CHtml::link($row->host, $this->createUrl("siteconfig/update/{$row->id}") , array("class" => "btn-link") ); ?>  </td>
       <td> <?php echo $row->db; ?>  </td>
       <td> <?php echo $row->user; ?>  </td>
-      <td> <?php echo CHtml::link($row->code, $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-link underline")); ?>  </td>
+      <td> <?php echo $row->code ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
       <td>
+        <?php echo CHtml::link("History", $this->createUrl("backup/index/", array("siteconfig_id"=>"{$row->id}")), array("class" => "btn-action round")); ?> 
         <?php if(Yii::app()->user->isAdmin()):?>
         <?php echo CHtml::link("Delete",$this->createUrl( "siteconfig/delete/{$row->id}"), array("class" => "btn-action-delete round delete", "data-tip" => "Are you sure to delete this database configuration ?") ) ?> 
         <?php endif; ?>

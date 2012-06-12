@@ -22,6 +22,7 @@
   <?php 
   $i =0 ;
    foreach($sites as $row): ?>
+    <?php if(empty($row->code)) continue; ?> 
     <tr class="<?php echo $i%2?"even":"odd" ?>">
       <td> <?php echo CHtml::link($row->code, $this->createUrl("siteconfig/update/{$row->id}"), array("class" => "btn-link underline")); ?>  </td>
       <td> <?php echo $row->name ; ?>  </td>
@@ -35,20 +36,21 @@
             $status = $row->getStatusText();
           ?>
           <span class="state <?php echo "{$status}-state"  ?> " >
-            <?php echo CHtml::link(ucfirst($status), $this->createUrl("importsitehistory/index", array("siteconfig_id" => $row->id)), array()) ?>
+            <?php echo ucfirst($status) ; ?>
           </span>
         <?php else: ?>
            -
         <?php endif; ?>
       </td>
       <td> 
+       <?php echo  CHtml::link( "History", $this->createUrl("importsitehistory/index", array("siteconfig_id" => $row->id)), array("class" =>"btn-action round")) ?>   
         <?php 
         
         if( $row->isImportable()): ?> 
           <span class="disabled round"> Waiting to be imported </span>
         <?php elseif($row->isImporting()): ?>
           <span class="disabled round"> In progress </span>
-        <?php elseif(Yii::app()->user->isAdmin())  :?>
+        <?php elseif(Yii::app()->user->isAdmin() && !empty($row->code))  :?>
           <?php echo CHtml::link("Start Import", $this->createUrl("importsitehistory/import", array("siteconfig_id"=>"{$row->id}")),
                 array("class" => "btn-action-delete confirm round", "data-tip" => "Are you sure to import to site: {$row->name}" ) ) ?> 
         <?php endif; ?>

@@ -59,7 +59,7 @@
     <footer  id="footer" class="width"> 
       <div >
           <div>
-            <div style="float: right;" >
+            <div style="float: right;color:#ccc; font-size: 0.8em;" >
               <?php echo Yii::app()->name; ?> version 1.0b </div>
           </div>  
           <div class="clear"> </div>

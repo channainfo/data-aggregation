@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 	$model->name
 );
 ?>
-<h1 class="action-title round">Update Site </h1>
+<h1 class="action-title round">Update Database Configuration </h1>
 <?php if(Yii::app()->user->isAdmin()): ?>
   <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 <?php else :?>
