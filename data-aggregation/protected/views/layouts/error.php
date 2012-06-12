@@ -19,9 +19,9 @@
   </head>
   
   <body>
-    <div id="main">
+    <div id="main" class="width">
       <div class="head" > 
-        <h1><a href="" title="nchads" ><?php echo CHtml::image(Yii::app()->request->baseUrl."/images/nchads.jpg","NCHADs") ?> </a></h1>
+        <h1><a href="<?php echo $this->createUrl("/"); ?>" title="nchads"  ><?php echo CHtml::image(Yii::app()->request->baseUrl."/images/nchads.jpg","NCHADs") ?> </a></h1>
       </div>
       <div> </div>
       

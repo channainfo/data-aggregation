@@ -1,6 +1,5 @@
 <div class="form round" style="border: 1px solid #ccc;padding:10px;">
-  
-  <div class="title round action-title flash-error "> <?php echo $error["message"]; ?> </div>
+  <div class="title round action-title flash-error "> Error message :  <?php echo $error["message"]; ?> </div>
   
   <p style="background: #ddd;">
     <h1 class="action-title round" > Error detail </h1>
@@ -17,6 +16,4 @@
   
   
   <a href="#" onclick="window.history.go(-1)" class="btn-action round" > Go Back </a>
-  
-  
 </div>  
