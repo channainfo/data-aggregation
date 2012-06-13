@@ -7,7 +7,7 @@ date_default_timezone_set("Asia/Phnom_Penh");
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Data aggregation',
+	'name'=>'Data Aggregation',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
