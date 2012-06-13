@@ -60,7 +60,7 @@
       <div >
           <div>
             <div style="float: right;color:#ccc; font-size: 0.8em;" >
-              <?php echo Yii::app()->name; ?> version 1.0b </div>
+              <?php echo Yii::app()->name; ?> version <?php echo Yii::app()->params["version"]; ?> </div>
           </div>  
           <div class="clear"> </div>
       </div> 
