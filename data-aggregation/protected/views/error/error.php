@@ -15,5 +15,5 @@
   </p>
   
   
-  <a href="#" onclick="window.history.go(-1)" class="btn-action round" > Go Back </a>
+  <a href="<?php echo $this->createUrl("/") ?>" class="btn-action round" > Go Back </a>
 </div>  
