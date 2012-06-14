@@ -105,7 +105,7 @@
  
   <div class="row">
     <label></label>
-    <?php echo CHtml::button("Save", array("id" => "btn-submit")); ?>
+    <?php echo CHtml::button("Export", array("id" => "btn-submit")); ?>
   </div>
 
     <script type="text/javascript" > 
