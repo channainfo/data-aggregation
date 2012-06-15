@@ -207,6 +207,7 @@
           throw new DaInvalidDbException($ex->getMessage());
         }
      }
+     $dataReaderX->close();
      $f = microtime(true);
      DaTool::p(" finished in : " . ($f-$s). " second(s)") ;
      
@@ -338,6 +339,7 @@
          }
          $this->patientIter ++;
       }
+      $dataReader->close();
       $f = microtime(true);
       DaTool::p(" finished in : " . ($f-$s). " second(s)") ;
       DaDbHelper::endIgnoringForeignKey($this->db);
@@ -375,7 +377,8 @@
           $id = $this->getTableKeyValue($table, $record);
           $this->importChildren($id, $table) ;
         }
-     } 
+     }
+     $dataReader->close();
    }
    
    public function importVisitMain($patientId, $table){
@@ -403,6 +406,7 @@
          break;
        }
      }
+     $dataReader->close();
    }
    
    public function importIMainChildrenPartial($parentId, $table){
@@ -449,6 +453,7 @@
         else if(!$this->addRecord($record, $table))
                 break ;
       }
+      $dataReader->close();
    }
    
    /**

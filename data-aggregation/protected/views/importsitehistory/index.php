@@ -46,7 +46,7 @@
               }
               else{
                 updateProgressBar(response);
-                setTimeout(updateBar, 500);
+                setTimeout(updateBar, 1000);
               }
             }
           });
