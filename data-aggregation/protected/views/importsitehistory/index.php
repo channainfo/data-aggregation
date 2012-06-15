@@ -11,7 +11,7 @@
 <div class="tableWrapper round">
     <?php 
       $firstImport = $importHistories[0];
-      if($firstImport->status == ImportSiteHistory::PENDING): ?>
+      if($firstImport->status == ImportSiteHistory::PENDING ): ?>
         <style type="text/css" >
           .ui-progressbar { position:relative; width: 350px; }
           .pblabel { position: absolute; display: block; width: 100%; text-align: center; line-height: 1.2em;font-weight:normal; }
@@ -82,13 +82,13 @@
           updateBar();
         }); 
       </script>
-    <?php else: ?>
+    <?php elseif($firstImport->status == ImportSiteHistory::START ): ?>
       <script type="text/javascript">
         function reloadUpdate(){
           window.location.reload();
         }
         $(function(){
-            setTimeout(reloadUpdate, 5000);
+            setTimeout(reloadUpdate, 30*1000);
         });
       </script>
     <?php endif; ?>
