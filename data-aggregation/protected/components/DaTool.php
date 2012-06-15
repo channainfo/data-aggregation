@@ -4,13 +4,13 @@
    public static $messages = array();
    
    public static function pln($msg){
-        Yii::log($msg);
-        echo "\n {$msg}";
+        //Yii::log($msg);
+        //echo "\n {$msg}";
    }
    
    public static function p($msg){
-        Yii::log($msg);
-        echo $msg ;
+        //Yii::log($msg);
+        //echo $msg ;
    }
    
    public static function hp($msg, $chr='_'){
