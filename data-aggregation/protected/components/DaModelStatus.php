@@ -13,7 +13,7 @@
   const INIT = 10 ;
   
   public function getStatusText(){
-    $status = array( self::START => "start", self::PENDING => "pending" , self::FAILED => "failed", self::SUCCESS => "success", );
+    $status = array( self::START => "waiting", self::PENDING => "running" , self::FAILED => "failed", self::SUCCESS => "success", );
     if($this->status != self::INIT )
       return $status[(int)$this->status];
     

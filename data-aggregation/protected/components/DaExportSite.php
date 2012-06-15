@@ -193,6 +193,9 @@ EOD;
     */ 
    public function reverse($conversionId){
      $conversion =  Conversion::model()->findByPk($conversionId);
+     $conversion->status = Conversion::PENDING ;
+     $conversion->save(); 
+     
      $file = DaConfig::pathDataStore().$conversion->src ;
      //pathinfo($this->conversion->src);
      $dir = DaConfig::pathDataStore()."export/extract/";
@@ -263,6 +266,9 @@ EOD;
     */
    public function export($exportId){
      $this->export = ExportHistory::model()->findByPk($exportId);    
+     $this->export->status = ExportHistory::PENDING ;
+     $this->export->save();
+     
      foreach($this->export->getSites() as $site )
        $this->sitecodes[] = "'$site->code'" ;   
      

@@ -245,11 +245,11 @@ div.tableWrapper thead th, div.tableWrapper td {
 }
 .state{
   
-  padding-left: 25px;
+  padding-left: 18px;
   background-position: left center;
   background-repeat: no-repeat;
 }
-.pending-state{
+.running-state{
   background-image: url(../images/state-pending.png);
 }
 .success-state{
@@ -258,7 +258,7 @@ div.tableWrapper thead th, div.tableWrapper td {
 .failed-state{
   background-image: url(../images/state-failed.png);
 }
-.start-state{
+.waiting-state{
   background-image: url(../images/state-start.png);
 }
 .disabled{

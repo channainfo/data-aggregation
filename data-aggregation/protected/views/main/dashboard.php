@@ -19,7 +19,7 @@
         "User Management is used to manage the user information. We can browse, add, update, delete user");?>
   
 <?php echo DaViewHelper::dashboardIcon($this->createUrl("conversion/"), "icon-export-convertion", "Conversion", 
-        "Conversion of reversible annonymization export to normal format"); ?>
+        "Conversion of reversible annonymization"); ?>
 
 
   
