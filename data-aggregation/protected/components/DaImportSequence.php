@@ -28,6 +28,10 @@
    private $patientIter;
    private $patientTotal=array();
    
+   public function __destruct(){
+     $this->dbX->setActive(false);
+   }
+   
    public function __construct($db, $code ) {
      $this->db = $db ;
      $this->_loadSiteConfig($code);
@@ -428,6 +432,7 @@
    }
    
    public function importChild($table, $parentId){
+      DaTool::pln("Importing: {$table}  with parent: {$parentId}" );
       $sqlX = DaRecordReader::getReader($table);
       $dataReader = $this->getRecordReader($sqlX, $parentId);
       foreach($dataReader as $record){
