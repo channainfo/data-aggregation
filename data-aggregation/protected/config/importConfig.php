@@ -115,11 +115,14 @@
 		'EFV',
 		'IDV',
 		'Kaletra(LPV/r)',
+		'Kaletra (LPV/r)',
 		'LPV',
 		'NFV',
 		'NVP',
 		'RTV',
 		'SQV',
-		'TDF'
+		'TDF',
+		'ATV',
+		'ATV/r'
     )  
 );      
