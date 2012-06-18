@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Data Aggregation',  
 	// preloading 'log' component
-	'preload'=>array('log'),
+	//'preload'=>array('log'),
 
 	// autoloading model and component classes
 	'import'=>array(  
@@ -60,16 +60,16 @@ return array(
 		'errorHandler'=>array(
 			 // use 'site/error' action to display errors
        'errorAction'=>'error/error',
-     ),
-		'log'=>array(
-      'class'=>'CLogRouter',
-      'routes'=>array(
-          array(
-              'class'=>'CFileLogRoute',
-              'levels'=>'trace, info',
-              'categories'=>'system.*',
-          ),
-          
+     )),
+//		'log'=>array(
+//      'class'=>'CLogRouter',
+//      'routes'=>array(
+//          array(
+//              'class'=>'CFileLogRoute',
+//              'levels'=>'trace, info',
+//              'categories'=>'system.*',
+//          ),
+//          
           
           
 //       array(
@@ -91,9 +91,9 @@ return array(
 					'class'=>'CWebLogRoute',
 				),
 				*/
-			),
-		),
-	),
+//			),
+//		),
+//	),
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
