@@ -23,13 +23,13 @@
    
    public function retry($job){
      echo "\n ========= retry ===================== \n" ;
-     $siteconfig = $this->siteconfig;
-     if($siteconfig && $siteconfig->lastImport()){
-        if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING ){
-          $import = $siteconfig->lastImport();
-          $import->status = ImportSiteHistory::START;
-          $import->save();
-        }
-     }
+//     $siteconfig = $this->siteconfig;
+//     if($siteconfig && $siteconfig->lastImport()){
+//        if($siteconfig->lastImport()->status == ImportSiteHistory::PENDING ){
+//          $import = $siteconfig->lastImport();
+//          $import->status = ImportSiteHistory::START;
+//          $import->save();
+//        }
+//     }
    }
  }

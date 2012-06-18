@@ -46,7 +46,8 @@
               }
               else{
                 updateProgressBar(response);
-                setTimeout(updateBar, 1000);
+                var interval = 1000 + Math.floor(Math.random()*1000);
+                setTimeout(updateBar, interval);
               }
             }
           });
