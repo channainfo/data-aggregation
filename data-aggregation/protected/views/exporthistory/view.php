@@ -28,14 +28,7 @@
   </table>
   <p> &nbsp; </p>
   <div class="row" style="border:1px solid #ccc; padding: 10px;" >
-    <?php 
-     //DaTool::debug($model->getTableList());
-     //DaTool::debug($model->getSites());
-     //DaTool::debug(ExportHistory::tableList());
-     //foreach($model->getSites() as $site){
-     //  echo "\n site id : {$site->code}";
-     //}
-     
+    <?php      
      $allTables = ExportHistory::tableList();
      $selectedTables = $model->getTableList();
      

@@ -39,7 +39,7 @@
 
   <div class="row" style="border: 1px solid #ccc;padding:10px;">
     <?php 
-      $sites = SiteConfig::siteListBox();
+      $sites = SiteConfig::allSite();
       foreach($sites as $id => $site):
     ?>
     <div class="exportTableItem" >

@@ -10,7 +10,7 @@
                 'users'=>array('@') ),
           
           array('allow', // allow authenticated user to perform 'update' and 'delete' actions
-                'actions'=>array('create', 'delete'),
+                'actions'=>array('create', 'delete','view'),
                 'users'=>array('@'),
                 'expression'=> '$user->isAdmin()',//$isOwnerOrAdmin,
           ),

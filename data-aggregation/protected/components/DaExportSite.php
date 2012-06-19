@@ -6,7 +6,6 @@
  class DaExportSite {
    public $export ;
    public $db ;
-   private $sitecodes;
    private $files = array();
    private $metadata = array();
    
@@ -114,9 +113,9 @@ EOD;
     
     $where = "" ;
     if($reversible == false){
-      if($this->export->all_site && $this->isSiteTable($tableName)  ){
+      if(!$this->export->all_site && $this->isSiteTable($tableName)  ){
         $sitecodestring = $this->getSiteCodeString();
-        $where = " WHERE id IN ({$sitecodestring})" ;
+        $where = "WHERE id IN ({$sitecodestring})" ;
       }
       $from = $tableName ;
       $selecedFields = $this->getColumnsSelect($tableName, $columns, $settings);
@@ -131,10 +130,11 @@ EOD;
     $sql = " SELECT  {$columnHeader} " .
            " \n UNION ALL " .
            " \n SELECT {$selecedFields} " .
-           " \n FROM {$from} {$where} " .
+           " \n FROM {$from} " .
+           " \n {$where} " .
            " \n INTO OUTFILE '" . addslashes($fullpath) ."' ".
            " \n FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '\"' ";
-              
+       
     $command =$this->db->createCommand($sql);
     $command->execute();
     $this->files [] = $fullpath ;
@@ -269,9 +269,6 @@ EOD;
      $this->export->status = ExportHistory::PENDING ;
      $this->export->save();
      
-     foreach($this->export->getSites() as $site )
-       $this->sitecodes[] = "'$site->code'" ;   
-     
      $this->writeHeaderDataExport();
      $settings = DaConfig::importSetting();
      
@@ -297,8 +294,8 @@ EOD;
    }
    public function getSiteCodeString(){
      $sitecodes = array(-1);
-     foreach($this->export->getSites() as $site){
-       $sitecodes[] = "'{$site->code}'";
+     foreach($this->export->getSites() as $code => $site_desc){
+       $sitecodes[] = "'{$code}'";
      }
      return implode(",", $sitecodes);
    }

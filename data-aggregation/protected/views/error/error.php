@@ -7,7 +7,12 @@
       <label> Code </label>
       <?php echo $error["code"] ?>
     </div>
-
+    
+    <div class="row"> 
+      <label> Code </label>
+      <?php echo $error["message"] ?>
+    </div>
+    
     <div class="row"> 
       <label> Type </label>
       <?php echo $error["type"] ?>

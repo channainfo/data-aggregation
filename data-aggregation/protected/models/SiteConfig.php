@@ -67,6 +67,27 @@ class SiteConfig extends DaModelStatus
     }
     return $data;
   } 
+  
+  public static function allSite($codes=array()){
+    $sql = " SELECT  Clinic, ART FROM tblclinic ";
+    if(!empty($codes)){
+      foreach($codes as $code){
+        $where[] = "'{$code}'";
+      }
+      $where_str = implode(",", $where);
+      $sql = $sql. " WHERE ART in ($where_str) " ;
+    }
+    
+    $command = Yii::app()->db->createCommand($sql);
+    $dataReader = $command->query();
+    $data = array();
+    foreach($dataReader as $row){
+      $data[$row["ART"]] = "{$row["ART"]} - {$row["Clinic"]}" ; 
+    }
+    return $data ;
+  }
+  
+  
   /**
    *
    * @param string $separator default is -
@@ -127,9 +148,6 @@ class SiteConfig extends DaModelStatus
       $this->last_imported = NULL ;
       $this->save();
     }
-    
-    
-    
     catch(CException $ex){
       throw new DaInvalidSiteDatabaseException("Could not find any site from host: [{$this->host}] , db: [{$this->db}]  in table: [{$table}] ");
     }

@@ -291,7 +291,7 @@ div.tableWrapper thead th, div.tableWrapper td {
  
  .exportTableItem{
    float:left; 
-   width: 200px;
+   width: 245px;
    line-height: 1.5 ;
  }
  .importLabel{
