@@ -1,48 +1,125 @@
-  NCHADS Data aggregration
-  ========================
-  The main app folder is located in [data-aggregration]. we use  [data-aggregration] to
-denote our app root across this doc. 
 
 
-  Installation:
-  -------------
+
+
+--------------------------------------------------------------------------------
+Installation Guide: 
+--------------------------------------------------------------------------------
+
+  Data aggregation is a web based application developed with PHP, MySql, Mssql and is tested under Php5, Mysql5, 
+Mssql sever 2005, apache2.
+
   
-  - Requirement:
-    All the necessary third parties installation are located in  [data-aggregration]/docs/install 
-
-    * Mssql server extension for php by microsoft .
-    * Microsoft SQL Server 2008 R2 Native Client  .
-    * Php 5.x
-    * Apache 2
-
-
-
-  - config database: 
-     configure database connection in the following env :
-        * console.php database for console app
-        * main.php database for app
-        * test.php database for running test
-
-  - Import sql schema to your database.
-     Sql schema is located in [data-aggregration]/docs/server-schema.sql
-
-
-  - Create APP infrastructure
-    open up your terminal and navigator to [data-aggregration]/protected
-      * [data-aggregration]/protected >  yiic migrate  
-          you will see the list of app tables to be created and the confirmation. confirm it by typing yes
-  - Create default user 
-    * [data-aggregration]/protected >  yiic db seed
-      This will create user = admin with password = 123456
+  Requirement :
+  -------------
+    - Apache2 Web server
+    - Php 5 (As apache module)
+    - Mysql server 5 
+    - Mssql server 2005
     
-  - Built configuration
-    * [data-aggregration]/protected >  yiic db built
+
+    Application needs PHP_PDO extension of Mysql and Mssql to be able to communicate with the database server.
+due to lack of support of php_pdo_mssql.dll, the app uses  php_pdo_sqlsrv_53_ts_vc9.dll, php_sqlsrv_53_ts_vc9.dll instead. 
+
+    Both php_pdo_sqlsrv_53_ts_vc9.dll, php_sqlsrv_53_ts_vc9.dll are used because the PDO has some bugs with restoring database.
+
+ *** [php_pdo_sql_srv] is pronounced 'php-pdo-sql-server].
+ *** [ts] is 'thread safe', [nts] is 'non thread safe'
+ *** [vc9] is 'compiled with miscrosoft visual studio 9'
+ *** [53] is 'compile for php 5.3'
+
+    To get the information about you installed php, you can run a php function :  php_info(). php_info() provides 
+you lots of information. our interested sections are: 
+  - PHP Version 5.3.8 : the header of the page
+  - Compiler : is the compiler used to build php. For instance : MSVC9 (Visual C++ 2008) [vc9] 
+  - Thread Safety : is ts or non ts. For instance : enabled [ts]
+  
+ *** All the version of php extension for sql server [project-root]/docs/install/
+  -  SQLSRV20.EXE (php_sqlsrv for php 5.2) , SQLSRV30.EXE (php_sqlsrv for php 5.3)
+  -  sqlncli.msi , sqlncli64.msi (Mssq server native client)
 
 
-  - Import process
-    Import can be run inside wep app or console app. We are talking about console app in this section. 
-    Note: All import processes will be run in background process. We use cron.bat to run it.
-      *
+  Configure database :
+  ------------------
+    Navigate to [project-root]/data-aggregation/protected/main.php and find the section 'db' and change it accordingly.
+
+    'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=server_oi_dev',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => 'tey=123',
+			'charset' => 'utf8',
+		),
+    
+    Navigate to [project-root]/data-aggregation/protected/console.php and find the section 'db' and change it accordingly.
+
+    'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=server_oi_dev',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => 'tey=123',
+			'charset' => 'utf8',
+		),
+
+    - main.php is for the app. for both web app and console app.
+    - console.php is for console app only. If your console app uses the same database you can just omit the 'db' section in console.php
+
+    Note: 
+      connectionString:   
+        - localhost : is the database server name
+        - server_oi_dev : is the database name
+      user 
+        - root is the username to connect to database  
+      password
+        - tey=123 is the password
+        
+
+
+
+    Install App environment: 
+    ------------------------
+    To aggregate data from sites, the initial table need to be created. Open your mysql client and import the
+    [project-root]/data-aggregation/docs/install/server-schema.sql to the selected database
+
+
+    Open up your terminal
+    > cd [project-root]/data-aggregation/protected
+    > yiic migrate
+    > yiic db seed
+    > yiic db drugControl
+    > yiic db build    
+
+    The [ yiic migrate ] command creates the  database tables for the app. 
+    The [ yiic db seed ] command creates user and user-group. By default the application create user: admin, password: 123456 
+    The [ yiic db drugControl ] command creates record in da_drug_control then generated by app for app setting.
+    The [ yiic db build ] command creates tables, record for app setting.
+
+
+    Configure cron : 
+    ----------------
+    job for background process: in window platform cron tab is simply a schedule-task. You can find the cron.xx.xml
+located in [project-root]/data-aggregation/docs/install/. Import this file to your task schedule. 
+     
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+ 
+
+ 
 
       
       

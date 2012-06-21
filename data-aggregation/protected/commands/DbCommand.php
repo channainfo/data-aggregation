@@ -107,6 +107,8 @@
         $drugConrols[] = "'{$row["name"]}'";
 
       $newLine = ",\n\t\t" ;  
+      asort($tableImports);
+      
       $tableImportStr = implode($newLine , $tableImports );
       $tableFixedStr = implode($newLine , $tableFixeds );
       $idsStr = implode($newLine , $ids );
