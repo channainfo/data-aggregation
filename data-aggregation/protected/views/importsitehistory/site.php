@@ -52,7 +52,7 @@
           <span class="disabled round"> In progress </span>
         <?php elseif(Yii::app()->user->isAdmin() && !empty($row->code))  :?>
           <?php echo CHtml::link("Start Import", $this->createUrl("importsitehistory/import", array("siteconfig_id"=>"{$row->id}")),
-                array("class" => "btn-action-delete confirm round", "data-tip" => "Are you sure to import to site: {$row->name}" ) ) ?> 
+                array("class" => "btn-action-delete confirm round", "data-tip" => "Are you sure to import to site: {$row->name} ? " ) ) ?> 
         <?php endif; ?>
       </td>
     </tr>

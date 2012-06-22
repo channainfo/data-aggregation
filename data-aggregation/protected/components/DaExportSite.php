@@ -115,7 +115,7 @@ EOD;
     if($reversible == false){
       if(!$this->export->all_site && $this->isSiteTable($tableName)  ){
         $sitecodestring = $this->getSiteCodeString();
-        $where = "WHERE id IN ({$sitecodestring})" ;
+        $where = " \n WHERE id IN ({$sitecodestring})" ;
       }
       $from = $tableName ;
       $selecedFields = $this->getColumnsSelect($tableName, $columns, $settings);
@@ -127,14 +127,19 @@ EOD;
     }
     $columnHeader ="{$this->getColumnsHeader($columns)}";
     
-    $sql = " SELECT  {$columnHeader} " .
+    $order = "" ;
+    if(array_search("id", $columns))
+       $order = " \n ORDER BY id DESC" ;
+    
+    $sql = " \n SELECT  {$columnHeader} " .
            " \n UNION ALL " .
            " \n SELECT {$selecedFields} " .
            " \n FROM {$from} " .
-           " \n {$where} " .
+           " {$where} " .
+           " {$order} ".        
            " \n INTO OUTFILE '" . addslashes($fullpath) ."' ".
            " \n FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '\"' ";
-       
+      
     $command =$this->db->createCommand($sql);
     $command->execute();
     $this->files [] = $fullpath ;
