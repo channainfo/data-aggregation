@@ -9,6 +9,8 @@
    const PASS_KEY = "NCHADS_DA" ;
    const META_EXPORT_FN  = "config.ini" ;
    
+   const JS_RELOAD = 30000;
+   
    const QUEUE_IMPORT = "Import" ;
    const QUEUE_CONVERSION_N_EXPORT = "Export n Conversion" ;
    

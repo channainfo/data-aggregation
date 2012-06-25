@@ -48,4 +48,12 @@ $this->breadcrumbs = array('Export');
   <div class="clear"></div>
   <br />
 </div>
+<script type="text/javascript">
+    function reloadUpdate(){
+      window.location.reload();
+    }
+    $(function(){
+      setTimeout(reloadUpdate, <?php echo DaConfig::JS_RELOAD; ?>);
+    });
+</script>
 <?php endif; ?>

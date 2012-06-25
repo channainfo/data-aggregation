@@ -89,7 +89,7 @@
           window.location.reload();
         }
         $(function(){
-            setTimeout(reloadUpdate, 30*1000);
+          setTimeout(reloadUpdate, <?php echo DaConfig::JS_RELOAD; ?>);
         });
       </script>
     <?php endif; ?>
