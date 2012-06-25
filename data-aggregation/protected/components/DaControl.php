@@ -23,10 +23,6 @@
     public function getErrors(){
       return $this->errors;
     }
-
-    public function recordsError(){
-      return array();
-    }
     
     public function addError($message){
       $this->errors[] = $message ;

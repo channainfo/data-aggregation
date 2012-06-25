@@ -9,7 +9,7 @@
     </div>
     
     <div class="row"> 
-      <label> Code </label>
+      <label> Message </label>
       <?php echo $error["message"] ?>
     </div>
     

@@ -30,15 +30,23 @@
   <div class="row" style="border:1px solid #ccc; padding: 10px;" >
     <?php      
      $allTables = ExportHistory::tableList();
+     $tcount = count($allTables);
+     $tcolumn = round($tcount/4);
+     $ti = 0;
+     
      $selectedTables = $model->getTableList();
      
      foreach($allTables as $tableName => $cols):
+       if($ti == 0)
+         echo "<div class='exportTableItem' >" ;
+       elseif($ti%$tcolumn == 0)
+         echo "</div><div class='exportTableItem' >" ;
        $content = $tableName;
+       
        if(isset($selectedTables[$tableName]))
          $content = "<a href='#{$tableName}' ><b >{$tableName}</b> </a>" ;
     ?>
-    <div class="exportTableItem">
-      
+    <div >
       <?php echo CHtml::checkBox("{$tableName}", isset($selectedTables[$tableName]), array("disabled" =>"disabled"));  ?>
       <?php if(isset($selectedTables[$tableName])): ?>
           <a href="#<?php echo $tableName ?>_columns" class="fancy_table_list" > <?php echo $tableName; ?> </a>
@@ -46,8 +54,13 @@
           <span > <?php echo $content;  ?> </span>
       <?php endif;  ?>
     </div>
-    <?php endforeach; ?>
-    <div class="clear"></div>
+    <?php
+     $ti++;
+     if($ti == $tcount)
+       echo "</div>" ;
+     endforeach; 
+   ?>
+    <div class="clear">&nbsp;</div>
     
   </div>
   

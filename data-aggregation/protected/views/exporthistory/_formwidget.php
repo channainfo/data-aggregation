@@ -63,15 +63,28 @@
   <div class="row" style="border: 1px solid #ccc;padding:10px;">
     <?php 
       $tables = ExportHistory::tableList();
+      $tcount = count($tables);
+      $tcolumn = round($tcount/4);
+      $ti = 0;
       foreach($tables as $table => $columns):
+        if($ti == 0)
+          echo "<div class='exportTableItem' > ";
+        elseif($ti%$tcolumn == 0)
+          echo "</div><div class='exportTableItem' >" ;
     ?>
-        <div class="exportTableItem" >
+       
+        <div >
           <?php echo CHtml::checkBox("ExportHistory[table_list][tables][{$table}]", false, array("id" => $table, "class" =>"table_list")); ?>
           <a href='#fancy_<?php echo $table; ?>' class="fancy_table_list" data-rel="<?php echo $table ?>" >
             <?php echo CHtml::label($table, $table, array("style" => "float:none; display:inline; font-weight:normal;")); ?>
           </a>  
         </div> 
-    <?php endforeach; ?>
+    <?php 
+      $ti++;
+      if($ti == $tcount)
+        echo "</div>";
+      $ti++;
+    endforeach; ?>
     <div class="clear"></div>
   </div>
   <!-- Fancy Box  -->

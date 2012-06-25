@@ -10,14 +10,27 @@
     <?php 
       $configs = DaConfig::importConfig();
       $tables = array_merge($configs["tables"], $configs["fixed"]);
+      $i=0;
+      $count  = count($tables) ;
+      $ncolumn = round($count/4);
+      
       foreach($tables as $table => $columns):
+       if($i == 0)
+         echo "<div class='exportTableItem' >" ;
+        
+       elseif($i%$ncolumn == 0)
+         echo "</div><div class='exportTableItem'>" ;
     ?>
-        <div class="exportTableItem" >
-          - <a href='#fancy_<?php echo $table; ?>' class="fancy_table_list" data-rel="<?php echo $table ?>" >
-            <?php echo $table ?>
-          </a>  
+        <div >
+          <a href='#fancy_<?php echo $table; ?>' class="fancy_table_list" data-rel="<?php echo $table ?>" ><?php echo $table ?></a>  
         </div> 
-    <?php endforeach; ?>
+    <?php
+      $i++ ;
+      if($i == $count)
+        echo "</div>" ;
+      
+      endforeach; 
+    ?>
     <div class="clear"></div>
   </div>
   <!-- Fancy Box  -->
@@ -50,7 +63,9 @@
           
         </div>
     </div> 
-   <?php endforeach; ?>
+   <?php 
+   $i++ ;
+   endforeach; ?>
    <!-- End Fancy box -->
    <br />
 
