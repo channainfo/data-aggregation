@@ -138,8 +138,7 @@ EOD;
            " {$where} " .
            " {$order} ".        
            " \n INTO OUTFILE '" . addslashes($fullpath) ."' ".
-           " \n FIELDS TERMINATED BY ','  OPTIONALLY ENCLOSED BY '\"' ";
-      
+           " \n FIELDS ESCAPED BY '' TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\\r\\n' " ;         
     $command =$this->db->createCommand($sql);
     $command->execute();
     $this->files [] = $fullpath ;
@@ -168,13 +167,22 @@ EOD;
               }
           }
           else  
-            $select[] = $column ;
+            $select[] = $this->normalColumnExport($column);
        }
        else
-         $select[] = $column;
+         $select[] = $this->normalColumnExport($column);
      }
      return implode(", ", $select) ;
    }
+   /**
+    *
+    * @param type $column column name
+    * @return string return the column to export
+    */
+   public function normalColumnExport($column){
+      return "IFNULL($column, '')" ;
+   }
+   
    /**
     * Generate string with decoding command in mysql
     * @param string $tableName table name that contains config inside the $settings variable
@@ -188,7 +196,7 @@ EOD;
        if(isset($settings[$tableName][$column]))
          $fields[] = $this->decodeAnonymize($column) ; //" da_reverse({$column})" ;
        else
-         $fields[] = $column ;
+         $fields[] = $this->normalColumnExport($column);
      }
      return implode(", ", $fields);
    }

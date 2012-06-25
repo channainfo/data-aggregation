@@ -72,7 +72,7 @@
     
     public function testIsColumnsAnonymize(){
       $exportSite = new DaExportSite(Yii::app()->db);
-      $exportSite->export($this->exportHistory->id);
+      //$exportSite->export($this->exportHistory->id);
       
       $result = $exportSite->isColumnsAnonymize("tblaimain", "clinicid", $this->settings);
       $this->assertEquals($result, true);
@@ -93,7 +93,7 @@
       $exportSite = new DaExportSite(Yii::app()->db);
       $sql = $exportSite->getColumnsSelectReverse("tblaimain", array("clinicid", "dateVisite","grou", "blah"), $settings);
       
-      $result = "DECODE(UNHEX(clinicid), 'NCHADS_DA'), dateVisite, DECODE(UNHEX(grou), 'NCHADS_DA'), blah";
+      $result = "DECODE(UNHEX(clinicid), 'NCHADS_DA'), IFNULL(dateVisite, ''), DECODE(UNHEX(grou), 'NCHADS_DA'), IFNULL(blah, '')";
       $this->assertEquals($sql, $result);
           
     }
@@ -107,7 +107,7 @@
       
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "HEX(ENCODE(clinicid, 'NCHADS_DA')), HEX(ENCODE(grou, 'NCHADS_DA')), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
+      $str = "HEX(ENCODE(clinicid, 'NCHADS_DA')), HEX(ENCODE(grou, 'NCHADS_DA')), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
       $this->assertEquals($result, $str);
       
       // Anonymize not reversable
@@ -120,7 +120,7 @@
       $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "HEX(ENCODE(clinicid, clinicid)), HEX(ENCODE(grou, grou)), namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
+      $str = "HEX(ENCODE(clinicid, clinicid)), HEX(ENCODE(grou, grou)), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
       $this->assertEquals($result, $str);
       
       
@@ -134,7 +134,7 @@
       $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "clinicid, grou, namecontps1, maritalstatus, namelocationhbc, artnumber, idu, pretranditional";
+      $str = "IFNULL(clinicid, ''), IFNULL(grou, ''), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
       $this->assertEquals($result, $str);
       
     }
