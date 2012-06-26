@@ -115,7 +115,10 @@ EOD;
     if($reversible == false){
       if(!$this->export->all_site && $this->isSiteTable($tableName)  ){
         $sitecodestring = $this->getSiteCodeString();
-        $where = " \n WHERE id IN ({$sitecodestring})" ;
+        $field = "id";
+        if($tableName == "tblclinic")
+          $field = "art";
+        $where = " \n WHERE $field IN ({$sitecodestring})" ;
       }
       $from = $tableName ;
       $selecedFields = $this->getColumnsSelect($tableName, $columns, $settings);
@@ -355,7 +358,7 @@ EOD;
     */
    public function isSiteTable($table){
      $configs = DaConfig::importConfig();
-     if(isset($configs["tables"][$table]))
+     if(isset($configs["tables"][$table]) || $table == "tblclinic" )
        return true;
      return false ;
    }

@@ -5,8 +5,6 @@
     public $settings ;
     public $attributes ;
 
-
-
     public function setUp() {
       $this->settings = array('tblaimain' => array( 'clinicid','grou') ,
                               'tblcimain' => array( 'datevisit','dob','sex' ) ,
@@ -69,6 +67,16 @@
       $this->exportHistory->save();
       return parent::setUp();
     }
+    
+    public function testIsSiteTable(){
+      $exportSite = new DaExportSite(Yii::app()->db);
+      $yes = $exportSite->isSiteTable("tblclinic");
+      $this->assertEquals($yes, true);
+      
+      $no = $exportSite->isSiteTable("tblprovince");
+      $this->assertEquals($no, false);
+      
+    } 
     
     public function testIsColumnsAnonymize(){
       $exportSite = new DaExportSite(Yii::app()->db);
