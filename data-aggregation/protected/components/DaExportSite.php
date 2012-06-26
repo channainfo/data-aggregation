@@ -158,11 +158,11 @@ EOD;
        if($this->export->reversable == ExportHistory::ANONYM_REVERSABLE  || $this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE ){
           if($this->isColumnsAnonymize($tableName, $column, $settings)){
               if( $this->export->reversable == ExportHistory::ANONYM_REVERSABLE ){
-                $select[] = $this->encodeReversable($column); // "da_anonymize({$column}, 1)" ;
+                $select[] = $this->normalColumnExport($this->encodeReversable($column)); // "da_anonymize({$column}, 1)" ;
                 $this->metadata[$tableName][$column] = 1 ;
               }
               else if ($this->export->reversable == ExportHistory::ANONYM_NOT_REVERSABLE){
-                $select[] = $this->encodeNotReversable($column) ; // "da_anonymize({$column}, 0)" ;
+                $select[] = $this->normalColumnExport($this->encodeNotReversable($column)) ; // "da_anonymize({$column}, 0)" ;
                 $this->metadata[$tableName][$column] = 0 ;
               }
           }

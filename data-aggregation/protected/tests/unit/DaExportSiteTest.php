@@ -107,7 +107,7 @@
       
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "HEX(ENCODE(clinicid, 'NCHADS_DA')), HEX(ENCODE(grou, 'NCHADS_DA')), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
+      $str = "IFNULL(HEX(ENCODE(clinicid, 'NCHADS_DA')), ''), IFNULL(HEX(ENCODE(grou, 'NCHADS_DA')), ''), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
       $this->assertEquals($result, $str);
       
       // Anonymize not reversable
@@ -120,7 +120,7 @@
       $exportSite->export($history1->id);
       $result = $exportSite->getColumnsSelect("tblaimain", $columns , $this->settings);
       
-      $str = "HEX(ENCODE(clinicid, clinicid)), HEX(ENCODE(grou, grou)), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
+      $str = "IFNULL(HEX(ENCODE(clinicid, clinicid)), ''), IFNULL(HEX(ENCODE(grou, grou)), ''), IFNULL(namecontps1, ''), IFNULL(maritalstatus, ''), IFNULL(namelocationhbc, ''), IFNULL(artnumber, ''), IFNULL(idu, ''), IFNULL(pretranditional, '')";
       $this->assertEquals($result, $str);
       
       
