@@ -153,15 +153,15 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-        DaTool::debug($ex->getMessage(),0,0);
+        echo $ex->getMessage();
      }
      catch(DaInvalidDbException $ex){
-       DaTool::debug($ex->getMessage(),0,0);
+       echo $ex->getMessage();
        //$this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
-       DaTool::debug($ex->getMessage(),0,0);
+       echo $ex->getMessage();
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
    }
@@ -326,12 +326,10 @@
                 }
            }
            catch(DaInvalidDbException $ex){
-             DaTool::debug($ex->getMessage(),0,0);
              $this->rollback();
              throw $ex ;
            }
            catch(Exception $ex){
-             DaTool::debug($ex->getMessage(),0,0);
              $this->rollback();
              $this->addRejectPatient($record, $table );
            }
@@ -534,21 +532,5 @@
    
    public function hasError(){
      return !empty($this->errors);
-   }
-   
-   
+   }   
  }
- 
- 
-//========================================================================= 
-/* 
-function da_import_shutdown(){
-  global $_siteconfig;
-  $text = "unexpected";
-  if($_siteconfig)
-    $text = print_r($_siteconfig->attributes, 1);
-  file_put_contents("shutdown.info", $text);
-  echo $text ;
-}
-register_shutdown_function('da_import_shutdown');
-*/

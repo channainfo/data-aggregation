@@ -42,14 +42,8 @@
    public function actionCreate(){
      $model = new ExportHistory();
      if(isset($_POST["ExportHistory"])){
-       $model->setData($_POST["ExportHistory"]);
-       if($model->save()){
+       if($model->saveAsSeparate($_POST["ExportHistory"])){
          Yii::app()->user->setFlash("success", "Export have been created");
-         DJJob::enqueue(new DaExportSiteJob($model->id), DaConfig::QUEUE_CONVERSION_N_EXPORT );
-         $job_id = DJJob::lastInsertedJob();
-         $model->job_id = $job_id ;
-         $model->status = ImportSiteHistory::START ;
-         $model->save();
          $this->redirect($this->createUrl("index"));
        }
        else

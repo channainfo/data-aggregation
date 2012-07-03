@@ -104,7 +104,7 @@
           <th width="120"> Inserted </th>
           <th width="120"> Rejected </th>
           <th width="120"> Total </th>
-          <th width="180"> Action </th>
+          <th width="200"> Action </th>
         </tr>
       </thead>
     <?php 

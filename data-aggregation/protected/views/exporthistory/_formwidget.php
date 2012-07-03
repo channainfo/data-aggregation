@@ -2,7 +2,7 @@
   <?php echo CHtml::errorSummary($model); ?>
 
  <style type="text/css">
-    #ExportHistory_reversable label{
+    #ExportHistory_reversable label, #ExportHistory_separate label {
       display: inline;
       float: none;
       font-weight: normal;
@@ -21,6 +21,23 @@
               ) );  ?>
     <?php echo $form->error($model, "reversable");  ?>
   </div>
+  
+  
+  <div class="row">
+    <label> Export output </label>
+    <span id="ExportHistory_separate" >
+      <input id="ExportHistory_separate0" type="radio" name="ExportHistory[separate]" value="0" checked="checked" />
+      <label for="ExportHistory_separate0"  > Single </label>
+      <span style="margin-left: 50px;" >  </span>
+      <input id="ExportHistory_separate1" type="radio" name="ExportHistory[separate]" value="1" /> 
+      <label for="ExportHistory_separate1"  > Separated by site </label>
+    </span>  
+  </div>
+  
+  
+  
+  
+  
   <!--
   <div class="row">
     <?php echo $form->labelEx($model, "sites");  ?>

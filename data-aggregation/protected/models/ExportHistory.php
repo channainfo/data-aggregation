@@ -1,5 +1,6 @@
 <?php
-
+ Yii::import("application.vendors.*");
+ require_once "djjob/DJJobConfig.php";
 /**
  * This is the model class for table "da_export_history".
  *
@@ -19,6 +20,7 @@
  * @property integer $all_table
  * @property string $site_text
  * @property string $message
+ * @property string $group
  * 
  * 
  */
@@ -28,7 +30,6 @@ class ExportHistory extends DaModelStatus{
   const ANONYM_REVERSABLE =1 ;
   const ANONYM_NOT_REVERSABLE = 2 ;
   
- 
   
   /**
 	 * Returns the static model of the specified AR class.
@@ -49,7 +50,8 @@ class ExportHistory extends DaModelStatus{
        foreach($tables as $table => $value){
          $tableList[$table] = $attrs["table_list"]["columns"][$table];
        }
-  
+       if(isset($attrs["group"]))
+          $this->group = md5($attrs["group"]);
        $this->reversable = $attrs["reversable"];
        $this->date_start = DaDbWrapper::now();
        $this->all_site   = $attrs["all_site"];
@@ -83,6 +85,43 @@ class ExportHistory extends DaModelStatus{
 	public function tableName(){
 		return 'da_export_history';
 	}
+  /**
+   * 
+   */
+  public function djjobLink(){
+      DJJob::enqueue(new DaExportSiteJob($this->id), DaConfig::QUEUE_CONVERSION_N_EXPORT );
+      $job_id = DJJob::lastInsertedJob();
+      $this->job_id = $job_id ;
+      $this->status = ImportSiteHistory::START ;
+      $this->save();
+  }
+  
+  public function saveAsSeparate($params){
+    if(isset($params["separate"]) && $params["separate"] == "1"){
+      $params["all_site"] = 0 ;
+      unset($params["separate"]);
+      $attributes = $params;
+      $result = false ;
+      $group = rand(0, 5000).time();
+      foreach($params["site_list"] as $index => $site){
+        unset($attributes["site_list"]);
+        $attributes["site_list"][$index] = $site ;
+        $attributes["group"] = $group ;
+        $exportHistory = new ExportHistory();
+        $exportHistory->setData($attributes);
+        $result = $exportHistory->save();
+        if($result)
+          $exportHistory->djjobLink();
+      }
+    }
+    else{
+        $exportHistory = new ExportHistory();
+        $exportHistory->setData($params);
+        $result = $exportHistory->save();
+        $exportHistory->djjobLink();
+    }
+    return $result ;
+  }
   
   public function setTableList($tableList){
     $tableList = serialize($tableList);
@@ -136,7 +175,7 @@ class ExportHistory extends DaModelStatus{
     if($this->file)
        @unlink(DaConfig::pathDataStoreExport().$this->file);
     return parent::afterDelete();
-  }
+  } 
 
 	/**
 	 * @return array validation rules for model attributes.

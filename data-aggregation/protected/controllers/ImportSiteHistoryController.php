@@ -24,7 +24,7 @@
      $model = new ImportSiteHistory();
      
      $criteria = new CDbCriteria();
-     $criteria->order = "t.modified_at DESC";
+     $criteria->order = "t.id DESC";
      
      $criteria->with = array("siteconfig") ;
      $siteconfig = NULL;
