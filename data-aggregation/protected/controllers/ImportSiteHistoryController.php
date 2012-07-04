@@ -102,8 +102,10 @@
 
       $model = new ImportSiteHistory();
       $model->job_id = $job_id ;
-      $model->siteconfig_id = $siteconfig_id;
+      $model->siteconfig_id = $siteconfig->id;
       $model->status = ImportSiteHistory::START ;
+      $model->site_name = $siteconfig->name ;
+      $model->site_code = $siteconfig->code ;
       
       if($model->save()){
         Yii::app()->user->setFlash("success", "Import has been added to queue to run" );

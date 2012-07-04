@@ -122,7 +122,7 @@
         <tr class="<?php echo $i%2 == 0 ? "even" : "add" ?>" >
           <td> <?php echo date("Y-m-d, H:i:s", strtotime($importHistory->created_at) ); ?> </td>
           <td> <span class="state <?php echo "{$status}-state"  ?> <?php echo $cls; ?>" ><?php echo ucfirst($status) ?></span></td>
-          <td> <?php echo "{$importHistory->siteconfig->code} - {$importHistory->siteconfig->name} ";  ?></td>
+          <td> <?php echo $importHistory->site_code. "-" . $importHistory->site_name;  ?> </td>
           <td> 
             
             <div  >

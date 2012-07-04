@@ -17,7 +17,8 @@
  * @property integer total_record
  * @property integer current_record
  * @property integer importing_record
- * 
+ * @property string site_code
+ * @property string site_name
  *
  * The followings are the available model relations:
  * @property Siteconfigs $siteconfig
