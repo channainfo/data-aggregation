@@ -21,7 +21,7 @@
      $model = new Backup();
      
      $criteria = new CDbCriteria();
-     $criteria->order = " modified_at DESC";
+     $criteria->order = " id DESC";
      $criteria->condition = "siteconfig_id = ". intval($_GET["siteconfig_id"]);
      
      $totalCount = $model->count($criteria);

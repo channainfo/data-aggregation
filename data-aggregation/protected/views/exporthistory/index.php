@@ -22,9 +22,17 @@ $this->breadcrumbs = array('Export');
       </tr>
     </thead>
   <?php 
-  $i =0 ;
-   foreach($rows as $row): ?>
-    <tr class="<?php echo $i%2?"even":"odd" ?>">
+   $i =0 ;
+   $group = "" ;
+   $css = array("odd", "even");
+   $index = 0 ;
+   foreach($rows as $row):
+     if($group != $row->group || $row->group == ""){
+        $group = $row->group;
+        $index = 1-$index ;
+     }
+  ?>
+    <tr class="<?php echo $css[$index]; ?>">
       <td> <?php echo CHtml::link("{$row->id}",$this->createUrl( "exporthistory/view/{$row->id}"), array() ) ?> </td>
       <td> <?php echo $row->date_start; ?>  </td>
       <td> <?php echo $row->date_end; ?>  </td>

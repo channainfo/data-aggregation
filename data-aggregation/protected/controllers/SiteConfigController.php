@@ -34,7 +34,7 @@ class SiteConfigController extends DaController {
     $model = new SiteConfig();
     
     $criteria = new CDbCriteria();
-    $criteria->order = " modified_at DESC " ;
+    $criteria->order = " id DESC " ;
     
     $itemCount = $model->count($criteria);
     

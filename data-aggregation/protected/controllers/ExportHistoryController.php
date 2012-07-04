@@ -23,7 +23,7 @@
      $model = new ExportHistory();
      
      $criteria = new CDbCriteria();
-     $criteria->order = " modified_at DESC";
+     $criteria->order = " id DESC";
      $totalCount = $model->count($criteria);
      
      $pages = new CPagination($totalCount);
