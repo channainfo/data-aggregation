@@ -13,8 +13,6 @@ require_once($yii);
 Yii::createConsoleApplication($config);
 
 Yii::import("application.vendors.*");
-//require_once "djjob/DJJobConfig.php";
-
 $djPath = dirname(__FILE__).'/protected/vendors/djjob/DJJobConfig.php';
 require_once $djPath;
 

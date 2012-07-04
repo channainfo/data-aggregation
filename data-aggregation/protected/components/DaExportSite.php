@@ -8,6 +8,7 @@
    public $db ;
    private $files = array();
    private $metadata = array();
+   private $filename = "" ;
    
    /**
     *
@@ -22,16 +23,21 @@
      $this->metadata["header_info"]["export_id"] = $this->export->id ;
      $this->metadata["header_info"]["type"] = $this->export->reversable ;
      $this->metadata["header_info"]["name"] = $this->export->getReversibleText();
+     $this->filename = $this->export->id . "-" ;
+     if($this->export->group)
+       $this->filename =  $this->export->getSiteText("_")."-". $this->filename;
+     
    }
    
    public function writeHeaderDataConversion($settings){
      $this->metadata["header_info"]["export_id"] = $settings["header_info"]["export_id"] ;
      $this->metadata["header_info"]["type"] = ExportHistory::NORMAL ;
      $this->metadata["header_info"]["name"] = ExportHistory::ReversableText(ExportHistory::NORMAL);
+     $this->filename = $settings["header_info"]["export_id"]."-".time()."-"  ;
    }
    
    public function createZip(){
-     $file = $this->metadata["header_info"]["export_id"]."-".ExportHistory::ReversableText($this->metadata["header_info"]["type"])."-".date("Y-m-d-H-i-s").".zip";
+     $file = $this->filename.ExportHistory::ReversableText($this->metadata["header_info"]["type"]).".zip";
      $archive = new DaArchive();
      $zipfile = DaConfig::pathDataStoreExport().$file;
      $archive->createZip($this->files, $zipfile  );

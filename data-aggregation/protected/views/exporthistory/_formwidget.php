@@ -27,10 +27,10 @@
     <label> Export output </label>
     <span id="ExportHistory_separate" >
       <input id="ExportHistory_separate0" type="radio" name="ExportHistory[separate]" value="0" checked="checked" />
-      <label for="ExportHistory_separate0"  > Single </label>
+      <label for="ExportHistory_separate0"  > Only one file </label>
       <span style="margin-left: 50px;" >  </span>
       <input id="ExportHistory_separate1" type="radio" name="ExportHistory[separate]" value="1" /> 
-      <label for="ExportHistory_separate1"  > Separated by site </label>
+      <label for="ExportHistory_separate1"  > Separated files by site </label>
     </span>  
   </div>
   
