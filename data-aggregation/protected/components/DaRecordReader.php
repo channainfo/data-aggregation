@@ -163,9 +163,17 @@
    }
    
    public static function getIdFromRecord($table, $record){
+     $key = self::getKeyFromTable($table);
+     if($key !==false )
+        return $record[$key];
+     return $false ;
+   }
+   
+   public static function getKeyFromTable($table){
      $configs = DaConfig::importConfig();
-     $key = $configs["keys"][$table];
-     return $record[$key];
+     if(isset($configs["keys"][$table]))
+       return $configs["keys"][$table];
+     return false ;
    }
   
    

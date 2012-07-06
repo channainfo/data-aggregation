@@ -14,28 +14,35 @@
      * @return boolean
      * @throws Exception 
      */
-    public static function artNum($value){
-      $message = self::artError($value);
-      if($message)
-        throw new Exception($message);
-      return true ;
+    public static function artNum($value){      
+      $art = new DaARTError($value);
+      if($art->getErrorType() == DaARTError::ERR_ADULT) 
+        throw new Exception("Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length");
+      else if($art->getErrorType() == DaARTError::ERR_CHILD)
+        throw new Exception("Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length") ;
+      else if($art->getErrorType() == DaARTError::ERR_NONE)
+        return true ;
     }
     
-    public static function artError($value){
-      $message = "" ;
-      $art = trim($value);
-      if(strtolower($art[0])== 'p'){
-        $code =substr($art, 1);
-        if(strlen($code) != 9){
-          $message = "Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length";
-        }
-      }
-      else if(strlen($art) != 9){
-        $message = "Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length";
-      }
-      return $message ;
-    }
-    
+//    public static function artError($value){
+//      $art = new DaARTError($value);
+//      $error = $art->getErrorType();
+//      
+//      
+//      $message = "" ;
+//      $art = trim($value);
+//      if(strtolower($art[0])== 'p'){
+//        $code =substr($art, 1);
+//        if(strlen($code) != 9){
+//          $message = "Invalid [ART] number for child: [ART]= ['{$art}'] for child should have 10 characters in length";
+//        }
+//      }
+//      else if(strlen($art) != 9){
+//        $message = "Invalid [ART] number for adult: [ART]= ['{$art}'] should have 9 characters in length";
+//      }
+//      return $message ;
+//    }
+//    
     /**
      *
      * @param string $date
@@ -49,6 +56,19 @@
       }
       return true ;
     }
+    /**
+     *
+     * @param string $date
+     * @return boolean 
+     */
+    public static function checkDate($date){
+      $year = DaTool::getYear($date);
+      if($year == "1900" ){
+        return false;
+      }
+      return true ;
+    }
+    
     /**
      *
      * @param string $dob
