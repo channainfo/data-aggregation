@@ -11,7 +11,7 @@
      * @throws DaInvalidControlException 
      */
     public function check($option=array()){
-      return $this->checkDateVisit() &&  $this->checkOfficeIn($option["dbx"]) ;
+      return $this->checkDateVisit() && $this->checkGender() &&  $this->checkOfficeIn($option["dbx"]) ;
     }
 
     public function checkDateVisit(){
@@ -21,6 +21,15 @@
         return false;
       }
       return true ;
+    }
+    
+    public function checkGender(){
+      $gender = new DaGenderError($this->record["Sex"]);
+      if($gender->getErrorType() != DaGenderError::ERR_NONE){
+        $this->addError("[tblcimain] invalid sex. {$gender}");
+        return false;
+      }
+      return true;
     }
     
     /**

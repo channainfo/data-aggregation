@@ -6,7 +6,8 @@
                           "OfficeIn" => "yes", 
                           "DateARV" => "2009-09-09", 
                           "ARVNumber" => "P190100010" ,
-                          "DateVisit" => "2009-09-09"  
+                          "DateVisit" => "2009-09-09" ,
+                          "Sex" => "Male"
                     );
    
    public $key ;
@@ -46,7 +47,7 @@
      }
    }
    
-   public function testCheck(){
+   public function testCheckOfficeIn(){
      $elements= array(
                       array( "record" => array("OffYesNo"=>"",
                                               "OfficeIn" => "yes", 
@@ -54,6 +55,7 @@
                                               "ARVNumber" => "P190100010" ,
                                               $this->key => "P000001",
                                               "DateVisit" => "2009-09-09",
+                                              "Sex" => "Female"
                                               
                                         ),
                              "result" => true, "err" =>"", "count" => 0,
@@ -64,6 +66,7 @@
                                               "ARVNumber" => "P190100010" ,
                                               $this->key => "P000001",
                                               "DateVisit" => "2009-09-09",
+                                              "Sex" => "Female"
                                               
                                         ),
                              "result" => true, "err" =>"", "count" => 0,
@@ -73,7 +76,8 @@
                                               "DateARV" => "2009-09-09", 
                                               "ARVNumber" => "P190100010" ,
                                               $this->key => "P000001",
-                                              "DateVisit" => "2009-09-09"  
+                                              "DateVisit" => "2009-09-09" ,
+                                              "Sex" => "Female"
                                         ),
                              "result" => false, "err" =>"Invalid [OfficeIn].", "count" => 1,
                              ),
@@ -83,7 +87,8 @@
                                               "DateARV" => "1900-09-09", 
                                               "ARVNumber" => "P190100010",
                                               $this->key => "P000001",
-                                              "DateVisit" => "2009-09-09"  
+                                              "DateVisit" => "2009-09-09",
+                                              "Sex" => "Female"
                                         ),
                              "result" => false, "err" =>"Invalid [DateARV]", "count" => 1,
                              ),
@@ -92,7 +97,8 @@
                                               "DateARV" => "2009-09-09", 
                                               "ARVNumber" => "P19010000002x" ,
                                               $this->key => "P000001",  
-                                              "DateVisit" => "2009-09-09"  
+                                              "DateVisit" => "2009-09-09" ,
+                                              "Sex" => "Female"
                                         ),
                              "result" => false, "err" =>"Invalid [ARVNumber]", "count" => 1,
                              ),
@@ -101,7 +107,8 @@
                                               "DateARV" => "2009-09-09", 
                                               "ARVNumber" => "P19010000x" ,
                                               $this->key => "P000007",  
-                                              "DateVisit" => "2009-09-09"  
+                                              "DateVisit" => "2009-09-09" ,
+                                              "Sex" => "Female"
                                         ),
                              "result" => false, "err" =>"[tblcart] ARVNumber: P19010000x", "count" => 1,
                              ),
@@ -110,11 +117,11 @@
                                               "DateARV" => "2009-09-09", 
                                               "ARVNumber" => "P190100005" ,
                                               $this->key => "P000007",
-                                              "DateVisit" => "2009-09-09"  
+                                              "DateVisit" => "2009-09-09",
+                                              "Sex" => "Female"
                                         ),
                              "result" => false, "err" =>"[tblcvmain] ARVNumber: P190100005", "count" => 1,
-                             )
-                
+                             ),
          
      );
      
@@ -128,6 +135,7 @@
        $this->assertEquals(count($cimainControl->getErrors()), $element["count"]);
        
        $errors = $cimainControl->getErrors();
+       //print_r($errors);
        if(count($errors))
         $this->assertNotEquals( strpos($errors[0], $element["err"]) , false);
      }
@@ -148,5 +156,75 @@
         $this->assertEquals(count($ciControl->getErrors()),1);
         $errors = $ciControl->getErrors();
         $this->assertNotEquals(strpos($errors[0], "Invalid [DateVisit]:"),false);
+   }
+   
+   
+   public function testCheck(){
+      $elements = array( array( "record" => array( "OffYesNo"=>"",
+                                  "OfficeIn" => "yes", 
+                                  "DateARV" => "2009-09-09", 
+                                  "ARVNumber" => "P190100010" ,
+                                  $this->key => "P000001",
+                                  "DateVisit" => "2009-09-09",
+                                  "Sex" => "Female"
+                                ),
+                               "result" => true, "error" => ""  ),
+          
+                         array( "record" => array( "OffYesNo"=>"Yes",
+                                  "OfficeIn" => "yes", 
+                                  "DateARV" => "2009-09-09", 
+                                  "ARVNumber" => "P190100010" ,
+                                  $this->key => "P000001",
+                                  "DateVisit" => "2009-09-09",
+                                  "Sex" => "Female"
+                                ),
+                               "result" => true, "error" => ""  ),
+          
+          
+                         array( "record" => array( "OffYesNo"=>"Yes",
+                                  "OfficeIn" => "yes", 
+                                  "DateARV" => "2009-09-09", 
+                                  "ARVNumber" => "P190100010" ,
+                                  $this->key => "P000001",
+                                  "DateVisit" => "1900-09-09",
+                                  "Sex" => "Female"
+                                ),
+                               "result" => false, "error" => "Invalid [DateVisit]"),          
+          
+                         array( "record" => array( "OffYesNo"=>"Yes",
+                                  "OfficeIn" => "yes", 
+                                  "DateARV" => "2009-09-09", 
+                                  "ARVNumber" => "P190100010" ,
+                                  $this->key => "P000001",
+                                  "DateVisit" => "2009-09-09",
+                                  "Sex" => ""
+                                ),
+                               "result" => false, "error" => "[tblcimain] invalid sex."  ),
+          
+                         array( "record" => array( "OffYesNo"=>"Yes",
+                                  "OfficeIn" => "yes", 
+                                  "DateARV" => "2009-09-09", 
+                                  "ARVNumber" => "P190100010x" ,
+                                  $this->key => "P000001",
+                                  "DateVisit" => "2009-09-09",
+                                  "Sex" => "Male"
+                                ),
+                               "result" => false, "error" => "Invalid [ARVNumber] :P190100010x"  ),
+          );
+      foreach($elements as $element){
+        $ciMain = new DaControlCiMain();
+        $ciMain->setRecord($element["record"]);
+        $result = $ciMain->check(array("dbx"=>$this->dbx));
+        
+        //echo "result: {$result}-expected:{$element["result"]}\n";
+        //print_r($ciMain->getErrors());
+        
+        $this->assertEquals((bool)$result, $element["result"]);
+        $errors = $ciMain->getErrors();
+        
+        if(count($errors)){
+          $this->assertNotEquals(strpos($errors[0], $element["error"]), false);
+        }
+      }
    }
   }

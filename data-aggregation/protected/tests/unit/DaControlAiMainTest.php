@@ -9,6 +9,7 @@
                           "DateFirstVisit" => "2009-09-09", 
                           "DateStaART" => "2009-08-08" ,
                           "ArtNumber" => "190100001" ,
+                          "Sex" => "Female"
                           
                           );
    public $key ;
@@ -21,10 +22,80 @@
    }
     
    public function testCheck(){
-     $this->instance->setRecord($this->valid);
-     $success = $this->instance->check(array("dbx"=>$this->dbx));
-     $this->assertEquals($success, true);
-     $this->assertEquals($this->instance->errors, array());
+     $elements= array(
+                      array("record" => array("OffYesNo"=>"",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "2009-09-09", 
+                                              "DateStaART" => "2009-08-08" ,
+                                              "ArtNumber" => "190100005",
+                                              $this->key => "000005",
+                                              "Sex" => "Male"),  
+                            "result" => true, "err" =>""
+                             ),
+                      array("record" => array("OffYesNo"=>"Yes",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "2009-09-09", 
+                                              "DateStaART" => "2009-08-08" ,
+                                              "ArtNumber" => "190100005",
+                                              "Sex" => "Male",
+                                              $this->key => "000005"),
+                            "result" => true, "err" =>""
+                             ),
+                      array("record" => array("OffYesNo"=>"Yes",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "1900-09-09", 
+                                              "DateStaART" => "2009-08-08" ,
+                                              "ArtNumber" => "190100005",
+                                              "Sex" => "Male",
+                                              $this->key => "000005"),
+                            "result" => false, "err" =>"Invalid [DateFirstVisit]"
+                             ),
+                      array("record" => array("OffYesNo"=>"Yes",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "2009-09-09", 
+                                              "DateStaART" => "2000-08-08" ,
+                                              "ArtNumber" => "190100005",
+                                              "Sex" => "TranSex",
+                                              $this->key => "000005"),
+                            "result" => false, "err" =>"[tblaimain] invalid sex TranSex"
+                             ),
+                      array("record" => array("OffYesNo"=>"Yes",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "2009-09-09", 
+                                              "DateStaART" => "1900-08-08" ,
+                                              "ArtNumber" => "190100005",
+                                              "Sex" => "Male",
+                                              $this->key => "000005"),
+                            "result" => false, "err" =>"DateStaART should not be in year 1900"
+                             ),
+                      array("record" => array("OffYesNo"=>"Yes",
+                                              "OffTransferin" => "yes", 
+                                              "DateFirstVisit" => "2009-09-09", 
+                                              "DateStaART" => "2009-08-08" ,
+                                              "ArtNumber" => "190100005x",
+                                              "Sex" => "Male",
+                                              $this->key => "000005"),
+                            "result" => false, "err" =>"Invalid [ART] number"
+                             ),
+         );
+      foreach($elements as $element) {
+        $aiMain = new DaControlAiMain();
+        $aiMain->setRecord($element["record"]);
+        
+        $result = $aiMain->check(array("dbx" => $this->dbx));
+        $errors = $aiMain->getErrors();
+        
+        $this->assertEquals((bool)$result, $element["result"]);
+        
+        //echo "result:{$result}-expected:{$element["result"]}";
+        //print_r($errors);
+        
+        if(!$result)
+          $this->assertEquals(count($aiMain->getErrors ()),1);
+        
+        if(count($errors))
+         $this->assertNotEquals(strpos($errors[0], $element["err"]), false );
+      }
    }
    
    public function testAiMainErrOffTran(){
@@ -83,8 +154,7 @@
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "190100005",
                                               $this->key => "000005"),
-                            "result" => true, "err" =>"", "count" => 0,
-                             ),
+                            "result" => true, "err" =>"" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
                                               "OffTransferin" => "yes", 
@@ -92,8 +162,7 @@
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "19010000x",
                                               $this->key => "000005"),
-                            "result" => false, "err" => "ArtNumber: 19010000x does not exist", "count" => 1,
-                          ),
+                            "result" => false, "err" => "ArtNumber: 19010000x does not exist" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
                                               "OffTransferin" => "yes", 
@@ -101,7 +170,7 @@
                                               "DateStaART" => "1900-08-08" ,
                                               "ArtNumber" => "19010000",
                                               $this->key => "000005"),
-                            "result" => false, "err" => "DateStaART should not be in year 1900", "count" => 1 ),
+                            "result" => false, "err" => "DateStaART should not be in year 1900" ),
          
          
                             
@@ -112,7 +181,7 @@
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "19010000",
                                               $this->key => "000005"),
-                            "result" => false, "err" => "Invalid transferin.", "count" => 1),
+                            "result" => false, "err" => "Invalid transferin."),
          
                        
          
@@ -122,7 +191,7 @@
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "xxx",
                                               $this->key => "xxx"),
-                            "result" => true, "err" => "", "count" => 0,),
+                            "result" => true, "err" => "" ),
          
      );
      
@@ -131,13 +200,14 @@
        $aimainControl->setRecord($element["record"]);
        $result = $aimainControl->checkTranIn($this->dbx);
        $this->assertEquals((bool)$result, (bool)$element["result"]);
-       $this->assertEquals(count($aimainControl->getErrors()), $element["count"]);
+       
+       if(!$result)
+        $this->assertEquals(count($aimainControl->getErrors()), 1);
+       
        $errors = $aimainControl->getErrors();
        if(count($errors))
         $this->assertNotEquals( strpos($errors[0], $element["err"]) , false);
      }
-     
-     
    }
    
    

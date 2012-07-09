@@ -13,8 +13,18 @@
      * @return boolean check(array("dbx"=> $dbx));
      */
     public function check($options=array()) {
-       return $this->checkDateFirstVisit() &&  $this->checkTranIn($options["dbx"]) ;
+       return $this->checkDateFirstVisit() && $this->checkGender() &&  $this->checkTranIn($options["dbx"]) ;
     }
+    
+    public function checkGender(){
+      $gender = new DaGenderError($this->record["Sex"]);
+      if($gender->getErrorType() != DaGenderError::ERR_NONE){
+        $this->addError("[tblaimain] invalid sex {$gender}. ");
+        return false;
+      }
+      return true;
+    }
+    
     /**
      *
      * @param CDbConnection $dbx

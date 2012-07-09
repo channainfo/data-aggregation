@@ -26,4 +26,8 @@
    public function getDate(){
      return $this->date;
    }
+   
+   public function __toString() {
+     return $this->date;
+   }
  }
