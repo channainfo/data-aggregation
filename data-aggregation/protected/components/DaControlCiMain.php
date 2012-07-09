@@ -65,7 +65,7 @@
       $art = $this->record["ARVNumber"] ;
       $clinicid = DaRecordReader::getIdFromRecord("tblcimain", $this->record); 
       
-      if( !$this->existARVInCART($dbx, $art) ){
+      if( !$this->existARVInCART($dbx, $art, $clinicid) ){
         $this->addError("[tblcart] ARVNumber: ". $art. " does not exist in tblcart with ClinicId: ".$clinicid);
         return false ;
       }
@@ -78,11 +78,13 @@
       return true ;
     }
     
-    public function existARVInCART($dbx, $art){
-      $sql = " SELECT  count(*) as total FROM tblcart WHERE art = ? " ; 
+    public function existARVInCART($dbx, $art, $clinicid){
+      $sql = " SELECT  count(*) as total FROM tblcart WHERE art = ? AND clinicid = ? " ; 
       $command = $dbx->createCommand($sql);
       
       $command->bindParam(1, $art, PDO::PARAM_STR);
+      $command->bindParam(2, $clinicid, PDO::PARAM_STR);
+      
       $row = $command->queryRow();
       return $row["total"];
    }

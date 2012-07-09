@@ -125,7 +125,7 @@
      );
      
      foreach($elements as $element){
-       $result = $aimainControl->existARTInART($this->dbx, $element["art"]);
+       $result = $aimainControl->existARTInART($this->dbx, $element["art"], $element["clinicid"]);
        $this->assertEquals((bool)$result, (bool)$element["result"] );
      }
    }

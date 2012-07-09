@@ -66,7 +66,7 @@
       $art = $this->record["ArtNumber"] ;
       $clinicid = DaRecordReader::getIdFromRecord("tblaimain", $this->record); 
       
-      if( !$this->existARTInART($dbx, $art) ){
+      if( !$this->existARTInART($dbx, $art, $clinicid) ){
         $this->addError("ArtNumber: ". $art. " does not exist in tblart with CLinicId: ".$clinicid);
         return false ;
       }
@@ -79,11 +79,13 @@
       return true ;
    } 
    
-   public function existARTInART($dbx, $art){
-      $sql = " SELECT  count(*) as total FROM tblart WHERE art = ? " ; 
+   public function existARTInART($dbx, $art, $clinic){
+      $sql = " SELECT  count(*) as total FROM tblart WHERE art = ?  AND clinicid = ? " ; 
       $command = $dbx->createCommand($sql);
       
       $command->bindParam(1, $art, PDO::PARAM_STR);
+      $command->bindParam(2, $clinic, PDO::PARAM_STR);
+      
       $row = $command->queryRow();
       return $row["total"];
    }

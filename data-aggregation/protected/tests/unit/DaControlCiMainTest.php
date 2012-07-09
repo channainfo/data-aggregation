@@ -26,7 +26,7 @@
      );
      
      foreach($elements as $element){
-       $result = $cimainControl->existARVInCART($this->dbx, $element["art"]);
+       $result = $cimainControl->existARVInCART($this->dbx, $element["art"], $element["clinicid"]);
        $this->assertEquals((bool)$result, (bool)$element["result"]);
      }
    }

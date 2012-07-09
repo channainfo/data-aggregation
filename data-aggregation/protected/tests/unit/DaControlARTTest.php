@@ -36,7 +36,7 @@
      $result = $this->instance->check();
      $this->assertEquals($result, false);
      $this->assertEquals(count($this->instance->errors), 1);
-     $this->assertEquals(preg_match("/\[Date]/i", $this->instance->errors[0]), 1 ); // $this->instance->errors[0])
+     $this->assertEquals(preg_match("/\[ARTDate]/i", $this->instance->errors[0]), 1 ); // $this->instance->errors[0])
    }
    
    public function testCheckWithARTNumARTDate() {

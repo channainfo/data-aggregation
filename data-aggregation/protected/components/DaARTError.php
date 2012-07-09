@@ -27,6 +27,9 @@
       }
       return $this->type ;    
    }
+   public function __toString() {
+     return $this->art;
+   }
    
    public function getErrorType(){
       return $this->type ;

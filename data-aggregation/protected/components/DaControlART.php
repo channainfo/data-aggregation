@@ -5,8 +5,6 @@
    * ART date should not be in year 1900 
    * ART number for children : start with 'p'
    */ 
-
-   
    
    /**
     * @throws DaInvalidControlException 
@@ -16,28 +14,23 @@
     }
     
     public function checkARTDate(){
-      $valid = true ;
-      try{ DaChecker::dateVisit($this->record["ARTDate"]);
+      $yearError = new DaYearError($this->record["ARTDate"]);
+      if($yearError->getErrorType() !== DaYearError::ERR_NONE){
+        $this->addError("Invalid [ARTDate] : {$yearError}");
+        return false;
       }
-      catch(Exception $ex){
-        $valid = false;
-        $this->addError($ex->getMessage());
-      }
-      return $valid ;
+      return true;
     }
   
     /**
      * @return boolean 
      */
     public function checkARTNumber(){
-      $valid = true ;
-      try{
-        $valid = DaChecker::artNum($this->record["ART"]);
+      $artError = new DaARTError($this->record["ART"]);
+      if($artError->getErrorType() != DaARTError::ERR_NONE){
+        $this->addError("Invalid [ART] number {$artError} . ");
+        return false;
       }
-      catch(Exception $ex){
-        $valid = false ;
-        $this->addError($ex->getMessage());
-      }
-      return $valid ;
+      return true ;
     }
  }
