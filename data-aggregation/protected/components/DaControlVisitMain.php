@@ -10,17 +10,23 @@ abstract class DaControlVisitMain extends DaControl {
     * @throws DaInvalidControlException 
     */   
    public function checkDateVisit(){
-     
-     try{
-       DaChecker::dateVisit($this->record["DateVisit"]);
-       return true ;
+     $yearError = new DaYearError($this->record["DateVisit"]);
+     if($yearError->getErrorType() != DaYearError::ERR_NONE){
+       $this->addError("[DateVisit] invalid: \"{$yearError}\" ");
+       return false;
      }
-     catch(Exception $ex){
-       $this->addError($ex->getMessage());
-       return false ;
+     return true;
+   } 
+   
+   public function checkARTNumber(){
+     $art = trim($this->record["ARTNum"]);
+     if($art == "")
+       return true;
+     $artError = new DaARTError($art);
+     if($artError->getErrorType() != DaARTError::ERR_NONE){
+       $this->addError("[ARTNum] invalid {$artError} .");
+       return false;
      }
+     return true ;
    }
-   
-   
-   
 }

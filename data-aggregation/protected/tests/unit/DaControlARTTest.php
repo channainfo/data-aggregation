@@ -21,6 +21,14 @@
      $this->assertEquals($this->instance->errors, array());
    }
    
+   public function testCheckWithEmptyART(){
+     $this->instance->setRecord($this->valid);
+     $result = $this->instance->check($this->valid);    
+     $this->assertEquals($result, true);
+     $this->assertEquals($this->instance->errors, array());
+   }
+   
+   
    public function testCheckWithInvalidARTNum(){
      $record = array_merge($this->valid, array("ART" =>  "12345678909"));
      $this->instance->setRecord($record);
