@@ -32,8 +32,8 @@
      */
     public function checkTranIn($dbx){
       if(DaChecker::offYesNo($this->record["OffYesNo"])){
-        
-        if(trim($this->record["OffTransferin"]) == ""){
+        $isEmpty = empty($this->record["OffTransferin"]);
+        if($isEmpty){
           $this->addError("Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty ");
           return false ;
         }

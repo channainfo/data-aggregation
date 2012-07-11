@@ -16,13 +16,11 @@
      * @throws DaInvalidControlException 
      */
     public function checkDateVisit(){
-       try{
-         DaChecker::dateVisit($this->record["DateVisit"]);
-         return true;
-       }
-       catch(Exception $ex){
-         $this->addError($ex->getMessage());
-         return false;
-       }
+     $yearError = new DaYearError($this->record["DateVisit"]);
+     if($yearError->getErrorType() != DaYearError::ERR_NONE){
+       $this->addError("[DateVisit] invalid: \"{$yearError}\" ");
+       return false;
+     }
+     return true;
     }
  }

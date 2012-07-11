@@ -6,8 +6,7 @@
    }
    
    public function testCountRecord(){
-     
-     $total = DaDbHelper::countRecord(Yii::app()->db, "tblaimain");
-     $this->assertEquals($total, 5);
+     $total = DaDbHelper::countRecord(Yii::app()->db, "da_drug_controls");
+     $this->assertEquals($total, 17);
    }
  }

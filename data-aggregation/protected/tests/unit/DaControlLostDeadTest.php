@@ -70,16 +70,17 @@ class DaControlLostDeadTest extends CDbTestCase {
    public function testLoadErrorLostDead(){
      $dbX = $this->getDbx();
      $evLostDead = new DaControlEvLostDead();
-     $clinicids = array( array("123456", true), array("123456", true) , 
-                         array("1234567", true), array("1234567", true), 
-                         array("12345678", true) , array("12345678", true) ,
-                         array("123456789", false), array("123456789", false),
-                         array("1234567890", false), array("1234567890", false),
+     $clinicids = array( array("123456", true),  
+                         array("1234567", false),  
+                         array("12345678", true) , 
+                         array("123456789", false),
+                         array("1234567890", false)
      );
 
      foreach($clinicids as  $clinicid ){
-       $error = $evLostDead->loadErrorLostDead($dbX, $clinicid[0]);
-       $this->assertEquals($error, $clinicid[1]);
+       $hasError = $evLostDead->loadErrorLostDead($dbX, $clinicid[0]);
+       //echo "\n result:{$hasError}-expected:{$clinicid[1]} ";
+       $this->assertEquals($hasError, $clinicid[1]);
      }
    }
    public function testLoadErrorsLostDead(){

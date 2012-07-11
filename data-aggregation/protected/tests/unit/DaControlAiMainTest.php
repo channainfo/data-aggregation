@@ -121,7 +121,7 @@
          array("art" => "190100001"   , "clinicid" => "000001    ", "result" => true ),
          array("art" => "190100001   ", "clinicid" => "000001 ", "result" => true),
          array("art" => "000019    "   , "clinicid" => "000019   ", "result" => false ),
-         array("art" => "190100020   ", "clinicid" => "000020   ", "result" => true ),
+         array("art" => "1901020   ", "clinicid" => "000020   ", "result" => true ),
      );
      
      foreach($elements as $element){
@@ -134,13 +134,14 @@
      $aimainControl = new DaControlAiMain();
      $elements = array(
          array("art" => "190100005"    , "clinicid" => "000005  ", "result" => true ),
-         array("art" => "1901000060 " , "clinicid" => "000006 ", "result" => true),
+         array("art" => "190100006" , "clinicid" => "000006 ", "result" => true),
          array("art" => "190100001  "   , "clinicid" => "000001 ", "result" => true ),
          array("art" => "190100006   " , "clinicid" => "000006 ", "result" => true ),
          array("art" => "xxxx" , "clinicid" => "000005  ", "result" => false ),
      );
      foreach($elements as $element){
        $result = $aimainControl->existARTInAvMain($this->dbx, $element["art"], $element["clinicid"]);
+       //echo "\n result: $result-expected:{$element["result"]}";
        $this->assertEquals((bool)$result, (bool)$element["result"] );
      }
    }
@@ -149,7 +150,7 @@
    public function testCheckTranIn(){
      $elements= array(
                       array("record" => array("OffYesNo"=>"Yes",
-                                              "OffTransferin" => "yes", 
+                                              "OffTransferin" => " Yes", 
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "190100005",
@@ -157,7 +158,7 @@
                             "result" => true, "err" =>"" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
-                                              "OffTransferin" => "yes", 
+                                              "OffTransferin" => " yes", 
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "19010000x",
@@ -165,7 +166,7 @@
                             "result" => false, "err" => "ArtNumber: 19010000x does not exist" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
-                                              "OffTransferin" => "yes", 
+                                              "OffTransferin" => "yes ", 
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "1900-08-08" ,
                                               "ArtNumber" => "19010000",

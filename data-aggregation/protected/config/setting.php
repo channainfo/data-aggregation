@@ -1,7 +1,5 @@
 <?php    
   return array(
-     'tblaiarvtreatment' => array( 'clinicid','clinic' ) ,
-	'tblaimain' => array( 'clinicid','age','sex','pclinicid','id' ) ,
-	'tblcimain' => array( 'clinicid','eclinicid','id' ) ,
-	'tbleimain' => array( 'clinicid','id' ) 
+     'table1' => array( 'col1','col2','col3','col4','col5' ) ,
+	'table2' => array( 'a1','a2','a3','a4','a5' ) 
 );      

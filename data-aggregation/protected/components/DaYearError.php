@@ -1,6 +1,6 @@
 <?php
  class DaYearError extends DaError {
-   private $date;
+   private $date = "";
    const ERR_1900 = 1;
    const ERR_EMPTY = 2;
    const ERR_NONE = 0 ;
@@ -28,6 +28,6 @@
    }
    
    public function __toString() {
-     return $this->date;
+     return "".$this->date;
    }
  }

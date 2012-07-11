@@ -12,9 +12,11 @@
     public $error = false;
 
     public function check($options=array()) {
-      $valid = $this->checkLDDate() && $this->checkLostDead($options);
+      $dbx = $options["dbx"];
+      $clinicid = $options["clinicid"];
+      $valid = $this->checkLDDate() && $this->checkLostDead($dbx, $clinicid);
       if(!$valid)
-        $this->loadRecords ($options["dbX"], $options["clinicid"]);
+        $this->loadRecords ($dbx, $clinicid );
       return $valid;
     } 
     /**
@@ -34,9 +36,9 @@
     * @return boolean
     * @throws DaInvalidControlException 
     */
-    public function checkLostDead($options){
+    public function checkLostDead($dbx, $clinicid){
       $valid = true ;
-      $this->loadErrorLostDead($options["dbX"], $options["clinicid"]);
+      $this->loadErrorLostDead($dbx, $clinicid);
       $tableName = $this->tableName();
       if($this->error){
         $status = trim($this->record['Status']) ;

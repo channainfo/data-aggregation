@@ -160,7 +160,7 @@ class UserController extends DaController{
 	{
     $model = new User();
     $criteria = new CDbCriteria();
-    $criteria->order = 'id DESC, login ASC';
+    $criteria->order = 't.id DESC, login ASC';
     $criteria->with = array("group") ;
     
     $itemCount = $model->count($criteria);

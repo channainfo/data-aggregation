@@ -145,6 +145,7 @@
         $this->importTablesFixed();
         
         $this->importIMain("tblaimain");
+        exit;
         $this->importIMain("tblcimain");
         
         if($this->isTableExistInMssql("tbleimain"))
@@ -153,15 +154,15 @@
         $this->_endImporting(ImportSiteHistory::SUCCESS);
      }
      catch(DaInvalidStatusException $ex){
-        echo $ex->getMessage();
+        DaTool::debug($ex->getTraceAsString(),0,0);
      }
      catch(DaInvalidDbException $ex){
-       echo $ex->getMessage();
+       DaTool::debug($ex->getTraceAsString(),0,0);
        //$this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
-       echo $ex->getMessage();
+       DaTool::debug($ex->getTraceAsString(),0,0);
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
    }
@@ -301,7 +302,7 @@
          $this->incPatientTotal($table, "total");
          
          $control->setRecord($record);
-         if($control->check()){
+         if($control->check(array("dbx" => $this->dbX))){
             $this->beginTransaction();
             try {
                 if($this->addRecord($record, $table)){
@@ -326,10 +327,12 @@
                 }
            }
            catch(DaInvalidDbException $ex){
+             DaTool::debug($ex->getTraceAsString(),0,0);
              $this->rollback();
              throw $ex ;
            }
            catch(Exception $ex){
+             DaTool::debug($ex->getTraceAsString(),0,0);
              $this->rollback();
              $this->addRejectPatient($record, $table );
            }
@@ -346,6 +349,11 @@
       DaTool::p(" finished in : " . ($f-$s). " second(s)") ;
       DaDbHelper::endIgnoringForeignKey($this->db);
    }
+   
+   public function getTotalPatientIter(){
+     return $this->patientIter ;
+   }
+   
    public function addRecordErrors($record, $table){
      $this->recordErrors[$table][] = $record;
    }
@@ -387,13 +395,12 @@
      $sqlX = DaRecordReader::getReader($table);
      $dataReader = $this->getRecordReader($sqlX, $patientId);
      $control = DaControlImport::getControlInstance($table);
-     
+     $options = array("dbx"=>$this->dbX);
      foreach($dataReader as $record){
        $control->setRecord($record);
-       $options = array();
        if(get_class($control) == "DaControlEvMain")
           $options["dob"] = $this->currentPatient["DOB"];
-       
+              
        if($control->check($options)){
           if($this->addRecord($record, $table)) {
             $id = $this->getTableKeyValue($table, $record);
@@ -440,7 +447,7 @@
           $options = array();
           
           if(get_parent_class($control) == "DaControlLostDead"){
-            $options["dbX"] = $this->dbX;
+            $options["dbx"] = $this->dbX;
             $options["clinicid"] = $this->getTableKeyValue($this->patientTable, $this->currentPatient);
           }
           if($control->check($options)){
@@ -488,6 +495,7 @@
        return true ;
      }
      catch(Exception $ex){
+       DaTool::debug($ex->getMessage(),0,0);
        $this->rollback();
        throw new DaInvalidDbException($ex->getMessage());
      }
