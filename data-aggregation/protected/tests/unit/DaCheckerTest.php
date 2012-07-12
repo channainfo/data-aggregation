@@ -14,6 +14,20 @@
      }
    }
    
+   public function testIsEmpty(){
+     $elements = array(
+         array( "OffTransferin" => "", "result" => true),
+         array( "OffTransferin" => " ", "result" => true),
+         array( "OffTransferin" => "TaKeo ", "result" => false),
+         array( "OffTransferin" => " Kompongcham", "result" => false)
+     ); 
+     
+     foreach($elements as $element) {
+        $result = DaChecker::isEmpty($element["OffTransferin"]);
+        //echo "\n result:{$result}-expected:{$element["result"]}" ;
+        $this->assertEquals($result, $element["result"]);
+     }
+   }
    
    public function testOffYesNo(){
      $elements = array(

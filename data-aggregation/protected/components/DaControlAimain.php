@@ -24,7 +24,7 @@
       }
       return true;
     }
-    
+   
     /**
      *
      * @param CDbConnection $dbx
@@ -32,8 +32,7 @@
      */
     public function checkTranIn($dbx){
       if(DaChecker::offYesNo($this->record["OffYesNo"])){
-        $isEmpty = empty($this->record["OffTransferin"]);
-        if($isEmpty){
+        if(DaChecker::isEmpty($this->record["OffTransferin"])){
           $this->addError("Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty ");
           return false ;
         }

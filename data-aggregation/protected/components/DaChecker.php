@@ -21,6 +21,12 @@
       }
       return true ;
     }
+    
+    public static function isEmpty($value){
+      $isEmpty = trim($value);
+      return $isEmpty == "";
+    }
+    
     /**
      *
      * @param string $date

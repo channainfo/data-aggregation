@@ -39,7 +39,7 @@
     public function checkOfficeIn($dbx){
       if(DaChecker::offYesNo($this->record["OffYesNo"])){
         
-        if(trim($this->record["OfficeIn"]) == ""){
+        if( DaChecker::isEmpty($this->record["OfficeIn"])){
           $this->addError("Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes");
           return false;
         }

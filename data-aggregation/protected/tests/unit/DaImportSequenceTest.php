@@ -14,6 +14,9 @@
    
    public function setUp() {
      parent::setUp();
+     $daImporter = new DaImporter(Yii::app()->db);
+     $daImporter->truncate(true);
+     
      $this->createSite2();
    }
    
@@ -43,170 +46,116 @@
     $daImporter->truncate(true);
     
     $import = new DaImportSequence(Yii::app()->db, $this->site->code);
-    
     $import->importIMain("tblaimain");
-    
+            
     $patients = $this->getInsertedPatients("tblaimain", $this->site->code);
-    $rejectPatients = $import->rejectPatients("tblaimain");
+    $this->assertEquals(count($patients), 7);
+    
+    
+    $rejectPatients = $import->rejectPatients("tblaimain", 0 , 100);
+    $this->assertEquals(count($rejectPatients), 14);
     
     $total = $import->getTotalPatientIter();
+    $this->assertEquals(count($patients)+count($rejectPatients), $total);
     
-    echo "\n Info: total inserted: ".count($patients)." total rejected: ". count($rejectPatients)." total: $total";
-    echo "\n patient :" ;
-    print_r($patients);
+    $clinics = array("000004" ,"000005", "000006", "000007", "000008", "000010", "000016");
     
+    foreach($patients as $index => $patient){
+      //echo "\n result : {$patient["CLinicID"]}-expected: {$clinics[$index]}";
+      $found = array_search(trim($patient["CLinicID"]), $clinics);
+      $this->assertNotEquals($found, false);
+    }
     
-//    $this->assertEquals( count($patients), 5);
-//    $this->assertEquals( $this->strEqual($patients[0]["CLinicID"], "000002"), true);
-//    $this->assertEquals( $this->strEqual($patients[1]["CLinicID"], "000003"), true);
-//    $this->assertEquals( $this->strEqual($patients[2]["CLinicID"], "000004"), true);
-//    $this->assertEquals( $this->strEqual($patients[3]["CLinicID"], "000008"), true);
-//    $this->assertEquals( $this->strEqual($patients[4]["CLinicID"], "0000010"), true);
-    
-    
-    
-    $totalPatients = array(
-        "000002" => array(
-            "tblavmain" => array( 
-                                  "tblavlostdead" => 2 , 
-                                  "tblavarv" => 2 , 
-                                  "tblAVTBdrugs" => 1, 
-                                  "tblappoint" =>1, 
-                                  "tblAVOIdrugs" => 2, 
-                                  "tblAVTB" => 1 ),
-            "tblaimain" => array( "tblavmain" => 2, 
-                                  "tblavlostdead" => 2,
-                                  "tblaiothermedical" => 3, 
-                                  "tblart" => 1, 
-                                  "tblAIIsoniazid" => 1,
-                                  "tblAIARVTreatment" => 1,
-                                  "tblAIDrugAllergy" => 1, 
-                                  "tblAICotrimo" => 1, 
-                                  "tblAIOthPasMedical" => 1,
-                                  "tblAIFamily" => 3, 
-                                  "tblAITBPastMedical" => 1,
-                                  "tblAIFluconazole" => 1, 
-                                  "tblAITraditional" =>1,
-                                  "tblPatientTest" => 4,
-                                ),
-            "tblpatienttest" => array(
-                                "tblTestCXR" => 7,
-                                "tbltestAbdominal" => 3 
-             )
-            ),
-        "000003" => array(
-            "tblavmain" => array( 
-                                  "tblavlostdead" => 1 , 
-                                  "tblavarv" => 1 , 
-                                  "tblAVTBdrugs" => 0, 
-                                  "tblappoint" =>1, 
-                                  "tblAVOIdrugs" => 2, 
-                                  "tblAVTB" => 2 ),
-            "tblaimain" => array( "tblavmain" => 9, 
-                                  "tblavlostdead" => 1,
-                                  "tblaiothermedical" => 0, 
-                                  "tblart" => 0, 
-                                  "tblAIIsoniazid" => 1,
-                                  "tblAIARVTreatment" => 0,
-                                  "tblAIDrugAllergy" => 1, 
-                                  "tblAICotrimo" => 1, 
-                                  "tblAIOthPasMedical" => 1,
-                                  "tblAIFamily" => 4, 
-                                  "tblAITBPastMedical" => 1,
-                                  "tblAIFluconazole" => 1, 
-                                  "tblAITraditional" =>1,
-                                  "tblPatientTest" => 3,
-                                ),
-            "tblpatienttest" => array(
-                                "tblTestCXR" => 4,
-                                "tbltestAbdominal" => 2 
-             )
-            ),
+    $elements = array(
+              "avmain" => array(        
+                      "avlostdead" => array(0,1,2,1,0,0,0),
+                      "avarv" => array(3,10,6,6,6,1,1),
+                      "avlostdead" => array(0,1,0,0,2,2,0),
+                      "avtb" => array(0,2,3,1,0,0,0),
+                      "appoint" => array(0,3,1,1,2,0,0),
+                      "avoidrugs" => array(5,0,0,4,2,0,0),
+                      "avtbdrugs" => array(1,2,1,0,0,0,3),
+                      ),
+            
+               "aimain" => array(   
+                      "avmain" => array(3,5,3,4,2,1,1),       
+                      "aitraditional" => array(1,1,1,1,1,1,0),
+                      "art" => array(1,0,1,1,1,1,1),
+                      "aiarvtreatment" => array(1,1,1,1,1,0,1),
+                      "aidrugallergy" => array(0,1,1,1,0,1,1),
+                      "aicotrimo" => array(1,0,1,1,0,1,1),
+                      "aiothpasmedical" => array(1,1,1,1,1,0,0),
+                      "aifamily" => array(3,3,4,6,1,3,0),
+                      "aitbpastmedical" => array(1,1,1,1,1,1,1),
+                      "aifluconazole" => array(0,0,1,1,1,1,1),
+                      "aiothermedical" => array(0,1,0,0,2,0,0),
+                      "aiisoniazid" => array(1,1,0,0,0,0,0),
+                      "patienttest" => array(0,6,12,3,4,2,5),
+                     ),
+            
+               "test" => array(       
+                      "testcxr" => array(0,2,3,0,0,0,3),
+                      "testabdominal" => array(0,1,2,4,0,2,0)
+                      )
     );
     
-//    foreach($totalPatients as $clinicid => $record){
-//      foreach($record["tblavmain"] as $table => $count ){
-//        $rows = $this->getAVChildRecords($table, $clinicid, $this->site->code);
-//        $this->assertEquals(count($rows), $count);
-//        
-//      }
-//      foreach($record["tblaimain"] as $table => $count){
-//        $rows = $this->getAiChildRecords($table, $clinicid, $this->site->code);
-//        $this->assertEquals(count($rows), $count);
-//      }
-//      
-//      foreach($record["tblpatienttest"] as $table => $count){
-//        $rows = $this->getPatientTestChildRecords($table, $clinicid, $this->site->code);
-//        $this->assertEquals(count($rows), $count);
-//      }
-//    }
-    
-    
-    /** success patients 
-     * 000002,
-     * ---AVMain
-     *     2:tblavmain , 1:tblavlostdead, 2:tblavarv, 1:tblAVTBdrugs, 1:tblappoint, 2:tblAVOIdrugs, 0:tblAVTB 
-     * ---AiMain
-     *     3:tblaiothermedical, 1:tblart, 1:tblAIIsoniazid, 1:tblAIDrugAllergy, 1:tblAICotrimo
-     *     1:tblAIOthPasMedical, 2:tblAIFamily, 1:tblAITBPastMedical, 1:tblAIFluconazole, 1:tblAITraditional       
-     * 000003, 
-     * 000004, 
-     * 000008,
-     * 000010 
-     *  
-     */
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    echo "\n\n reject ";
-    //print_r($rejectPatients);
-    
-    foreach($rejectPatients as $rejectPatient){
-      $p = $this->unserializePatient($rejectPatient);
-
-      echo "\n error patient ";
-      print_r($p["record"]);
-      echo "\n error message ";
-      print_r($p["message"]);
-      
-      
-      
-      
+    foreach($clinics as $clinicIndex => $clinicId){
+       foreach($elements as $section => $tableList){
+          foreach($tableList as $tableName => $tableValue){
+              $tblName = "tbl".$tableName ;
+              $expected = $tableValue[$clinicIndex];
+              $result = $this->countElements($section, $tblName, $clinicId);
+              //echo "\n *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
+              $this->assertEquals($result, $expected);
+          }
+       }
     }
-//    $this->assertEquals(count($rejectPatients),5);
-//    
-//    $rejectPatient = $this->unserializePatient($rejectPatients[0]);
-//    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00001"),true);
-//    $this->assertEquals(preg_match("/DateFirstVisit/i", $rejectPatient["message"]["0"]),1);
-//    $this->assertEquals( $this->strEqual($rejectPatient["err_records"]["tblaimain"][0]["CLinicID"],"00001"),true);
-//    
-//    $rejectPatient = $this->unserializePatient($rejectPatients[1]);
-//    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00005"),true);
-//    
-//    $rejectPatient = $this->unserializePatient($rejectPatients[2]);
-//    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00006"),true);
-//    
-//    $rejectPatient = $this->unserializePatient($rejectPatients[3]);
-//    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00007"),true);
-//    
-//    $rejectPatient = $this->unserializePatient($rejectPatients[4]);
-//    $this->assertEquals( $this->strEqual($rejectPatient["record"]["CLinicID"],"00009"),true);
     
-    /** rejectPatients
-     * 000001 : tblaimain DateFirstVisit 1900
-     * 000005 : tblavlostdead status
-     * 000006 : tblaimain  Artnumber 1234567890
-     * 000007 : tblavarv   Arv = [blah] invalid
-     * 000009 : tblavlostdead 
-     * 
-     */
+    $elements = array(  "000001" => "Invalid [DateFirstVisit]" ,
+                        "000002"=> "[tblaimain] invalid sex Gay" ,
+                        "000003"=> "Invalid [ARV] . [ARV] = ['yyy'] is not in '( 3TC,ABC,AZT," ,
+                        "000009"=> "[tblaimain] invalid sex TranSex" ,
+                        "000011"=> "Invalid transferin. [OffYesNo=Yes] so OffTransferin should not be empty" ,
+                        "000012"=> "DateStaART should not be in year 1900" ,
+                        "000013"=> "ArtNumber:  does not exist in tblart with CLinicId: 000013" ,
+                        "000014"=> "ArtNumber: 111122223  does not exist in tblart with CLinicId: 000014" ,
+                        "000015"=> "ArtNumber: 190100015  does not exist in tblavmain with CLinicId: 000015" ,
+                        "000017"=> "Invalid tblavlostdead. [Date] = '2010-09-01" ,
+                        "000018"=> "Invalid tblavlostdead. [Date] = '2008-07-09 00:00:00" ,
+                        "000019"=> "Invalid [ARV] . [ARV] = ['pppp'] is not in '( 3TC,ABC" ,
+                        "000020"=> "Invalid [ART] number for adult: [ART]= ['1901020 " ,
+                        "000021"=> "ArtNumber: 190100021  does not exist in tblart with CLinicId: 000021" 
+    );
+    
+    foreach($rejectPatients as $index => $rejectPatient){
+      $p = $this->unserializePatient($rejectPatient);
+      $record = $p["record"];
+      $message = $p["message"][0];
+      $clinicId = trim($record["CLinicID"]);
+      //echo "\n clinicid:{$record["CLinicID"]}-err:{$message}";
+      $this->assertEquals(isset($elements[$clinicId]), true);
+      $this->assertNotEquals(strpos($message, $elements[$clinicId]),false);
+    }
+    
+  }
+  
+  public function countElements($section, $table, $clinicId){
+    $db = Yii::app()->db;
+      
+    if($section == "aimain")
+       $sql = " SELECT count(*) as total FROM $table WHERE clinicid = ?";
+    
+    else if($section == "avmain")
+      $sql = " SELECT count(*) as total FROM $table WHERE av_id in (SELECT av_id FROM tblavmain WHERE clinicid= ? )" ;
+      
+    else if($section == "test")
+      $sql = " SELECT count(*) as total FROM $table WHERE testid in (SELECT testid FROM tblpatienttest WHERE clinicid= ? )" ;
+
+    $command = $db->createCommand($sql);
+    $command->bindParam(1, $clinicId, PDO::PARAM_STR);
+    $row = $command->queryRow();
+ 
+    return $row["total"] ;
   }
   
   public function testImportEIMain(){

@@ -145,7 +145,6 @@
         $this->importTablesFixed();
         
         $this->importIMain("tblaimain");
-        exit;
         $this->importIMain("tblcimain");
         
         if($this->isTableExistInMssql("tbleimain"))
@@ -158,7 +157,6 @@
      }
      catch(DaInvalidDbException $ex){
        DaTool::debug($ex->getTraceAsString(),0,0);
-       //$this->patientTotal = array(); 
        $this->_endImporting(ImportSiteHistory::FAILED, $ex->getMessage());
      }
      catch(Exception $ex){
@@ -178,7 +176,6 @@
         $this->_importTableFixed($table, $cols);
      }
    }
-      
    /**
     *
     * @param string $table
@@ -273,7 +270,6 @@
       catch (Exception $ex) {
         throw new DaInvalidDbException($ex->getMessage());
       }
-     
    }  
    
    public function importIMain($table){
@@ -284,14 +280,12 @@
       $totalRecord = DaDbHelper::countRecord($this->dbX, $table);
       $r = 1 ;
       $randomUpdate = $this->getRandomRecordUpdate();
-
      
       $this->patientTable = $table ;
       $dataReader = $this->getRecordReader("SELECT * FROM {$table}");
       $control = DaControlImport::getControlInstance($table);
       
-      
-      $this->patientIter = 1;
+      $this->patientIter = 0;
       foreach($dataReader as $record){
          $this->processImportHistoryUpdate($totalRecord, $r++, $randomUpdate, $table, $record);
          
@@ -496,6 +490,7 @@
      }
      catch(Exception $ex){
        DaTool::debug($ex->getMessage(),0,0);
+       DaTool::debug($ex->getTraceAsString(),0,0);
        $this->rollback();
        throw new DaInvalidDbException($ex->getMessage());
      }

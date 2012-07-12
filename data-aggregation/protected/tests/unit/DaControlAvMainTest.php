@@ -18,7 +18,7 @@
                       array($this->key => "000001" , "ARTNum"=> "190100001" , "result" => true),
                       array($this->key => "000002" , "ARTNum"=> "123456000 " , "result" => false),
                       array($this->key => "000004" , "ARTNum"=> "19010000x " , "result" => false),
-                      array($this->key => "000005" , "ARTNum"=> "190100005 " , "result" => true),
+                      array($this->key => "000005" , "ARTNum"=> "190100005 " , "result" => false),
                       array($this->key => "000011" , "ARTNum"=> "190100011   " , "result" => true),
      );
      

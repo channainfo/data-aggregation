@@ -20,7 +20,7 @@
      $this->instance = DaControlImport::getControlInstance("tblaimain");
      parent::setUp();
    }
-    
+
    public function testCheck(){
      $elements= array(
                       array("record" => array("OffYesNo"=>"",
@@ -39,7 +39,7 @@
                                               "ArtNumber" => "190100005",
                                               "Sex" => "Male",
                                               $this->key => "000005"),
-                            "result" => true, "err" =>""
+                            "result" => false, "err" =>"ArtNumber: 190100005 does not exist in tblart"
                              ),
                       array("record" => array("OffYesNo"=>"Yes",
                                               "OffTransferin" => "yes", 
@@ -78,23 +78,21 @@
                             "result" => false, "err" =>"Invalid [ART] number"
                              ),
          );
-      foreach($elements as $element) {
+      foreach($elements as $index => $element) {
         $aiMain = new DaControlAiMain();
         $aiMain->setRecord($element["record"]);
-        
         $result = $aiMain->check(array("dbx" => $this->dbx));
-        $errors = $aiMain->getErrors();
         
+        //echo "\n {$index} result:{$result}-expected:{$element["result"]}";
         $this->assertEquals((bool)$result, $element["result"]);
+       
         
-        //echo "result:{$result}-expected:{$element["result"]}";
-        //print_r($errors);
         
         if(!$result)
           $this->assertEquals(count($aiMain->getErrors ()),1);
         
-        if(count($errors))
-         $this->assertNotEquals(strpos($errors[0], $element["err"]), false );
+        if(count($aiMain->errors))
+          $this->assertNotEquals(strpos($aiMain->errors[0], $element["err"]), false );
       }
    }
    
@@ -133,15 +131,15 @@
    public function testExistARTInAvMain(){
      $aimainControl = new DaControlAiMain();
      $elements = array(
-         array("art" => "190100005"    , "clinicid" => "000005  ", "result" => true ),
+         array("art" => "190100005" , "clinicid" => "000005  ", "result" => false ),
          array("art" => "190100006" , "clinicid" => "000006 ", "result" => true),
-         array("art" => "190100001  "   , "clinicid" => "000001 ", "result" => true ),
-         array("art" => "190100006   " , "clinicid" => "000006 ", "result" => true ),
-         array("art" => "xxxx" , "clinicid" => "000005  ", "result" => false ),
+         array("art" => "190100007" , "clinicid" => "000007 ", "result" => true),
+         array("art" => "190100008" , "clinicid" => "000008 ", "result" => true),
+         
      );
      foreach($elements as $element){
        $result = $aimainControl->existARTInAvMain($this->dbx, $element["art"], $element["clinicid"]);
-       //echo "\n result: $result-expected:{$element["result"]}";
+       //echo "\n ARTInAvMain result: $result-expected:{$element["result"]}";
        $this->assertEquals((bool)$result, (bool)$element["result"] );
      }
    }
@@ -153,8 +151,8 @@
                                               "OffTransferin" => " Yes", 
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "2009-08-08" ,
-                                              "ArtNumber" => "190100005",
-                                              $this->key => "000005"),
+                                              "ArtNumber" => "190100006",
+                                              $this->key => "000006"),
                             "result" => true, "err" =>"" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
@@ -162,7 +160,7 @@
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "19010000x",
-                                              $this->key => "000005"),
+                                              $this->key => "000006"),
                             "result" => false, "err" => "ArtNumber: 19010000x does not exist" ),
          
                       array("record" => array("OffYesNo"=>"Yes",
@@ -170,7 +168,7 @@
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "1900-08-08" ,
                                               "ArtNumber" => "19010000",
-                                              $this->key => "000005"),
+                                              $this->key => "000006"),
                             "result" => false, "err" => "DateStaART should not be in year 1900" ),
          
          
@@ -181,7 +179,7 @@
                                               "DateFirstVisit" => "2009-09-09", 
                                               "DateStaART" => "2009-08-08" ,
                                               "ArtNumber" => "19010000",
-                                              $this->key => "000005"),
+                                              $this->key => "000006"),
                             "result" => false, "err" => "Invalid transferin."),
          
                        
@@ -196,12 +194,12 @@
          
      );
      
-     foreach($elements as $element){
+     foreach($elements as $index => $element){
        $aimainControl = new DaControlAiMain();
        $aimainControl->setRecord($element["record"]);
        $result = $aimainControl->checkTranIn($this->dbx);
+       //echo "\n {$index} result:{$result}-expected:{$element["result"]}";
        $this->assertEquals((bool)$result, (bool)$element["result"]);
-       
        if(!$result)
         $this->assertEquals(count($aimainControl->getErrors()), 1);
        

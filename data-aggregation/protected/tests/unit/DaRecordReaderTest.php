@@ -10,4 +10,9 @@
      $this->assertEquals($sql, "SELECT * FROM tblavmain WHERE ClinicId = ?");
    }
    
+   public function testGetReaderPatient(){
+     $sql = DaRecordReader::getReader("tblpatienttest");
+     $this->assertEquals($sql, "SELECT * FROM tblpatienttest WHERE ClinicId = ?");
+   }
+   
  }
