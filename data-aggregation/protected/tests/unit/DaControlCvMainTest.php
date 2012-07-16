@@ -30,7 +30,8 @@
        $this->assertEquals($result, $element["result"]);
        $errors = $cvmain->getErrors();
        if(count($errors)){
-         $this->assertNotEquals(strpos($errors[0], "[ARTNum] P19010000x does not exist"), false);
+         $exist = strpos($errors[0], "[ARTNum] P19010000x does not exist") !== false ;
+         $this->assertTrue($exist);
        }
      }
    }
@@ -55,7 +56,8 @@
      $errors = $evMain->getErrors();
      //print_r($errors);
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[DateVisit] invalid:"), false);
+     $exist = strpos($errors[0],"[DateVisit] invalid:") !== false ;
+     $this->assertTrue($exist);
    }
    
    public function testCheckInvalidARTNum(){
@@ -68,7 +70,8 @@
      $errors = $evMain->getErrors();
      //print_r($errors);
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[ARTNum] invalid pp123456789"), false);
+     $exist = strpos($errors[0],"[ARTNum] invalid pp123456789") !== false ;
+     $this->assertTrue($exist);
    }
    
    public function testCheckInvalidARTinARTTable(){
@@ -81,6 +84,7 @@
      $errors = $evMain->getErrors();
      //print_r($errors);
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[ARTNum] P190100010 does not exist in tblcart ."), false); 
+     $exist = strpos($errors[0],"[ARTNum] P190100010 does not exist in tblcart .") !== false ;
+     $this->assertTrue($exist); 
    }
  }

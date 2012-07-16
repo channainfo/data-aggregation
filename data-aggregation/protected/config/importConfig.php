@@ -1,4 +1,4 @@
-  <?php    
+<?php    
   return array(
     "tables" => array(
        'tblaiarvtreatment' => array( 'clinicid','detaildrugtreat','clinic','startdate','stopdate','reasonstop','id' ) ,

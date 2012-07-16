@@ -57,5 +57,3 @@
     $this->download($file);
    }
  }
-?>
-  

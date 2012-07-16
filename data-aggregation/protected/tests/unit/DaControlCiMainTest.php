@@ -136,8 +136,10 @@
        
        $errors = $cimainControl->getErrors();
        //print_r($errors);
-       if(count($errors))
-        $this->assertNotEquals( strpos($errors[0], $element["err"]) , false);
+       if(count($errors)){
+        $exist = strpos($errors[0], $element["err"]) !== false ;   
+        $this->assertTrue($exist);
+       }
      }
    }
    
@@ -155,7 +157,8 @@
         $this->assertEquals($result, false);
         $this->assertEquals(count($ciControl->getErrors()),1);
         $errors = $ciControl->getErrors();
-        $this->assertNotEquals(strpos($errors[0], "Invalid [DateVisit]:"),false);
+        $exist = strpos($errors[0], "Invalid [DateVisit]:") !== false ;
+        $this->assertTrue($exist);
    }
    
    
@@ -216,15 +219,16 @@
         $ciMain->setRecord($element["record"]);
         $result = $ciMain->check(array("dbx"=>$this->dbx));
         
-        echo "result: {$result}-expected:{$element["result"]}\n";
+        //echo "result: {$result}-expected:{$element["result"]}\n";
         //print_r($ciMain->getErrors());
         
-//        $this->assertEquals((bool)$result, $element["result"]);
-//        $errors = $ciMain->getErrors();
-//        
-//        if(count($errors)){
-//          $this->assertNotEquals(strpos($errors[0], $element["error"]), false);
-//        }
+        $this->assertEquals((bool)$result, $element["result"]);
+        $errors = $ciMain->getErrors();
+        
+        if(count($errors)){
+          $exist = strpos($errors[0], $element["error"]) !== false ;
+          $this->assertTrue($exist);
+        }
       }
    }
   }

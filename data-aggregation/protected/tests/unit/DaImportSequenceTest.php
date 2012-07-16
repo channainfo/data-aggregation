@@ -59,7 +59,8 @@
     foreach($patients as $index => $patient){
       //echo "\n result : {$patient["CLinicID"]}-expected: {$clinics[$index]}";
       $found = array_search(trim($patient["CLinicID"]), $clinics);
-      $this->assertNotEquals($found, false);
+      $exist = $found !== false ;
+      $this->assertTrue($exist);
     }
     
     $elements = array(
@@ -101,7 +102,7 @@
               $tblName = "tbl".$tableName ;
               $expected = $tableValue[$clinicIndex];
               $result = $this->countElements($section, $tblName, $clinicId);
-              //echo "\n *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
+              //echo "\n -".($result == $expected) ."- *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
               $this->assertEquals($result, $expected);
           }
        }
@@ -130,11 +131,10 @@
       $clinicId = trim($record["CLinicID"]);
       //echo "\n clinicid:{$record["CLinicID"]}-err:{$message}";
       $this->assertEquals(isset($elements[$clinicId]), true);
-      $this->assertNotEquals(strpos($message, $elements[$clinicId]),false);
+      $exist = strpos($message, $elements[$clinicId]) !== false ;
+      $this->assertTrue( $exist);
     }
-    
   }
-  
   
   public function testImportCiMain(){
     
@@ -163,7 +163,7 @@
     $elements = array(
               "cvmain" => array(        
                       "cvlostdead" => array(1,2,1),
-                      "cvarv" => array(4,4,2),
+                      "cvarv" => array(4,13,11),
                       "cvtb" => array(6,8,4),
                       "cvoi" => array(8,6,6),
                       "cvarvoi" => array(11,10,7),
@@ -195,8 +195,8 @@
               $tblName = "tbl".$tableName ;
               $expected = $tableValue[$clinicIndex];
               $result = $this->countElements($section, $tblName, $clinicId);
-              echo "\n *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
-              //$this->assertEquals($result, $expected);
+              //echo "\n *" .($result === $expected) ." ** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
+              $this->assertEquals($result, $expected);
           }
        }
     }
@@ -204,7 +204,7 @@
     $elements = array(  "P000001" => "Invalid [OfficeIn]. [OfficeIn]" ,
                         "P000002" => "Invalid [DateVisit]: 1900-03-19 00:00:00.000" ,
                         "P000003" => "[tblcimain] invalid sex. Gay" ,
-                        "P000016" => "[tblcvmain] ARVNumber: P190100016 does not exist in tblcvmain with ClinicId: p000016" ,
+                        "P000016" => "[tblcvmain] ARVNumber: P190100016 does not exist in tblcvmain with ClinicId: P000016" ,
                         "P000017" => "[tblcart] ARVNumber: P190100017 does not exist in tblcart with ClinicId: P000017" ,
                         "P000018" => "Invalid [ARVNumber] :123456" ,
                         "P000005" => "Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes" ,
@@ -220,9 +220,9 @@
       $message = $p["message"][0];
       $clinicId = trim($record["ClinicID"]);
       //echo "\n result clinicid:{$record["ClinicID"]}-expected:$elements[$clinicId]";
-      //echo "\n result message: $message-expected:$elements[$clinicId] ";
-      //$this->assertEquals(isset($elements[$clinicId]), true);
-      $this->assertNotEquals(strpos($message, $elements[$clinicId]),false);
+      $this->assertEquals(isset($elements[$clinicId]), true);
+      $exist = strpos($message, $elements[$clinicId]) !== false ;
+      $this->assertTrue($exist);
     }
     
   }
@@ -238,132 +238,96 @@
   public function countElements($section, $table, $clinicId){
     $db = Yii::app()->db;
       
-    if($section == "aimain" || $section == "cimain" )
+    if($section == "aimain" || $section == "cimain" || $section == "eimain" )
        $sql = " SELECT count(*) as total FROM $table WHERE clinicid = ?";
     
     else if($section == "avmain")
       $sql = " SELECT count(*) as total FROM $table WHERE av_id in (SELECT av_id FROM tblavmain WHERE clinicid= ? )" ;
     else if($section == "cvmain")
       $sql = " SELECT count(*) as total FROM $table WHERE cid in (SELECT cid FROM tblcvmain WHERE clinicid= ? )" ;
+    else if($section == "evmain"){
+      $sql = " SELECT count(*) as total FROM $table WHERE eid in (SELECT eid FROM tblevmain WHERE clinicid= ? )" ;
+    }
       
     else if($section == "test")
       $sql = " SELECT count(*) as total FROM $table WHERE testid in (SELECT testid FROM tblpatienttest WHERE clinicid= ? )" ;
-
-    
     
     $command = $db->createCommand($sql);
     $command->bindParam(1, $clinicId, PDO::PARAM_STR);
     $row = $command->queryRow();
- 
     return $row["total"] ;
   }
   
   public function testImportEIMain(){
-//     $this->removeRejectPatients("tblaimain");
-//     
-//     $import = new DaImportSequence(Yii::app()->db, $this->site->code );
-//     $import->importIMain("tbleimain");
-//     
-//     $rejectPatients = $import->rejectPatients("tbleimain");
-//     $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
-//     echo "\n\npatient :" ;
-//     print_r($patients);
-//     echo "\n\nreject :" ;
-//     print_r($rejectPatients);
+     $import = new DaImportSequence(Yii::app()->db, $this->site->code );
+     $import->importIMain("tbleimain");
+     
+     $rejectPatients = $import->rejectPatients("tbleimain");
+     $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
+     
+     $clinics = array("123", "1234", "1234567890");
+     foreach($patients as $index => $patient){
+       //echo "\n result: {$patient["ClinicID"]}- result: $clinics[$index] " ;
+       $this->assertEquals(trim($patient["ClinicID"]), $clinics[$index]);
+     }
+     
+     $elements = array(
+              "evmain" => array(        
+                      "evlostdead" => array(2,0,2),
+                      "evarv" => array(3,0,2)
+                      ),
+            
+               "cimain" => array(   
+                      "evmain" => array(2,0,1),       
+                      "patienttest" => array(1,1,1),
+                     ),
+            
+               "test" => array(       
+                      "testcxr" => array(2,1,4),
+                      "testabdominal" => array(1,2,2)
+                      )
+    );
+    
+    foreach($clinics as $clinicIndex => $clinicId){
+       foreach($elements as $section => $tableList){
+          foreach($tableList as $tableName => $tableValue){
+              $tblName = "tbl".$tableName ;
+              $expected = $tableValue[$clinicIndex];
+              $result = $this->countElements($section, $tblName, $clinicId);
+              //echo "\n clinic:{$clinicId} *" .($result === $expected) ." ** result:{$result}-expected:{$expected}, table:{$tblName}";
+              $this->assertEquals($result, $expected);
+          }
+       }
+    }
+    
      
      
-//     $this->assertEquals(count($patients), 3);
-//
-//     $this->assertEquals($patients[0]["ClinicID"], "123");
-//     $this->assertEquals($patients[1]["ClinicID"], "1234");
-//     $this->assertEquals($patients[1]["ClinicID"], "1234567890");
-//     
-//     $this->assertEquals(count($rejectPatients), 6);
-//     
-//     $patient1 = $this->unserializePatient($rejectPatients[0]);
-//     $this->assertEquals( preg_match("/Year should not be 1900/i", $patient1["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient1["err_records"]["tbleimain"][0]["ClinicID"] , "12"), true );
-//     $this->assertEquals( $this->strEqual($patient1["record"]["ClinicID"], "12" ), true);
-//     
-//     $patient2 = $this->unserializePatient($rejectPatients[1]);
-//     $this->assertEquals( preg_match("/Year should not be 1900/i", $patient2["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient2["err_records"]["tbleimain"][0]["ClinicID"] , "12345"), true );
-//     $this->assertEquals( $this->strEqual($patient2["record"]["ClinicID"], "12345" ), true);
-//     
-//     $patient3 = $this->unserializePatient($rejectPatients[2]);
-//     $this->assertEquals( preg_match("/Status/i", $patient3["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient3["err_records"]["tblevlostdead"][0]["ClinicID"] , "123456"), true );
-//     $this->assertEquals( $this->strEqual($patient3["record"]["ClinicID"], "123456" ), true);
-//     
-//
-//     $patient4 = $this->unserializePatient($rejectPatients[3]);
-//     $this->assertEquals( preg_match("/\[ARV\]/i", $patient4["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient4["err_records"]["tblevarv"][0]["ARV"] , "ppp"), true );
-//     $this->assertEquals( $this->strEqual($patient4["record"]["ClinicID"], "1234567" ), true);
-//     
-//     $patient5 = $this->unserializePatient($rejectPatients[4]);
-//     $this->assertEquals( preg_match("/Status/i", $patient5["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient5["err_records"]["tblevlostdead"][0]["ClinicID"] , "12345678"), true );
-//     $this->assertEquals( $this->strEqual($patient5["record"]["ClinicID"], "12345678" ), true);
-//     
-//     
-//     
-//     $patient6 = $this->unserializePatient($rejectPatients[5]);
-//     $this->assertEquals( preg_match("/Patient is not under 2 years old/i", $patient6["message"][0])> 0 , true );
-//     $this->assertEquals( $this->strEqual($patient6["err_records"]["tblevmain"][0]["ClinicID"] , "123456789"), true );
-//     $this->assertEquals( $this->strEqual($patient6["record"]["ClinicID"], "123456789" ), true);
-//     
-//     $visits = $this->getVisitMain("tblevmain", $this->site->code, "123");
-//     $this->assertEquals( count($visits),2);
-//     $this->assertEquals( $this->strEqual($visits[0]["ClinicID"],"123"), true);
-//     $this->assertEquals( $this->strEqual($visits[1]["ClinicID"],"123"), true);
-//     
-//     $visits = $this->getVisitMain("tblevmain", $this->site->code, "1234567890");
-//     $this->assertEquals( count($visits),1);
-//     $this->assertEquals( $this->strEqual($visits[0]["ClinicID"],"1234567890"), true);
-//     $this->assertEquals( $this->strEqual($visits[0]["EID"],"14"), true);
-//     
-//     
-//     $lostdeads = $this->getEvLostDead($this->site->code, "1234567890");
-//     $this->assertEquals(count($lostdeads), 2);
-//     $this->assertEquals($this->strEqual($lostdeads[0]["ClinicID"], "1234567890"), true);
-//     $this->assertEquals($this->strEqual($lostdeads[0]["EID"], "14"), true);
-//     $this->assertEquals($this->strEqual($lostdeads[0]["Status"], "dead"), true);
-//     
-//     $this->assertEquals($this->strEqual($lostdeads[1]["ClinicID"], "1234567890"), true);
-//     $this->assertEquals($this->strEqual($lostdeads[1]["EID"], "14"), true);
-//     $this->assertEquals($this->strEqual($lostdeads[1]["Status"], "lost"), true);
-//     
-//     $arvs = $this->getEvARV($this->site->code, 14);
-//     $this->assertEquals(count($arvs), 1);
-//     $this->assertEquals($arvs[0]["ARV"], "ddI");
      
+     $elements = array( "12"        => '[DateVisit] invalid: "1900-01-01 00:00:00.000"' ,
+                        "12345"     => '[DateVisit] invalid: "1900-01-01 00:00:00.000"' ,
+                        "123456"    => '[DateVisit] invalid: ""' ,
+                        "1234567"   => "Invalid [ARV] . [ARV] = ['ppp'] is not in '( 3TC,ABC,AZT,d4T,ddI,EFV,IDV" ,
+                        "12345678"  => "Invalid tblevlostdead. [Date] = '2008-04-03 00:00:00.000'" ,
+                        "123456789" => "Patient is not under 2 years old" ,
+     );
+     
+     foreach($rejectPatients as $rejectPatient){
+      $p = $this->unserializePatient($rejectPatient);
+      $clinicid = trim($p["record"]["ClinicID"]); 
+      $message = $p["message"][0];
+      $exist = strpos($message, $elements[$clinicid]) !== false;
+      //echo "\n clinic: {$clinicid} - result  :$message  ";
+      //echo "\n expected:{$elements[$clinicid]}" ;
+      $this->assertTrue($exist);
+     }
    }
    
-   private function strEqual($str1, $str2){
-     return trim($str1) == trim($str2) ;
-   }
    private function unserializePatient($patient){
       return array( "message" => unserialize($patient["message"]),
               "err_records" => unserialize($patient["err_records"]),
               "record" => unserialize($patient["record"])
            );
      
-   }
-   private function getEvLostDead($code, $clinicid){
-     $sql = " select * from tblevlostdead WHERE ID = ? AND ClinicID = ?" ;
-     $command = Yii::app()->db->createCommand($sql);
-     $command->bindParam(1, $code);
-     $command->bindParam(2, $clinicid);
-     return $command->queryAll();
-   }
-   
-   private function getEvARV($code, $eid){
-     $sql = " select * from tblevarv WHERE ID = ? AND Eid = ?" ;
-     $command = Yii::app()->db->createCommand($sql);
-     $command->bindParam(1, $code);
-     $command->bindParam(2, $eid);
-     return $command->queryAll();
    }
    
    private function getInsertedPatients($table, $code){
@@ -373,14 +337,7 @@
      $records = $command->queryAll();
      return $records ;
    }
-   private function getVisitMain($table, $code, $clinicid){
-     $sql = " select * from {$table} WHERE ID = ? AND ClinicID = ?" ;
-     $command = Yii::app()->db->createCommand($sql);
-     $command->bindParam(1, $code);
-     $command->bindParam(2, $clinicid);
-     return $command->queryAll();
-   }
-   
+
    public function cleanUp(){
      $tables = array("da_reject_patients", "da_import_site_histories", "da_siteconfigs", "tbleimain", "tblevmain" , "tblevlostdead", "tblevarv");
      $this->truncateTables($tables);
@@ -401,33 +358,4 @@
      $command = $db->createCommand($sql);
      $command->execute();
    }
-   
-   private function getAVChildRecords($table, $clinicId, $id){
-     $sql = "Select * from {$table} where av_id in (SELECT av_id from tblavmain where tblavmain.clinicid = '{$clinicId}' AND id='{$id}' )" ;
-     $commandX = Yii::app()->db->createCommand($sql);
-//     echo "\n".$sql ;
-     
-//     $commandX->bindParam(1, $clinicId, PDO::PARAM_STR );
-//     $commandX->bindParam(2, $id, PDO::PARAM_STR );
-     
-     return $commandX->queryAll();
-   }
-   
-   private function getAiChildRecords($table, $clinicId, $id){
-     $sql = "Select * from {$table} where clinicid = '{$clinicId}' AND id ='{$id}' " ;
-     $commandX = Yii::app()->db->createCommand($sql);
-//     echo "\n" .$sql ;
-//     $commandX->bindParam(1, $clinicId, PDO::PARAM_STR );
-//     $commandX->bindParam(2, $id, PDO::PARAM_STR );
-     
-     return $commandX->queryAll();
-   }
-
-   private function getPatientTestChildRecords($table, $clinicId, $id){
-     $sql = "Select * from {$table} where testid in (SELECT testid from tblPatientTest where tblPatientTest.clinicid = '{$clinicId}' AND id='{$id}' )" ;
-     $commandX = Yii::app()->db->createCommand($sql);
-     return $commandX->queryAll();
-   }
-   
-   
  }

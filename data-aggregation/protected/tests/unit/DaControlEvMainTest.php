@@ -27,7 +27,8 @@
      
      $this->assertEquals($result, false);
      $this->assertEquals(count($this->instance->errors), 1 );
-     $this->assertNotEquals(strpos($this->instance->errors[0],"[DateVisit] invalid"), false);
+     $exist = strpos($this->instance->errors[0],"[DateVisit] invalid") !==false ;
+     $this->assertTrue($exist);
    }
    
    public function testCheckWithInvalidAge(){
@@ -36,7 +37,8 @@
      
      $this->assertEquals($result, false);
      $this->assertEquals(count($this->instance->errors), 1 );
-     $this->assertNotEquals(strpos($this->instance->errors[0],"Patient is not under 2 years old"), false);
+     $exist = strpos($this->instance->errors[0],"Patient is not under 2 years old") !== false;
+     $this->assertTrue($exist);
    }
    
    

@@ -15,7 +15,8 @@
      
      $errors = $avmain->getErrors();
      $this->assertEquals(count($errors), 1) ;
-     $this->assertNotEquals(strpos($errors[0], "[DateVisit] invalid"), false);
+     $exist = strpos($errors[0], "[DateVisit] invalid") !==false;
+     $this->assertTrue($exist);
    }
    
    public function testCheckARTNumber(){
@@ -31,7 +32,8 @@
      $this->assertEquals($result, false);
      $errors = $avmain->getErrors();
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0], "[ARTNum] invalid"), false);
+     $exist = strpos($errors[0], "[ARTNum] invalid") !== false ;
+     $this->assertTrue($exist);
      
      
    }

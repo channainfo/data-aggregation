@@ -10,7 +10,7 @@
      * @param string $user
      * @param string $password
      * @param string $db
-     * @throws Exception 
+     * @throws DaDbConnectionException 
      */
     public function connect($host, $user, $password , $db){
        if($this->connection)
@@ -38,7 +38,7 @@
         foreach($errors as $error){
           $messages[] = $error["message"];
         }
-        throw new Exception( implode("\n", $messages));
+        throw new DaDbConnectionException( implode("\n", $messages));
       }
       return $connection; 
     }

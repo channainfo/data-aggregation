@@ -11,12 +11,12 @@
        foreach($databases as $database){
           $db = new DaDbConnection();
           $db->connect($host,$user,$passwrod, $database);
-          $this->assertEquals(true, $db->isConnected());
+          $this->assertEquals(true, (bool)$db->isConnected());
           unset($db);
        }
      }
      /**
-     * @expectedException Exception
+     * @expectedException DaDbConnectionException
      */
      public function testConnectionFailed(){
        $host = "localhost";
