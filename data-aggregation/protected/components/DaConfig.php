@@ -24,7 +24,11 @@
     * @return string value in web root dir -> webroot/data/ 
     */
    public static function pathDataStore(){
-     return dirname(__FILE__)."/../../data/";
+     $path = dirname(__FILE__)."/../../data/";
+     if(!file_exists($path)){
+         self::mkDir($path);
+     }
+     return $path ;
    }
    
    public static function mkDir($dir){

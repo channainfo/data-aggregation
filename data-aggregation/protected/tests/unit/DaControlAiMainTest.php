@@ -91,8 +91,10 @@
         if(!$result)
           $this->assertEquals(count($aiMain->getErrors ()),1);
         
-        if(count($aiMain->errors))
-          $this->assertNotEquals(strpos($aiMain->errors[0], $element["err"]), false );
+        if(count($aiMain->errors)){
+          $exist = strpos($aiMain->errors[0], $element["err"]) !==false ;
+          $this->assertTrue($exist, true);
+        }
       }
    }
    
@@ -204,8 +206,10 @@
         $this->assertEquals(count($aimainControl->getErrors()), 1);
        
        $errors = $aimainControl->getErrors();
-       if(count($errors))
-        $this->assertNotEquals( strpos($errors[0], $element["err"]) , false);
+       if(count($errors)){
+        $exist = strpos($errors[0], $element["err"]) !== false ;
+        $this->assertTrue($exist);
+       }
      }
    }
    

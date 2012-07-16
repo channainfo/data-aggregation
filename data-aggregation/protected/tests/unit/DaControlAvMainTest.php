@@ -49,7 +49,8 @@
      $this->assertEquals($result, false);
      $errors = $avMain->getErrors();
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[DateVisit] invalid:"), false);
+     $exist = strpos($errors[0],"[DateVisit] invalid:") !==false ;
+     $this->assertTrue($exist);
    }
    
    public function testCheckInvalidARTNum(){
@@ -62,7 +63,8 @@
      $errors = $avMain->getErrors();
      //print_r($errors);
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[ARTNum] invalid pp123456789"), false);
+     $exist = strpos($errors[0],"[ARTNum] invalid pp123456789") !== false ;
+     $this->assertTrue($exist);
    }
    
    public function testCheckInvalidARTinARTTable(){
@@ -75,7 +77,8 @@
      $errors = $avMain->getErrors();
      //print_r($errors);
      $this->assertEquals(count($errors), 1);
-     $this->assertNotEquals(strpos($errors[0],"[ARTNum]: 190100001 does exist in table tblart"), false); 
+     $exist = strpos($errors[0],"[ARTNum]: 190100001 does exist in table tblart") !== false ;
+     $this->assertTrue($exist); 
    }
    
    
