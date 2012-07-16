@@ -17,6 +17,7 @@
      $daImporter = new DaImporter(Yii::app()->db);
      $daImporter->truncate(true);
      
+     $this->truncateRejectPatients();
      $this->createSite2();
    }
    
@@ -39,12 +40,7 @@
      $this->import->save() ;
    }
 
-  public function testImportAiMain(){
-    $this->removeRejectPatients("tbleimain");
-    
-    $daImporter = new DaImporter(Yii::app()->db);
-    $daImporter->truncate(true);
-    
+  public function testImportAiMain(){   
     $import = new DaImportSequence(Yii::app()->db, $this->site->code);
     $import->importIMain("tblaimain");
             
@@ -139,18 +135,122 @@
     
   }
   
+  
+  public function testImportCiMain(){
+    
+    $import = new DaImportSequence(Yii::app()->db, $this->site->code);
+    $import->importIMain("tblcimain");
+            
+    $patients = $this->getInsertedPatients("tblcimain", $this->site->code);
+    $this->assertEquals(count($patients), 3);
+    
+    
+    $rejectPatients = $import->rejectPatients("tblcimain", 0 , 100);
+    $this->assertEquals(count($rejectPatients), 10);
+    
+    $total = $import->getTotalPatientIter();
+    $this->assertEquals(count($patients)+count($rejectPatients), $total);
+    
+    $clinics = array("P000004", "P000006", "P000010" );
+    
+    foreach($patients as $index => $patient){
+      //echo "\n result : {$patient["CLinicID"]}-expected: {$clinics[$index]}";
+      //print_r($patient);
+      //$found = array_search(trim($patient["CLinicID"]), $clinics);
+      //$this->assertNotEquals($found, false);
+    }
+    
+    $elements = array(
+              "cvmain" => array(        
+                      "cvlostdead" => array(1,2,1),
+                      "cvarv" => array(4,4,2),
+                      "cvtb" => array(6,8,4),
+                      "cvoi" => array(8,6,6),
+                      "cvarvoi" => array(11,10,7),
+                      ),
+            
+               "cimain" => array(   
+                      "cvmain" => array(5,4,4),       
+                      "citraditional" => array(1,1,0),
+                      "cart" => array(1,1,1),
+                      "ciarvtreatment" => array(2,1,3),
+                      "cidrugallergy" => array(3,2,1),
+                      "cicotrimo" => array(1,1,0),
+                      "ciothpastmedical" => array(4,4,1),
+                      "cifamily" => array(3,3,3),
+                      "citbpastmedical" => array(3,1,2),
+                      "cifluconazole" => array(1,0,1),
+                      "patienttest" => array(4,2,3),
+                     ),
+            
+               "test" => array(       
+                      "testcxr" => array(5,5,9),
+                      "testabdominal" => array(10,5,6)
+                      )
+    );
+    
+    foreach($clinics as $clinicIndex => $clinicId){
+       foreach($elements as $section => $tableList){
+          foreach($tableList as $tableName => $tableValue){
+              $tblName = "tbl".$tableName ;
+              $expected = $tableValue[$clinicIndex];
+              $result = $this->countElements($section, $tblName, $clinicId);
+              echo "\n *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
+              //$this->assertEquals($result, $expected);
+          }
+       }
+    }
+    
+    $elements = array(  "P000001" => "Invalid [OfficeIn]. [OfficeIn]" ,
+                        "P000002" => "Invalid [DateVisit]: 1900-03-19 00:00:00.000" ,
+                        "P000003" => "[tblcimain] invalid sex. Gay" ,
+                        "P000016" => "[tblcvmain] ARVNumber: P190100016 does not exist in tblcvmain with ClinicId: p000016" ,
+                        "P000017" => "[tblcart] ARVNumber: P190100017 does not exist in tblcart with ClinicId: P000017" ,
+                        "P000018" => "Invalid [ARVNumber] :123456" ,
+                        "P000005" => "Invalid [OfficeIn]. [OfficeIn] should not be empty when [OffYesNo]= Yes" ,
+                        "P000007" => "[tblcart] ARVNumber: P190100007 does not exist in tblcart with ClinicId: P000007" ,
+                        "P000008" => "[ARTNum] P030000008 does not exist in tblcart" ,
+                        "P000009" => "Invalid [ARV] . [ARV] = ['kkkk'] is not in '( 3TC,ABC,AZT,d4T," ,
+    );
+    
+    foreach($rejectPatients as $index => $rejectPatient){
+      $p = $this->unserializePatient($rejectPatient);
+      $record = $p["record"];
+      //print_r($record);
+      $message = $p["message"][0];
+      $clinicId = trim($record["ClinicID"]);
+      //echo "\n result clinicid:{$record["ClinicID"]}-expected:$elements[$clinicId]";
+      //echo "\n result message: $message-expected:$elements[$clinicId] ";
+      //$this->assertEquals(isset($elements[$clinicId]), true);
+      $this->assertNotEquals(strpos($message, $elements[$clinicId]),false);
+    }
+    
+  }
+  
+  
+  /**
+   *
+   * @param type $section
+   * @param type $table
+   * @param type $clinicId
+   * @return type 
+   */
   public function countElements($section, $table, $clinicId){
     $db = Yii::app()->db;
       
-    if($section == "aimain")
+    if($section == "aimain" || $section == "cimain" )
        $sql = " SELECT count(*) as total FROM $table WHERE clinicid = ?";
     
     else if($section == "avmain")
       $sql = " SELECT count(*) as total FROM $table WHERE av_id in (SELECT av_id FROM tblavmain WHERE clinicid= ? )" ;
+    else if($section == "cvmain")
+      $sql = " SELECT count(*) as total FROM $table WHERE cid in (SELECT cid FROM tblcvmain WHERE clinicid= ? )" ;
       
     else if($section == "test")
       $sql = " SELECT count(*) as total FROM $table WHERE testid in (SELECT testid FROM tblpatienttest WHERE clinicid= ? )" ;
 
+    
+    
     $command = $db->createCommand($sql);
     $command->bindParam(1, $clinicId, PDO::PARAM_STR);
     $row = $command->queryRow();
@@ -295,11 +395,10 @@
      DaDbHelper::endIgnoringForeignKey($db);
    }
    
-   public function removeRejectPatients($table){
+   public function truncateRejectPatients(){
      $db = Yii::app()->db ;
-     $sql = "DELETE  FROM da_reject_patients WHERE tableName= ?";
+     $sql = "truncate da_reject_patients ";
      $command = $db->createCommand($sql);
-     $command->bindParam(1, $table, PDO::PARAM_STR);
      $command->execute();
    }
    
