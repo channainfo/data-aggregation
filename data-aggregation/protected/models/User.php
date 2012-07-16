@@ -22,6 +22,8 @@ class User extends DaActiveRecordModel
   public static $STATUS = array("Inactive", "Active");
   const ADMIN = "1" ;
   const VIEWER = "2" ;
+  const INACTIVE = 0;
+  const ACTIVE = 1;
   
  
   /**
