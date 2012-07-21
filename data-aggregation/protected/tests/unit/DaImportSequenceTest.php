@@ -45,16 +45,18 @@
     $import->importIMain("tblaimain");
             
     $patients = $this->getInsertedPatients("tblaimain", $this->site->code);
-    $this->assertEquals(count($patients), 7);
+    $this->assertEquals(count($patients), 8);
     
     
     $rejectPatients = $import->rejectPatients("tblaimain", 0 , 100);
     $this->assertEquals(count($rejectPatients), 14);
     
-    $total = $import->getTotalPatientIter();
-    $this->assertEquals(count($patients)+count($rejectPatients), $total);
     
-    $clinics = array("000004" ,"000005", "000006", "000007", "000008", "000010", "000016");
+    $total = $import->getTotalPatientIter();
+    $warning = 1 ;
+    $this->assertEquals(count($patients)+count($rejectPatients), $total + $warning );
+    
+    $clinics = array("000004" ,"000005", "000006", "000007", "000008", "000010", "000016", "000017");
     
     foreach($patients as $index => $patient){
       //echo "\n result : {$patient["CLinicID"]}-expected: {$clinics[$index]}";
@@ -65,34 +67,33 @@
     
     $elements = array(
               "avmain" => array(        
-                      "avlostdead" => array(0,1,2,1,0,0,0),
-                      "avarv" => array(3,10,6,6,6,1,1),
-                      "avlostdead" => array(0,1,0,0,2,2,0),
-                      "avtb" => array(0,2,3,1,0,0,0),
-                      "appoint" => array(0,3,1,1,2,0,0),
-                      "avoidrugs" => array(5,0,0,4,2,0,0),
-                      "avtbdrugs" => array(1,2,1,0,0,0,3),
+                      "avlostdead" => array(0,1,0,0,2,2,0,2),
+                      "avarv" => array(3,10,6,6,6,1,1,3),
+                      "avtb" => array(0,2,3,1,0,0,0,0),
+                      "appoint" => array(0,3,1,1,2,0,0,0),
+                      "avoidrugs" => array(5,0,0,4,2,0,0,0),
+                      "avtbdrugs" => array(1,2,1,0,0,0,3,0),
                       ),
             
                "aimain" => array(   
-                      "avmain" => array(3,5,3,4,2,1,1),       
-                      "aitraditional" => array(1,1,1,1,1,1,0),
-                      "art" => array(1,0,1,1,1,1,1),
-                      "aiarvtreatment" => array(1,1,1,1,1,0,1),
-                      "aidrugallergy" => array(0,1,1,1,0,1,1),
-                      "aicotrimo" => array(1,0,1,1,0,1,1),
-                      "aiothpasmedical" => array(1,1,1,1,1,0,0),
-                      "aifamily" => array(3,3,4,6,1,3,0),
-                      "aitbpastmedical" => array(1,1,1,1,1,1,1),
-                      "aifluconazole" => array(0,0,1,1,1,1,1),
-                      "aiothermedical" => array(0,1,0,0,2,0,0),
-                      "aiisoniazid" => array(1,1,0,0,0,0,0),
-                      "patienttest" => array(0,6,12,3,4,2,5),
+                      "avmain" => array(3,5,3,4,2,1,1,1),       
+                      "aitraditional" => array(1,1,1,1,1,1,0,0),
+                      "art" => array(1,0,1,1,1,1,1,1),
+                      "aiarvtreatment" => array(1,1,1,1,1,0,1,0),
+                      "aidrugallergy" => array(0,1,1,1,0,1,1,0),
+                      "aicotrimo" => array(1,0,1,1,0,1,1,0),
+                      "aiothpasmedical" => array(1,1,1,1,1,0,0,0),
+                      "aifamily" => array(3,3,4,6,1,3,0,0),
+                      "aitbpastmedical" => array(1,1,1,1,1,1,1,0),
+                      "aifluconazole" => array(0,0,1,1,1,1,1,0),
+                      "aiothermedical" => array(0,1,0,0,2,0,0,0),
+                      "aiisoniazid" => array(1,1,0,0,0,0,0,0),
+                      "patienttest" => array(0,6,12,3,4,2,5,15),
                      ),
             
                "test" => array(       
-                      "testcxr" => array(0,2,3,0,0,0,3),
-                      "testabdominal" => array(0,1,2,4,0,2,0)
+                      "testcxr" => array(0,2,3,0,0,0,3,0),
+                      "testabdominal" => array(0,1,2,4,0,2,0,0)
                       )
     );
     
@@ -102,7 +103,7 @@
               $tblName = "tbl".$tableName ;
               $expected = $tableValue[$clinicIndex];
               $result = $this->countElements($section, $tblName, $clinicId);
-              //echo "\n -".($result == $expected) ."- *** result:{$result}-expected:{$expected}, table:{$tblName}, clinic:{$clinicId}";
+              //echo "\n - clinic:{$clinicId}, table:{$tblName}".($result == $expected) ."- *** result:{$result}-expected:{$expected}";
               $this->assertEquals($result, $expected);
           }
        }
@@ -117,8 +118,8 @@
                         "000013"=> "ArtNumber:  does not exist in tblart with CLinicId: 000013" ,
                         "000014"=> "ArtNumber: 111122223  does not exist in tblart with CLinicId: 000014" ,
                         "000015"=> "ArtNumber: 190100015  does not exist in tblavmain with CLinicId: 000015" ,
-                        "000017"=> "Invalid tblavlostdead. [Date] = '2010-09-01" ,
-                        "000018"=> "Invalid tblavlostdead. [Date] = '2008-07-09 00:00:00" ,
+                        "000017"=> "Invalid tblavlostdead. [Date] = '2010-09-01 12:00:00.000'",
+                        "000018"=> "Invalid [LDDate] = 1900-07-09 00:00:00.000 in [tblavlostdead]" ,
                         "000019"=> "Invalid [ARV] . [ARV] = ['pppp'] is not in '( 3TC,ABC" ,
                         "000020"=> "Invalid [ART] number for adult: [ART]= ['1901020 " ,
                         "000021"=> "ArtNumber: 190100021  does not exist in tblart with CLinicId: 000021" 
@@ -264,27 +265,27 @@
      
      $rejectPatients = $import->rejectPatients("tbleimain");
      $patients = $this->getInsertedPatients("tbleimain", $this->site->code);
+     $clinics = array("123", "1234","12345678", "1234567890");
      
-     $clinics = array("123", "1234", "1234567890");
      foreach($patients as $index => $patient){
-       //echo "\n result: {$patient["ClinicID"]}- result: $clinics[$index] " ;
+       //echo "\n result: {$patient["ClinicID"]}- expected: $clinics[$index] " ;
        $this->assertEquals(trim($patient["ClinicID"]), $clinics[$index]);
      }
      
      $elements = array(
               "evmain" => array(        
-                      "evlostdead" => array(2,0,2),
-                      "evarv" => array(3,0,2)
+                      "evlostdead" => array(2,0,1,2),
+                      "evarv" => array(3,0,2,2)
                       ),
             
-               "cimain" => array(   
-                      "evmain" => array(2,0,1),       
-                      "patienttest" => array(1,1,1),
+               "eimain" => array(   
+                      "evmain" => array(2,0,2,1),       
+                      "patienttest" => array(1,1,0,1),
                      ),
             
                "test" => array(       
-                      "testcxr" => array(2,1,4),
-                      "testabdominal" => array(1,2,2)
+                      "testcxr" => array(2,1,0,4),
+                      "testabdominal" => array(1,2,0,2)
                       )
     );
     
@@ -307,7 +308,7 @@
                         "12345"     => '[DateVisit] invalid: "1900-01-01 00:00:00.000"' ,
                         "123456"    => '[DateVisit] invalid: ""' ,
                         "1234567"   => "Invalid [ARV] . [ARV] = ['ppp'] is not in '( 3TC,ABC,AZT,d4T,ddI,EFV,IDV" ,
-                        "12345678"  => "Invalid tblevlostdead. [Date] = '2008-04-03 00:00:00.000'" ,
+                        "12345678"  => "Invalid tblevlostdead. [Date] =" ,
                         "123456789" => "Patient is not under 2 years old" ,
      );
      
@@ -316,7 +317,7 @@
       $clinicid = trim($p["record"]["ClinicID"]); 
       $message = $p["message"][0];
       $exist = strpos($message, $elements[$clinicid]) !== false;
-      //echo "\n clinic: {$clinicid} - result  :$message  ";
+      //echo "\n\n clinic: {$clinicid} - result  :$message  ";
       //echo "\n expected:{$elements[$clinicid]}" ;
       $this->assertTrue($exist);
      }

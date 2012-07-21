@@ -34,11 +34,11 @@ class DaController extends Controller {
      header("Content-type: application/octet-stream");
      header("Content-Disposition: attachment; filename={$basename}");
      header("Content-Transfer-Encoding: binary");
-     //readfile($fullName);
+     
      $handle = fopen($fullName, "rb");
      while (!feof($handle)) {
        echo fread($handle, 8192);
-       ob_flush();
+       //ob_flush();
      }
      fclose($handle); 
    }

@@ -24,14 +24,14 @@
     DaConfig::mkDir(DaConfig::pathDataStoreExport()); 
     $file = DaConfig::pathDataStoreExport()."reject_patient_{$_GET["import_site_history_id"]}.csv" ;
     if(!file_exists($file) || 1){
-      $command = Yii::app()->db->createCommand()->select('tableName , message, record, err_records')
+      $command = Yii::app()->db->createCommand()->select('tableName , message, record, err_records, reject_type')
                   ->from('da_reject_patients p')
                   ->where('import_site_history_id=:import_site_history_id', array(':import_site_history_id'=>$_GET["import_site_history_id"]) )
-                  ->order(" p.tableName ");
+                  ->order(" p.tableName, p.reject_type ");
       $dataReader = $command->query();
 
       $csv  = new DaCSV($file);
-      $csv->addRow( array("clinic" => "ClinicId", "patientType" => "Patient type", "message" => "Message" , "Table" ) );  
+      $csv->addRow( array("clinic" => "ClinicId", "patientType" => "Patient type", "message" => "Message" , "Table", "Type" ) );  
 
       foreach($dataReader as $record){
         $rows = array();
@@ -40,6 +40,8 @@
           $rows["clinic"] = DaRecordReader::getIdFromRecord($record["tableName"], $patient);
         }
         $rows["patientType"] = RejectPatient::patientType($record["tableName"]);
+        
+        
         
         if($record["message"]){
           $messages = unserialize($record["message"]);
@@ -50,6 +52,7 @@
           $rows["tableName"] = $table;
           break;
         }
+        $rows["type"] = RejectPatient::getRejectType($record["reject_type"]);
         $csv->addRow($rows);
       }
       $csv->generate();

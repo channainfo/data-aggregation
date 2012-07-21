@@ -6,6 +6,14 @@
   * @property SiteConfig $siteconfig
   * @property integer $start
   * @property integer $end 
+  * @property integer $rejectCount
+  * @property integer $recordErrors An array of in the form  recordErrors[patienTable][] = $recordCasueError
+  * @property integer $controlErrors  An array contain value of error of control $control->getErrors(), $error[] = "errorMessage"
+  * @property integer $currentPatientRecord current record of patient being imported
+  * @property integer $currentPatientTable current patient table being imported
+  * @property integer $patientIter current number of patient being imported
+  * @property integer $patientTotal total number of patient
+   
   * @property CDbTransaction $transaction
   *  
   */
@@ -18,16 +26,19 @@
    
    public $start = null;
    public $end = null ;
+   
    public $rejectCount = 0;
    public $recordErrors = array();
-   public $errors = array();
+   public $controlErrors = array();
    
-   public $currentPatient ;
-   public $patientTable ;
+   public $currentPatientRecord ;
+   public $currentPatientTable ;
    
    private $patientIter;
    private $patientTotal=array();
    
+   private $patientIdTemp ;
+     
    public function __destruct(){
      $this->dbX->setActive(false);
    }
@@ -44,7 +55,7 @@
    public function getDbX(){
      return $this->dbX;
    }
-   
+      
    /**
     *
     * @return SiteConfig 
@@ -82,7 +93,6 @@
     protected function isTableExistInMssql($tableName){
       return DaSqlHelper::isTableExistInMssql($tableName, $this->dbX);
     }
-
 
     protected function _startImporting(){
       $this->start = microtime(true);
@@ -247,7 +257,7 @@
       $this->transaction = null;
    }
    public function commit(){
-     $this->incPatientTotal($this->patientTable, "inserted");
+     $this->incPatientTotal($this->currentPatientTable, "inserted");
      if($this->transaction)
       $this->transaction->commit();
       $this->transaction = null;
@@ -281,17 +291,16 @@
       $r = 1 ;
       $randomUpdate = $this->getRandomRecordUpdate();
      
-      $this->patientTable = $table ;
+      $this->currentPatientTable = $table ;
       $dataReader = $this->getRecordReader("SELECT * FROM {$table}");
       $control = DaControlImport::getControlInstance($table);
       
       $this->patientIter = 0;
       foreach($dataReader as $record){
          $this->processImportHistoryUpdate($totalRecord, $r++, $randomUpdate, $table, $record);
-         
-         $this->recordErrors = array(); 
-         $this->errors = array();
-         $this->currentPatient = $record ;
+
+         $this->resetRecordError(); 
+         $this->currentPatientRecord = $record ;
          
          $this->incPatientTotal($table, "total");
          
@@ -316,7 +325,7 @@
 
                     else{
                       $this->rollback();
-                      $this->addRejectPatient($record, $table );
+                      $this->addRejectPatient();
                     }
                 }
            }
@@ -328,13 +337,12 @@
            catch(Exception $ex){
              DaTool::debug($ex->getTraceAsString(),0,0);
              $this->rollback();
-             $this->addRejectPatient($record, $table );
+             $this->addRejectPatient( );
            }
          }
          else{
-           $this->errors = $control->getErrors();
-           $this->addRecordErrors($record, $table);
-           $this->addRejectPatient($record, $table);
+           $this->addRecordErrors($control->getErrors(), $record, $table);
+           $this->addRejectPatient();
          }
          $this->patientIter ++;
       }
@@ -348,9 +356,16 @@
      return $this->patientIter ;
    }
    
-   public function addRecordErrors($record, $table){
+   public function addRecordErrors($errMessage, $record, $table){
      $this->recordErrors[$table][] = $record;
+     $this->controlErrors = $errMessage ;
    }
+   
+   public function resetRecordError(){
+     $this->recordErrors = array(); 
+     $this->controlErrors = array();
+   }
+   
    public function getTypeVisit($table){
      if($table == "tblaimain")
        return "tblavmain";
@@ -393,7 +408,7 @@
      foreach($dataReader as $record){
        $control->setRecord($record);
        if(get_class($control) == "DaControlEvMain")
-          $options["dob"] = $this->currentPatient["DOB"];
+          $options["dob"] = $this->currentPatientRecord["DOB"];
               
        if($control->check($options)){
           if($this->addRecord($record, $table)) {
@@ -404,8 +419,7 @@
           }
        }
        else{
-         $this->errors = $control->getErrors() ; 
-         $this->addRecordErrors($record, $table) ;
+         $this->addRecordErrors($control->getErrors(),$record, $table) ;
          break;
        }
      }
@@ -429,7 +443,11 @@
           break;
       }
    }
-   
+   /**
+    * @throws DaInvalidDbException
+    * @param string $table
+    * @param integer $parentId 
+    */
    public function importChild($table, $parentId){
       DaTool::pln("Importing: {$table}  with parent: {$parentId}" );
       $sqlX = DaRecordReader::getReader($table);
@@ -442,20 +460,37 @@
           
           if(get_parent_class($control) == "DaControlLostDead"){
             $options["dbx"] = $this->dbX;
-            $options["clinicid"] = $this->getTableKeyValue($this->patientTable, $this->currentPatient);
+            $options["clinicid"] = $this->getTableKeyValue($this->currentPatientTable, $this->currentPatientRecord);      
           }
+          
           if($control->check($options)){
-            if(!$this->addRecord($record, $table))
-                    break;
+            //this will through DaInvalidDbException
+            $this->addRecord($record, $table);
           }
           else{
-            $this->addRecordErrors($record, $table) ;
-            $this->errors = $control->getErrors(); 
-            break;
+              // check if failed in case of lostdead
+              if(get_parent_class($control) == "DaControlLostDead"){
+                //if error type is waring just act like success but need to add waring to reject patient
+                if($control->isWarning()){
+                  $this->addRecord($record, $table);
+                  $this->addRejectPatientWarning(array($table=> array($record)), $control->getErrors());
+                }
+                //just like normal error. reject the patient and skip other child
+                else{
+                   $this->addRecordErrors($control->getErrors(), $record, $table) ;
+                   break; 
+                }
+              }
+              // just normal error no warning
+              else{
+                $this->addRecordErrors($control->getErrors(), $record, $table) ;
+                break;
+              }
           }
         }
-        else if(!$this->addRecord($record, $table))
-                break ;
+        else 
+          $this->addRecord($record, $table);
+              
       }
       $dataReader->close();
    }
@@ -497,33 +532,60 @@
      return false;
      
    }
+   public function addRejectPatientWarning( $errorRecords, $errorMsg){
+     $patientId = $this->getTableKeyValue($this->currentPatientTable, $this->currentPatientRecord);
+     //only add reject only one time per patient
+     if($this->patientIdTemp != $patientId ){
+          $this->addPatientToTable( $this->currentPatientTable, 
+                               $this->currentPatientRecord, 
+                               $errorRecords, 
+                               $errorMsg, 
+                               RejectPatient::TYPE_WARNING);
+          $this->patientIdTemp = $patientId;
+     }
+   }
+   /**
+    * 
+    */
+   public function addRejectPatient(){
+     $this->incPatientTotal($this->currentPatientTable, "rejected");
+     
+     $this->addPatientToTable( $this->currentPatientTable, 
+                               $this->currentPatientRecord, 
+                               $this->recordErrors, 
+                               $this->controlErrors, 
+                               RejectPatient::TYPE_STRICT );
+     $this->rejectCount++ ;
+   }
    
-   public function addRejectPatient($record, $name ){
-      $this->incPatientTotal($this->patientTable, "rejected");
+   public function addPatientToTable($tableName, $record, $errorRecords, $errorMessage, $rejectType ){
       $sql = DaSqlHelper::sqlFromTableCols("da_reject_patients", 
-         array("record", "err_records" , "message","tableName", "name" ,"import_site_history_id", "created_at", "modified_at" ),
+         array( "record", "err_records" , "message", "tableName", "name" ,
+                "import_site_history_id", "reject_type", "created_at", "modified_at" ),
          false );
      
       $command = $this->db->createCommand($sql);
       
       $now = date("Y-m-d H:i:s");
       $record = serialize($record);
-      $message = serialize($this->errors);
+      $errorMessage = serialize($errorMessage);
 
       $import_id = $this->siteconfig->lastImport()->id ;
-      $errorRecords = serialize($this->recordErrors);
+      $errorRecords = serialize($errorRecords);
       
-      $command->bindParam( "tableName" , $name , PDO::PARAM_STR);
+      $command->bindParam( "tableName" , $tableName , PDO::PARAM_STR);
       $command->bindParam( "err_records" , $errorRecords , PDO::PARAM_STR);
-      $command->bindParam( "name" , $name , PDO::PARAM_STR);
+      $command->bindParam( "name" , $tableName , PDO::PARAM_STR);
       $command->bindParam( "record" , $record , PDO::PARAM_STR);
       $command->bindParam( "import_site_history_id" , $import_id, PDO::PARAM_STR  );
-      $command->bindParam( "message" , $message , PDO::PARAM_STR  );
+      $command->bindParam( "message" , $errorMessage , PDO::PARAM_STR  );
+      $command->bindParam( "reject_type" , $rejectType , PDO::PARAM_INT  );
+      
       $command->bindParam( "created_at" , $now , PDO::PARAM_STR);
       $command->bindParam( "modified_at" , $now , PDO::PARAM_STR);
       $command->execute();
-      $this->rejectCount++ ;
    }
+   
    
    public function totalReject(){
      return $this->rejectCount;
@@ -534,6 +596,6 @@
    }
    
    public function hasError(){
-     return !empty($this->errors);
+     return !empty($this->controlErrors);
    }   
  }

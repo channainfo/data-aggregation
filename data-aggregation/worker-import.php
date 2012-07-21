@@ -17,7 +17,7 @@ $djPath = dirname(__FILE__).'/protected/vendors/djjob/DJJobConfig.php';
 
 require_once $djPath;
 $worker = new DJWorker(array( "queue" => DaConfig::QUEUE_IMPORT,
-                              "count" => 0, 
+                              "count" => 5, 
                               "max_attempts" => 2, 
                               "sleep" => 10
                               ));

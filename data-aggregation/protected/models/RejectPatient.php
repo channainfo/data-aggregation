@@ -12,20 +12,33 @@
  * @property string $record
  * @property string $err_records
  * @property integer $import_site_history_id
+ * @property integer $reject_type
  * @property string $modified_at
  * @property string $created_at
  */
 class RejectPatient extends DaActiveRecordModel
 {
+  const TYPE_STRICT = 1;
+  const TYPE_WARNING = 2 ;
+  
+  
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return RejectPatient the static model class
 	 */
-	public static function model($className=__CLASS__)
-	{
+	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}
+  
+  public function getRejectTypeString(){
+    return self::getRejectType($this->reject_type);  
+  }
+  
+  public static function getRejectType($type){
+    $types = array(self::TYPE_STRICT => "Rejected", self::TYPE_WARNING => "Warning");
+     return $types[$type];
+  }
 
 	/**
 	 * @return string the associated database table name
@@ -47,9 +60,6 @@ class RejectPatient extends DaActiveRecordModel
 			array('code, import_site_history_id', 'numerical', 'integerOnly'=>true),
 			array('tableName, name', 'length', 'max'=>255),
 			array('message, record, modified_at, created_at', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, tableName, name, code, message, record, import_site_history_id, modified_at, created_at', 'safe', 'on'=>'search'),
 		);
 	}
   
@@ -99,6 +109,7 @@ class RejectPatient extends DaActiveRecordModel
 			'message' => 'Message',
 			'record' => 'Record',
 			'import_site_history_id' => 'Import Site History',
+      'reject_type' => "Reject Type" ,  
 			'modified_at' => 'Modified At',
 			'created_at' => 'Created At',
 		);

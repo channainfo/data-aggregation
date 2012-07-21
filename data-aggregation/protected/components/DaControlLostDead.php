@@ -10,8 +10,10 @@
     public $clinicId = "";
     public $errorRecords = array() ;
     public $error = false;
+    public $warning = false;
 
     public function check($options=array()) {
+      $this->warning = false ;
       $dbx = $options["dbx"];
       $clinicid = $options["clinicid"];
       $valid = $this->checkLDDate() && $this->checkLostDead($dbx, $clinicid);
@@ -19,16 +21,21 @@
         $this->loadRecords ($dbx, $clinicid );
       return $valid;
     } 
+    
+    public function isWarning(){
+      return $this->warning;
+    }
     /**
      * @throws DaInvalidControlException 
      */
     public function checkLDDate(){
-      $year = DaTool::getYear($this->record["LDdate"]);
-      if($year == "1900"){
-        $this->addError("Invalid [LDDate]. [LDDate]={$this->record["LDdate"]} should not be in 1900 ");
+     $yearError = new DaYearError($this->record["LDdate"]);
+     if($yearError->getErrorType() != DaYearError::ERR_NONE){
+        $tableName = $this->tableName();
+        $this->addError(" Invalid [LDDate] = {$this->record["LDdate"]} in [{$tableName}] should not be in 1900 ");
         return false;
-      }
-      return true ;
+     }
+     return true ;
     }
     /**
     * Lost and dead need to check  checkLostDead
@@ -44,6 +51,7 @@
         $status = trim($this->record['Status']) ;
         $this->addError( " Invalid {$tableName}. [Date] = '{$this->record["LDdate"]}'  , [Status] = '{$status}'" );
         $valid = false;
+        $this->warning = true ;
       }
       return $valid;
     }

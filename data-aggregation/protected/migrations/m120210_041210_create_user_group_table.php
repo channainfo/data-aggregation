@@ -11,17 +11,5 @@ class m120210_041210_create_user_group_table extends CDbMigration{
 
 	public function down(){
     $this->dropTable("da_groups");
-    
 	}
-
-	/*
-	// Use safeUp/safeDown to do migration with transaction
-	public function safeUp()
-	{
-	}
-
-	public function safeDown()
-	{
-	}
-	*/
 }

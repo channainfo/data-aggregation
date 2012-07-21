@@ -1,4 +1,7 @@
 <?php
+/**
+ * @param RejectPatient  $rejectPatient
+ */
   $this->breadcrumbs = array(
       "Import data" => $this->createUrl("importsitehistory/site"),
       "Import History" => $this->createUrl("importsitehistory/index?siteconfig_id={$importHistory->siteconfig_id}"),
@@ -20,6 +23,7 @@
           <th width="90"> Patient type </th>
           <th > Message </th>
           <th> Table </th>
+          <th> Type </th>
           <th width="90"> More detail </th>
         </tr>
       </thead>
@@ -56,6 +60,11 @@
                   break;
                 }
              ?>
+          </td>
+          <td> 
+            <a href="javascript:void(0);" title="<?php echo $rejectPatient->getRejectTypeString();?>" class="<?php echo strtolower($rejectPatient->getRejectTypeString()); ?>" >
+              <?php //echo $rejectPatient->getRejectTypeString(); ?>
+            </a>  
           </td>
           <td> 
             <?php $readId = "record-{$rejectPatient->id}" ;  ?>
