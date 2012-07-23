@@ -61,11 +61,7 @@
                 }
              ?>
           </td>
-          <td> 
-            <a href="javascript:void(0);" title="<?php echo $rejectPatient->getRejectTypeString();?>" class="<?php echo strtolower($rejectPatient->getRejectTypeString()); ?>" >
-              <?php //echo $rejectPatient->getRejectTypeString(); ?>
-            </a>  
-          </td>
+          <td> <span> <?php echo $rejectPatient->getRejectTypeString(); ?> </span> </td>
           <td> 
             <?php $readId = "record-{$rejectPatient->id}" ;  ?>
             <div style="display:none;" >  
