@@ -292,6 +292,12 @@ CREATE TABLE IF NOT EXISTS `da_users` (
 --
 -- Dumping data for table `da_users`
 --
+INSERT INTO `da_groups` (`id`, `name`, `description`) VALUES
+(1, 'Administrator', 'Administrator of system'),
+(2, 'Viewer', 'TODO: clarify later');
+
+INSERT INTO `da_users` (`id`, `login`, `group_id`, `password`, `email`, `salt`, `name`, `created_at`, `modified_at`, `last_login_at`, `active`) VALUES
+(1, 'admin', 1, '80d6cf67cf4023aacb999ee72c8b159b', NULL, 'f51a753ce3f75688840b087a500ad0ce', 'Administrator', '2012-07-27 12:09:45', '2012-07-27 12:09:45', '2012-07-27 12:09:51', 1);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
