@@ -113,8 +113,8 @@ class SiteConfigController extends DaController {
             $lastBackup->save();
             $connection = null;
             $file =  DaConfig::pathDataStore().$backupAttrs["filename"] ;
-            $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], $siteAttrs["password"], $siteAttrs["db"], 
-                  $file ,$connection );
+            $errors = $db->restoreFromBakFile($siteAttrs["host"], $siteAttrs["user"], 
+                        $siteAttrs["password"], $siteAttrs["db"],$file ,$connection );
 
             $endTime =  microtime(true);
             if(count($errors)){
@@ -125,6 +125,7 @@ class SiteConfigController extends DaController {
             }
             $lastBackup->duration = $endTime-$startTime;
             $lastBackup->save();
+            @unlink($file);
           }
           else
             $errors["message"] = "No back up to restore" ;

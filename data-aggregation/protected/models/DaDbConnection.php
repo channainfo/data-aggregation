@@ -101,7 +101,6 @@ EOT;
             $errors["message"] = $this->errorMessage(sqlsrv_errors());       
        }
        else{
-         
          $errors["message"] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
        }
        return $errors;

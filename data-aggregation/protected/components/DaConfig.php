@@ -71,8 +71,9 @@
    }
      
    public static function generateFile($filename){
-     return  time()."-".$filename;
+     return  time()."_".$filename;
    }
+   
    
    public static function webRoot(){
      return dirname(__FILE__)."/../../";

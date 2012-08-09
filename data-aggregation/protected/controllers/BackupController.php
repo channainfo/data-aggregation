@@ -57,7 +57,7 @@
           else{
               $model->setAttributes($_POST['Backup']);
               $file = CUploadedFile::getInstance($model,'filename');
-              $filename = DaConfig::generateFile($file->name); 
+              $filename = DaConfig::generateFile("tmp.bak"); //$file->name 
               $model->setAttributes(array("filename"=>$filename, "siteconfig_id" =>(int)$_GET["siteconfig_id"] ));
 
               if($model->validate() && $file->saveAs(DaConfig::pathDataStore().$filename)){
