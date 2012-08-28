@@ -744,7 +744,7 @@ CREATE TABLE IF NOT EXISTS `tblcimain` (
   `Prefluconzazole` char(7) DEFAULT NULL,
   `PreTranditional` char(7) DEFAULT NULL,
   `DrugAllergy` char(7) NOT NULL,
-  `EClinicId` char(10) NOT NULL,
+  `EClinicId` char(10) DEFAULT NULL,
   `ID` char(4) NOT NULL,
   PRIMARY KEY (`ClinicID`,`ID`),
   KEY `FK_tblCIMain_tblClinic` (`ID`)

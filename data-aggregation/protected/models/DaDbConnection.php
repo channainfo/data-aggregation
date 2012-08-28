@@ -83,6 +83,13 @@
        // TODO update backup table to set state to pending
        $errors = array();
        if($connection){
+          $useSql = " USE master; ";
+          $stmt = $this->query($useSql, $connection);
+          if($stmt === false)
+            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+         
+          
+         
           // start doing restoring
           $sql = <<<EOT
          RESTORE DATABASE $db FROM DISK = '$backup' WITH REPLACE, RECOVERY ;
@@ -93,12 +100,29 @@ EOT;
           if($stmt === false)
             $errors["message"] = $this->errorMessage(sqlsrv_errors());
           
-          //Put DB into usable state.
-          $useSql = " USE {$db}; ";
+             
+          $useSql = " USE master; ";
           $stmt = $this->query($useSql, $connection);
-          
           if($stmt === false)
-            $errors["message"] = $this->errorMessage(sqlsrv_errors());       
+            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+          
+//          $useSql = " alter database {$db} set offline; ";
+//          $stmt = $this->query($useSql, $connection);
+//          if($stmt === false)
+//            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+//          
+//          $useSql = " alter database {$db} set online; ";
+//          $stmt = $this->query($useSql, $connection);
+//          if($stmt === false)
+//            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+          
+          //Put DB into usable state.
+//          $useSql = " USE {$db}; ";
+//          $stmt = $this->query($useSql, $connection);
+//          
+//          if($stmt === false)
+//            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+//          
        }
        else{
          $errors["message"] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
