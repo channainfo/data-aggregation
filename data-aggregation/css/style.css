@@ -168,7 +168,19 @@ div.breadcrumb{
   padding:3px 6px;
   color:white;
   font-size: 12px;
+  float: left;
+  margin: 1px 3px;
 }
+.disabled{
+  background-color: #eee;
+  padding:3px 6px;
+  color:#666;
+  font-size: 12px;
+  float: left;
+  margin: 1px 3px;
+ }
+
+
 .btn-action-edit:hover, .btn-action-delete:hover ,.btn-action-new:hover, .btn-action:hover{
   background-color: #09f;
 }
@@ -278,12 +290,7 @@ div.tableWrapper thead th, div.tableWrapper td {
 .waiting-state{
   background-image: url(../images/state-start.png);
 }
-.disabled{
-  background-color: #eee;
-  color: #ccc;
-  padding: 5px 10px;
-  font-weight: bold;
- }
+
  ul{
    padding: 0px;
    margin: 0px;
@@ -335,3 +342,4 @@ div.tableWrapper thead th, div.tableWrapper td {
  #footer{
    margin-bottom: 10px;
  }
+ div.hz{font-weight: bold;}

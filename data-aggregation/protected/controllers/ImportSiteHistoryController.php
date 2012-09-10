@@ -133,6 +133,7 @@
          $infos["percentage"] = number_format(($import->attributes["current_record"]*100)/$import->attributes["total_record"], 2);
         }
         $infos["finished"] = false ;
+        $infos["total_visit"] = $import->attributes["total_visit"] ;
       }
       else {
         $infos["finished"] = true ;

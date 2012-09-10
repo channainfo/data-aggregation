@@ -47,9 +47,9 @@
         <?php 
         
         if( $row->isImportable()): ?> 
-          <span class="disabled round"> Waiting to be imported </span>
+          <span class="disabled round"> Waiting </span>
         <?php elseif($row->isImporting()): ?>
-          <span class="disabled round"> In progress </span>
+          <span class="disabled round"> Importing </span>
         <?php elseif(Yii::app()->user->isAdmin() && !empty($row->code))  :?>
           <?php echo CHtml::link("Start Import", $this->createUrl("importsitehistory/import", array("siteconfig_id"=>"{$row->id}")),
                 array("class" => "btn-action-delete confirm round", "data-tip" => "Are you sure to import to site: {$row->name} ? " ) ) ?> 

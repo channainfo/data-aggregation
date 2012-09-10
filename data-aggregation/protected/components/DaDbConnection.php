@@ -69,27 +69,22 @@
     public function checkDbState($host, $user, $password,  $db){
       $sql = "SELECT state, state_desc, FROM sys.databases WHERE name = '{$db}' " ;
       $connection =  $this->establishConnection($host, $user, $password, "master" );
-      $stmt = $this->query($sql, $connection);
-      
-      
+      $this->query($sql, $connection);
     }
     
     
     public function restoreFromBakFile($host, $user, $password,  $db, $backup, &$connection){
-       
-       $connection =  $this->establishConnection($host, $user, $password, "master");
-       $this->mssqlConfigure();
-       
-       // TODO update backup table to set state to pending
-       $errors = array();
-       if($connection){
-          $useSql = " USE master; ";
+       try{
+          
+        $connection =  $this->establishConnection($host, $user, $password, "master");
+        $this->mssqlConfigure();
+        $useSql = " alter database {$db} set offline; ";
           $stmt = $this->query($useSql, $connection);
           if($stmt === false)
-            $errors["message"] = $this->errorMessage(sqlsrv_errors());
-         
-          
-         
+            $errors["message"] = $this->errorMessage(sqlsrv_errors())." at line: ". __LINE__." in file :" .__FILE__;
+       
+        // TODO update backup table to set state to pending
+        $errors = array();
           // start doing restoring
           $sql = <<<EOT
          RESTORE DATABASE $db FROM DISK = '$backup' WITH REPLACE, RECOVERY ;
@@ -98,23 +93,23 @@ EOT;
           $stmt = $this->query($sql, $connection );
           
           if($stmt === false)
-            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+            $errors["message"] = $this->errorMessage(sqlsrv_errors())." at line: ". __LINE__." in file :" .__FILE__;
           
              
           $useSql = " USE master; ";
           $stmt = $this->query($useSql, $connection);
           if($stmt === false)
-            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+            $errors["message"] = $this->errorMessage(sqlsrv_errors())." at line: ". __LINE__." in file :" .__FILE__;
           
 //          $useSql = " alter database {$db} set offline; ";
 //          $stmt = $this->query($useSql, $connection);
 //          if($stmt === false)
-//            $errors["message"] = $this->errorMessage(sqlsrv_errors());
-//          
-//          $useSql = " alter database {$db} set online; ";
-//          $stmt = $this->query($useSql, $connection);
-//          if($stmt === false)
-//            $errors["message"] = $this->errorMessage(sqlsrv_errors());
+//            $errors["message"] = $this->errorMessage(sqlsrv_errors())." at line: ". __LINE__." in file :" .__FILE__;
+          
+          $useSql = " alter database {$db} set online; ";
+          $stmt = $this->query($useSql, $connection);
+          if($stmt === false)
+            $errors["message"] = $this->errorMessage(sqlsrv_errors())." at line: ". __LINE__." in file :" .__FILE__;
           
           //Put DB into usable state.
 //          $useSql = " USE {$db}; ";
@@ -124,8 +119,8 @@ EOT;
 //            $errors["message"] = $this->errorMessage(sqlsrv_errors());
 //          
        }
-       else{
-         $errors["message"] = "could not connect to {master db } with user: {$user} and password: {$password} for host: {$host} ";
+       catch(Exception $e){
+         $errors["message"] = $e->getMessage()." at line: ". __LINE__." in file :" .__FILE__;
        }
        return $errors;
      }

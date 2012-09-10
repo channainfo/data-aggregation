@@ -13,6 +13,7 @@
       $firstImport = $importHistories[0];
       if($firstImport->status == ImportSiteHistory::PENDING ): ?>
         <style type="text/css" >
+          .visit { visibility: hidden;}
           .ui-progressbar { position:relative; width: 350px; }
           .pblabel { position: absolute; display: block; width: 100%; text-align: center; line-height: 1.2em;font-weight:normal; }
           .ui-progressbar-value{ overflow: hidden; }
@@ -29,7 +30,9 @@
           <div class="importLabel" > 
             <div class="importTableValue"  id="importCurrent"  > 0 </div>
             <div class="importTableValue label" >of</div>
-            <div class="importTableValue"  id="importTotal"   >
+            <div class="importTableValue"  id="importTotal"   > </div>
+            <div class="importTableValue label visit" > - Total visit: </div>
+            <div class="importTableValue visit"  id="importTotalVisit"   >0</div>
           </div>
       </div>
     
@@ -56,6 +59,15 @@
           $("#progressbar").progressbar("value", response["percentage"] );
           $("#importPercentage").html(response["percentage"]+"%");
           $("#importTotal").html( response["total_record"]);
+          if(response["total_visit"] != "0"){
+            $(".visit").css("visibility", "visible");
+            console.log("total", response["total_visit"] );
+            $("#importTotalVisit").html( response["total_visit"]);
+          }
+          else{
+            $(".visit").css("visibility", "hidden");
+          }
+          
           $("#importCurrent").html( response["current_record"]);
           $("#importTable").html( response["importing_table"]);
         }
@@ -97,14 +109,15 @@
     <table class="tgrid">
       <thead>
         <tr>
-          <th width="150"> Date </th>
-          <th width="50"> Status </th>
-          <th width="150"> Site </th>
+          <th> Date </th>
+          <th> Status </th>
+          <th> Site </th>
           <th> Reason </th>
-          <th width="120"> Inserted </th>
-          <th width="120"> Rejected </th>
-          <th width="120"> Total </th>
-          <th width="200"> Action </th>
+          <th> Inserted </th>
+          <th> Rejected </th>
+          <th> Patients </th>
+          <th> Visits </th>
+          <th> Action </th>
         </tr>
       </thead>
     <?php 
@@ -166,18 +179,33 @@
           </td>
           <td> 
             <?php
-                  if(isset($info["total"])){
-                    foreach($info["total"] as $tableName => $total){
-                      echo " <div> {$tableName}: {$total} </div> " ;
-                    }
+                 
+                if(isset($info["total"])){
+                  echo "<ul class='totalDetail' >";
+                  foreach($info["total"] as $tableName => $total){
+                      echo " <li> {$tableName}: {$total} </li> " ;
+                  }
+                  echo "</ul>";
                 }
               ?>
+          </td>
+          <td>
+            <?php
+              if(isset($info["visit"])){
+                  echo "<ul class='totalDetail' >";
+                  foreach($info["visit"] as $tableName => $total){
+                      echo " <li> {$tableName}: {$total} </li> " ;
+                  }
+                  echo "</ul>" ;
+                }
+            ?>
           </td>
           <td>
             <?php if(Yii::app()->user->isAdmin()):?>
             <?php echo CHtml::link("Delete", $this->createUrl("importsitehistory/delete/{$importHistory->id}"), array("class" => "btn-action-delete delete round ", "data-tip" => "Are you sure to delete this import history ?") ) ?>
             <?php endif;?>
-            <?php echo CHtml::link("Rejected Patients" , $this->createUrl("rejectpatient/index", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-action round ")); ?> 
+            <br />
+            <?php echo CHtml::link("Rejected" , $this->createUrl("rejectpatient/index", array("import_site_history_id" => $importHistory->id)), array("class" => "btn-action round ")); ?> 
           </td>
         </tr>
     <?php 

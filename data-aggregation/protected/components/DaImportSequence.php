@@ -13,6 +13,7 @@
   * @property integer $currentPatientTable current patient table being imported
   * @property integer $patientIter current number of patient being imported
   * @property integer $patientTotal total number of patient
+  * @property array $visits total number of visit 
    
   * @property CDbTransaction $transaction
   *  
@@ -38,6 +39,8 @@
    private $patientTotal=array();
    
    private $patientIdTemp ;
+   private $visits = array();
+   private $total_visit = 0;
      
    public function __destruct(){
      $this->dbX->setActive(false);
@@ -152,7 +155,7 @@
         DaTool::hp("Importing site: {$this->siteconfig->code}, {$this->siteconfig->name}");
 
         $this->_startImporting();
-        $this->importTablesFixed();
+        //$this->importTablesFixed();
         
         $this->importIMain("tblaimain");
         $this->importIMain("tblcimain");
@@ -212,7 +215,7 @@
           $i++;
         }
         try{
-          $this->processImportHistoryUpdate($total, $r++, $quantUpdate, $table, $records);
+          $this->processImportHistoryUpdate($this->total_visit, $total, $r++, $quantUpdate, $table, $records);
           $commandInsert->execute();
         }
         catch(CDbException $ex){
@@ -231,10 +234,11 @@
     * @param type $quantity iteration to update
     * @param type $tableName 
     */
-   public function processImportHistoryUpdate($total, $current,$quantity, $tableName, $record){
+   public function processImportHistoryUpdate($total_visit, $total, $current,$quantity, $tableName, $record){
      if( $current == 1 ||  ($current % $quantity == 0) ){
        $import = $this->siteconfig->lastImport();
        
+       $import->total_visit = $total_visit ;
        $import->total_record = $total;
        $import->current_record = $current;
        $import->importing_table = $tableName ;
@@ -263,6 +267,8 @@
       $this->transaction = null;
    }
    
+   
+   
    private function incPatientTotal($table, $type){
      if(isset($this->patientTotal[$type][$table]))
        $this->patientTotal[$type][$table]++;
@@ -285,6 +291,10 @@
    public function importIMain($table){
       DaTool::pln("Import patient: {$table}");
       $s  = microtime(true);
+      
+      $this->total_visit = $this->getVisitTotal($table);
+      $this->setVisitTotal($table, $this->total_visit);
+      
       DaDbHelper::startIgnoringForeignKey($this->db);
       
       $totalRecord = DaDbHelper::countRecord($this->dbX, $table);
@@ -297,7 +307,7 @@
       
       $this->patientIter = 0;
       foreach($dataReader as $record){
-         $this->processImportHistoryUpdate($totalRecord, $r++, $randomUpdate, $table, $record);
+         $this->processImportHistoryUpdate($this->total_visit,$totalRecord, $r++, $randomUpdate, $table, $record);
 
          $this->resetRecordError(); 
          $this->currentPatientRecord = $record ;
@@ -374,6 +384,25 @@
      else if($table == "tbleimain")
        return "tblevmain";
    }
+   /**
+    *
+    * @param string $table name of visit table
+    * @return integer 
+    */
+   public function getVisitTotal($table){
+    return DaDbHelper::countRecord($this->dbX, $this->getTypeVisit($table));
+   }
+   
+   /**
+    *
+    * @param string $table name of patient table
+    */
+   public function setVisitTotal($table, $total){
+      $visitTable = $this->getTypeVisit($table) ;
+      $this->patientTotal["visit"][$visitTable] = $total;
+      $this->visits["{$visitTable}"] = $total;
+   }
+   
    //===========================================================================
    public function rejectPatients($table, $offset=0, $limit=10){
      $import_site_history = $this->siteconfig->lastImport()->id ;
