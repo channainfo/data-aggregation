@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 25, 2012 at 11:22 AM
+-- Generation Time: Sep 17, 2012 at 09:45 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -36,12 +36,7 @@ CREATE TABLE IF NOT EXISTS `da_backups` (
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_da_bakups_siteconfig_id` (`siteconfig_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_backups`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -63,11 +58,6 @@ CREATE TABLE IF NOT EXISTS `da_conversion` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `da_conversion`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -86,12 +76,7 @@ CREATE TABLE IF NOT EXISTS `da_djjobs` (
   `error` datetime DEFAULT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_djjobs`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -106,12 +91,7 @@ CREATE TABLE IF NOT EXISTS `da_drug_controls` (
   `created_at` datetime DEFAULT NULL,
   `modified_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_drug_controls`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -139,11 +119,6 @@ CREATE TABLE IF NOT EXISTS `da_export_history` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `da_export_history`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -155,12 +130,7 @@ CREATE TABLE IF NOT EXISTS `da_groups` (
   `name` varchar(255) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_groups`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -184,14 +154,10 @@ CREATE TABLE IF NOT EXISTS `da_import_site_histories` (
   `importing_record` text,
   `site_code` varchar(255) DEFAULT NULL,
   `site_name` varchar(255) DEFAULT NULL,
+  `total_visit` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_da_import_site_histories_siteconfig_id` (`siteconfig_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_import_site_histories`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -209,11 +175,6 @@ CREATE TABLE IF NOT EXISTS `da_import_tables` (
   `modified_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_import_tables`
---
-
 
 -- --------------------------------------------------------
 
@@ -234,12 +195,7 @@ CREATE TABLE IF NOT EXISTS `da_reject_patients` (
   `created_at` datetime DEFAULT NULL,
   `reject_type` int(4) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_reject_patients`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=297 ;
 
 -- --------------------------------------------------------
 
@@ -261,12 +217,7 @@ CREATE TABLE IF NOT EXISTS `da_siteconfigs` (
   `last_imported` datetime DEFAULT NULL,
   `last_restored` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_siteconfigs`
---
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -287,18 +238,7 @@ CREATE TABLE IF NOT EXISTS `da_users` (
   `last_login_at` datetime DEFAULT NULL,
   `active` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `da_users`
---
-INSERT INTO `da_groups` (`id`, `name`, `description`) VALUES
-(1, 'Administrator', 'Administrator of system'),
-(2, 'Viewer', 'TODO: clarify later');
-
-INSERT INTO `da_users` (`id`, `login`, `group_id`, `password`, `email`, `salt`, `name`, `created_at`, `modified_at`, `last_login_at`, `active`) VALUES
-(1, 'admin', 1, '80d6cf67cf4023aacb999ee72c8b159b', NULL, 'f51a753ce3f75688840b087a500ad0ce', 'Administrator', '2012-07-27 12:09:45', '2012-07-27 12:09:45', '2012-07-27 12:09:51', 1);
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
