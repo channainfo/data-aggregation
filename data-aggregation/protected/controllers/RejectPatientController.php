@@ -25,7 +25,7 @@
     
     $import = ImportSiteHistory::model()->findByPk($_GET["import_site_history_id"]);
     
-    $file = DaConfig::pathDataStoreExport().$import->siteconfig()->fullName().".csv" ;
+    $file = DaConfig::pathDataStoreExport().$import->site_name.".csv" ;
     
     if(!file_exists($file) || 1){
       $command = Yii::app()->db->createCommand()->select('tableName , message, record, err_records, reject_type')
